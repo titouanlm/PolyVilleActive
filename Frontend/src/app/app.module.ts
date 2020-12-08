@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BasicDisplayComponent } from './map-display/basic-display.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import {NgxBlocklyModule} from 'ngx-blockly';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     RouterModule.forRoot([
     { path: '', component: BasicDisplayComponent },
 ], { relativeLinkResolution: 'legacy' }),
+    NgxBlocklyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
