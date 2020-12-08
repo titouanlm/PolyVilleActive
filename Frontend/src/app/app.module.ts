@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { BasicDisplayComponent } from './map-display/basic-display.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import {NgxBlocklyModule} from 'ngx-blockly';
+import { BlocklyComponent } from './blockly/blockly.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicDisplayComponent,
-    TopBarComponent
+    TopBarComponent,
+    BlocklyComponent
   ],
   imports: [
     BrowserModule,

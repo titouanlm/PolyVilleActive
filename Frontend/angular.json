@@ -28,12 +28,17 @@
               "src/assets"
             ],
             "styles": [
+              "/Users/Titouan/Desktop/Polytech/SI4/PS7/Frontend/node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [
               "node_modules/ngx-blockly/scripts/blockly/blockly_compressed.js",
               "node_modules/ngx-blockly/scripts/blockly/blocks_compressed.js",
               "node_modules/ngx-blockly/scripts/blockly/python_compressed.js",
+              "node_modules/ngx-blockly/scripts/blockly/javascript_compressed.js",
+              "node_modules/ngx-blockly/scripts/blockly/php_compressed.js",
+              "node_modules/ngx-blockly/scripts/blockly/dart_compressed.js",
+              "node_modules/ngx-blockly/scripts/blockly/lua_compressed.js",
               "node_modules/ngx-blockly/scripts/blockly/msg/js/en.js"
             ]
           },

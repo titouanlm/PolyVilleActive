@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {NgxBlocklyConfig} from 'ngx-blockly';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +8,4 @@ import {NgxBlocklyConfig} from 'ngx-blockly';
 
 export class AppComponent {
   title = 'Frontend';
-
-  public config: NgxBlocklyConfig = {
-    toolbox: '<xml id="toolbox" style="display: none">' +
-      '<block type="controls_if"></block>' +
-      '<block type="controls_repeat_ext"></block>' +
-      '<block type="logic_compare"></block>' +
-      '<block type="math_number"></block>' +
-      '<block type="math_arithmetic"></block>' +
-      '<block type="text"></block>' +
-      '<block type="text_print"></block>' +
-      '</xml>',
-    scrollbars: true,
-    trashcan: true
-  };
 }

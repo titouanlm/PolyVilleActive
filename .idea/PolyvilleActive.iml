@@ -4,5 +4,9 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="blockly_compressed" level="application" />
+    <orderEntry type="library" name="javascript_compressed" level="application" />
+    <orderEntry type="library" name="blocks_compressed" level="application" />
+    <orderEntry type="library" name="en" level="application" />
   </component>
 </module>
