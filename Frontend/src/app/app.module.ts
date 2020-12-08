@@ -29,6 +29,7 @@ import { SellerDisplayComponent } from './seller-display/seller-display.componen
       { path: '', component: DisplayForAllComponent },
       { path: 'visitorinhabitant', component: VisitorInhabitantDisplayComponent },
       { path: 'seller', component: SellerDisplayComponent },
+      { path: 'seller/blocky', component: BlocklyComponent },
 ], { relativeLinkResolution: 'legacy' }),
     NgxBlocklyModule,
     MatIconModule,
