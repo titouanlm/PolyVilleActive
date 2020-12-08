@@ -1,0 +1,66 @@
+p{
+  position: relative;
+  top: 10%;
+  text-align: center;
+
+}
+
+h1{
+  position: relative;
+  top: 20%;
+  text-align: center;
+}
+
+
+.positionblocklysellers {
+  position: relative;
+  top: 30%;
+  text-align: center;
+}
+
+.positionblocklysellers a span{
+  position: absolute;
+  display: block;
+}
+
+.positionblocklysellers a span {
+  position: absolute;
+  display: block;
+}
+
+.positionblocklysellers a span:nth-child(1) {
+  top: 0;
+  left: 46.5%;
+  width: 13.7%;
+  height: 4px;
+  background: linear-gradient(90deg, #541c8c, #541c8c);
+}
+
+.positionblocklysellers a span:nth-child(2) {
+  left: 60%;
+  width: 4px;
+  height: 550%;
+  background: linear-gradient(180deg, #541c8c, #541c8c);
+}
+
+.positionblocklysellers a span:nth-child(3) {
+  top: 550%;
+  right: 39.75%;
+  width: 13.7%;
+  height: 4px;
+  background: linear-gradient(270deg, #541c8c, #541c8c);
+}
+
+.positionblocklysellers a span:nth-child(4) {
+  left: 46.5%;
+  width: 4px;
+  height: 565%;
+  background: linear-gradient(360deg, #541c8c, #541c8c);
+}
+
+
+
+.increaseSize
+{
+  font-size: 800%;
+}
