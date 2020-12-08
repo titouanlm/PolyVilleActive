@@ -28,7 +28,6 @@
               "src/assets"
             ],
             "styles": [
-              "/Users/Titouan/Desktop/Polytech/SI4/PS7/Frontend/node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [
