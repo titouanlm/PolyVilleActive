@@ -17,8 +17,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: '', component: BasicDisplayComponent},
-    ]),
+    { path: '', component: BasicDisplayComponent },
+], { relativeLinkResolution: 'legacy' }),
   ],
   providers: [],
   bootstrap: [AppComponent]
