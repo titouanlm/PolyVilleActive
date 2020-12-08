@@ -132,5 +132,8 @@
         }
       }
     }},
-  "defaultProject": "PolyvilleActive"
+  "defaultProject": "PolyvilleActive",
+  "cli": {
+    "analytics": "7956e0df-773e-44c1-a34d-d2248929c309"
+  }
 }
