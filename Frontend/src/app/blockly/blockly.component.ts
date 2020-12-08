@@ -16,14 +16,29 @@ export class BlocklyComponent implements OnInit {
   }
 
   public config: NgxBlocklyConfig = {
-    toolbox: '<xml id="toolbox" style="display: none">' +
-      '<block type="controls_if"></block>' +
-      '<block type="controls_repeat_ext"></block>' +
+    toolbox: ' <xml id="toolbox" style="display: none">' +
+      '<category name="Variables" custom="VARIABLE" colour="330"></category>' +
+    '<category name="Functions" custom="PROCEDURE" colour="330"></category>' +
+    '<category name="Logic" colour="210">' +
+    '<block type="controls_if"></block>' +
       '<block type="logic_compare"></block>' +
-      '<block type="math_number"></block>' +
+    '<block type="logic_operation"></block>' +
+    '<block type="logic_boolean"></block>' +
+    '</category>' +
+    '<category name="Loops" colour="120">' +
+    '<block type="controls_whileUntil"></block>' +
+      '<block type="controls_repeat_ext"></block>' +
+    '<block type="controls_for"></block>' +
+    '</category>' +
+    '<category name="Math" colour="230">' +
+    '<block type="math_number"></block>' +
       '<block type="math_arithmetic"></block>' +
-      '<block type="text"></block>' +
+    '</category>' +
+    '<category name="Functions" colour="290" custom="PROCEDURE"></category>' +
+    '<category name="Texte" colour="150">' +
+    '<block type="text"></block>' +
       '<block type="text_print"></block>' +
+    '</category>' +
       '</xml>',
     scrollbars: false,
     trashcan: true
