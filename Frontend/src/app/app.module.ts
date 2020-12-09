@@ -11,6 +11,7 @@ import { VisitorInhabitantDisplayComponent } from './visitor-inhabitant-display/
 import { DisplayForAllComponent } from './display-for-all/display-for-all.component';
 import { SellerDisplayComponent } from './seller-display/seller-display.component';
 import { TestblockComponent } from './testblock/testblock.component';
+import { MyBlocksComponent} from './MyBlocks/MyBlocks.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { TestblockComponent } from './testblock/testblock.component';
     TopBarComponent,
     DisplayForAllComponent,
     SellerDisplayComponent,
-    TestblockComponent
+    TestblockComponent,
+    MyBlocksComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { TestblockComponent } from './testblock/testblock.component';
       { path: '', component: DisplayForAllComponent },
       { path: 'visitorinhabitant', component: VisitorInhabitantDisplayComponent },
       { path: 'seller', component: SellerDisplayComponent },
-      { path: 'seller/blockly', component: TestblockComponent },
+      { path: 'seller/blockly', component: MyBlocksComponent },
 ], { relativeLinkResolution: 'legacy' }),
     NgxBlocklyModule,
     MatIconModule,
