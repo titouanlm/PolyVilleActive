@@ -26,8 +26,7 @@ import { ShopInformationComponent } from './shop-information/shop-information.co
     DisplayForAllComponent,
     SellerDisplayComponent,
     TestblockComponent,
-    MyBlocksComponent,
-    ShopInformationComponent
+    MyBlocksComponent
   ],
   imports: [
     BrowserModule,
@@ -36,11 +35,9 @@ import { ShopInformationComponent } from './shop-information/shop-information.co
       { path: '', component: DisplayForAllComponent },
       { path: 'visitorinhabitant', component: VisitorInhabitantDisplayComponent },
       { path: 'seller', component: SellerDisplayComponent },
-      { path: 'seller/blockly', component: MyBlocksComponent },
-], { relativeLinkResolution: 'legacy' }),
-      { path: 'seller/blockly', component: TestblockComponent },
       { path: 'seller/shop-information', component: ShopInformationComponent },
-    ], { useHash: true}), /*{ relative Link Resolution: 'legacy' },*/
+      { path: 'seller/blockly', component: MyBlocksComponent },
+], { useHash: true}), /*{ relativeLinkResolution: 'legacy' }),*/
     NgxBlocklyModule,
     MatIconModule,
   ],
