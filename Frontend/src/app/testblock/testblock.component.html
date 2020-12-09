@@ -1,2 +1,8 @@
 <!--<app-blockly></app-blockly>-->
 <ngx-blockly [config]="config" [customBlocks]="customBlocks" [generatorConfig]="generatorConfig"></ngx-blockly>
+
+<div class="exitblockly">
+  <a [routerLink]="['..']">
+    <mat-icon [inline]="true">exit_to_app</mat-icon>
+  </a>
+</div>
