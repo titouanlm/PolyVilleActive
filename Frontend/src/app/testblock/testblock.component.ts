@@ -40,7 +40,7 @@ export class TestblockComponent {
       LOOP_CATEGORY,
       MATH_CATEGORY,
       TEXT_CATEGORY,
-      new Separator(), //Add Separator
+      new Separator(), // Add Separator
       LISTS_CATEGORY,
       COLOUR_CATEGORY,
       VARIABLES_CATEGORY,
