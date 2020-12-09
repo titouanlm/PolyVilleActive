@@ -12,6 +12,8 @@ import { DisplayForAllComponent } from './display-for-all/display-for-all.compon
 import { SellerDisplayComponent } from './seller-display/seller-display.component';
 import { TestblockComponent } from './testblock/testblock.component';
 import { MyBlocksComponent} from './MyBlocks/MyBlocks.component';
+import { ShopInformationComponent } from './shop-information/shop-information.component';
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { MyBlocksComponent} from './MyBlocks/MyBlocks.component';
     DisplayForAllComponent,
     SellerDisplayComponent,
     TestblockComponent,
-    MyBlocksComponent
+    MyBlocksComponent,
+    ShopInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -35,10 +38,14 @@ import { MyBlocksComponent} from './MyBlocks/MyBlocks.component';
       { path: 'seller', component: SellerDisplayComponent },
       { path: 'seller/blockly', component: MyBlocksComponent },
 ], { relativeLinkResolution: 'legacy' }),
+      { path: 'seller/blockly', component: TestblockComponent },
+      { path: 'seller/shop-information', component: ShopInformationComponent },
+    ], { useHash: true}), /*{ relative Link Resolution: 'legacy' },*/
     NgxBlocklyModule,
     MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule],
 })
 export class AppModule { }
