@@ -1,4 +1,4 @@
-const {Promotion } = require('../../../../models')
+const {Promotion } = require('../../models')
 
 /**
  * Function buildAPromo.
