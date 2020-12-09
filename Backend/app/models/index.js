@@ -1,5 +1,10 @@
-const Quiz = require('./quiz.model.js')
+const Event = require('./Event.model.js')
+const Shop = require('./Shop.model.js')
+const Promotion = require('./Promotion.model.js')
+const Notification = require('./Notification.model.js')
+const Seller = require('./Seller.model.js')
+const Inhabitant = require('./Inhabitant.model.js')
 
 module.exports = {
-  Quiz,
+    Event,Shop,Seller,Promotion,Notification,Inhabitant
 }
