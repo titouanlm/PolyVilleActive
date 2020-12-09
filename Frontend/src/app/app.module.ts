@@ -10,6 +10,10 @@ import { BlocklyComponent } from './blockly/blockly.component';
 import { VisitorInhabitantDisplayComponent } from './visitor-inhabitant-display/visitor-inhabitant-display.component';
 import { DisplayForAllComponent } from './display-for-all/display-for-all.component';
 import { SellerDisplayComponent } from './seller-display/seller-display.component';
+import { TestblockComponent } from './testblock/testblock.component';
+import { MyBlocksComponent} from './MyBlocks/MyBlocks.component';
+import { ShopInformationComponent } from './shop-information/shop-information.component';
+
 
 
 @NgModule({
@@ -20,7 +24,9 @@ import { SellerDisplayComponent } from './seller-display/seller-display.componen
     VisitorInhabitantDisplayComponent,
     TopBarComponent,
     DisplayForAllComponent,
-    SellerDisplayComponent
+    SellerDisplayComponent,
+    TestblockComponent,
+    MyBlocksComponent
   ],
   imports: [
     BrowserModule,
@@ -29,12 +35,14 @@ import { SellerDisplayComponent } from './seller-display/seller-display.componen
       { path: '', component: DisplayForAllComponent },
       { path: 'visitorinhabitant', component: VisitorInhabitantDisplayComponent },
       { path: 'seller', component: SellerDisplayComponent },
-      { path: 'seller/blocky', component: BlocklyComponent },
-], { relativeLinkResolution: 'legacy' }),
+      { path: 'seller/shop-information', component: ShopInformationComponent },
+      { path: 'seller/blockly', component: MyBlocksComponent },
+], { useHash: true}), /*{ relativeLinkResolution: 'legacy' }),*/
     NgxBlocklyModule,
     MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule],
 })
 export class AppModule { }

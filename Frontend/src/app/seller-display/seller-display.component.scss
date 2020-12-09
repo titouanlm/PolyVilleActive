@@ -5,60 +5,86 @@ p{
 
 }
 
-h1{
+h1 {
   position: relative;
   top: 20%;
   text-align: center;
 }
 
 
-.positionblocklysellers {
-  position: relative;
-  top: 30%;
+h2 {
+  position: absolute;
   text-align: center;
+  top: 71.5%;
+  left: 18.5%;
 }
 
-.positionblocklysellers a span{
+h3 {
+  position: absolute;
+  text-align: center;
+  top: 70.5%;
+  left: 69.5%;
+  font-size: 200%;
+}
+
+.sellersblocklycreation {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  left: 45%;
+}
+
+.sellersblocklycreation a span{
   position: absolute;
   display: block;
 }
 
-.positionblocklysellers a span {
-  position: absolute;
-  display: block;
-}
-
-.positionblocklysellers a span:nth-child(1) {
-  top: 0;
-  left: 46.5%;
-  width: 13.7%;
-  height: 4px;
+.sellersblocklycreation a span:nth-child(1) {
+  position : absolute;
+  top: 0%;
+  width: 160%;
+  left: -30%;
+  height: 2%;
   background: linear-gradient(90deg, #541c8c, #541c8c);
 }
 
-.positionblocklysellers a span:nth-child(2) {
-  left: 60%;
-  width: 4px;
-  height: 550%;
+.sellersblocklycreation a span:nth-child(2) {
+  left: -30%;
+  width: 4%;
+  height: 100%;
   background: linear-gradient(180deg, #541c8c, #541c8c);
 }
 
-.positionblocklysellers a span:nth-child(3) {
-  top: 550%;
-  right: 39.75%;
-  width: 13.7%;
-  height: 4px;
+.sellersblocklycreation a span:nth-child(3) {
+  position : absolute;
+  top: 100%;
+  width: 160%;
+  height: 2%;
+  left: -30%;
   background: linear-gradient(270deg, #541c8c, #541c8c);
 }
 
-.positionblocklysellers a span:nth-child(4) {
-  left: 46.5%;
-  width: 4px;
-  height: 565%;
+.sellersblocklycreation a span:nth-child(4) {
+  left: 126%;
+  width: 4%;
+  height: 100%;
   background: linear-gradient(360deg, #541c8c, #541c8c);
 }
 
 
+.sellersshopinformation {
+  position: absolute;
+  top: 50%;
+  text-align: left;
+  left: 20%;
+}
+
+.sellersexit {
+  position: absolute;
+  top: 50%;
+  left: 72%;
+
+}
 
 .increaseSize
 {
