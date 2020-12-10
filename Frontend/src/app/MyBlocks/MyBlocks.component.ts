@@ -13,7 +13,10 @@ import {DatesBlock} from './DatesBlock';
 import {NotifBlock} from './NotifBlock';
 import {CondPromoBlock} from './CondPromoBlock';
 import {TitreBlock} from './TitreBlock';
-import {MagasinBlock} from './MagasinBlock';
+
+
+declare var Blockly: any;
+
 
 @Component({
   selector: 'app-myblocks',
@@ -29,7 +32,6 @@ export class MyBlocksComponent {
     new PromoBlock('promotion', null, null),
     new TitreBlock( 'titredescription' , null , null),
     new DatesBlock('dates' , null, null),
-    new MagasinBlock( 'magasin' , null , null),
     new NotifBlock( 'notification' , null , null),
     new CondPromoBlock( 'condpromo' , null , null)
   ];
@@ -53,6 +55,17 @@ export class MyBlocksComponent {
 
 
   onCode(code: string) {
+    console.log(code);
+  }
+
+  execute() {
+    var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
+
+    try {
+      eval(code);
+    } catch (e) {
+      alert(e);
+    }
     console.log(code);
   }
 
