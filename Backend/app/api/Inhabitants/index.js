@@ -25,6 +25,8 @@ router.get('/:inhabitantId', (req, res) => {
 
 router.post('/', (req, res) => {
     try {
+        console.log("Test")
+
         const inhabitant = Inhabitant.create({ ...req.body })
         res.status(201).json(inhabitant)
     } catch (err) {

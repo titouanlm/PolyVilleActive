@@ -2,7 +2,7 @@ const Joi = require('joi')
 const BaseModel = require('../utils/base-model.js')
 
 module.exports = new BaseModel('Promotion', {
-    promoId: Joi.number().required(),
+    //promoId: Joi.number().required(),
     promoDescription: Joi.string().required(),
     promoStartDate : Joi.string(),
     promoEndDate : Joi.string(),

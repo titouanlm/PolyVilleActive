@@ -2,9 +2,8 @@ const Joi = require('joi')
 const BaseModel = require('../utils/base-model.js')
 
 module.exports = new BaseModel('Shop', {
-    shopId: Joi.number(),
-    label: Joi.string(),
-    longitude:  Joi.number(),
-    latitude:  Joi.number(),
+    label: Joi.string().required(),
+    longitude:  Joi.number().required(),
+    latitude:  Joi.number().required(),
     sellerId: Joi.number().required(),
 })
