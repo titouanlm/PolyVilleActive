@@ -17,7 +17,7 @@ export class InhabitantService {
 
   public inhabitantForm: FormGroup;
 
-  constructor(public formBuilder: FormBuilder,private http: HttpClient) {
+  constructor(public formBuilder: FormBuilder, private http: HttpClient) {
     this.inhabitantForm = this.formBuilder.group({
       number: [''],
     });

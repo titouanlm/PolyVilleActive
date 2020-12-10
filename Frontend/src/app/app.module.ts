@@ -21,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
+import { PopupSellerAuthenticationComponent } from './popup-seller-authentication/popup-seller-authentication.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {HttpClientModule} from "@angular/common/http";
     SellerDisplayComponent,
     TestblockComponent,
     MyBlocksComponent,
-    PopupVisitorInhabitantAuthenticationComponent
+    PopupVisitorInhabitantAuthenticationComponent,
+    PopupSellerAuthenticationComponent
   ],
   imports: [
     BrowserModule,

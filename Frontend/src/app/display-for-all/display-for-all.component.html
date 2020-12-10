@@ -2,16 +2,17 @@
   <h1><br>Welcome to PolyVille Active !</h1>
 
   <div class="inhabitantDisplay">
-    <a (click)="openDialog()" class="inhabitantIcon">
+    <a (click)="openInhabitantsDialog()" class="inhabitantIcon">
       <mat-icon [inline]="true">account_box</mat-icon>
     </a><br>
     <h1>Inhabitants and Visitors</h1>
   </div>
 
   <div class="sellerDisplay">
-    <a [routerLink]="['seller']" class="sellerIcon">
+    <a (click)="openSellersDialog()" class="sellerIcon">
       <mat-icon [inline]="true">shop</mat-icon>
     </a><br>
     <h1>Sellers</h1>
   </div>
+
 </div>
