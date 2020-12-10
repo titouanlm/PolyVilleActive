@@ -6,7 +6,7 @@ module.exports = new BaseModel('Event', {
     description: Joi.string().required(),
     startDate : Joi.string().required(),
     endDate : Joi.string().required(),
-    promotions: Joi.array(),
     keywords: Joi.string(),
+    shopId : Joi.number().required()
 
 })
