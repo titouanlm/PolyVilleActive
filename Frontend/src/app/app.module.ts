@@ -13,8 +13,14 @@ import { SellerDisplayComponent } from './seller-display/seller-display.componen
 import { TestblockComponent } from './testblock/testblock.component';
 import { MyBlocksComponent} from './MyBlocks/MyBlocks.component';
 import { ShopInformationComponent } from './shop-information/shop-information.component';
-
-
+import { PopupVisitorInhabitantAuthenticationComponent } from './popup-visitor-inhabitant-authentication/popup-visitor-inhabitant-authentication.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MatInputModule } from "@angular/material/input";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,23 +32,34 @@ import { ShopInformationComponent } from './shop-information/shop-information.co
     DisplayForAllComponent,
     SellerDisplayComponent,
     TestblockComponent,
-    MyBlocksComponent
+    MyBlocksComponent,
+    PopupVisitorInhabitantAuthenticationComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    MatDialogModule,
     RouterModule.forRoot([
-      { path: '', component: DisplayForAllComponent },
-      { path: 'visitorinhabitant', component: VisitorInhabitantDisplayComponent },
-      { path: 'seller', component: SellerDisplayComponent },
-      { path: 'seller/shop-information', component: ShopInformationComponent },
-      { path: 'seller/blockly', component: MyBlocksComponent },
-], { useHash: true}), /*{ relativeLinkResolution: 'legacy' }),*/
+      {path: '', component: DisplayForAllComponent},
+      {path: 'visitorinhabitant', component: VisitorInhabitantDisplayComponent},
+      {path: 'seller', component: SellerDisplayComponent},
+      {path: 'seller/shop-information', component: ShopInformationComponent},
+      {path: 'seller/blockly', component: MyBlocksComponent},
+    ], {useHash: true}),
     NgxBlocklyModule,
     MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent],
   exports: [RouterModule],
+  entryComponents: [PopupVisitorInhabitantAuthenticationComponent],
 })
+
 export class AppModule { }

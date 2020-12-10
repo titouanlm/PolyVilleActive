@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {InhabitantService} from '../../services/inhabitant.service';
 
 @Component({
   selector: 'app-basic-display',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisitorInhabitantDisplayComponent implements OnInit {
 
-  constructor() { }
+  public inhabitant;
+
+  public number: number;
+
+  constructor(public inhabitantService: InhabitantService) {
+    this.number=this.inhabitantService.number;
+    const inhabitant = inhabitantService.getInhabitant(this.number);
+    if (inhabitant === null){
+      this.inhabitant = inhabitantService.createInhabitant(this.number);
+    }
+    else {
+      this.inhabitant = inhabitant
+    }
+  }
 
   ngOnInit() {
   }

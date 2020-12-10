@@ -12,7 +12,8 @@ export class CondPromoBlock extends CustomBlock {
   defineBlock() {
     this.block.appendDummyInput()
       .appendField('Déclencher la promotion quand la condition sur')
-      .appendField(new Blockly.FieldDropdown([['la date', 'DATE_COND'], ['le nombre de personnes dans le magasin', 'CUSTUMORS_NB_COND'], ['', '']]), 'PROMO_CONDITION')
+      .appendField(new Blockly.FieldDropdown([['la date', 'DATE_COND'],
+        ['le nombre de personnes dans le magasin', 'CUSTUMORS_NB_COND'], ['', '']]), 'PROMO_CONDITION')
       .appendField('est validée.');
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
