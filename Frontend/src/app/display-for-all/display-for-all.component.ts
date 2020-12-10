@@ -27,7 +27,7 @@ export class DisplayForAllComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       this.number = result;
-      if (this.number !== null) {
+      if (this.number != null) {
         this.inhabitantService.number = this.number;
         this.router.navigate(['visitorinhabitant']);
       }
