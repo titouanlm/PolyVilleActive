@@ -18,7 +18,8 @@ export class InhabitantService {
   public inhabitant$: BehaviorSubject<Inhabitant> ;
 
   constructor(public formBuilder: FormBuilder, private http: HttpClient) {
-    this.inhabitant$ = new BehaviorSubject<Inhabitant>(JSON.parse(localStorage.getItem('currentInhabitant')));
+    this.currentInhabitant = JSON.parse(localStorage.getItem('currentInhabitant'));
+    this.inhabitant$ = new BehaviorSubject<Inhabitant>(this.currentInhabitant);
     this.inhabitantForm = this.formBuilder.group({
       firstName: [''],
       lastName: [''],
@@ -45,7 +46,7 @@ export class InhabitantService {
       .subscribe(
         (res) => {
           this.currentInhabitant = res;
-          console.log(this.currentInhabitant);
+          localStorage.setItem('currentInhabitant', JSON.stringify(this.currentInhabitant));
           this.inhabitant$.next(this.currentInhabitant);
         },
       );
