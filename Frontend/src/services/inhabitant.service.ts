@@ -19,12 +19,11 @@ export class InhabitantService {
 
   constructor(public formBuilder: FormBuilder, private http: HttpClient) {
     this.inhabitantForm = this.formBuilder.group({
-      inhabitantId: [],
-      id: [],
       firstName: [''],
       lastName: [''],
       longitude: [],
       latitude: [],
+      id: [],
     });
   }
 
@@ -32,7 +31,7 @@ export class InhabitantService {
     let inhabitant = this.inhabitantForm.getRawValue() as Inhabitant;
     inhabitant.inhabitantId = inhabitantNumber;
     this.http.post<Inhabitant>( this.Url + 'inhabitants', inhabitant).subscribe(
-      (res) => inhabitant.inhabitantId  = res.inhabitantId,
+      (res) => inhabitant.id  = res.id,
       (err) => console.log(err)
     );
   }

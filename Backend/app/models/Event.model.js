@@ -1,5 +1,5 @@
-const Joi = require('joi')
-const BaseModel = require('../utils/base-model.js')
+const Joi = require('joi');
+const BaseModel = require('../utils/base-model.js');
 
 module.exports = new BaseModel('Event', {
     title: Joi.string().required(),
@@ -9,4 +9,4 @@ module.exports = new BaseModel('Event', {
     keywords: Joi.string(),
     shopId : Joi.number().required()
 
-})
+});

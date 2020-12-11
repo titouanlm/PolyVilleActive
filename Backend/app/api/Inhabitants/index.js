@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
 router.get('/:inhabitantId', (req, res) => {
     try {
-        const inhabitant = Inhabitant.getById(req.params.id);
+        const inhabitant = Inhabitant.getById(req.params.inhabitantId);
         res.status(200).json(inhabitant)
     } catch (err) {
         manageAllErrors(res, err)

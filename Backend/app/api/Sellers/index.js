@@ -1,7 +1,6 @@
 const { Router } = require('express');
 const { Seller } = require('../../models');
 const manageAllErrors = require('../../utils/routes/error-management');
-const { buildSellers, buildASeller } = require('./manager');
 
 const router = new Router();
 
@@ -16,7 +15,7 @@ router.get('/', (req, res) => {
 
 router.get('/:sellerId', (req, res) => {
     try {
-        const seller = Seller.getById(req.params.id);
+        const seller = Seller.getById(req.params.sellerId);
         res.status(200).json(seller)
     } catch (err) {
         manageAllErrors(res, err)

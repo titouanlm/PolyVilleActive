@@ -39,16 +39,7 @@ module.exports = class BaseModel {
 
   getById(id) {
     if (typeof id === 'string') id = parseInt(id, 10);
-      let item;
-    if (this.name === 'Inhabitant') {
-      item = this.items.find((i) => i.inhabitantId === id);
-    }
-    else if (this.name === 'Seller'){
-      item = this.items.find((i) => i.sellerId === id);
-    }
-    else if (this.name === 'Shop'){
-      item = this.items.find((i) => i.id === id);
-    }
+    const item = this.items.find((i) => i.id  === id);
     if (!item) throw new NotFoundError(`Cannot get ${this.name} id=${id} : not found`);
     return item
   }
