@@ -39,9 +39,9 @@ router.put('/:sellerId', (req, res) => {
     }
 });
 
-router.delete('/:shopId', (req, res) => {
+router.delete('/:sellerId', (req, res) => {
     try {
-        Shop.delete(req.params.shopId);
+        Shop.delete(req.params.sellerId)
         res.status(204).end()
     } catch (err) {
         manageAllErrors(res, err)

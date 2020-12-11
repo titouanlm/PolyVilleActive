@@ -79,7 +79,7 @@ export class MyBlocksComponent {
 
   execute() {
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
-
+   // Blockly.mainWorkspace.newBlock(Blockly.mainWorkspace,'notification',1);
     try {
       eval(code);
     } catch (e) {
