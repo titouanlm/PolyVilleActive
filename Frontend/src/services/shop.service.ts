@@ -4,11 +4,12 @@ import {BehaviorSubject, Subject} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Shop} from '../models/shop.model';
 import  {Event} from "../models/event.model";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: `root`
 })
-export class QuizService {
+export class ShopService {
   /**
    * Services Documentation:
    * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
@@ -23,8 +24,7 @@ export class QuizService {
    * Observable which contains the list of shop.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public shops$: BehaviorSubject<Shop[]>
-    = new BehaviorSubject(this.shops);
+  public shops$: BehaviorSubject<Shop[]> ;
 
   public shopSelected$: Subject<Shop> = new Subject();
   //public eventSelected$: Subject<Event> = new Subject();
@@ -35,6 +35,7 @@ export class QuizService {
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient) {
+    this.shops$ = new BehaviorSubject(this.shops);
     this.getShopsFromUrl();
   }
 
@@ -80,6 +81,14 @@ export class QuizService {
   updateEvent(shop: Shop, event: Event) {
     const eventUrl = this.shopsUrl + '/' + shop.id + '/' + this.eventsPath + '/' + event.id;
     this.http.put<Event>(eventUrl, event, this.httpOptions).subscribe(() => this.getShopFromUrl(shop.id));
+  }
+
+  verifyShopExist(shopName: string) {
+    return this.http.post<any>('http://localhost:9428/api/shops/verify', { "label": shopName })
+      .pipe(map(shop => {
+        // store user details and jwt token in local storage to keep user logged in between page refreshes
+        return shop;
+      }));
   }
 
 }
