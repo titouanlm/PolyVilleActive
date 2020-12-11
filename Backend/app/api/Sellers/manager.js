@@ -15,8 +15,6 @@ const buildASeller = (sellerId) => {
  */
 const buildSellers = () => {
     return Seller.get();
-    /*sellers.map((seller) => buildASeller(seller.id));
-    return sellers;*/
 };
 
 module.exports = {

@@ -46,6 +46,9 @@ module.exports = class BaseModel {
     else if (this.name === 'Seller'){
       item = this.items.find((i) => i.sellerId === id);
     }
+    else if (this.name === 'Shop'){
+      item = this.items.find((i) => i.id === id);
+    }
     if (!item) throw new NotFoundError(`Cannot get ${this.name} id=${id} : not found`);
     return item
   }

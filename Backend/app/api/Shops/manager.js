@@ -10,7 +10,7 @@ const {Event } = require('../../models');
 const buildAShop = (shopId) => {
     const shop = Shop.getById(shopId);
     const events = Event.get();
-    const parsedId = parseInt(shopId, 10)
+    const parsedId = parseInt(shopId, 10);
 
     return { shop, ...events.filter((event) => event.shopId === parsedId) }
 };
@@ -20,7 +20,7 @@ const buildAShop = (shopId) => {
  * This function build all shops with there events.
  */
 const buildShops = () => {
-    const Shops = Shop.get()
+    const Shops = Shop.get();
     return Shops.map((shop) => buildAShop(shop.id))
 };
 
