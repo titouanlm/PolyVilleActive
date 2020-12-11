@@ -3,10 +3,11 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 declare var Blockly: any;
 
 export class TitreBlock extends CustomBlock {
-
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = TitreBlock;
+
+
   }
 
   defineBlock() {
@@ -32,7 +33,9 @@ export class TitreBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    return 'Not implemented';
+   var title=this.block.getFieldValue('TITLE');
+   var description=this.block.getFieldValue('DESCRIPTION');
+    return 'All good';
   }
 
   toLuaCode(block: CustomBlock): string | any[] {

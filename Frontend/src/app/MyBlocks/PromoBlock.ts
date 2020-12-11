@@ -28,7 +28,9 @@ export class PromoBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    return 'Not implemented';
+    var statements_promotion = Blockly.JavaScript.statementToCode(block, 'PROMOTION');
+    var code='create promo\n';
+    return statements_promotion;
   }
 
   toLuaCode(block: CustomBlock): string | any[] {

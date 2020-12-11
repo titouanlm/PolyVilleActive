@@ -12,10 +12,10 @@ export class DatesBlock extends CustomBlock {
   defineBlock() {
     this.block.appendDummyInput()
       .appendField('Date de debut')
-      .appendField(new Blockly.FieldTextInput(''), 'BEGIN_DATE');
+      .appendField(new Blockly.FieldTextInput('JJ/MM/AAAA'), 'BEGIN_DATE');
     this.block.appendDummyInput()
       .appendField('Date de fin')
-      .appendField(new Blockly.FieldTextInput(''), 'END_DATE');
+      .appendField(new Blockly.FieldTextInput('JJ/MM/AAAA'), 'END_DATE');
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
     this.block.setColour(195);
@@ -31,7 +31,9 @@ export class DatesBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    return 'Not implemented';
+    var begin_date=this.block.getFieldValue('BEGIN_DATE').toString();
+    var end_date=this.block.getFieldValue('END_DATE').toString();
+    return begin_date;
   }
 
   toLuaCode(block: CustomBlock): string | any[] {

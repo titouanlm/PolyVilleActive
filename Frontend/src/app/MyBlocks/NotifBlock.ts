@@ -30,7 +30,10 @@ export class NotifBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    return 'Not implemented';
+    var checkbox_notif_yes = this.block.getFieldValue('NOTIF_YES') == 'TRUE';
+    var checkbox_notif_no = this.block.getFieldValue('NOTIF_NO') == 'TRUE';
+    return "'"+checkbox_notif_yes+"','"+checkbox_notif_no+"'";
+
   }
 
   toLuaCode(block: CustomBlock): string | any[] {
