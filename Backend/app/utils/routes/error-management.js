@@ -6,6 +6,6 @@ const manageAllErrors = (res, err) => {
     } else {
         res.status(500).json(err)
     }
-}
+};
 
 module.exports = manageAllErrors;

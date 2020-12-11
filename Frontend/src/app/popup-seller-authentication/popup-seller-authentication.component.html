@@ -1,9 +1,13 @@
 <mat-form-field class="fieldpopupmatdialog">
-  <mat-label>Shop id</mat-label>
-  <input matInput [(ngModel)]="data.number">
+  <mat-label>Id number</mat-label>
+  <input matInput [(ngModel)]="number">
 </mat-form-field >
 <div mat-dialog-actions class="okmatdialog">
-  <button mat-button [mat-dialog-close]="data.number" cdkFocusInitial>Ok</button>
+  <button mat-button cdkFocusInitial (click)="authenticate()">Ok</button>
 </div>
-
+<div class="errorMessage">
+  <span *ngIf="error">
+    {{ error }}
+  </span>
+</div>
 
