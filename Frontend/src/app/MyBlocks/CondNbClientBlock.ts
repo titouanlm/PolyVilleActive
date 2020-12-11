@@ -2,29 +2,30 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 
 declare var Blockly: any;
 
-export class NotifEventBlock extends CustomBlock {
+export class CondNbClientBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
-    this.class = NotifEventBlock;
+    this.class = CondNbClientBlock;
 
 
   }
 
   defineBlock() {
 
+    this.block.appendValueInput("nombre_clients")
+      .setCheck("Number")
+      .appendField("Declancher la promotion quand il y a ");
     this.block.appendDummyInput()
-      .appendField('Notification');
-    this.block.appendDummyInput()
-      .appendField('Texte de la notification')
-      .appendField(new Blockly.FieldTextInput('Un article acheté, le 2ème est à -70% !! Venez profiter de cette offre avant le 18 décemebre. '), 'NOTIF_TEXT');
+      .appendField("clients dans mon magasin.");
+    this.block.setInputsInline(true);
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
     this.block.setColour(230);
-    this.block.setTooltip('');
-    this.block.setHelpUrl('');
+    this.block.setTooltip("");
+    this.block.setHelpUrl("");
   }
   toXML() {
-    return '<block type="NotifEvent"></block>';
+    return '<block type="NbClient"></block>';
   }
 
   toDartCode(block: CustomBlock): string | any[] {
@@ -32,9 +33,9 @@ export class NotifEventBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    var text_notif = this.block.getFieldValue('Texte de la notification');
-    var code ='var notif=new Notification();\n'+
-      'notif.text='+text_notif+';\n';
+    var value_nombre_clients = Blockly.JavaScript.valueToCode(block, 'nombre_clients', Blockly.JavaScript.ORDER_NONE);
+
+    var code ='var Cond=new Condition();\nCond.type=\'NB_CUSTOMERS\';\nCond.nb_clients='+value_nombre_clients;
 
     return code;
   }

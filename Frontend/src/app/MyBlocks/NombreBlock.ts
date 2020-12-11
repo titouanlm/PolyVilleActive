@@ -2,27 +2,23 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 
 declare var Blockly: any;
 
-export class TextNotifEventBlock extends CustomBlock {
+export class NombreBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
-    this.class = TextNotifEventBlock;
-
+    this.class = NombreBlock;
 
   }
 
   defineBlock() {
-
     this.block.appendDummyInput()
-      .appendField('Texte de la notification')
-      .appendField(new Blockly.FieldTextInput('Un article acheté, le 2ème est à -70% !! Venez profiter de cet offre avant le 18 décemebre. '), 'NOTIF_TEXT');
-    this.block.setPreviousStatement(true, null);
-    this.block.setNextStatement(true, null);
-    this.block.setColour(150);
-    this.block.setTooltip('');
-    this.block.setHelpUrl('');
+      .appendField(new Blockly.FieldTextInput("0"), "nombre");
+    this.block.setOutput(true, null);
+    this.block.setColour(280);
+    this.block.setTooltip("");
+    this.block.setHelpUrl("");
   }
   toXML() {
-    return '<block type="TextNotif"></block>';
+    return '<block type="Nb"></block>';
   }
 
   toDartCode(block: CustomBlock): string | any[] {
@@ -30,8 +26,11 @@ export class TextNotifEventBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    var text_notif = this.block.getFieldValue('NOTIF_TEXT');
-    var code = 'notif.text=\''+text_notif+'\';\n';
+    var nombre = parseInt(this.block.getFieldValue('nombre'),10);
+    // TODO: Assemble JavaScript into code variable.
+    var code = nombre+';\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
 
     return code;
   }
