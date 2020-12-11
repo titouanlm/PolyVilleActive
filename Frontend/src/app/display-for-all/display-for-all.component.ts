@@ -26,23 +26,13 @@ export class DisplayForAllComponent implements OnInit {
     const dialogRef = this.dialog.open(PopupVisitorInhabitantAuthenticationComponent, {
       width: '18%',
       height: '26%',
-      data: {number: this.number}
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      this.number = result;
-      if (this.number != null) {
-        this.inhabitantService.number = this.number;
-        this.inhabitantService.getInhabitant(this.number);
-        this.router.navigate(['visitorinhabitant']);
-      }
     });
   }
 
   openSellersDialog() {
     const dialogRef = this.dialog.open(PopupSellerAuthenticationComponent, {
       width: '18%',
-      height: '26%',
-      data: {number: this.number}
+      height: '26%'
     });
     dialogRef.afterClosed().subscribe(result => {
       this.number = result;
