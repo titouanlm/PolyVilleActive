@@ -13,6 +13,7 @@ import {DatesBlock} from './DatesBlock';
 import {NotifBlock} from './NotifBlock';
 import {CondPromoBlock} from './CondPromoBlock';
 import {TitreBlock} from './TitreBlock';
+import {EventBlock} from "./EventBlock";
 
 
 declare var Blockly: any;
@@ -28,17 +29,24 @@ export class MyBlocksComponent {
 
   public config: NgxBlocklyConfig = {};
 
-  public customBlocks: CustomBlock[] = [
+  public customBlocks1: CustomBlock[] = [
     new PromoBlock('promotion', null, null),
     new TitreBlock( 'titredescription' , null , null),
     new DatesBlock('dates' , null, null),
     new NotifBlock( 'notification' , null , null),
     new CondPromoBlock( 'condpromo' , null , null)
   ];
+  public customBlocks2: CustomBlock[] = [
+    new EventBlock( 'Event' , null , null)
+
+  ];
+  public customBlocks: CustomBlock[] = this.customBlocks1.concat(this.customBlocks2);
+
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService) {
     ngxToolboxBuilder.nodes = [
-      new Category('Blocks atomiques', '#F00000', this.customBlocks, null)
+      new Category('Evenement', '#cf9700', this.customBlocks2, null),
+      new Category('Promotion', '#0f4f35', this.customBlocks1, null)
     ];
     this.config.toolbox = ngxToolboxBuilder.build();
     this.config.scrollbars = false;
