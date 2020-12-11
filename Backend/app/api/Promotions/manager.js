@@ -1,4 +1,4 @@
-const {Promotion } = require('../../models')
+const {Promotion } = require('../../models');
 
 /**
  * Function buildAPromo.
@@ -6,8 +6,7 @@ const {Promotion } = require('../../models')
  * @param promoId
  */
 const buildAPromo = (promoId) => {
-    const promo = Promotion.getById(promoId);
-    return promo
+    return Promotion.getById(promoId)
 };
 
 /**
@@ -15,11 +14,11 @@ const buildAPromo = (promoId) => {
  * This function build all promotions.
  */
 const buildPromos = () => {
-    const promos = Promotion.get()
+    const promos = Promotion.get();
     return promos.map((promo) => buildAPromo(promo.id))
-}
+};
 
 module.exports = {
     buildPromos,
     buildAPromo,
-}
+};

@@ -1,6 +1,7 @@
 export interface Inhabitant {
 
-  number: number;
+  inhabitantId: number;
+  id : number;
   firstName: string;
   lastName: string;
   longitude: number;

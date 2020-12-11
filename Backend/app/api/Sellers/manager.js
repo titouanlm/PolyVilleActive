@@ -1,4 +1,4 @@
-const { Seller} = require('../../models')
+const { Seller} = require('../../models');
 
 /**
  * Function buildASeller.
@@ -6,8 +6,7 @@ const { Seller} = require('../../models')
  * @param sellerId
  */
 const buildASeller = (sellerId) => {
-    const seller = Seller.getById(sellerId);
-    return seller
+    return Seller.getById(sellerId)
 };
 
 /**
@@ -15,11 +14,12 @@ const buildASeller = (sellerId) => {
  * This function return all sellers .
  */
 const buildSellers = () => {
-    const sellers = Seller.get()
-    return sellers.map((seller) => buildASeller(seller.id))
-}
+    return Seller.get();
+    /*sellers.map((seller) => buildASeller(seller.id));
+    return sellers;*/
+};
 
 module.exports = {
     buildSellers,
     buildASeller,
-}
+};

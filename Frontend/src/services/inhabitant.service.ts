@@ -9,7 +9,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 
 export class InhabitantService {
 
-  public inhabitantsUrl =  'http://localhost:9428/api/inhabitants/';
+  public Url =  'http://localhost:9428/api/';
 
   public currentInhabitant: Inhabitant;
 
@@ -19,26 +19,28 @@ export class InhabitantService {
 
   constructor(public formBuilder: FormBuilder, private http: HttpClient) {
     this.inhabitantForm = this.formBuilder.group({
-      number: [''],
+      inhabitantId: [],
+      id: [],
+      firstName: [''],
+      lastName: [''],
+      longitude: [],
+      latitude: [],
     });
   }
 
   createInhabitant(inhabitantNumber: number) {
-    const inhabitant : Inhabitant = this.inhabitantForm.getRawValue() as Inhabitant;
-    inhabitant.number = this.number;
-    this.http.post<Inhabitant>( this.inhabitantsUrl,  inhabitantNumber).subscribe(
-      (res) => inhabitant.number = res.number,
+    let inhabitant = this.inhabitantForm.getRawValue() as Inhabitant;
+    inhabitant.inhabitantId = inhabitantNumber;
+    this.http.post<Inhabitant>( this.Url + 'inhabitants', inhabitant).subscribe(
+      (res) => inhabitant.inhabitantId  = res.inhabitantId,
       (err) => console.log(err)
     );
-    return inhabitant;
   }
 
   getInhabitant(inhabitantNumber: number){
-    this.http.get<Inhabitant>(this.inhabitantsUrl + inhabitantNumber).subscribe((object) => {
+    this.http.get<Inhabitant>(this.Url + 'inhabitants/' + inhabitantNumber).subscribe((object) => {
       this.currentInhabitant = object;
-      return this.currentInhabitant;
     });
-    return null;
   }
 
 }

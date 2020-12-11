@@ -1,4 +1,4 @@
-const { Inhabitant} = require('../../models')
+const { Inhabitant } = require('../../models');
 
 /**
  * Function buildAnInhabitant.
@@ -14,10 +14,10 @@ const buildAnInhabitant = (inhabitantId) => {
  * This function return all inhabitants .
  */
 const buildInhabitants = () => {
-    return  Inhabitant.get()
-}
+    return Inhabitant.get()
+};
 
 module.exports = {
     buildInhabitants,
     buildAnInhabitant,
-}
+};

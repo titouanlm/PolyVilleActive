@@ -20,7 +20,7 @@ export class DisplayForAllComponent implements OnInit {
   number: number;
 
   constructor(public dialog: MatDialog, private router: Router, public inhabitantService: InhabitantService,
-              public sellerService: SellerService) { }
+              public sellerService: SellerService,) { }
 
   openInhabitantsDialog() {
     const dialogRef = this.dialog.open(PopupVisitorInhabitantAuthenticationComponent, {
@@ -32,6 +32,7 @@ export class DisplayForAllComponent implements OnInit {
       this.number = result;
       if (this.number != null) {
         this.inhabitantService.number = this.number;
+        this.inhabitantService.getInhabitant(this.number);
         this.router.navigate(['visitorinhabitant']);
       }
     });
