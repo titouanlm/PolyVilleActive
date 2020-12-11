@@ -32,7 +32,8 @@ export class NotifBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var checkbox_notif_yes = this.block.getFieldValue('NOTIF_YES') == 'TRUE';
     var checkbox_notif_no = this.block.getFieldValue('NOTIF_NO') == 'TRUE';
-    return "'"+checkbox_notif_yes+"','"+checkbox_notif_no+"'";
+    var code='promo.notif_on='+checkbox_notif_yes+';\n';
+    return code;
 
   }
 

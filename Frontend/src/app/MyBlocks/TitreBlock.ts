@@ -35,7 +35,8 @@ export class TitreBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
    var title=this.block.getFieldValue('TITLE');
    var description=this.block.getFieldValue('DESCRIPTION');
-    return 'All good';
+   var code ='promo.title='+title+';\npromo.description='+description+';\n';
+    return code;
   }
 
   toLuaCode(block: CustomBlock): string | any[] {

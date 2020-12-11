@@ -31,8 +31,8 @@ export class CondPromoBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var type_cond=this.block.getFieldValue('PROMO_CONDITION');
-
-    return "'"+type_cond+"'";
+    var code='promo.condLeft='+type_cond+';\n';
+    return code;
   }
 
   toLuaCode(block: CustomBlock): string | any[] {
