@@ -6,7 +6,6 @@ const {Event } = require('../../models');
  * This function build a shop with his events
  * @param shopId
  */
-
 const buildAShop = (shopId) => {
     const shop = Shop.getById(shopId);
     const events = Event.get();

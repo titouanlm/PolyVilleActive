@@ -29,22 +29,6 @@ export class InhabitantService {
     });
   }
 
-  /*createInhabitant(inhabitantNumber: number) {
-    let inhabitant = this.inhabitantForm.getRawValue() as Inhabitant;
-    inhabitant.id = inhabitantNumber;
-    this.http.post<Inhabitant>( this.Url + 'inhabitants', inhabitant).subscribe(
-      (res) => inhabitant.id  = res.id,
-      (err) => console.log(err)
-    );
-  }*/
-
-  // getInhabitant(inhabitantNumber: number){
-  //   this.http.get<Inhabitant>(this.Url + 'inhabitants/' + inhabitantNumber).subscribe((object) => {
-  //     this.currentInhabitant = object;
-  //   });
-  // }
-
-
   public get currentInhabitantValue(): Inhabitant {
     return this.currentInhabitantSubject.value;
   }

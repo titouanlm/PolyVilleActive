@@ -1,6 +1,5 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {DialogData} from '../display-for-all/display-for-all.component';
+import {Component, OnInit} from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
 import {Router} from "@angular/router";
 import {InhabitantService} from "../../services/inhabitant.service";
 
@@ -11,11 +10,12 @@ import {InhabitantService} from "../../services/inhabitant.service";
 })
 
 export class PopupVisitorInhabitantAuthenticationComponent implements OnInit {
+
   number: number;
   error = '';
-  validate =  false;
-  constructor(private dialogRef: MatDialogRef<PopupVisitorInhabitantAuthenticationComponent>, private router: Router, private inhabitantService: InhabitantService) {
-  }
+
+  constructor(private dialogRef: MatDialogRef<PopupVisitorInhabitantAuthenticationComponent>,
+              private router: Router, private inhabitantService: InhabitantService) { }
 
   ngOnInit(): void {
   }
@@ -26,10 +26,9 @@ export class PopupVisitorInhabitantAuthenticationComponent implements OnInit {
         data => {
           this.dialogRef.close();
           this.router.navigate(['visitorinhabitant']);
-          this.validate = true;
         },
         error => {
-          this.error = 'Habitant inconnu.';
+          this.error = 'Unknown inhabitant.';
           console.log(this.error);
         });
   }

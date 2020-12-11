@@ -48,7 +48,6 @@ router.delete('/:inhabitantId', (req, res) => {
     }
 });
 
-
 router.post('/authenticate', (req, res) => {
     try {
         const { id } = req.body;
@@ -66,6 +65,6 @@ router.post('/authenticate', (req, res) => {
             res.status(500).json(err)
         }
     }
-})
+});
 
 module.exports = router;
