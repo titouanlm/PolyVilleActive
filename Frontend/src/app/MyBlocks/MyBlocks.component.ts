@@ -15,6 +15,7 @@ import {CondPromoBlock} from './CondPromoBlock';
 import {TitreBlock} from './TitreBlock';
 import {EventBlock} from "./EventBlock";
 import {PromoEventBlock} from "./PromoEventBlock";
+import {NotifEventBlock} from "./NotifEventBlock";
 
 
 declare var Blockly: any;
@@ -39,7 +40,8 @@ export class MyBlocksComponent {
   ];
   public customBlocks2: CustomBlock[] = [
     new EventBlock( 'Event' , null , null),
-    new PromoEventBlock('PromoEvent' , null , null)
+    new PromoEventBlock('PromoEvent' , null , null),
+    new NotifEventBlock('NotifEvent' , null , null)
   ];
   public customBlocks: CustomBlock[] = this.customBlocks1.concat(this.customBlocks2);
 
