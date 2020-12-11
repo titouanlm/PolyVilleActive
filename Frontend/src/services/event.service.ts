@@ -8,7 +8,7 @@ import  {Event,Promotion,Notification} from "../models/event.model";
 @Injectable({
   providedIn: `root`
 })
-export class QuizService {
+export class EventService {
   /**
    * Services Documentation:
    * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html

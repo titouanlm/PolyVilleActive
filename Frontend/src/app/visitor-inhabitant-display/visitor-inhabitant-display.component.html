@@ -1,8 +1,20 @@
 <p>Welcome {{ inhabitant.firstName }} {{ inhabitant.lastName }}</p>
 <p>Your location : {{ inhabitant.latitude}}; {{inhabitant.longitude}} </p>
-<div class="inhabitantsexit" >
+<input matInput [(ngModel)]="shopName" placeholder="Shop's name"/> <br>
+<button id="runButton" type="button" class="btn btn-success" (click)="move()">Move to the shop</button><br>
+
+<div class="errorMessage">
+  <span *ngIf="error">
+    {{ error }}
+  </span>
+</div>
+
+<div class="inhabitantsExit" >
   <a [routerLink]="['..']" class="increaseSize">
     <mat-icon [inline]="true" (click)="logout()">exit_to_app</mat-icon>
   </a>
 </div>
+
+
+
 

@@ -33,11 +33,15 @@ router.post('/', (req, res) => {
 
 router.put('/:inhabitantId', (req, res) => {
     try {
+        console.log(req.body)
+        console.log(req.params.inhabitantId)
+
         res.status(200).json(Inhabitant.update(req.params.inhabitantId, req.body))
     } catch (err) {
         manageAllErrors(res, err)
     }
 });
+
 
 router.delete('/:inhabitantId', (req, res) => {
     try {

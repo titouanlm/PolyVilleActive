@@ -53,4 +53,22 @@ router.delete('/:shopId', (req, res) => {
     }
 });
 
+
+router.post('/verify', (req, res) => {
+    try {
+        const { label } = req.body;
+        const shop = Shop.get().find(x => x.label === label);
+        if (!shop) { return error();
+        }else{
+            res.status(201).json(shop)
+        }
+    } catch (err) {
+        if (err.name === 'ValidationError') {
+            res.status(400).json(err.extra)
+        } else {
+            res.status(500).json(err)
+        }
+    }
+});
+
 module.exports = router;

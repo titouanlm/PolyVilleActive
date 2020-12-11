@@ -12,14 +12,13 @@ import {BehaviorSubject, Observable} from "rxjs";
 export class InhabitantService {
 
   public Url =  'http://localhost:9428/api/';
-  private currentInhabitantSubject: BehaviorSubject<Inhabitant>;
-  public currentInhabitant: Observable<Inhabitant>;
 
   public inhabitantForm: FormGroup;
+  public currentInhabitant: Inhabitant;
+  public inhabitant$: BehaviorSubject<Inhabitant> ;
 
   constructor(public formBuilder: FormBuilder, private http: HttpClient) {
-    this.currentInhabitantSubject = new BehaviorSubject<Inhabitant>(JSON.parse(localStorage.getItem('currentInhabitant')));
-    this.currentInhabitant = this.currentInhabitantSubject.asObservable();
+    this.inhabitant$ = new BehaviorSubject<Inhabitant>(JSON.parse(localStorage.getItem('currentInhabitant')));
     this.inhabitantForm = this.formBuilder.group({
       firstName: [''],
       lastName: [''],
@@ -29,24 +28,33 @@ export class InhabitantService {
     });
   }
 
-  public get currentInhabitantValue(): Inhabitant {
-    return this.currentInhabitantSubject.value;
-  }
-
   authenticateInhabitant(inhabitantNumber: number){
     return this.http.post<any>('http://localhost:9428/api/inhabitants/authenticate', { "id": inhabitantNumber })
       .pipe(map(inhabitant => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentInhabitant', JSON.stringify(inhabitant));
-        this.currentInhabitantSubject.next(inhabitant);
+        this.currentInhabitant = inhabitant;
+        this.inhabitant$.next(this.currentInhabitant);
         return inhabitant;
       }));
+  }
+
+
+  changeLocation(longitude: string, latitude: string) {
+    this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {longitude: longitude, latitude: latitude })
+      .subscribe(
+        (res) => {
+          this.currentInhabitant = res;
+          console.log(this.currentInhabitant);
+          this.inhabitant$.next(this.currentInhabitant);
+        },
+      );
   }
 
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentInhabitant');
-    this.currentInhabitantSubject.next(null);
+    this.inhabitant$.next(null);
   }
 
 }
