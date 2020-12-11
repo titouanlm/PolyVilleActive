@@ -1,6 +1,7 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {DialogData} from '../display-for-all/display-for-all.component';
+import {Component, OnInit} from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
+import {Router} from "@angular/router";
+import {InhabitantService} from "../../services/inhabitant.service";
 
 @Component({
   selector: 'app-visitor-inhabitant-authentication',
@@ -10,9 +11,29 @@ import {DialogData} from '../display-for-all/display-for-all.component';
 
 export class PopupVisitorInhabitantAuthenticationComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+  number: number;
+  error = '';
+
+  constructor(private dialogRef: MatDialogRef<PopupVisitorInhabitantAuthenticationComponent>,
+              private router: Router, private inhabitantService: InhabitantService) { }
 
   ngOnInit(): void {
   }
+
+  authenticate() {
+    this.inhabitantService.authenticateInhabitant(Number(this.number))
+      .subscribe(
+        data => {
+          this.dialogRef.close();
+          this.router.navigate(['visitorinhabitant']);
+        },
+        error => {
+          this.error = 'Unknown inhabitant.';
+          console.log(this.error);
+        });
+  }
+
+
+
 
 }

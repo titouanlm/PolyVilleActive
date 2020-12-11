@@ -2,29 +2,32 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 
 declare var Blockly: any;
 
-export class NotifEventBlock extends CustomBlock {
+export class NotifFrequenceBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
-    this.class = NotifEventBlock;
+    this.class = NotifFrequenceBlock;
 
 
   }
 
   defineBlock() {
 
+    this.block.appendValueInput("durée")
+      .setCheck("Number")
+      .appendField("Envoyer la notification chaque");
     this.block.appendDummyInput()
-      .appendField('Notification');
+      .appendField(new Blockly.FieldDropdown([["jour(s) ","jours"], ["heure(s) ","heures"], ["",""]]), "temps");
     this.block.appendDummyInput()
-      .appendField('Texte de la notification')
-      .appendField(new Blockly.FieldTextInput('Un article acheté, le 2ème est à -70% !! Venez profiter de cette offre avant le 18 décemebre. '), 'NOTIF_TEXT');
+      .appendField(".");
+    this.block.setInputsInline(true);
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(230);
-    this.block.setTooltip('');
-    this.block.setHelpUrl('');
+    this.block.setColour(270);
+    this.block.setTooltip("");
+    this.block.setHelpUrl("");
   }
   toXML() {
-    return '<block type="NotifEvent"></block>';
+    return '<block type="NotifFrequence"></block>';
   }
 
   toDartCode(block: CustomBlock): string | any[] {
@@ -32,11 +35,13 @@ export class NotifEventBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    var text_notif = this.block.getFieldValue('Texte de la notification');
-    var code ='var notif=new Notification();\n'+
-      'notif.text='+text_notif+';\n';
 
+    var value_frequence = Blockly.JavaScript.valueToCode(block, 'durée', Blockly.JavaScript.ORDER_NONE);
+    var dropdown_temps = this.block.getFieldValue('temps');
+    var code ='notif.frequence='+value_frequence+'notif.temps_frequence='+dropdown_temps+';\n';
     return code;
+
+
   }
 
   toLuaCode(block: CustomBlock): string | any[] {

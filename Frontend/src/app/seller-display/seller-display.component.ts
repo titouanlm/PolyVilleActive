@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SellerService} from '../../services/seller.service';
+import {Seller} from "../../models/seller.model";
 
 @Component({
   selector: 'app-seller-display',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerDisplayComponent implements OnInit {
 
-  constructor() { }
+  public seller: Seller;
+
+  constructor(public sellerService: SellerService) {
+    this.seller=sellerService.currentSellerValue;
+  }
 
   ngOnInit(): void {
+  }
+
+  logout() {
+    this.sellerService.logout();
   }
 
 }

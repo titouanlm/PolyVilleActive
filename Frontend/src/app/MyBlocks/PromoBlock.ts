@@ -13,6 +13,7 @@ export class PromoBlock extends CustomBlock {
     this.block.appendStatementInput('PROMOTION')
       .setCheck(null)
       .appendField(this.type);
+    this.block.setNextStatement(true,null);
     this.block.setPreviousStatement(true, null);
     this.block.setColour(330);
     this.block.setTooltip('');

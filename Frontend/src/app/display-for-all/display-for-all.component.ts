@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupVisitorInhabitantAuthenticationComponent } from '../popup-visitor-inhabitant-authentication/popup-visitor-inhabitant-authentication.component';
-import { Router } from '@angular/router';
-import {InhabitantService} from "../../services/inhabitant.service";
 import {PopupSellerAuthenticationComponent} from "../popup-seller-authentication/popup-seller-authentication.component";
-import {SellerService} from "../../services/seller.service";
 
 export interface DialogData {
   number: number;
@@ -17,41 +14,19 @@ export interface DialogData {
 })
 export class DisplayForAllComponent implements OnInit {
 
-  number: number;
-
-  constructor(public dialog: MatDialog, private router: Router, public inhabitantService: InhabitantService,
-              public sellerService: SellerService,) { }
+  constructor(public dialog: MatDialog) { }
 
   openInhabitantsDialog() {
     const dialogRef = this.dialog.open(PopupVisitorInhabitantAuthenticationComponent, {
       width: '18%',
       height: '26%',
-      data: {number: this.number}
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      this.number = result;
-      if (this.number != null) {
-        this.inhabitantService.number = this.number;
-        this.inhabitantService.getInhabitant(this.number);
-        this.router.navigate(['visitorinhabitant']);
-      }
     });
   }
 
   openSellersDialog() {
     const dialogRef = this.dialog.open(PopupSellerAuthenticationComponent, {
       width: '18%',
-      height: '26%',
-      data: {number: this.number}
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      this.number = result;
-      const seller = this.sellerService.getSeller(this.number);
-      if (this.number != null /*&& Seller != null*/) {
-        this.sellerService.sellerId = this.number;
-        this.sellerService.currentSeller = seller;
-        this.router.navigate(['seller']);
-      }
+      height: '26%'
     });
   }
 

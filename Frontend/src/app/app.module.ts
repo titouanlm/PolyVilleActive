@@ -22,6 +22,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import { PopupSellerAuthenticationComponent } from './popup-seller-authentication/popup-seller-authentication.component';
+import { ShopRatingComponent } from './shop-rating/shop-rating.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PopupSellerAuthenticationComponent } from './popup-seller-authenticatio
     TestblockComponent,
     MyBlocksComponent,
     PopupVisitorInhabitantAuthenticationComponent,
-    PopupSellerAuthenticationComponent
+    PopupSellerAuthenticationComponent,
+    ShopRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,7 @@ import { PopupSellerAuthenticationComponent } from './popup-seller-authenticatio
       {path: 'seller', component: SellerDisplayComponent},
       {path: 'seller/shop-information', component: ShopInformationComponent},
       {path: 'seller/blockly', component: MyBlocksComponent},
+      {path: 'visitorinhabitant/shoprating', component: ShopRatingComponent},
     ], {useHash: true}),
     NgxBlocklyModule,
     MatIconModule,

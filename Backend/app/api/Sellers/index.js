@@ -48,4 +48,23 @@ router.delete('/:sellerId', (req, res) => {
     }
 });
 
+router.post('/authenticate', (req, res) => {
+    try {
+        const { id } = req.body;
+        console.log(id);
+        const seller = Seller.get().find(x => x.id === id);
+        console.log(seller);
+        if (!seller) { return error();
+        }else{
+            res.status(201).json(seller)
+        }
+    } catch (err) {
+        if (err.name === 'ValidationError') {
+            res.status(400).json(err.extra)
+        } else {
+            res.status(500).json(err)
+        }
+    }
+});
+
 module.exports = router;

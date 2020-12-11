@@ -48,4 +48,23 @@ router.delete('/:inhabitantId', (req, res) => {
     }
 });
 
+router.post('/authenticate', (req, res) => {
+    try {
+        const { id } = req.body;
+        console.log(id);
+        const inhabitant = Inhabitant.get().find(x => x.id === id);
+        console.log(inhabitant);
+        if (!inhabitant) { return error();
+        }else{
+            res.status(201).json(inhabitant)
+        }
+    } catch (err) {
+        if (err.name === 'ValidationError') {
+            res.status(400).json(err.extra)
+        } else {
+            res.status(500).json(err)
+        }
+    }
+});
+
 module.exports = router;
