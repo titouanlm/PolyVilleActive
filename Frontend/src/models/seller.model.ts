@@ -1,9 +1,10 @@
 export interface Seller {
 
   sellerId: number;
-  shopId: number;
-  label: string;
-  longitude: number;
-  latitude: number;
+  id: number;
+  firstName: string;
+  lastName: string;
+  ShopId: number;
+  // promoId: [];
 
 }

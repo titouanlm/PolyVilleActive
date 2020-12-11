@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {InhabitantService} from '../../services/inhabitant.service';
+import {Inhabitant} from "../../models/inhabitant.model";
+import {Observable} from "rxjs";
+import {HttpClient} from '@angular/common/http';
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-basic-display',
@@ -8,18 +12,22 @@ import {InhabitantService} from '../../services/inhabitant.service';
 })
 export class VisitorInhabitantDisplayComponent implements OnInit {
 
-  public inhabitant;
-
   public number: number;
+
+  public inhabitant: Inhabitant;
 
   constructor(public inhabitantService: InhabitantService) {
     this.number=this.inhabitantService.number;
-    const inhabitant = inhabitantService.getInhabitant(this.number);
-    if (inhabitant === null){
-      this.inhabitant = inhabitantService.createInhabitant(this.number);
+    if (inhabitantService.currentInhabitant == undefined){
+      inhabitantService.createInhabitant(this.number);
+      console.log('ça marche pas');
+      setTimeout(() => {
+        //this.inhabitant = inhabitantService.createInhabitant(this.number);
+      }, 10)
     }
     else {
-      this.inhabitant = inhabitant
+      console.log('ça marche');
+      //this.inhabitant = inhabitant
     }
   }
 
