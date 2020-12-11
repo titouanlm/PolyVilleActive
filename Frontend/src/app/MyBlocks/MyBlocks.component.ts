@@ -20,6 +20,8 @@ import {TextNotifEventBlock} from "./TextNotifBlock";
 import {NombreBlock} from "./NombreBlock";
 import {CondNbClientBlock} from "./CondNbClientBlock";
 import {CondTempsBlock} from "./CondTempsBlock";
+import {NotifTempsBlock} from "./NotifTempsBlock";
+import {NotifFrequenceBlock} from "./NotifFrequence";
 
 
 declare var Blockly: any;
@@ -49,7 +51,10 @@ export class MyBlocksComponent {
 
   public customBlocks3: CustomBlock[] = [
     new NotifBlock( 'notification' , null , null),
-    new TextNotifEventBlock('TextNotif' , null , null)
+    new TextNotifEventBlock('TextNotif' , null , null),
+    new NotifTempsBlock('NotifTemps' , null , null),
+    new NotifFrequenceBlock('NotifFrequence' , null , null),
+    new NombreBlock('Nb' , null , null)
   ];
 
   public customBlocks4: CustomBlock[] = [
