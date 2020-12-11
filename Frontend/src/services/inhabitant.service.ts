@@ -29,7 +29,7 @@ export class InhabitantService {
 
   createInhabitant(inhabitantNumber: number) {
     let inhabitant = this.inhabitantForm.getRawValue() as Inhabitant;
-    inhabitant.inhabitantId = inhabitantNumber;
+    inhabitant.id = inhabitantNumber;
     this.http.post<Inhabitant>( this.Url + 'inhabitants', inhabitant).subscribe(
       (res) => inhabitant.id  = res.id,
       (err) => console.log(err)
