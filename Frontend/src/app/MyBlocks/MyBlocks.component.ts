@@ -16,6 +16,7 @@ import {TitreBlock} from './TitreBlock';
 import {EventBlock} from "./EventBlock";
 import {PromoEventBlock} from "./PromoEventBlock";
 import {NotifEventBlock} from "./NotifEventBlock";
+import {TextNotifEventBlock} from "./TextNotifBlock";
 
 
 declare var Blockly: any;
@@ -35,7 +36,6 @@ export class MyBlocksComponent {
     new PromoBlock('promotion', null, null),
     new TitreBlock( 'titredescription' , null , null),
     new DatesBlock('dates' , null, null),
-    new NotifBlock( 'notification' , null , null),
     new CondPromoBlock( 'condpromo' , null , null)
   ];
   public customBlocks2: CustomBlock[] = [
@@ -43,13 +43,21 @@ export class MyBlocksComponent {
     new PromoEventBlock('PromoEvent' , null , null),
     new NotifEventBlock('NotifEvent' , null , null)
   ];
-  public customBlocks: CustomBlock[] = this.customBlocks1.concat(this.customBlocks2);
+
+  public customBlocks3: CustomBlock[] = [
+    new NotifBlock( 'notification' , null , null),
+    new TextNotifEventBlock('TextNotif' , null , null)
+  ];
+
+
+  public customBlocks: CustomBlock[] = this.customBlocks1.concat(this.customBlocks2.concat(this.customBlocks3));
 
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService) {
     ngxToolboxBuilder.nodes = [
       new Category('Evenement', '#cf9700', this.customBlocks2, null),
-      new Category('Promotion', '#0f4f35', this.customBlocks1, null)
+      new Category('Promotion', '#0f4f35', this.customBlocks1, null),
+      new Category('Notification' , '#9c1309', this.customBlocks3, null)
     ];
     this.config.toolbox = ngxToolboxBuilder.build();
     this.config.scrollbars = false;
