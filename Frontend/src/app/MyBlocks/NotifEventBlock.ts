@@ -16,7 +16,7 @@ export class NotifEventBlock extends CustomBlock {
       .appendField('Notification');
     this.block.appendDummyInput()
       .appendField('Texte de la notification')
-      .appendField(new Blockly.FieldTextInput('Un article acheté, le 2ème est à -70% !! Venez profiter de cet offre avant le 18 décemebre. '), 'NOTIF_TEXT');
+      .appendField(new Blockly.FieldTextInput('Un article acheté, le 2ème est à -70% !! Venez profiter de cette offre avant le 18 décemebre. '), 'NOTIF_TEXT');
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
     this.block.setColour(230);
