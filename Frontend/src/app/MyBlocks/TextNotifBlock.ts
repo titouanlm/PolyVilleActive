@@ -2,10 +2,10 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 
 declare var Blockly: any;
 
-export class NotifEventBlock extends CustomBlock {
+export class TextNotifEventBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
-    this.class = NotifEventBlock;
+    this.class = TextNotifEventBlock;
 
 
   }
@@ -13,18 +13,16 @@ export class NotifEventBlock extends CustomBlock {
   defineBlock() {
 
     this.block.appendDummyInput()
-      .appendField('Notification');
-    this.block.appendDummyInput()
       .appendField('Texte de la notification')
       .appendField(new Blockly.FieldTextInput('Un article acheté, le 2ème est à -70% !! Venez profiter de cet offre avant le 18 décemebre. '), 'NOTIF_TEXT');
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(230);
+    this.block.setColour(150);
     this.block.setTooltip('');
     this.block.setHelpUrl('');
   }
   toXML() {
-    return '<block type="NotifEvent"></block>';
+    return '<block type="TextNotif"></block>';
   }
 
   toDartCode(block: CustomBlock): string | any[] {
@@ -33,8 +31,7 @@ export class NotifEventBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var text_notif = this.block.getFieldValue('Texte de la notification');
-    var code ='var notif=new Notification();\n'+
-      'notif.text='+text_notif+';\n';
+    var code = 'notif.text='+text_notif+';\n';
 
     return code;
   }
