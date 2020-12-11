@@ -2,26 +2,23 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 
 declare var Blockly: any;
 
-export class PromoBlock extends CustomBlock {
-
+export class NombreBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
-    this.class = PromoBlock;
+    this.class = NombreBlock;
+
   }
 
   defineBlock() {
-    this.block.appendStatementInput('PROMOTION')
-      .setCheck(null)
-      .appendField(this.type);
-    this.block.setNextStatement(true,null);
-    this.block.setPreviousStatement(true, null);
-    this.block.setColour(330);
-    this.block.setTooltip('');
-    this.block.setHelpUrl('');
+    this.block.appendDummyInput()
+      .appendField(new Blockly.FieldTextInput("0"), "nombre");
+    this.block.setOutput(true, null);
+    this.block.setColour(280);
+    this.block.setTooltip("");
+    this.block.setHelpUrl("");
   }
-
   toXML() {
-    return '<block type="promotion"></block>';
+    return '<block type="Nb"></block>';
   }
 
   toDartCode(block: CustomBlock): string | any[] {
@@ -29,10 +26,13 @@ export class PromoBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    var statements_promotion = Blockly.JavaScript.statementToCode(block, 'PROMOTION');
-    var code='var promo=new Promotion();\n';
-    //var code="hello";
-    return code+statements_promotion;
+    var nombre = parseInt(this.block.getFieldValue('nombre'),10);
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'Cond.nombre='+nombre+';\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+
+    return code;
   }
 
   toLuaCode(block: CustomBlock): string | any[] {
