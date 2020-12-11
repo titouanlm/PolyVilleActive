@@ -5,8 +5,7 @@ module.exports = new BaseModel('Seller', {
 
     firstName: Joi.string(),
     lastName: Joi.string(),
-    longitude: Joi.number(),
-    latitude: Joi.number(),
+    ShopId: Joi.number(),
     id: Joi.number(),
 });
 

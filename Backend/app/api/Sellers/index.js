@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 router.get('/:sellerId', (req, res) => {
     try {
-        const seller = Seller.getById(req.params.sellerId);
+        const seller = Seller.getById(req.params.id);
         res.status(200).json(seller)
     } catch (err) {
         manageAllErrors(res, err)
