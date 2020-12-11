@@ -35,8 +35,8 @@ export class PromoEventBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    var title=this.block.getFieldValue('TITLE');
-    var description=this.block.getFieldValue('DESCRIPTION');
+    var title=this.block.getFieldValue('Title_promo');
+    var description=this.block.getFieldValue('Description_promo');
     var code ='var promo=new Promotion();\npromo.title='+title+';\npromo.description='+description+';\n';
     return code;
   }
