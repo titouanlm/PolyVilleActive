@@ -28,7 +28,7 @@ export class NombreBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var nombre = parseInt(this.block.getFieldValue('nombre'),10);
     // TODO: Assemble JavaScript into code variable.
-    var code = 'Cond.nombre='+nombre+';\n';
+    var code = nombre+';\n';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
 

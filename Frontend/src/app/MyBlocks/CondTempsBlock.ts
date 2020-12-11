@@ -38,7 +38,7 @@ export class CondTempsBlock extends CustomBlock {
 
     var value_temps = Blockly.JavaScript.valueToCode(block, 'nombre_clients', Blockly.JavaScript.ORDER_NONE);
     var dropdown_temps = this.block.getFieldValue('temps');
-    var code ='var Cond=new Condition();\nCond.type=\'NB_CUSTOMERS\';\n'+value_temps+'Cond.temps='+dropdown_temps+';\n';
+    var code ='var Cond=new Condition();\nCond.type=\'NB_CUSTOMERS\';\nCond.durée='+value_temps+'Cond.temps='+dropdown_temps+';\n';
     return code;
 
 

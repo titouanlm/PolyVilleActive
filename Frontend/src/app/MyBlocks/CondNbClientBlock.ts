@@ -35,7 +35,7 @@ export class CondNbClientBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var value_nombre_clients = Blockly.JavaScript.valueToCode(block, 'nombre_clients', Blockly.JavaScript.ORDER_NONE);
 
-    var code ='var Cond=new Condition();\nCond.type=\'NB_CUSTOMERS\';\n'+value_nombre_clients;
+    var code ='var Cond=new Condition();\nCond.type=\'NB_CUSTOMERS\';\nCond.nb_clients='+value_nombre_clients;
 
     return code;
   }
