@@ -6,6 +6,9 @@ export interface Shop{
   longitude: number,
   latitude: number,
   sellerId?: number,
-  storeRating: number,
+  storeRating: {
+    averageRate: number,
+    voterNumber: number,
+  },
   events: Event[]
 }

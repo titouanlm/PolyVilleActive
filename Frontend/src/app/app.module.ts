@@ -22,7 +22,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import { PopupSellerAuthenticationComponent } from './popup-seller-authentication/popup-seller-authentication.component';
+import {ShopListRatingComponent} from "./shop-list-rating/shop-list-rating.component";
+import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import { ShopRatingComponent } from './shop-rating/shop-rating.component';
+
 
 @NgModule({
   declarations: [
@@ -37,8 +40,9 @@ import { ShopRatingComponent } from './shop-rating/shop-rating.component';
     MyBlocksComponent,
     PopupVisitorInhabitantAuthenticationComponent,
     PopupSellerAuthenticationComponent,
+    ShopListRatingComponent,
     ShopRatingComponent,
-    ShopInformationComponent
+    ShopInformationComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,8 @@ import { ShopRatingComponent } from './shop-rating/shop-rating.component';
       {path: 'seller', component: SellerDisplayComponent},
       {path: 'seller/shop-information', component: ShopInformationComponent},
       {path: 'seller/blockly', component: MyBlocksComponent},
-      {path: 'visitorinhabitant/shoprating', component: ShopRatingComponent},
+      {path: 'visitorinhabitant/shoprating', component: ShopListRatingComponent},
+      {path: 'visitorinhabitant/shoprating/shop', component: ShopRatingComponent},
     ], {useHash: true}),
     NgxBlocklyModule,
     MatIconModule,
@@ -61,10 +66,11 @@ import { ShopRatingComponent } from './shop-rating/shop-rating.component';
     MatInputModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbRatingModule,
   ],
   providers: [ ],
   bootstrap: [AppComponent],
-  exports: [RouterModule],
+  exports: [RouterModule/*, NgbdRatingBasic*/],
   entryComponents: [PopupVisitorInhabitantAuthenticationComponent],
 })
 

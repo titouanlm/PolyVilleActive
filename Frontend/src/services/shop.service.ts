@@ -7,11 +7,11 @@ import  {Event} from "../models/event.model";
 import {map} from "rxjs/operators";
 import {SellerService} from "./seller.service";
 import {InhabitantService} from "./inhabitant.service";
-import {Inhabitant} from "../models/inhabitant.model";
 
 @Injectable({
   providedIn: `root`
 })
+
 export class ShopService {
   /**
    * Services Documentation:
@@ -21,8 +21,10 @@ export class ShopService {
   /**
    * The list of shop.
    */
-  private shops: Shop[];
-  private shopSelected: Shop;
+
+  public shops: Shop[];
+
+  public shopSelected: Shop;
   /**
    * Observable which contains the list of shop.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
@@ -65,7 +67,7 @@ export class ShopService {
     const urlWithId = this.shopsUrl + '/' + shopId;
     this.http.get<Shop>(urlWithId, this.httpOptions).subscribe((shop) => {
       this.shopSelected = shop;
-      this.shopSelected$.next(this.shopSelected);
+      this.shopSelected$.next(shop);
     });
   }
 

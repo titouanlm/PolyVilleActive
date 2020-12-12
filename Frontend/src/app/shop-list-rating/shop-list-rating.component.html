@@ -1,0 +1,19 @@
+<div *ngFor="let shop of shopList;let i = index">
+  <table>
+    <tr>
+      <th [routerLink]="['shop']" (click)="setShop(i)">{{shop.label}}</th>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <a [routerLink]="['..']" class="increaseSize">
+    <mat-icon [inline]="true" style="font-size: 8em;position: relative;left: 46%" >exit_to_app</mat-icon>
+  </a>
+</div>
+
+<div style="font-size: 8em;position: relative;left: 42%">
+  <h1>
+    previous page
+  </h1>
+</div>
