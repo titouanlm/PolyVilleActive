@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 
 router.get('/:shopId', (req, res) => {
     try {
-        const shop = buildAShop(req.params.shopId);
+        const shop = Shop.getById(req.params.shopId);
         res.status(200).json(shop)
     } catch (err) {
         manageAllErrors(res, err)

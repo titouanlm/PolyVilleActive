@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {SellerService} from '../../services/seller.service';
 import {Seller} from "../../models/seller.model";
+import {ShopService} from "../../services/shop.service";
+import {Shop} from "../../models/shop.model";
 
 @Component({
   selector: 'app-seller-display',
@@ -21,5 +23,4 @@ export class SellerDisplayComponent implements OnInit {
   logout() {
     this.sellerService.logout();
   }
-
 }

@@ -34,43 +34,6 @@ h3 {
   left: 45%;
 }
 
-.sellersblocklycreation a span{
-  position: absolute;
-  display: block;
-}
-
-.sellersblocklycreation a span:nth-child(1) {
-  position : absolute;
-  top: 0%;
-  width: 160%;
-  left: -30%;
-  height: 2%;
-  background: linear-gradient(90deg, #541c8c, #541c8c);
-}
-
-.sellersblocklycreation a span:nth-child(2) {
-  left: -30%;
-  width: 4%;
-  height: 100%;
-  background: linear-gradient(180deg, #541c8c, #541c8c);
-}
-
-.sellersblocklycreation a span:nth-child(3) {
-  position : absolute;
-  top: 100%;
-  width: 160%;
-  height: 2%;
-  left: -30%;
-  background: linear-gradient(270deg, #541c8c, #541c8c);
-}
-
-.sellersblocklycreation a span:nth-child(4) {
-  left: 126%;
-  width: 4%;
-  height: 100%;
-  background: linear-gradient(360deg, #541c8c, #541c8c);
-}
-
 
 .sellersshopinformation {
   position: absolute;

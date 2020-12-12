@@ -5,6 +5,9 @@ import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Shop} from '../models/shop.model';
 import  {Event} from "../models/event.model";
 import {map} from "rxjs/operators";
+import {SellerService} from "./seller.service";
+import {InhabitantService} from "./inhabitant.service";
+import {Inhabitant} from "../models/inhabitant.model";
 
 @Injectable({
   providedIn: `root`
@@ -19,12 +22,12 @@ export class ShopService {
    * The list of shop.
    */
   private shops: Shop[];
-
+  private shopSelected: Shop;
   /**
    * Observable which contains the list of shop.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public shops$: BehaviorSubject<Shop[]> ;
+  public shops$: BehaviorSubject<Shop[]>;
 
   public shopSelected$: Subject<Shop> = new Subject();
   //public eventSelected$: Subject<Event> = new Subject();
@@ -34,13 +37,16 @@ export class ShopService {
 
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private sellerService : SellerService, private inhabitantService: InhabitantService) {
     this.shops$ = new BehaviorSubject(this.shops);
     this.getShopsFromUrl();
+    if(this.sellerService.currentSellerValue != null){
+      this.getShopFromUrl(String(this.sellerService.currentSellerValue.shopId));
+    }
   }
 
   getShopsFromUrl() {
-    this.http.get<Shop[]>(this.shopsUrl).subscribe((shopsList) => {
+    this.http.get<any>('http://localhost:9428/api/shops').subscribe(shopsList => {
       this.shops = shopsList;
       this.shops$.next(this.shops);
     });
@@ -58,7 +64,8 @@ export class ShopService {
   getShopFromUrl(shopId: string) {
     const urlWithId = this.shopsUrl + '/' + shopId;
     this.http.get<Shop>(urlWithId, this.httpOptions).subscribe((shop) => {
-      this.shopSelected$.next(shop);
+      this.shopSelected = shop;
+      this.shopSelected$.next(this.shopSelected);
     });
   }
 
@@ -91,4 +98,11 @@ export class ShopService {
       }));
   }
 
+  getNbPeopleClose() {
+    return this.inhabitantService.getInhabitantsCloseTo(this.shopSelected)
+      .pipe(map(
+        inhabitantsClose => {
+          return inhabitantsClose.length;
+        }));
+  }
 }

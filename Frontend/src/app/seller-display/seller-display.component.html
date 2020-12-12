@@ -1,17 +1,12 @@
 <p>
-  Welcome to your dedicated space, sellers :D
+  Welcome to your dedicated space, {{ seller.firstName }}
 </p>
 <h1>
   To create an event of your choice, click down in the middle
-
 </h1>
 
 <div class="sellersblocklycreation" >
   <a [routerLink]="['blockly']" class="increaseSize">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
     <mat-icon [inline]="true">add_box</mat-icon>
   </a>
 

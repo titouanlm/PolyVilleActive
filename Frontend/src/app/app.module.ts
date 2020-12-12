@@ -37,7 +37,8 @@ import { ShopRatingComponent } from './shop-rating/shop-rating.component';
     MyBlocksComponent,
     PopupVisitorInhabitantAuthenticationComponent,
     PopupSellerAuthenticationComponent,
-    ShopRatingComponent
+    ShopRatingComponent,
+    ShopInformationComponent
   ],
   imports: [
     BrowserModule,

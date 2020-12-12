@@ -8,6 +8,7 @@ module.exports = (cb) => {
   const app = express();
   app.disable('x-powered-by');
   app.use(cors());
+  app.disable('etag');
   app.use(bodyParser.json({}));
   app.use(morgan('[:date[iso]] :method :url :status :response-time ms - :res[content-length]'));
   app.use('/api', api);
