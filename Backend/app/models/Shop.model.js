@@ -7,6 +7,6 @@ module.exports = new BaseModel('Shop', {
     longitude:  Joi.number().required(),
     latitude:  Joi.number().required(),
     sellerId: Joi.number().required(),
-    storeNote: Joi.number(),
     id: Joi.number(),
+    storeRating: Joi.number(),
 });

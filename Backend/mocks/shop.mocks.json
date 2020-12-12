@@ -1,10 +1,11 @@
 [
   {
-    "label": "Nam LLC",
+    "label": "Nam LLC 874",
     "longitude": "85.45452",
     "latitude": "-2.24237",
     "sellerId": 1855,
-    "id": 1234567
+    "id": 1234567,
+    "storeRating": 4.789
   },
   {
     "label": "Auctor Ullamcorper Nisl Institute",
