@@ -2,10 +2,10 @@ import {Event} from './event.model'
 
 export interface Shop{
   id: string;
-  label: string,
-  longitude: number,
-  latitude: number,
-  sellerId?: number,
-  storeNote: number,
-  events: Event[]
+  label: string;
+  longitude: number;
+  latitude: number;
+  sellerId?: number;
+  storeNote: number;
+  events: Event[];
 }

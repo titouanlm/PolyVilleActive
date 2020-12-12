@@ -9,7 +9,7 @@ const router = new Router({ mergeParams: true })
 
 router.get('/', (req, res) => {
     try {
-        const notifs = buildNotifs()
+        const notifs = buildNotifs(req.params.shopId,req.params.eventId)
         res.status(200).json(notifs)
     } catch (err) {
         manageAllErrors(res, err)
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 
 router.get('/:notifId', (req, res) => {
     try {
-        const notif = buildANotif(req.params.eventId)
+        const notif = buildANotif(req.params.shopId,req.params.eventId,req.params.notifId)
         res.status(200).json(notif)
     } catch (err) {
         manageAllErrors(res, err)

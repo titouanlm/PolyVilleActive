@@ -1,25 +1,28 @@
 const { Notification } = require('../../../../models')
-
+const {buildAnEvent} = require('../../Events/manager')
 /**
- * Function buildAPromo.
+ * Function buildANotif.
  * This function return a notification.
  * @param notifId
+ * @param shopId
+ * @param eventId
  */
-const buildANotif = (notifId) => {
-    const notif = Notification.getById(notifId);
-    return notif
+const buildANotif = (shopId,eventId,notifId) => {
+    const notifs=buildEventNotifs(shopId,eventId)
+    return notifs.filter((not) => not.id === notifId)
 };
 
 /**
  * Function  buildEvents.
  * This function build all promotions.
  */
-const buildNotifs = () => {
-    const notifs = Notification.get();
-    return notifs.map((notif) => buildANotif(notif.id))
+const buildEventNotifs = (shopId, eventId) => {
+    const event = buildAnEvent(shopId,eventId)
+   // const notifs = Notification.get();
+    return event.notifications;
 };
 
 module.exports = {
-    buildNotifs,
+    buildNotifs: buildEventNotifs,
     buildANotif,
 };

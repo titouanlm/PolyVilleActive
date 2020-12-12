@@ -75,7 +75,7 @@ export class ShopService {
 
   updateShop(shop: Shop) {
     const shopUrl = this.shopsUrl + '/' + shop.id ;
-    this.http.put<Event>(shopUrl, shop, this.httpOptions).subscribe(() => this.getShopsFromUrl());
+    this.http.put<Shop>(shopUrl, shop, this.httpOptions).subscribe(() => this.getShopsFromUrl());
   }
 
   updateEvent(shop: Shop, event: Event) {

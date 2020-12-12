@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 
 router.get('/:eventId', (req, res) => {
     try {
-        const event = buildAnEvent(req.params.eventId)
+        const event = buildAnEvent(req.params.shopId,req.params.eventId)
         res.status(200).json(event)
     } catch (err) {
         manageAllErrors(res, err)

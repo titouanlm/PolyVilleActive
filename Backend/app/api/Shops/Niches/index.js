@@ -1,23 +1,23 @@
 const { Router } = require('express')
-const manageAllErrors = require('../../../../utils/routes/error-management')
-const { Promotion } = require('../../../../models')
-const { buildPromos, buildAPromo } = require('./manager')
+const manageAllErrors = require('../../../utils/routes/error-management')
+const { Niche } = require('../../../models')
+const { buildShopNiches, buildANiche } = require('./manager')
 
 
 const router = new Router({ mergeParams: true })
 
 router.get('/', (req, res) => {
     try {
-        const promos = buildPromos(req.params.shopId,req.params.eventId)
+        const promos = buildShopNiches(req.params.shopId)
         res.status(200).json(promos)
     } catch (err) {
         manageAllErrors(res, err)
     }
 })
 
-router.get('/:promoId', (req, res) => {
+router.get('/:eventId', (req, res) => {
     try {
-        const promo = buildAPromo(req.params.shopId,req.params.eventId,req.params.promoId)
+        const promo = buildANiche(req.params.shopId,req.params.eventId)
         res.status(200).json(promo)
     } catch (err) {
         manageAllErrors(res, err)
@@ -26,24 +26,24 @@ router.get('/:promoId', (req, res) => {
 
 router.post('/', (req, res) => {
     try {
-        const promo = Promotion.create({ ...req.body })
+        const promo = Niche.create({ ...req.body })
         res.status(201).json(promo)
     } catch (err) {
         manageAllErrors(res, err)
     }
 })
 
-router.put('/:promoId', (req, res) => {
+router.put('/:nicheId', (req, res) => {
     try {
-        res.status(200).json(Promotion.update(req.params.promoId, req.body))
+        res.status(200).json(Niche.update(req.params.nicheId, req.body))
     } catch (err) {
         manageAllErrors(res, err)
     }
 })
 
-router.delete('/:promoId', (req, res) => {
+router.delete('/:nicheId', (req, res) => {
     try {
-        Shop.delete(req.params.promoId)
+        Shop.delete(req.params.nicheId)
         res.status(204).end()
     } catch (err) {
         manageAllErrors(res, err)

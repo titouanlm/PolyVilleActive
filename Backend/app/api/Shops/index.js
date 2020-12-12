@@ -1,12 +1,14 @@
 const { Router } = require('express');
 const { Shop } = require('../../models');
 const manageAllErrors = require('../../utils/routes/error-management');
+const NichesRouter = require('./niches');
 const EventsRouter = require('./events');
 const { buildShops, buildAShop } = require('./manager');
 
 const router = new Router();
 
 router.use('/:shopId/events', EventsRouter);
+router.use('/:shopId/niches', NichesRouter);
 
 
 router.get('/', (req, res) => {
