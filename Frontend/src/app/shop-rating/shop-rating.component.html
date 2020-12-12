@@ -1,1 +1,15 @@
-<p>shop-rating works!</p>
+<h1 style="position: absolute;top: 20%;left: 41%"> Rate the store !</h1>
+<ngb-rating [(rate)]="currentRate" class="ratingspecificshop" (click)="rateShop()"></ngb-rating>
+
+
+<div style="position: relative;top: 55%;left: 46%">
+  <a [routerLink]="['..']" class="increaseSize">
+    <mat-icon [inline]="true" style="font-size: 8em;" >exit_to_app</mat-icon>
+  </a>
+</div>
+
+<div style="font-size: 8em;position: relative;top: 60%;left: 42%">
+  <h1>
+    previous page
+  </h1>
+</div>

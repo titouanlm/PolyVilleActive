@@ -4,4 +4,5 @@ export interface Inhabitant {
   longitude: number;
   latitude: number;
   id: number;
+  shopRated : number[];
 }

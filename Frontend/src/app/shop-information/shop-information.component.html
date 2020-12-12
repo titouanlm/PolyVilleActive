@@ -1,1 +1,4 @@
-<p>shop-information works!</p>
+<div *ngIf="shop" class="shopInformation">
+  <p>{{ shop.label}} </p> <br>
+  <p>Number of people close to the shop : {{ nbPeopleClose }} </p> <br>
+</div>

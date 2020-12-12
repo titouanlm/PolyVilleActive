@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import { map } from 'rxjs/operators';
 import {BehaviorSubject, Observable} from "rxjs";
+import {Shop} from "../models/shop.model";
 
 @Injectable({
   providedIn: 'root'
@@ -11,22 +12,12 @@ import {BehaviorSubject, Observable} from "rxjs";
 
 export class InhabitantService {
 
-  public Url =  'http://localhost:9428/api/';
-
-  public inhabitantForm: FormGroup;
   public currentInhabitant: Inhabitant;
   public inhabitant$: BehaviorSubject<Inhabitant> ;
 
-  constructor(public formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private http: HttpClient) {
     this.currentInhabitant = JSON.parse(localStorage.getItem('currentInhabitant'));
     this.inhabitant$ = new BehaviorSubject<Inhabitant>(this.currentInhabitant);
-    this.inhabitantForm = this.formBuilder.group({
-      firstName: [''],
-      lastName: [''],
-      longitude: [],
-      latitude: [],
-      id: [],
-    });
   }
 
   authenticateInhabitant(inhabitantNumber: number){
@@ -38,6 +29,14 @@ export class InhabitantService {
         this.inhabitant$.next(this.currentInhabitant);
         return inhabitant;
       }));
+  }
+
+  getShopIfRatedByAnInhabitant(shopNumber: number){
+    if (this.currentInhabitant.shopRated == undefined) {
+      this.currentInhabitant.shopRated = [];
+      return undefined;
+    }
+    return this.currentInhabitant.shopRated.find(element => element = shopNumber);
   }
 
 
@@ -58,4 +57,11 @@ export class InhabitantService {
     this.inhabitant$.next(null);
   }
 
+  getInhabitantsCloseTo(shop : Shop) {
+    return this.http.get<any>('http://localhost:9428/api/inhabitants').pipe(map((inhabitantList => {
+      let test = inhabitantList.filter((inhabitant) => inhabitant.longitude === shop.longitude && inhabitant.latitude === shop.latitude)
+      console.log(test);
+      return test;
+    })));
+  }
 }

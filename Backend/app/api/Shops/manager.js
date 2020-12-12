@@ -19,8 +19,7 @@ const buildAShop = (shopId) => {
  * This function build all shops with there events.
  */
 const buildShops = () => {
-    const Shops = Shop.get();
-    return Shops.map((shop) => buildAShop(shop.id))
+    return Shop.get();
 };
 
 module.exports = {

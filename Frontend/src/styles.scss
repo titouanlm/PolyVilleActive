@@ -8,3 +8,6 @@ app-root {
 }
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
