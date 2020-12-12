@@ -6,8 +6,8 @@
     "sellerId": 1855,
     "id": 1234567,
     "storeRating": {
-      "averageRate": 0,
-      "voterNumber": 0
+      "averageRate": 10,
+      "voterNumber": 1
     }
   },
   {

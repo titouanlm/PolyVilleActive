@@ -31,6 +31,14 @@ export class InhabitantService {
       }));
   }
 
+  getShopIfRatedByAnInhabitant(shopNumber: number){
+    if (this.currentInhabitant.shopRated == undefined) {
+      this.currentInhabitant.shopRated = [];
+      return undefined;
+    }
+    return this.currentInhabitant.shopRated.find(element => element = shopNumber);
+  }
+
 
   changeLocation(longitude: string, latitude: string) {
     this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {longitude: longitude, latitude: latitude })

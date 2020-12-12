@@ -7,4 +7,5 @@ module.exports = new BaseModel('Inhabitant', {
     longitude:  Joi.number(),
     latitude:  Joi.number(),
     id: Joi.number(),
+    shopRated: Joi.array().items(Joi.number()),
 });

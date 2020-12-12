@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from 'src/services/shop.service';
+import {InhabitantService} from "../../services/inhabitant.service";
 
 @Component({
   selector: 'app-shop-rating',
@@ -12,7 +13,7 @@ export class ShopRatingComponent implements OnInit {
   alreadyVoted = false;
   votersNumber: number;
 
-  constructor(private shopService: ShopService) {
+  constructor(private shopService: ShopService, private inhabitantService: InhabitantService) {
     this.shopService.shopSelected$.subscribe((shop) => this.currentRate = shop.storeRating.averageRate);
     if (this.currentRate == undefined) {
       this.currentRate = 0;
@@ -20,6 +21,13 @@ export class ShopRatingComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  rateShop(){
+    if (this.inhabitantService.getShopIfRatedByAnInhabitant(Number(this.shopService.shopSelected.id)) == undefined) {
+      this.inhabitantService.currentInhabitant.shopRated.push(Number(this.shopService.shopSelected.id));
+      this.setRateWait();
+    }
   }
 
   setRateWait(){
