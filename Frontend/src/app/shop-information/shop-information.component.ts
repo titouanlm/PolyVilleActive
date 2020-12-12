@@ -12,12 +12,19 @@ import { takeWhile } from 'rxjs/operators';
 
 })
 export class ShopInformationComponent implements OnInit {
+
   public shop : Shop;
   public nbPeopleClose: number;
+  public shopRate: number;
 
   constructor(public shopService: ShopService) {
     this.shopService.shopSelected$.subscribe((shop) => {
       this.shop = shop;
+      if ( this.shop != undefined
+        && this.shop.storeRating != undefined
+        && this.shop.storeRating.voterNumber !=0){
+        this.shopRate = this.shop.storeRating.averageRate;
+      }
       this.calculateNbPeopleClose();
     });
   }
