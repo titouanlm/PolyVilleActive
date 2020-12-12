@@ -11,7 +11,7 @@ const buildAShop = (shopId) => {
     const events = Event.get();
     const parsedId = parseInt(shopId, 10);
 
-    return { shop, ...events.filter((event) => event.shopId === parsedId) }
+    return { ...shop, ...events.filter((event) => event.shopId === parsedId) }
 };
 
 /**
