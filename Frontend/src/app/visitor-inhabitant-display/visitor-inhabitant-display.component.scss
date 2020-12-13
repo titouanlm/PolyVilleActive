@@ -4,6 +4,20 @@
   left: 72%;
 }
 
+h4{
+  position: relative;
+  top: 10%;
+  text-align: center;
+  font-size: 4em;
+}
+
+p{
+  position: relative;
+  top: 15%;
+  text-align: center;
+  font-size: 2em;
+}
+
 .increaseSize
 {
   font-size: 800%;
@@ -13,4 +27,11 @@
   position: absolute;
   top: 50%;
   left: 20%;
+}
+
+.inhabitantinformation{
+  position: absolute;
+  text-align: center;
+  top: 60%;
+  left: 44.5%;
 }

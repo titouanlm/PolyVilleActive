@@ -1,10 +1,8 @@
-<div *ngIf="shop" class="shopInformation">
-  <p>{{ shop.label}} </p> <br>
-  <p>Number of people close to the shop : {{ nbPeopleClose }} </p> <br>
-
-
-
+<div *ngIf="shop" >
+  <p class="shopInformation1">{{ shop.label}} </p> <br>
+  <p class="shopInformation2">People near the shop : {{ nbPeopleClose }} </p> <br>
 </div>
+
 
 <div class="sellersexit" >
   <a [routerLink]="['..']" class="increaseSize">
@@ -41,7 +39,7 @@
 <br><br><br><br><br><br><br>
 <div>
   <table class="tble">
-    <div class="chart-wrapper">
+    <div>
       <canvas baseChart
               [datasets]="lineChartData"
               [labels]="lineChartLabels"

@@ -40,25 +40,26 @@ export class ShopInformationComponent implements OnInit {
   ];
 
   constructor(public shopService: ShopService,public nicheService: NicheService) {
-    console.log("constructeur")
+    console.log("constructeur");
     this.shopService.shopSelected$.subscribe((shop) => {
       this.shop = shop;
-      if ( this.shop != undefined
-        && this.shop.storeRating != undefined
+      if ( this.shop.storeRating != undefined
         && this.shop.storeRating.voterNumber !=0){
         this.shopRate = this.shop.storeRating.averageRate;
       }
+
       this.calculateNbPeopleClose();
 
       this.nicheService.getShopNichesFromUrl(this.shop.id+'');
-      console.log('shop : '+this.shop)
+      console.log('shop : '+this.shop);
       this.nicheService.niches$.subscribe((nichs)=>{
         this.niches=nichs;
-        console.log('niches : '+this.niches)
+        console.log('niches : '+this.niches);
         this.buildListFreq();
 
-      })
+      });
       console.log('listfreq : '+this.listFreq)
+
     });
 
 

@@ -1,7 +1,9 @@
-<p>Welcome {{ inhabitant.firstName }} {{ inhabitant.lastName }}</p>
+<h4>Welcome {{ inhabitant.firstName }} {{ inhabitant.lastName }}</h4>
 <p>Your location : {{ inhabitant.latitude}}; {{inhabitant.longitude}} </p>
-<input matInput [(ngModel)]="shopName" placeholder="Shop's name"/> <br>
-<button id="runButton" type="button" class="btn btn-success" (click)="move()">Move to the shop</button><br>
+<div class="inhabitantinformation">
+  <input matInput [(ngModel)]="shopName" placeholder="Shop's name"/> <br>
+  <button id="runButton" type="button" class="btn btn-success" (click)="move()">Move to the shop</button><br>
+</div>
 
 <div class="errorMessage">
   <span *ngIf="error">

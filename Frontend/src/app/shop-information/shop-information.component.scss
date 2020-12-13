@@ -9,7 +9,7 @@
 h2 {
   position: absolute;
   text-align: center;
-  top: 30%;
+  top: 40%;
   left: 15%;
   font-size: 200%;
 }
@@ -35,6 +35,20 @@ h3 {
 
 .sellerinfo{
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 5%;
+}
+
+.shopInformation1{
+  position: absolute;
+  font-size: 4em;
+  left: 10%;
+  top: 10%;
+}
+
+.shopInformation2{
+  position: absolute;
+  font-size: 3em;
+  left: 5%;
+  top: 70%;
 }
