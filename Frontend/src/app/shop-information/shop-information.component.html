@@ -2,19 +2,7 @@
   <p>{{ shop.label}} </p> <br>
   <p>Number of people close to the shop : {{ nbPeopleClose }} </p> <br>
 
-<table class="tble">
-  <div class="chart-wrapper">
-    <canvas baseChart
-            [datasets]="lineChartData"
-            [labels]="lineChartLabels"
-            [options]="lineChartOptions"
-            [colors]="lineChartColors"
-            [legend]="lineChartLegend"
-            [chartType]="lineChartType"
-            [plugins]="lineChartPlugins">
-    </canvas>
-  </div>
-  </table>
+
 
 </div>
 
@@ -48,4 +36,21 @@
   <h3>
     previous page
   </h3>
+</div>
+
+<br><br><br><br><br><br><br>
+<div>
+  <table class="tble">
+    <div class="chart-wrapper">
+      <canvas baseChart
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              [plugins]="lineChartPlugins">
+      </canvas>
+    </div>
+  </table>
 </div>
