@@ -35,7 +35,7 @@ export class ShopInformationComponent implements OnInit {
   lineChartColors: Color[] = [
     {
       borderColor: 'black',
-      backgroundColor: 'rgba(135, 248, 157, 1)',
+      backgroundColor: 'rgba(116, 52, 235, 1)',
     },
   ];
 
