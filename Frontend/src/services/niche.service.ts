@@ -17,7 +17,7 @@ export class NicheService {
   /**
    * The list .
    */
-  private niches: Niche[];
+  private niches: Niche[]=[];
 
 
   /**
@@ -41,7 +41,7 @@ export class NicheService {
 
 
   getShopNichesFromUrl(shopId: string) {
-    const url = this.shopsUrl + '/' + shopId + this.nichesPath ;
+    const url = this.shopsUrl + '/' + shopId + '/'+this.nichesPath ;
     this.http.get<Niche[]>(url).subscribe((nicheList) => {
       this.niches= nicheList;
       this.niches$.next(this.niches);
@@ -49,7 +49,7 @@ export class NicheService {
   }
 
   getNicheFromUrl(shopId:string,nicheId: string) {
-    const urlWithId = this.shopsUrl + '/' + shopId + this.nichesPath + '/'+ nicheId;
+    const urlWithId = this.shopsUrl + '/' + shopId + '/'+ this.nichesPath + '/'+ nicheId;
     this.http.get<Niche>(urlWithId).subscribe((niche) => {
       this.niche$.next(niche);
     });

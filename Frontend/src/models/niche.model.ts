@@ -1,7 +1,7 @@
 export interface Niche {
   heureDebut: number;
   heureFin: number;
-  freqMoyenne: number;
+  nbPersonneMoyenne: number;
   shopId: number;
   id: number;
 }

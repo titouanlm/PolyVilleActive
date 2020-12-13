@@ -2,1996 +2,2017 @@
   {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 42,
+    "nbPersonneMoyenne": 42,
     "shopId": 1234567,
     "id": 134561
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 48,
+    "nbPersonneMoyenne": 48,
     "shopId": 1234567,
     "id": 134562
   },
   {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 133,
+    "nbPersonneMoyenne": 133,
     "shopId": 1234567,
     "id": 134563
   },
   {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 27,
+    "nbPersonneMoyenne": 27,
     "shopId": 1234567,
     "id": 134564
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 26,
+    "nbPersonneMoyenne": 26,
     "shopId": 1234567,
     "id": 134565
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 147,
+    "nbPersonneMoyenne": 147,
     "shopId": 1234567,
     "id": 134566
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 66,
+    "nbPersonneMoyenne": 66,
     "shopId": 1234567,
     "id": 134567
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 28,
+    "nbPersonneMoyenne": 28,
     "shopId": 1234567,
     "id": 134568
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 42,
+    "nbPersonneMoyenne": 42,
     "shopId": 1234567,
     "id": 134569
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 141,
+    "nbPersonneMoyenne": 141,
     "shopId": 1234567,
     "id": 134570
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 104,
+    "nbPersonneMoyenne": 104,
     "shopId": 1234567,
     "id": 134571
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 85,
+    "nbPersonneMoyenne": 85,
     "shopId": 1234567,
     "id": 134572
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 118,
+    "nbPersonneMoyenne": 118,
     "shopId": 1234567,
     "id": 134573
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 99,
+    "nbPersonneMoyenne": 99,
     "shopId": 1234567,
     "id": 134574
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 52,
+    "nbPersonneMoyenne": 52,
     "shopId": 1234567,
     "id": 134575
   },
   {
     "heureDebut": "15",
+    "heureFin": "16",
+    "nbPersonneMoyenne": 9,
+    "shopId": 1234567,
+    "id": 134849
+  },
+  {
+    "heureDebut": "16",
     "heureFin": "17",
-    "freqMoyenne": 4,
+    "nbPersonneMoyenne": 4,
     "shopId": 1234567,
     "id": 134576
   },
   {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 92,
+    "nbPersonneMoyenne": 92,
     "shopId": 1234567,
     "id": 134577
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 68,
+    "nbPersonneMoyenne": 68,
     "shopId": 1234567,
     "id": 134578
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 79,
+    "nbPersonneMoyenne": 79,
     "shopId": 1234567,
     "id": 134579
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 17,
+    "nbPersonneMoyenne": 17,
     "shopId": 1234567,
     "id": 134580
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 9,
+    "nbPersonneMoyenne": 9,
     "shopId": 1234567,
     "id": 134581
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 7,
+    "nbPersonneMoyenne": 7,
     "shopId": 1234567,
     "id": 134582
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 2,
+    "nbPersonneMoyenne": 2,
     "shopId": 1234567,
     "id": 134583
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 58,
+    "nbPersonneMoyenne": 58,
     "shopId": 1234568,
     "id": 134585
   },
   {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 69,
+    "nbPersonneMoyenne": 69,
     "shopId": 1234568,
     "id": 134586
   },
   {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 135,
+    "nbPersonneMoyenne": 135,
     "shopId": 1234568,
     "id": 134587
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 56,
+    "nbPersonneMoyenne": 56,
     "shopId": 1234568,
     "id": 134588
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 53,
+    "nbPersonneMoyenne": 53,
     "shopId": 1234568,
     "id": 134589
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 91,
+    "nbPersonneMoyenne": 91,
     "shopId": 1234568,
     "id": 134590
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 121,
+    "nbPersonneMoyenne": 121,
     "shopId": 1234568,
     "id": 134591
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 30,
+    "nbPersonneMoyenne": 30,
     "shopId": 1234568,
     "id": 134592
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 136,
+    "nbPersonneMoyenne": 136,
     "shopId": 1234568,
     "id": 134593
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 47,
+    "nbPersonneMoyenne": 47,
     "shopId": 1234568,
     "id": 134594
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 81,
+    "nbPersonneMoyenne": 81,
     "shopId": 1234568,
     "id": 134595
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 108,
+    "nbPersonneMoyenne": 108,
     "shopId": 1234568,
     "id": 134596
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 85,
+    "nbPersonneMoyenne": 85,
     "shopId": 1234568,
     "id": 134597
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 38,
+    "nbPersonneMoyenne": 38,
     "shopId": 1234568,
     "id": 134598
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 135,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 135,
     "shopId": 1234568,
     "id": 134599
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 105,
+    "shopId": 1234568,
+    "id": 134850
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 25,
+    "nbPersonneMoyenne": 25,
     "shopId": 1234568,
     "id": 134600
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 99,
+    "nbPersonneMoyenne": 99,
     "shopId": 1234568,
     "id": 134601
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 98,
+    "nbPersonneMoyenne": 98,
     "shopId": 1234568,
     "id": 134602
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 33,
+    "nbPersonneMoyenne": 33,
     "shopId": 1234568,
     "id": 134603
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 1,
+    "nbPersonneMoyenne": 1,
     "shopId": 1234568,
     "id": 134604
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 69,
+    "nbPersonneMoyenne": 69,
     "shopId": 1234568,
     "id": 134605
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 40,
+    "nbPersonneMoyenne": 40,
     "shopId": 1234568,
     "id": 134606
   },
   {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 42,
+    "nbPersonneMoyenne": 42,
     "shopId": 1234568,
     "id": 134607
   },
   {
-    "heureDebut": "1",
-    "heureFin": "2",
-    "freqMoyenne": 68,
-    "shopId": 1234568,
-    "id": 134608
-  },
-  {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 120,
+    "nbPersonneMoyenne": 120,
     "shopId": 1234569,
     "id": 134609
   },
   {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 95,
+    "nbPersonneMoyenne": 95,
     "shopId": 1234569,
     "id": 134610
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 69,
+    "nbPersonneMoyenne": 69,
     "shopId": 1234569,
     "id": 134611
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 115,
+    "nbPersonneMoyenne": 115,
     "shopId": 1234569,
     "id": 134612
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 97,
+    "nbPersonneMoyenne": 97,
     "shopId": 1234569,
     "id": 134613
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 64,
+    "nbPersonneMoyenne": 64,
     "shopId": 1234569,
     "id": 134614
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 79,
+    "nbPersonneMoyenne": 79,
     "shopId": 1234569,
     "id": 134615
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 25,
+    "nbPersonneMoyenne": 25,
     "shopId": 1234569,
     "id": 134616
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 115,
+    "nbPersonneMoyenne": 115,
     "shopId": 1234569,
     "id": 134617
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 128,
+    "nbPersonneMoyenne": 128,
     "shopId": 1234569,
     "id": 134618
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 142,
+    "nbPersonneMoyenne": 142,
     "shopId": 1234569,
     "id": 134619
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 113,
+    "nbPersonneMoyenne": 113,
     "shopId": 1234569,
     "id": 134620
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 81,
+    "nbPersonneMoyenne": 81,
     "shopId": 1234569,
     "id": 134621
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 57,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 57,
     "shopId": 1234569,
     "id": 134622
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 17,
+    "shopId": 1234569,
+    "id": 134851
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 76,
+    "nbPersonneMoyenne": 76,
     "shopId": 1234569,
     "id": 134623
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 114,
+    "nbPersonneMoyenne": 114,
     "shopId": 1234569,
     "id": 134624
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 122,
+    "nbPersonneMoyenne": 122,
     "shopId": 1234569,
     "id": 134625
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 138,
+    "nbPersonneMoyenne": 138,
     "shopId": 1234569,
     "id": 134626
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 68,
+    "nbPersonneMoyenne": 68,
     "shopId": 1234569,
     "id": 134627
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 95,
+    "nbPersonneMoyenne": 95,
     "shopId": 1234569,
     "id": 134628
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 120,
+    "nbPersonneMoyenne": 120,
     "shopId": 1234569,
     "id": 134629
   },
   {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 121,
+    "nbPersonneMoyenne": 121,
     "shopId": 1234569,
     "id": 134630
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 94,
+    "nbPersonneMoyenne": 94,
     "shopId": 1234569,
     "id": 134631
   },
   {
-    "heureDebut": "2",
-    "heureFin": "3",
-    "freqMoyenne": 82,
-    "shopId": 1234569,
-    "id": 134632
-  },
-  {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 47,
+    "nbPersonneMoyenne": 47,
     "shopId": 1234570,
     "id": 134633
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 91,
+    "nbPersonneMoyenne": 91,
     "shopId": 1234570,
     "id": 134634
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 146,
+    "nbPersonneMoyenne": 146,
     "shopId": 1234570,
     "id": 134635
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 41,
+    "nbPersonneMoyenne": 41,
     "shopId": 1234570,
     "id": 134636
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 19,
+    "nbPersonneMoyenne": 19,
     "shopId": 1234570,
     "id": 134637
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 42,
+    "nbPersonneMoyenne": 42,
     "shopId": 1234570,
     "id": 134638
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 3,
+    "nbPersonneMoyenne": 3,
     "shopId": 1234570,
     "id": 134639
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 105,
+    "nbPersonneMoyenne": 105,
     "shopId": 1234570,
     "id": 134640
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 1,
+    "nbPersonneMoyenne": 1,
     "shopId": 1234570,
     "id": 134641
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 119,
+    "nbPersonneMoyenne": 119,
     "shopId": 1234570,
     "id": 134642
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 11,
+    "nbPersonneMoyenne": 11,
     "shopId": 1234570,
     "id": 134643
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 58,
+    "nbPersonneMoyenne": 58,
     "shopId": 1234570,
     "id": 134644
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 114,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 114,
     "shopId": 1234570,
     "id": 134645
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 10,
+    "shopId": 1234570,
+    "id": 134852
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 102,
+    "nbPersonneMoyenne": 102,
     "shopId": 1234570,
     "id": 134646
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 43,
+    "nbPersonneMoyenne": 43,
     "shopId": 1234570,
     "id": 134647
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 48,
+    "nbPersonneMoyenne": 48,
     "shopId": 1234570,
     "id": 134648
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 140,
+    "nbPersonneMoyenne": 140,
     "shopId": 1234570,
     "id": 134649
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 138,
+    "nbPersonneMoyenne": 138,
     "shopId": 1234570,
     "id": 134650
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 63,
+    "nbPersonneMoyenne": 63,
     "shopId": 1234570,
     "id": 134651
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 16,
+    "nbPersonneMoyenne": 16,
     "shopId": 1234570,
     "id": 134652
   },
   {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 94,
+    "nbPersonneMoyenne": 94,
     "shopId": 1234570,
     "id": 134653
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 66,
+    "nbPersonneMoyenne": 66,
     "shopId": 1234570,
     "id": 134654
   },
   {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 10,
+    "nbPersonneMoyenne": 10,
     "shopId": 1234570,
     "id": 134655
   },
   {
-    "heureDebut": "3",
-    "heureFin": "4",
-    "freqMoyenne": 135,
-    "shopId": 1234570,
-    "id": 134656
-  },
-  {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 71,
+    "nbPersonneMoyenne": 71,
     "shopId": 1234571,
     "id": 134657
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 16,
+    "nbPersonneMoyenne": 16,
     "shopId": 1234571,
     "id": 134658
   },
   {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 58,
+    "nbPersonneMoyenne": 58,
     "shopId": 1234571,
     "id": 134659
   },
   {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 81,
+    "nbPersonneMoyenne": 81,
     "shopId": 1234571,
     "id": 134660
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 93,
+    "nbPersonneMoyenne": 93,
     "shopId": 1234571,
     "id": 134661
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 133,
+    "nbPersonneMoyenne": 133,
     "shopId": 1234571,
     "id": 134662
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 119,
+    "nbPersonneMoyenne": 119,
     "shopId": 1234571,
     "id": 134663
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 29,
+    "nbPersonneMoyenne": 29,
     "shopId": 1234571,
     "id": 134664
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 103,
+    "nbPersonneMoyenne": 103,
     "shopId": 1234571,
     "id": 134665
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 38,
+    "nbPersonneMoyenne": 38,
     "shopId": 1234571,
     "id": 134666
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 12,
+    "nbPersonneMoyenne": 12,
     "shopId": 1234571,
     "id": 134667
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 95,
+    "nbPersonneMoyenne": 95,
     "shopId": 1234571,
     "id": 134668
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 90,
+    "nbPersonneMoyenne": 90,
     "shopId": 1234571,
     "id": 134669
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 131,
+    "nbPersonneMoyenne": 131,
     "shopId": 1234571,
     "id": 134670
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 31,
+    "nbPersonneMoyenne": 31,
     "shopId": 1234571,
     "id": 134671
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 46,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 46,
     "shopId": 1234571,
     "id": 134672
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 86,
+    "shopId": 1234571,
+    "id": 134853
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 0,
+    "nbPersonneMoyenne": 0,
     "shopId": 1234571,
     "id": 134673
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 51,
+    "nbPersonneMoyenne": 51,
     "shopId": 1234571,
     "id": 134674
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 19,
+    "nbPersonneMoyenne": 19,
     "shopId": 1234571,
     "id": 134675
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 25,
+    "nbPersonneMoyenne": 25,
     "shopId": 1234571,
     "id": 134676
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 128,
+    "nbPersonneMoyenne": 128,
     "shopId": 1234571,
     "id": 134677
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 21,
+    "nbPersonneMoyenne": 21,
     "shopId": 1234571,
     "id": 134678
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 35,
+    "nbPersonneMoyenne": 35,
     "shopId": 1234571,
     "id": 134679
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 36,
+    "nbPersonneMoyenne": 36,
     "shopId": 1234572,
     "id": 134681
   },
   {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 76,
+    "nbPersonneMoyenne": 76,
     "shopId": 1234572,
     "id": 134682
   },
   {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 129,
+    "nbPersonneMoyenne": 129,
     "shopId": 1234572,
     "id": 134683
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 98,
+    "nbPersonneMoyenne": 98,
     "shopId": 1234572,
     "id": 134684
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 26,
+    "nbPersonneMoyenne": 26,
     "shopId": 1234572,
     "id": 134685
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 140,
+    "nbPersonneMoyenne": 140,
     "shopId": 1234572,
     "id": 134686
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 36,
+    "nbPersonneMoyenne": 36,
     "shopId": 1234572,
     "id": 134687
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 26,
+    "nbPersonneMoyenne": 26,
     "shopId": 1234572,
     "id": 134688
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 103,
+    "nbPersonneMoyenne": 103,
     "shopId": 1234572,
     "id": 134689
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 28,
+    "nbPersonneMoyenne": 28,
     "shopId": 1234572,
     "id": 134690
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 53,
+    "nbPersonneMoyenne": 53,
     "shopId": 1234572,
     "id": 134691
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 35,
+    "nbPersonneMoyenne": 35,
     "shopId": 1234572,
     "id": 134692
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 40,
+    "nbPersonneMoyenne": 40,
     "shopId": 1234572,
     "id": 134693
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 47,
+    "nbPersonneMoyenne": 47,
     "shopId": 1234572,
     "id": 134694
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 125,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 125,
     "shopId": 1234572,
     "id": 134695
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 18,
+    "shopId": 1234572,
+    "id": 134854
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 147,
+    "nbPersonneMoyenne": 147,
     "shopId": 1234572,
     "id": 134696
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 40,
+    "nbPersonneMoyenne": 40,
     "shopId": 1234572,
     "id": 134697
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 24,
+    "nbPersonneMoyenne": 24,
     "shopId": 1234572,
     "id": 134698
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 74,
+    "nbPersonneMoyenne": 74,
     "shopId": 1234572,
     "id": 134699
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 135,
+    "nbPersonneMoyenne": 135,
     "shopId": 1234572,
     "id": 134700
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 35,
+    "nbPersonneMoyenne": 35,
     "shopId": 1234572,
     "id": 134701
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 6,
+    "nbPersonneMoyenne": 6,
     "shopId": 1234572,
     "id": 134702
   },
   {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 115,
+    "nbPersonneMoyenne": 115,
     "shopId": 1234572,
     "id": 134703
   },
   {
-    "heureDebut": "1",
-    "heureFin": "2",
-    "freqMoyenne": 147,
-    "shopId": 1234572,
-    "id": 134704
-  },
-  {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 73,
+    "nbPersonneMoyenne": 73,
     "shopId": 1234573,
     "id": 134705
   },
   {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 67,
+    "nbPersonneMoyenne": 67,
     "shopId": 1234573,
     "id": 134706
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 144,
+    "nbPersonneMoyenne": 144,
     "shopId": 1234573,
     "id": 134707
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 81,
+    "nbPersonneMoyenne": 81,
     "shopId": 1234573,
     "id": 134708
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 140,
+    "nbPersonneMoyenne": 140,
     "shopId": 1234573,
     "id": 134709
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 40,
+    "nbPersonneMoyenne": 40,
     "shopId": 1234573,
     "id": 134710
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 137,
+    "nbPersonneMoyenne": 137,
     "shopId": 1234573,
     "id": 134711
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 8,
+    "nbPersonneMoyenne": 8,
     "shopId": 1234573,
     "id": 134712
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 100,
+    "nbPersonneMoyenne": 100,
     "shopId": 1234573,
     "id": 134713
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 92,
+    "nbPersonneMoyenne": 92,
     "shopId": 1234573,
     "id": 134714
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 41,
+    "nbPersonneMoyenne": 41,
     "shopId": 1234573,
     "id": 134715
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 43,
+    "nbPersonneMoyenne": 43,
     "shopId": 1234573,
     "id": 134716
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 91,
+    "nbPersonneMoyenne": 91,
     "shopId": 1234573,
     "id": 134717
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 21,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 21,
     "shopId": 1234573,
     "id": 134718
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 21,
+    "shopId": 1234573,
+    "id": 134855
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 12,
+    "nbPersonneMoyenne": 12,
     "shopId": 1234573,
     "id": 134719
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 121,
+    "nbPersonneMoyenne": 121,
     "shopId": 1234573,
     "id": 134720
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 112,
+    "nbPersonneMoyenne": 112,
     "shopId": 1234573,
     "id": 134721
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 132,
+    "nbPersonneMoyenne": 132,
     "shopId": 1234573,
     "id": 134722
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 44,
+    "nbPersonneMoyenne": 44,
     "shopId": 1234573,
     "id": 134723
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 53,
+    "nbPersonneMoyenne": 53,
     "shopId": 1234573,
     "id": 134724
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 36,
+    "nbPersonneMoyenne": 36,
     "shopId": 1234573,
     "id": 134725
   },
   {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 125,
+    "nbPersonneMoyenne": 125,
     "shopId": 1234573,
     "id": 134726
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 62,
+    "nbPersonneMoyenne": 62,
     "shopId": 1234573,
     "id": 134727
   },
   {
-    "heureDebut": "2",
-    "heureFin": "3",
-    "freqMoyenne": 61,
-    "shopId": 1234573,
-    "id": 134728
-  },
-  {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 144,
+    "nbPersonneMoyenne": 144,
     "shopId": 1234574,
     "id": 134729
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 35,
+    "nbPersonneMoyenne": 35,
     "shopId": 1234574,
     "id": 134730
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 114,
+    "nbPersonneMoyenne": 114,
     "shopId": 1234574,
     "id": 134731
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 134,
+    "nbPersonneMoyenne": 134,
     "shopId": 1234574,
     "id": 134732
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 29,
+    "nbPersonneMoyenne": 29,
     "shopId": 1234574,
     "id": 134733
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 119,
+    "nbPersonneMoyenne": 119,
     "shopId": 1234574,
     "id": 134734
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 11,
+    "nbPersonneMoyenne": 11,
     "shopId": 1234574,
     "id": 134735
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 64,
+    "nbPersonneMoyenne": 64,
     "shopId": 1234574,
     "id": 134736
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 66,
+    "nbPersonneMoyenne": 66,
     "shopId": 1234574,
     "id": 134737
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 47,
+    "nbPersonneMoyenne": 47,
     "shopId": 1234574,
     "id": 134738
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 21,
+    "nbPersonneMoyenne": 21,
     "shopId": 1234574,
     "id": 134739
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 150,
+    "nbPersonneMoyenne": 150,
     "shopId": 1234574,
     "id": 134740
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 44,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 44,
     "shopId": 1234574,
     "id": 134741
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 74,
+    "shopId": 1234574,
+    "id": 134856
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 76,
+    "nbPersonneMoyenne": 76,
     "shopId": 1234574,
     "id": 134742
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 72,
+    "nbPersonneMoyenne": 72,
     "shopId": 1234574,
     "id": 134743
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 113,
+    "nbPersonneMoyenne": 113,
     "shopId": 1234574,
     "id": 134744
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 71,
+    "nbPersonneMoyenne": 71,
     "shopId": 1234574,
     "id": 134745
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 8,
+    "nbPersonneMoyenne": 8,
     "shopId": 1234574,
     "id": 134746
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 116,
+    "nbPersonneMoyenne": 116,
     "shopId": 1234574,
     "id": 134747
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 21,
+    "nbPersonneMoyenne": 21,
     "shopId": 1234574,
     "id": 134748
   },
   {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 83,
+    "nbPersonneMoyenne": 83,
     "shopId": 1234574,
     "id": 134749
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 103,
+    "nbPersonneMoyenne": 103,
     "shopId": 1234574,
     "id": 134750
   },
   {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 117,
+    "nbPersonneMoyenne": 117,
     "shopId": 1234574,
     "id": 134751
   },
   {
-    "heureDebut": "3",
-    "heureFin": "4",
-    "freqMoyenne": 44,
-    "shopId": 1234574,
-    "id": 134752
-  },
-  {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 48,
+    "nbPersonneMoyenne": 48,
     "shopId": 1234575,
     "id": 134753
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 100,
+    "nbPersonneMoyenne": 100,
     "shopId": 1234575,
     "id": 134754
   },
   {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 94,
+    "nbPersonneMoyenne": 94,
     "shopId": 1234575,
     "id": 134755
   },
   {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 147,
+    "nbPersonneMoyenne": 147,
     "shopId": 1234575,
     "id": 134756
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 126,
+    "nbPersonneMoyenne": 126,
     "shopId": 1234575,
     "id": 134757
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 133,
+    "nbPersonneMoyenne": 133,
     "shopId": 1234575,
     "id": 134758
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 62,
+    "nbPersonneMoyenne": 62,
     "shopId": 1234575,
     "id": 134759
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 24,
+    "nbPersonneMoyenne": 24,
     "shopId": 1234575,
     "id": 134760
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 123,
+    "nbPersonneMoyenne": 123,
     "shopId": 1234575,
     "id": 134761
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 56,
+    "nbPersonneMoyenne": 56,
     "shopId": 1234575,
     "id": 134762
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 50,
+    "nbPersonneMoyenne": 50,
     "shopId": 1234575,
     "id": 134763
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 108,
+    "nbPersonneMoyenne": 108,
     "shopId": 1234575,
     "id": 134764
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 48,
+    "nbPersonneMoyenne": 48,
     "shopId": 1234575,
     "id": 134765
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 124,
+    "nbPersonneMoyenne": 124,
     "shopId": 1234575,
     "id": 134766
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 106,
+    "nbPersonneMoyenne": 106,
     "shopId": 1234575,
     "id": 134767
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 145,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 145,
     "shopId": 1234575,
     "id": 134768
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 3,
+    "shopId": 1234575,
+    "id": 134857
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 42,
+    "nbPersonneMoyenne": 42,
     "shopId": 1234575,
     "id": 134769
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 149,
+    "nbPersonneMoyenne": 149,
     "shopId": 1234575,
     "id": 134770
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 137,
+    "nbPersonneMoyenne": 137,
     "shopId": 1234575,
     "id": 134771
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 67,
+    "nbPersonneMoyenne": 67,
     "shopId": 1234575,
     "id": 134772
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 113,
+    "nbPersonneMoyenne": 113,
     "shopId": 1234575,
     "id": 134773
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 114,
+    "nbPersonneMoyenne": 114,
     "shopId": 1234575,
     "id": 134774
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 66,
+    "nbPersonneMoyenne": 66,
     "shopId": 1234575,
     "id": 134775
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 51,
+    "nbPersonneMoyenne": 51,
     "shopId": 1234576,
     "id": 134777
   },
   {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 108,
+    "nbPersonneMoyenne": 108,
     "shopId": 1234576,
     "id": 134778
   },
   {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 3,
+    "nbPersonneMoyenne": 3,
     "shopId": 1234576,
     "id": 134779
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 88,
+    "nbPersonneMoyenne": 88,
     "shopId": 1234576,
     "id": 134780
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 128,
+    "nbPersonneMoyenne": 128,
     "shopId": 1234576,
     "id": 134781
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 132,
+    "nbPersonneMoyenne": 132,
     "shopId": 1234576,
     "id": 134782
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 97,
+    "nbPersonneMoyenne": 97,
     "shopId": 1234576,
     "id": 134783
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 38,
+    "nbPersonneMoyenne": 38,
     "shopId": 1234576,
     "id": 134784
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 57,
+    "nbPersonneMoyenne": 57,
     "shopId": 1234576,
     "id": 134785
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 121,
+    "nbPersonneMoyenne": 121,
     "shopId": 1234576,
     "id": 134786
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 57,
+    "nbPersonneMoyenne": 57,
     "shopId": 1234576,
     "id": 134787
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 20,
+    "nbPersonneMoyenne": 20,
     "shopId": 1234576,
     "id": 134788
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 56,
+    "nbPersonneMoyenne": 56,
     "shopId": 1234576,
     "id": 134789
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 137,
+    "nbPersonneMoyenne": 137,
     "shopId": 1234576,
     "id": 134790
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 56,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 36,
     "shopId": 1234576,
     "id": 134791
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 96,
+    "shopId": 1234576,
+    "id": 134858
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 65,
+    "nbPersonneMoyenne": 65,
     "shopId": 1234576,
     "id": 134792
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 149,
+    "nbPersonneMoyenne": 149,
     "shopId": 1234576,
     "id": 134793
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 31,
+    "nbPersonneMoyenne": 31,
     "shopId": 1234576,
     "id": 134794
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 1,
+    "nbPersonneMoyenne": 1,
     "shopId": 1234576,
     "id": 134795
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 45,
+    "nbPersonneMoyenne": 45,
     "shopId": 1234576,
     "id": 134796
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 126,
+    "nbPersonneMoyenne": 126,
     "shopId": 1234576,
     "id": 134797
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 120,
+    "nbPersonneMoyenne": 120,
     "shopId": 1234576,
     "id": 134798
   },
   {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 31,
+    "nbPersonneMoyenne": 31,
     "shopId": 1234576,
     "id": 134799
   },
   {
-    "heureDebut": "1",
-    "heureFin": "2",
-    "freqMoyenne": 132,
-    "shopId": 1234576,
-    "id": 134800
-  },
-  {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 123,
+    "nbPersonneMoyenne": 123,
     "shopId": 1234577,
     "id": 134801
   },
   {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 134,
+    "nbPersonneMoyenne": 134,
     "shopId": 1234577,
     "id": 134802
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 7,
+    "nbPersonneMoyenne": 7,
     "shopId": 1234577,
     "id": 134803
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 24,
+    "nbPersonneMoyenne": 24,
     "shopId": 1234577,
     "id": 134804
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 18,
+    "nbPersonneMoyenne": 18,
     "shopId": 1234577,
     "id": 134805
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 72,
+    "nbPersonneMoyenne": 72,
     "shopId": 1234577,
     "id": 134806
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 13,
+    "nbPersonneMoyenne": 13,
     "shopId": 1234577,
     "id": 134807
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 45,
+    "nbPersonneMoyenne": 45,
     "shopId": 1234577,
     "id": 134808
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 137,
+    "nbPersonneMoyenne": 137,
     "shopId": 1234577,
     "id": 134809
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 22,
+    "nbPersonneMoyenne": 22,
     "shopId": 1234577,
     "id": 134810
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 73,
+    "nbPersonneMoyenne": 73,
     "shopId": 1234577,
     "id": 134811
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 37,
+    "nbPersonneMoyenne": 37,
     "shopId": 1234577,
     "id": 134812
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 104,
+    "nbPersonneMoyenne": 104,
     "shopId": 1234577,
     "id": 134813
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 30,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 30,
     "shopId": 1234577,
     "id": 134814
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 10,
+    "shopId": 1234577,
+    "id": 134859
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 66,
+    "nbPersonneMoyenne": 66,
     "shopId": 1234577,
     "id": 134815
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 46,
+    "nbPersonneMoyenne": 46,
     "shopId": 1234577,
     "id": 134816
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 61,
+    "nbPersonneMoyenne": 61,
     "shopId": 1234577,
     "id": 134817
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 82,
+    "nbPersonneMoyenne": 82,
     "shopId": 1234577,
     "id": 134818
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 18,
+    "nbPersonneMoyenne": 18,
     "shopId": 1234577,
     "id": 134819
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 89,
+    "nbPersonneMoyenne": 89,
     "shopId": 1234577,
     "id": 134820
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 59,
+    "nbPersonneMoyenne": 59,
     "shopId": 1234577,
     "id": 134821
   },
   {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 133,
+    "nbPersonneMoyenne": 133,
     "shopId": 1234577,
     "id": 134822
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 16,
+    "nbPersonneMoyenne": 16,
     "shopId": 1234577,
     "id": 134823
   },
   {
-    "heureDebut": "2",
-    "heureFin": "3",
-    "freqMoyenne": 49,
-    "shopId": 1234577,
-    "id": 134824
-  },
-  {
     "heureDebut": "3",
     "heureFin": "4",
-    "freqMoyenne": 81,
+    "nbPersonneMoyenne": 81,
     "shopId": 1234578,
     "id": 134825
   },
   {
     "heureDebut": "4",
     "heureFin": "5",
-    "freqMoyenne": 80,
+    "nbPersonneMoyenne": 80,
     "shopId": 1234578,
     "id": 134826
   },
   {
     "heureDebut": "5",
     "heureFin": "6",
-    "freqMoyenne": 19,
+    "nbPersonneMoyenne": 19,
     "shopId": 1234578,
     "id": 134827
   },
   {
     "heureDebut": "6",
     "heureFin": "7",
-    "freqMoyenne": 137,
+    "nbPersonneMoyenne": 137,
     "shopId": 1234578,
     "id": 134828
   },
   {
     "heureDebut": "7",
     "heureFin": "8",
-    "freqMoyenne": 131,
+    "nbPersonneMoyenne": 131,
     "shopId": 1234578,
     "id": 134829
   },
   {
     "heureDebut": "8",
     "heureFin": "9",
-    "freqMoyenne": 2,
+    "nbPersonneMoyenne": 2,
     "shopId": 1234578,
     "id": 134830
   },
   {
     "heureDebut": "9",
     "heureFin": "10",
-    "freqMoyenne": 71,
+    "nbPersonneMoyenne": 71,
     "shopId": 1234578,
     "id": 134831
   },
   {
     "heureDebut": "10",
     "heureFin": "11",
-    "freqMoyenne": 124,
+    "nbPersonneMoyenne": 124,
     "shopId": 1234578,
     "id": 134832
   },
   {
     "heureDebut": "11",
     "heureFin": "12",
-    "freqMoyenne": 150,
+    "nbPersonneMoyenne": 150,
     "shopId": 1234578,
     "id": 134833
   },
   {
     "heureDebut": "12",
     "heureFin": "13",
-    "freqMoyenne": 9,
+    "nbPersonneMoyenne": 9,
     "shopId": 1234578,
     "id": 134834
   },
   {
     "heureDebut": "13",
     "heureFin": "14",
-    "freqMoyenne": 62,
+    "nbPersonneMoyenne": 62,
     "shopId": 1234578,
     "id": 134835
   },
   {
     "heureDebut": "14",
     "heureFin": "15",
-    "freqMoyenne": 32,
+    "nbPersonneMoyenne": 32,
     "shopId": 1234578,
     "id": 134836
   },
   {
     "heureDebut": "15",
-    "heureFin": "17",
-    "freqMoyenne": 126,
+    "heureFin": "16",
+    "nbPersonneMoyenne": 126,
     "shopId": 1234578,
     "id": 134837
   },
   {
+    "heureDebut": "16",
+    "heureFin": "17",
+    "nbPersonneMoyenne": 46,
+    "shopId": 1234578,
+    "id": 134860
+  },
+  {
     "heureDebut": "17",
     "heureFin": "18",
-    "freqMoyenne": 88,
+    "nbPersonneMoyenne": 88,
     "shopId": 1234578,
     "id": 134838
   },
   {
     "heureDebut": "18",
     "heureFin": "19",
-    "freqMoyenne": 144,
+    "nbPersonneMoyenne": 144,
     "shopId": 1234578,
     "id": 134839
   },
   {
     "heureDebut": "19",
     "heureFin": "20",
-    "freqMoyenne": 77,
+    "nbPersonneMoyenne": 77,
     "shopId": 1234578,
     "id": 134840
   },
   {
     "heureDebut": "20",
     "heureFin": "21",
-    "freqMoyenne": 80,
+    "nbPersonneMoyenne": 80,
     "shopId": 1234578,
     "id": 134841
   },
   {
     "heureDebut": "21",
     "heureFin": "22",
-    "freqMoyenne": 108,
+    "nbPersonneMoyenne": 108,
     "shopId": 1234578,
     "id": 134842
   },
   {
     "heureDebut": "22",
     "heureFin": "23",
-    "freqMoyenne": 33,
+    "nbPersonneMoyenne": 33,
     "shopId": 1234578,
     "id": 134843
   },
   {
     "heureDebut": "23",
     "heureFin": "24",
-    "freqMoyenne": 148,
+    "nbPersonneMoyenne": 148,
     "shopId": 1234578,
     "id": 134844
   },
   {
     "heureDebut": "0",
     "heureFin": "1",
-    "freqMoyenne": 4,
+    "nbPersonneMoyenne": 4,
     "shopId": 1234578,
     "id": 134845
   },
   {
     "heureDebut": "1",
     "heureFin": "2",
-    "freqMoyenne": 99,
+    "nbPersonneMoyenne": 99,
     "shopId": 1234578,
     "id": 134846
   },
   {
     "heureDebut": "2",
     "heureFin": "3",
-    "freqMoyenne": 65,
+    "nbPersonneMoyenne": 65,
     "shopId": 1234578,
     "id": 134847
-  },
-  {
-    "heureDebut": "3",
-    "heureFin": "4",
-    "freqMoyenne": 10,
-    "shopId": 1234578,
-    "id": 134848
   }
 ]

@@ -3,6 +3,10 @@ import {Shop} from "../../models/shop.model";
 import {ShopService} from "../../services/shop.service";
 import { interval } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
+import { ChartDataSets, ChartOptions } from 'chart.js';
+import { Color, Label } from 'ng2-charts';
+import {NicheService} from "../../services/niche.service";
+import {Niche} from "../../models/niche.model";
 
 @Component({
   selector: 'app-shop-information',
@@ -14,15 +18,47 @@ import { takeWhile } from 'rxjs/operators';
 export class ShopInformationComponent implements OnInit {
   public shop : Shop;
   public nbPeopleClose: number;
+  public niches: Niche[];
+  public listFreq:number[] =[];
+  lineChartLegend = true;
+  lineChartPlugins = [];
+  lineChartType = 'line';
+  lineChartData: ChartDataSets[] = [
+    { data: this.listFreq, label: 'Nombre moyen de fréquentation' },
+  ];
+  lineChartLabels: Label[] = ['00H-01H', '01H-02H', '02H-03H', '03H-04H', '04H-05H', '05H-06H', '06H-07H','07H-08H','08H-9H0','09H-10H','10H-11H', '11H-12H', '12H-13H', '13H-14H', '14H-15H', '15H-16H','16H-17H','17H-18H','18H-19H','19H-20H','20H-21H','21H-22H','22H-23H','23H-00H'];
+  lineChartOptions = {
+    responsive: true,
+  };
+  lineChartColors: Color[] = [
+    {
+      borderColor: 'black',
+      backgroundColor: 'rgba(135, 248, 157, 1)',
+    },
+  ];
 
-  constructor(public shopService: ShopService) {
+  constructor(public shopService: ShopService,public nicheService: NicheService) {
+    console.log("constructeur")
     this.shopService.shopSelected$.subscribe((shop) => {
       this.shop = shop;
       this.calculateNbPeopleClose();
+
+      this.nicheService.getShopNichesFromUrl(this.shop.id+'');
+      console.log('shop : '+this.shop)
+      this.nicheService.niches$.subscribe((nichs)=>{
+        this.niches=nichs;
+        console.log('niches : '+this.niches)
+        this.buildListFreq();
+
+      })
+      console.log('listfreq : '+this.listFreq)
     });
+
+
   }
 
   ngOnInit(): void {
+
     interval(30000)
       .pipe(takeWhile(() => true))
       .subscribe(() => {
@@ -34,4 +70,14 @@ export class ShopInformationComponent implements OnInit {
     this.shopService.getNbPeopleClose()
       .subscribe(nb => this.nbPeopleClose = nb);
   }
+
+  buildListFreq(){
+    this.niches.forEach(niche=>{
+      this.listFreq.push(niche.nbPersonneMoyenne);
+    })
+  }
+
+
+
+
 }

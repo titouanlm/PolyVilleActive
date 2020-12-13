@@ -47,7 +47,7 @@ export class EventService {
 
 
   getShopEventsFromUrl(shopId: string) {
-    const url = this.shopsUrl + '/' + shopId + this.eventsPath ;
+    const url = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath ;
     this.http.get<Event[]>(url).subscribe((eventList) => {
       this.events = eventList;
       this.events$.next(this.events);
@@ -55,7 +55,7 @@ export class EventService {
   }
 
   getEventFromUrl(shopId:string,eventId: string) {
-    const urlWithId = this.shopsUrl + '/' + shopId + this.eventsPath + '/'+ eventId;
+    const urlWithId = this.shopsUrl + '/' + shopId + '/'+this.eventsPath + '/'+ eventId;
     this.http.get<Event>(urlWithId).subscribe((event) => {
       this.event$.next(event);
     });
@@ -80,7 +80,7 @@ export class EventService {
 
 
   getPromotions(shopId:string,eventId: string) {
-    const url = this.shopsUrl + '/' + shopId + this.eventsPath + '/'+ eventId + '/'+this.promosPath ;
+    const url = this.shopsUrl + '/' + shopId + '/'+this.eventsPath + '/'+ eventId + '/'+this.promosPath ;
     this.http.get<Promotion[]>(url).subscribe((promos) => {
       this.promotions=promos;
       this.promotions$.next(promos);
@@ -88,7 +88,7 @@ export class EventService {
   }
 
   getPromotion(shopId:string,eventId: string,promoId: string) {
-    const urlWithId = this.shopsUrl + '/' + shopId + this.eventsPath + '/'+ eventId + '/'+this.promosPath +'/'+promoId ;
+    const urlWithId = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath + '/'+ eventId + '/'+this.promosPath +'/'+promoId ;
     this.http.get<Promotion>(urlWithId).subscribe((promo) => {
       this.promotion$.next(promo);
     });
@@ -107,7 +107,7 @@ export class EventService {
   //............................................... Notifications ..............................................
 
   getNotifications(shopId:string, eventId: string) {
-    const url = this.shopsUrl + '/' + shopId + this.eventsPath + '/'+ eventId + '/'+this.notifsPath ;
+    const url = this.shopsUrl + '/' + shopId + '/'+this.eventsPath + '/'+ eventId + '/'+this.notifsPath ;
     this.http.get<Notification[]>(url).subscribe((notifs) => {
       this.notifications=notifs;
       this.notifications$.next(notifs);
@@ -115,19 +115,19 @@ export class EventService {
   }
 
   getNotification(shopId:string, eventId: string, notifId: string) {
-    const urlWithId = this.shopsUrl + '/' + shopId + this.eventsPath + '/'+ eventId + '/'+this.notifsPath +'/'+notifId ;
+    const urlWithId = this.shopsUrl + '/' + shopId + '/'+this.eventsPath + '/'+ eventId + '/'+this.notifsPath +'/'+notifId ;
     this.http.get<Notification>(urlWithId).subscribe((notif) => {
       this.notification$.next(notif);
     });
   }
 
   addNotification(shopId:string, eventId: string, notif: Notification) {
-    const url = this.shopsUrl + '/' + shopId + this.eventsPath + '/'+ eventId + '/'+this.notifsPath ;
+    const url = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath + '/'+ eventId + '/'+this.notifsPath ;
     this.http.post<Notification>(url,notif).subscribe(() => this.getEventFromUrl(shopId,eventId));
   }
 
   updateNotification(shopId:string, eventId: string, notif: Notification) {
-    const url = this.shopsUrl + '/' + shopId + this.eventsPath + '/'+ eventId + '/'+this.notifsPath +'/'+ notif.id ;
+    const url = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath + '/'+ eventId + '/'+this.notifsPath +'/'+ notif.id ;
     this.http.put<Notification>(url,notif).subscribe(() => this.getEventFromUrl(shopId,eventId));
   }
 }

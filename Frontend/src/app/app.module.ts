@@ -25,6 +25,7 @@ import { PopupSellerAuthenticationComponent } from './popup-seller-authenticatio
 import {ShopListRatingComponent} from "./shop-list-rating/shop-list-rating.component";
 import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import { ShopRatingComponent } from './shop-rating/shop-rating.component';
+import {ChartsModule} from "ng2-charts";
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { ShopRatingComponent } from './shop-rating/shop-rating.component';
     HttpClientModule,
     ReactiveFormsModule,
     NgbRatingModule,
+    ChartsModule
   ],
   providers: [ ],
   bootstrap: [AppComponent],

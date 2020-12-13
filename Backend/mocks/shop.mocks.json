@@ -1,6 +1,5 @@
 [
   {
-
     "label": "Nam LLC 874",
     "longitude": "85.45452",
     "latitude": "-2.24237",
@@ -1052,8 +1051,8 @@
     "sellerId": 1774,
     "id": 1234662,
     "storeRating": {
-      "averageRate": 0,
-      "voterNumber": 0
+      "averageRate": 8,
+      "voterNumber": 1
     }
   },
   {
