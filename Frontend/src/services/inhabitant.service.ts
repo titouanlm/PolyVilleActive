@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Inhabitant} from '../models/inhabitant.model';
 import {HttpClient} from '@angular/common/http';
-import {FormBuilder, FormGroup} from "@angular/forms";
-import { map } from 'rxjs/operators';
-import {BehaviorSubject, Observable} from "rxjs";
+import {map} from 'rxjs/operators';
+import {BehaviorSubject} from "rxjs";
 import {Shop} from "../models/shop.model";
 
 @Injectable({
@@ -36,7 +35,13 @@ export class InhabitantService {
       this.currentInhabitant.shopRated = [];
       return undefined;
     }
-    return this.currentInhabitant.shopRated.find(element => element = shopNumber);
+    const constante = this.currentInhabitant.shopRated.indexOf(shopNumber);
+    return (constante==-1)?undefined :constante;
+  }
+
+  updateInhabitant(array: any[]){
+    this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {shopRated: array })
+      .subscribe(() => this.currentInhabitant);
   }
 
 
@@ -60,7 +65,7 @@ export class InhabitantService {
   getInhabitantsCloseTo(shop : Shop) {
     return this.http.get<any>('http://localhost:9428/api/inhabitants').pipe(map((inhabitantList => {
       let test = inhabitantList.filter((inhabitant) => inhabitant.longitude === shop.longitude && inhabitant.latitude === shop.latitude)
-      console.log(test);
+      //console.log(test);
       return test;
     })));
   }

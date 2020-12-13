@@ -17,3 +17,35 @@
   </table>
 
 </div>
+
+<div class="sellersexit" >
+  <a [routerLink]="['..']" class="increaseSize">
+    <mat-icon [inline]="true" >exit_to_app</mat-icon>
+  </a>
+</div>
+
+<div class="sellerinfo" >
+  <a [routerLink]="['..']" class="increaseSize">
+    <mat-icon [inline]="true" >info</mat-icon>
+  </a>
+</div>
+
+<div *ngIf="shopRate!=undefined">
+  <h2>
+    Your store rating is : {{shopRate}}
+  </h2>
+</div>
+
+<div *ngIf="shopRate==undefined">
+  <h2>
+    Your shop hasn't been rated yet
+  </h2>
+</div>
+
+
+
+<div>
+  <h3>
+    previous page
+  </h3>
+</div>

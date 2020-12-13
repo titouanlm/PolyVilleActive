@@ -1,5 +1,40 @@
 .tble{
   width: 50%;
   height: 50%;
-  align-content: end;
+  position: absolute;
+  text-align: center;
+  top: 10%;
+  left: 47%;
+}
+h2 {
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  left: 15%;
+  font-size: 200%;
+}
+
+h3 {
+  position: absolute;
+  text-align: center;
+  top: 78.5%;
+  left: 69.5%;
+  font-size: 200%;
+}
+
+.sellersexit {
+  position: absolute;
+  top: 60%;
+  left: 72%;
+}
+
+.increaseSize
+{
+  font-size: 800%;
+}
+
+.sellerinfo{
+  position: absolute;
+  top: 20%;
+  left: 5%;
 }
