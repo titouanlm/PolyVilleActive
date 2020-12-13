@@ -1073,8 +1073,8 @@
     "sellerId": 1844,
     "id": 1234664,
     "storeRating": {
-      "averageRate": 0,
-      "voterNumber": 0
+      "averageRate": 10,
+      "voterNumber": 1
     }
   },
   {

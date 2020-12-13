@@ -926,9 +926,13 @@
   {
     "firstName": "Ralph",
     "lastName": "Lewis",
-    "longitude": "-172.10977",
-    "latitude": "71.22854",
-    "id": 1999
+    "longitude": "-156.46241",
+    "latitude": "26.01035",
+    "id": 1999,
+    "shopRated": [
+      1234664,
+      1234664
+    ]
   },
   {
     "firstName": "Charissa",
