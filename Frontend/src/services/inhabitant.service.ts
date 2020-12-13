@@ -39,6 +39,11 @@ export class InhabitantService {
     return this.currentInhabitant.shopRated.find(element => element = shopNumber);
   }
 
+  updateInhabitant(array: any[]){
+    this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {shopRated: array })
+      .subscribe(() => this.currentInhabitant);
+  }
+
 
   changeLocation(longitude: string, latitude: string) {
     this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {longitude: longitude, latitude: latitude })

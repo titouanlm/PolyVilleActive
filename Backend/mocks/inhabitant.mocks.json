@@ -4,7 +4,10 @@
     "lastName": "Head",
     "longitude": "-123.10981",
     "latitude": "-20.19043",
-    "id": 1867
+    "id": 1867,
+    "shopRated": [
+      1234567
+    ]
   },
   {
     "firstName": "Wylie",
@@ -844,21 +847,30 @@
     "lastName": "Ball",
     "longitude": "99.96294",
     "latitude": "-50.32103",
-    "id": 1987
+    "id": 1987,
+    "shopRated": [
+      1234567
+    ]
   },
   {
     "firstName": "Florence",
     "lastName": "Snow",
     "longitude": "-121.58666",
     "latitude": "-67.33214",
-    "id": 1988
+    "id": 1988,
+    "shopRated": [
+      1234567
+    ]
   },
   {
     "firstName": "Eagan",
     "lastName": "Guy",
     "longitude": "155.92405",
     "latitude": "-68.13575",
-    "id": 1989
+    "id": 1989,
+    "shopRated": [
+      1234567
+    ]
   },
   {
     "firstName": "Ignacia",
@@ -1412,5 +1424,12 @@
     "longitude": "-123.10981",
     "latitude": "-20.19045",
     "id": 1607685568661
+  },
+  {
+    "firstName": "Jonas",
+    "lastName": "Head",
+    "longitude": "-123.10981",
+    "latitude": "-20.19043",
+    "id": 1607820120104
   }
 ]

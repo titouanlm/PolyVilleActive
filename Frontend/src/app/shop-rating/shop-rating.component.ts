@@ -27,6 +27,9 @@ export class ShopRatingComponent implements OnInit {
     if (this.inhabitantService.getShopIfRatedByAnInhabitant(Number(this.shopService.shopSelected.id)) == undefined) {
       this.inhabitantService.currentInhabitant.shopRated.push(Number(this.shopService.shopSelected.id));
       this.setRateWait();
+      const array = [];
+      array.push(this.shopService.shopSelected.id);
+      this.inhabitantService.updateInhabitant(array);
     }
   }
 
