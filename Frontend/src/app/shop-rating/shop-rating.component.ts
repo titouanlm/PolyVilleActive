@@ -12,9 +12,14 @@ export class ShopRatingComponent implements OnInit {
   currentRate: number;
   alreadyVoted = false;
   votersNumber: number;
+  idshop: string;
 
   constructor(private shopService: ShopService, private inhabitantService: InhabitantService) {
-    this.shopService.shopSelected$.subscribe((shop) => this.currentRate = shop.storeRating.averageRate);
+    this.shopService.shopSelected$.subscribe((shop) =>{
+      this.currentRate = shop.storeRating.averageRate;
+      this.idshop = shop.id;
+    });
+
     if (this.currentRate == undefined) {
       this.currentRate = 0;
     }
@@ -38,6 +43,10 @@ export class ShopRatingComponent implements OnInit {
         this.inhabitantService.updateInhabitant(array);
       }
     }
+  }
+
+  setShop(){
+    this.shopService.getShopFromUrl(this.idshop);
   }
 
   setRateWait(){

@@ -1,0 +1,27 @@
+<div>
+  <table class="tble">
+    <div>
+      <canvas baseChart
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              [plugins]="lineChartPlugins">
+      </canvas>
+    </div>
+  </table>
+</div>
+
+<div class="sellersexit" >
+  <a [routerLink]="['../..']" >
+    <mat-icon [inline]="true" >exit_to_app</mat-icon>
+  </a>
+</div>
+
+<div>
+  <h3>
+    return
+  </h3>
+</div>

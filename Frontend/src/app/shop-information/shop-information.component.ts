@@ -40,31 +40,40 @@ export class ShopInformationComponent implements OnInit {
   ];
 
   constructor(public shopService: ShopService,public nicheService: NicheService) {
+    console.log("constructeur");
+    this.calculateShopRate();
     this.shopService.shopSelected$.subscribe((shop) => {
       this.shop = shop;
-      if ( this.shop.storeRating != undefined
-        && this.shop.storeRating.voterNumber !=0){
-        this.shopRate = this.shop.storeRating.averageRate;
-      }
-
-      this.calculateNbPeopleClose();
-
       this.nicheService.getShopNichesFromUrl(this.shop.id+'');
       console.log('shop : '+this.shop);
       this.nicheService.niches$.subscribe((nichs)=>{
         this.niches=nichs;
         console.log('niches : '+this.niches);
         this.buildListFreq();
-
       });
       console.log('listfreq : '+this.listFreq)
-
     });
-
-
   }
 
+
+  private calculateShopRate(){
+    this.shopService.shopSelected$.subscribe((shop) =>
+    {
+      if ( shop.storeRating != undefined
+        && shop.storeRating.voterNumber !=0){
+        this.shopRate = shop.storeRating.averageRate;
+      }
+    });
+  }
+
+
+
   ngOnInit(): void {
+    /*interval(1000)
+      .pipe(takeWhile(() => true))
+      .subscribe(() =>
+        this.calculateShopRate());*/
+
 
     interval(30000)
       .pipe(takeWhile(() => true))

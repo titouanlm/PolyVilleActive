@@ -27,6 +27,7 @@ import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import { ShopRatingComponent } from './shop-rating/shop-rating.component';
 import {ChartsModule} from "ng2-charts";
 import { NotificationPromotionComponent } from './notification-promotion/notification-promotion.component';
+import { AdditionalShopInfoComponent } from './additional-shop-info/additional-shop-info.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { NotificationPromotionComponent } from './notification-promotion/notific
     ShopRatingComponent,
     ShopInformationComponent,
     NotificationPromotionComponent,
+    AdditionalShopInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +62,7 @@ import { NotificationPromotionComponent } from './notification-promotion/notific
       {path: 'seller/blockly', component: MyBlocksComponent},
       {path: 'visitorinhabitant/shoprating', component: ShopListRatingComponent},
       {path: 'visitorinhabitant/shoprating/shop', component: ShopRatingComponent},
+      {path: 'visitorinhabitant/shoprating/shop/additionalinfo', component: AdditionalShopInfoComponent},
     ], {useHash: true}),
     NgxBlocklyModule,
     MatIconModule,

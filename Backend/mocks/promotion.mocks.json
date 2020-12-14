@@ -6,5 +6,13 @@
     "endDate": "2020-02-22",
     "shopId": 1234665,
     "id": 1607907896865
+  },
+  {
+    "title": "50% off",
+    "description": "only for shoes",
+    "startDate": "2020-12-14",
+    "endDate": "2020-12-15",
+    "shopId": 1234567,
+    "id": 1607911981694
   }
 ]
