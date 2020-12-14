@@ -11,4 +11,5 @@ module.exports = new BaseModel('Shop', {
         averageRate: Joi.number().min(0).max(10),
         voterNumber: Joi.number(),
     }),
+    promotions: Joi.array(),
 });

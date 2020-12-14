@@ -3,13 +3,14 @@
 <div class="inhabitantinformation">
   <input matInput [(ngModel)]="shopName" placeholder="Shop's name"/> <br>
   <button id="runButton" type="button" class="btn btn-success" (click)="move()">Move to the shop</button><br>
+  <div class="errorMessage">
+    <span *ngIf="error">
+      {{ error }}
+    </span>
+  </div>
 </div>
 
-<div class="errorMessage">
-  <span *ngIf="error">
-    {{ error }}
-  </span>
-</div>
+
 
 <div class="inhabitantsExit" >
   <a [routerLink]="['..']" class="increaseSize">

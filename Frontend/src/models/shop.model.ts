@@ -1,4 +1,4 @@
-import {Event} from './event.model'
+import {Event, Promotion} from './event.model'
 
 export interface Shop{
   id: string;
@@ -6,9 +6,9 @@ export interface Shop{
   longitude: number;
   latitude: number;
   sellerId?: number;
-  events: Event[];
   storeRating: {
     averageRate: number,
     voterNumber: number,
   },
+  promotions: Promotion[];
 }

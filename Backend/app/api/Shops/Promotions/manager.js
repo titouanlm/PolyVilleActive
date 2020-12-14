@@ -1,5 +1,5 @@
-const {Promotion } = require('../../../../models')
-const {buildAnEvent} = require('../../Events/manager')
+const {Promotion } = require('../../../models')
+const {buildAnEvent} = require('../Events/manager')
 
 /**
  * Function buildAPromo.

@@ -1,4 +1,5 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
+import FieldDate from '@blockly/field-date';
 
 declare var Blockly: any;
 
@@ -6,8 +7,6 @@ export class PromoEventBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = PromoEventBlock;
-
-
   }
 
   defineBlock() {
@@ -20,6 +19,13 @@ export class PromoEventBlock extends CustomBlock {
     this.block.appendDummyInput()
       .appendField('Description')
       .appendField(new Blockly.FieldTextInput(''), 'Description_promo');
+
+    this.block.appendDummyInput()
+      .appendField('Start Date')
+      .appendField(new Blockly.FieldDate('2020-02-20'), 'Start_Date_promo');
+    this.block.appendDummyInput()
+      .appendField('End Date')
+      .appendField(new Blockly.FieldDate('2020-02-20'), 'End_Date_promo');
     this.block.setPreviousStatement(true,null);
     this.block.setNextStatement(true, null);
     this.block.setColour(315);
@@ -35,10 +41,13 @@ export class PromoEventBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    var title=this.block.getFieldValue('Title_promo');
+    const title = this.block.getFieldValue('Title_promo');
     var description=this.block.getFieldValue('Description_promo');
-    var code ='var promo=new Promotion();\npromo.title='+title+';\npromo.description='+description+';\n';
-    return code;
+    var startDate=this.block.getFieldValue('Start_Date_promo').toString();
+    var endDate=this.block.getFieldValue('End_Date_promo').toString();
+
+    return 'this.promotion.title="' + title + '";\nthis.promotion.description="' + description
+      + '";\nthis.promotion.startDate="' + startDate + '";\nthis.promotion.endDate="' + endDate + '";\n';
   }
 
   toLuaCode(block: CustomBlock): string | any[] {

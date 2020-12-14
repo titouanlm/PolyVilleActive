@@ -2,13 +2,11 @@ const { Router } = require('express')
 const { Event } = require('../../../models')
 const manageAllErrors = require('../../../utils/routes/error-management')
 const { buildEvents, buildAnEvent } = require('./manager')
-const PromotionsRouter = require('./promotions')
 const NotificationsRouter = require('./notifications')
 
 
 const router = new Router({ mergeParams: true })
 
-router.use('/:eventId/promotions', PromotionsRouter)
 router.use('/:eventId/notifications', NotificationsRouter)
 
 

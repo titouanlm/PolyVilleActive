@@ -12,13 +12,14 @@ export interface Event {
 
  export interface Promotion {
    id: string;
-   promoDescription: string;
-  promoStartDate : string;
-  promoEndDate : string;
-  promoShopId? : number;
+   title: string;
+   description: string;
+  startDate : string;
+  endDate : string;
+  shopId : number;
   promoKeywords: string;
   promoEventId?: number;
-  promoType: number;
+  promoType?: number;
   condLeft?: string;
   condRight?: string;
   condSign?: string;

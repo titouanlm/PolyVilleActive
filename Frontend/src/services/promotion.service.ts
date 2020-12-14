@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, Subject} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import  {Promotion} from "../models/event.model";
+import {map} from "rxjs/operators";
+import {Seller} from "../models/seller.model";
+import {SellerService} from "./seller.service";
 
 @Injectable({
   providedIn: `root`
@@ -22,15 +25,17 @@ export class PromotionService {
    * Observables.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public promotions$: BehaviorSubject<Promotion[]> = new BehaviorSubject(this.promotions);
+  public promotions$: BehaviorSubject<Promotion[]>;
 
   public promotion$: Subject<Promotion> = new Subject();
 
-  private Url = serverUrl + '/promotions';
-
+  private Url : string;
   private httpOptions = httpOptionsBase;
-
-  constructor(private http: HttpClient) {
+  private currentSeller : Seller;
+  constructor(private http: HttpClient, public sellerService: SellerService) {
+    this.currentSeller = JSON.parse(localStorage.getItem('currentSeller'));
+    this.promotions$ = new BehaviorSubject(this.promotions);
+    this.Url = serverUrl + '/shops/' + this.currentSeller.shopId +'/promotions';
     this.getPromotions()
   }
 
@@ -53,7 +58,11 @@ export class PromotionService {
   }
 
   addPromotion(promo: Promotion) {
-    this.http.post<Promotion>(this.Url,promo,this.httpOptions).subscribe(() => this.getPromotions());
+    return this.http.post<Promotion>(this.Url,promo,this.httpOptions)
+      .pipe(map(promoCreated => {
+          this.getPromotions();
+          return promoCreated;
+    } ));
   }
 
   updatePromotion(promo: Promotion) {

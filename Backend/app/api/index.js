@@ -6,7 +6,6 @@ const ShopsRouter = require('./shops');
 
 const router = new Router();
 router.get('/status', (req, res) => res.status(200).json('ok'));
-router.use('/promotions', PromotionsRouter);
 router.use('/inhabitants', InhabitantsRouter);
 router.use('/sellers', SellersRouter);
 router.use('/shops', ShopsRouter);

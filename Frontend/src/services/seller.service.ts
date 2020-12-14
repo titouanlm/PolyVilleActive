@@ -15,17 +15,9 @@ export class SellerService {
   private currentSellerSubject: BehaviorSubject<Seller>;
   public currentSeller: Observable<Seller>;
 
-  public sellerForm: FormGroup;
-
-  constructor(public formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private http: HttpClient) {
     this.currentSellerSubject = new BehaviorSubject<Seller>(JSON.parse(localStorage.getItem('currentSeller')));
     this.currentSeller = this.currentSellerSubject.asObservable();
-    this.sellerForm = this.formBuilder.group({
-      firstName: [''],
-      lastName: [''],
-      shopId: [],
-      id: [],
-    });
   }
 
   public get currentSellerValue(): Seller {

@@ -26,6 +26,7 @@ import {ShopListRatingComponent} from "./shop-list-rating/shop-list-rating.compo
 import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import { ShopRatingComponent } from './shop-rating/shop-rating.component';
 import {ChartsModule} from "ng2-charts";
+import { NotificationPromotionComponent } from './notification-promotion/notification-promotion.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import {ChartsModule} from "ng2-charts";
     ShopListRatingComponent,
     ShopRatingComponent,
     ShopInformationComponent,
+    NotificationPromotionComponent,
   ],
   imports: [
     BrowserModule,

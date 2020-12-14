@@ -6,8 +6,8 @@
     "sellerId": 1855,
     "id": 1234567,
     "storeRating": {
-      "averageRate": 6,
-      "voterNumber": 2
+      "averageRate": 6.6,
+      "voterNumber": 5
     }
   },
   {
@@ -17,8 +17,8 @@
     "sellerId": 1819,
     "id": 1234568,
     "storeRating": {
-      "averageRate": 7,
-      "voterNumber": 3
+      "averageRate": 7.75,
+      "voterNumber": 4
     }
   },
   {
@@ -28,8 +28,8 @@
     "sellerId": 1805,
     "id": 1234569,
     "storeRating": {
-      "averageRate": 0,
-      "voterNumber": 0
+      "averageRate": 5.5,
+      "voterNumber": 2
     }
   },
   {
@@ -39,8 +39,8 @@
     "sellerId": 1809,
     "id": 1234570,
     "storeRating": {
-      "averageRate": 0,
-      "voterNumber": 0
+      "averageRate": 9.5,
+      "voterNumber": 2
     }
   },
   {

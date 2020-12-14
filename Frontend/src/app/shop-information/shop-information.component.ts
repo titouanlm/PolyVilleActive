@@ -40,7 +40,6 @@ export class ShopInformationComponent implements OnInit {
   ];
 
   constructor(public shopService: ShopService,public nicheService: NicheService) {
-    console.log("constructeur");
     this.shopService.shopSelected$.subscribe((shop) => {
       this.shop = shop;
       if ( this.shop.storeRating != undefined

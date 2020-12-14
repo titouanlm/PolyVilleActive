@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupVisitorInhabitantAuthenticationComponent } from '../popup-visitor-inhabitant-authentication/popup-visitor-inhabitant-authentication.component';
 import {PopupSellerAuthenticationComponent} from "../popup-seller-authentication/popup-seller-authentication.component";
+import {Promotion} from "../../models/event.model";
 
 export interface DialogData {
   number: number;

@@ -22,6 +22,8 @@ import {CondNbClientBlock} from "./CondNbClientBlock";
 import {CondTempsBlock} from "./CondTempsBlock";
 import {NotifTempsBlock} from "./NotifTempsBlock";
 import {NotifFrequenceBlock} from "./NotifFrequence";
+import {PromotionService} from "../../services/promotion.service";
+import {Promotion} from "../../models/event.model";
 
 
 declare var Blockly: any;
@@ -67,8 +69,9 @@ export class MyBlocksComponent {
 
   public customBlocks: CustomBlock[] = this.customBlocks1.concat(this.customBlocks2.concat(this.customBlocks3.concat(this.customBlocks4)));
 
+  public promotion = <Promotion>{};
 
-  constructor(ngxToolboxBuilder: NgxToolboxBuilderService) {
+  constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public promotionService : PromotionService) {
     ngxToolboxBuilder.nodes = [
       new Category('Evenement', '#cf9700', this.customBlocks2, null),
       new Category('Promotion', '#0f4f35', this.customBlocks1, null),
@@ -88,16 +91,21 @@ export class MyBlocksComponent {
     xml: true
   };
 
-
-  onCode(code: string) {
-    console.log(code);
-  }
-
   execute() {
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
    // Blockly.mainWorkspace.newBlock(Blockly.mainWorkspace,'notification',1);
     try {
       eval(code);
+
+      this.promotionService.addPromotion(this.promotion)
+        .subscribe(
+          promoCreated => {
+                alert("Votre nouvelle promotion : "+ promoCreated.title + "a été créé !")
+          },
+          error => {
+            alert("Erreur : " + error);
+          });
+
     } catch (e) {
       alert(e);
     }

@@ -1,20 +1,24 @@
 const { Router } = require('express');
 const { Shop } = require('../../models');
 const manageAllErrors = require('../../utils/routes/error-management');
+const util = require('../../utils/shop-util');
+
 const NichesRouter = require('./niches');
 const EventsRouter = require('./events');
-const { buildShops, buildAShop } = require('./manager');
+const PromotionsRouter = require('./promotions');
+const { buildShops } = require('./manager');
 
 const router = new Router();
 
 router.use('/:shopId/events', EventsRouter);
+router.use('/:shopId/promotions', PromotionsRouter);
 router.use('/:shopId/niches', NichesRouter);
 
 
 router.get('/', (req, res) => {
     try {
-        const quizzes = buildShops();
-        res.status(200).json(quizzes)
+        const shopsWithPromos = util.associateAllPromos();
+        res.status(200).json(shopsWithPromos)
     } catch (err) {
         manageAllErrors(res, err)
     }
@@ -22,8 +26,8 @@ router.get('/', (req, res) => {
 
 router.get('/:shopId', (req, res) => {
     try {
-        const shop = Shop.getById(req.params.shopId);
-        res.status(200).json(shop)
+        const shopWthPromos = util.associatePromos(req.params.shopId);
+        res.status(200).json(shopWthPromos)
     } catch (err) {
         manageAllErrors(res, err)
     }
@@ -62,7 +66,8 @@ router.post('/verify', (req, res) => {
         const shop = Shop.get().find(x => x.label === label);
         if (!shop) { return error();
         }else{
-            res.status(201).json(shop)
+            const shopWthPromos = util.associatePromos(shop.id);
+            res.status(201).json(shopWthPromos)
         }
     } catch (err) {
         if (err.name === 'ValidationError') {

@@ -1,6 +1,6 @@
 const { Router } = require('express')
-const manageAllErrors = require('../../../../utils/routes/error-management')
-const { Promotion } = require('../../../../models')
+const manageAllErrors = require('../../../utils/routes/error-management')
+const { Promotion } = require('../../../models')
 const { buildPromos, buildAPromo } = require('./manager')
 
 
@@ -8,7 +8,7 @@ const router = new Router({ mergeParams: true })
 
 router.get('/', (req, res) => {
     try {
-        const promos = buildPromos(req.params.shopId,req.params.eventId)
+        const promos = Promotion.get()
         res.status(200).json(promos)
     } catch (err) {
         manageAllErrors(res, err)
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 router.get('/:promoId', (req, res) => {
     try {
-        const promo = buildAPromo(req.params.shopId,req.params.eventId,req.params.promoId)
+        const promo = Promotion.getById(req.params.promoId)
         res.status(200).json(promo)
     } catch (err) {
         manageAllErrors(res, err)
@@ -26,7 +26,7 @@ router.get('/:promoId', (req, res) => {
 
 router.post('/', (req, res) => {
     try {
-        const promo = Promotion.create({ ...req.body })
+        const promo = Promotion.create({ ...req.body, shopId: parseInt(req.params.shopId) })
         res.status(201).json(promo)
     } catch (err) {
         manageAllErrors(res, err)
