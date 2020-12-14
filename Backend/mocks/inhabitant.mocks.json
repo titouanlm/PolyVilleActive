@@ -2,9 +2,13 @@
   {
     "firstName": "Jonas",
     "lastName": "Head",
-    "longitude": "-123.10981",
-    "latitude": "-20.19043",
-    "id": 1867
+    "longitude": "-34.52381",
+    "latitude": "-44.95548",
+    "id": 1867,
+    "shopRated": [
+      1234568,
+      1234568
+    ]
   },
   {
     "firstName": "Wylie",
