@@ -28,6 +28,7 @@ import { ShopRatingComponent } from './shop-rating/shop-rating.component';
 import {ChartsModule} from "ng2-charts";
 import { NotificationPromotionComponent } from './notification-promotion/notification-promotion.component';
 import { AdditionalShopInfoComponent } from './additional-shop-info/additional-shop-info.component';
+import { CityCenterInformationComponent } from './city-center-information/city-center-information.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { AdditionalShopInfoComponent } from './additional-shop-info/additional-s
     ShopInformationComponent,
     NotificationPromotionComponent,
     AdditionalShopInfoComponent,
+    CityCenterInformationComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +65,7 @@ import { AdditionalShopInfoComponent } from './additional-shop-info/additional-s
       {path: 'visitorinhabitant/shoprating', component: ShopListRatingComponent},
       {path: 'visitorinhabitant/shoprating/shop', component: ShopRatingComponent},
       {path: 'visitorinhabitant/shoprating/shop/additionalinfo', component: AdditionalShopInfoComponent},
+      {path: 'visitorinhabitant/citycenterinformation', component: CityCenterInformationComponent},
     ], {useHash: true}),
     NgxBlocklyModule,
     MatIconModule,

@@ -19,7 +19,7 @@ export class PromotionService {
   /**
    * The list .
    */
-  private promotions: Promotion[];
+  public promotions: Promotion[];
 
   /**
    * Observables.
@@ -44,7 +44,7 @@ export class PromotionService {
 
 
   getPromotions() {
-    this.http.get<Promotion[]>(this.Url).subscribe((promos) => {
+    this.http.get<Promotion[]>('http://localhost:9428/api/promotions').subscribe((promos) => {
       this.promotions=promos;
       this.promotions$.next(promos);
     });

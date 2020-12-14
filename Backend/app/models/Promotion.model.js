@@ -14,4 +14,5 @@ module.exports = new BaseModel('Promotion', {
     condLeft: Joi.string(),
     condRight: Joi.string(),
     condSign: Joi.string(),
+    public: Joi.boolean(),
 });

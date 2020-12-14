@@ -21,7 +21,7 @@ export class NotificationPromotionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public interestedInPromotion(interested: boolean){ 
+  public interestedInPromotion(interested: boolean){
     if (interested && this.data.promotion.customersNumberInterested == undefined){
       const array = [];
       array.push(this.inhabitantService.currentInhabitant.id );

@@ -24,6 +24,7 @@ export interface Event {
   condLeft?: string;
   condRight?: string;
   condSign?: string;
+  public: boolean;
 }
 
  export interface Notification {
