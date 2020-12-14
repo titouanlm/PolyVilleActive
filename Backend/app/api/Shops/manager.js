@@ -16,7 +16,7 @@ const buildAShop = (shopId) => {
 
 /**
  * Function  buildShops.
- * This function build all shops with there events.
+ * This function build all shops with their events.
  */
 const buildShops = () => {
     return Shop.get();

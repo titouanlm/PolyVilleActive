@@ -5,7 +5,8 @@ const Notification = require('./Notification.model.js');
 const Seller = require('./Seller.model.js');
 const Inhabitant = require('./Inhabitant.model.js');
 const Niche = require('./Niche.model.js');
+const Autorisation = require('./Autorisation.model.js');
 
 module.exports = {
-    Event,Shop,Seller,Promotion,Notification,Inhabitant,Niche
+    Event,Shop,Seller,Promotion,Notification,Inhabitant,Niche,Autorisation
 };

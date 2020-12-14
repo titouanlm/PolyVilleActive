@@ -1,8 +1,13 @@
 const { Router } = require('express');
 const { Inhabitant } = require('../../models');
+const AutorisationRouter  = require('./Autorisation');
+
 const manageAllErrors = require('../../utils/routes/error-management');
 const { manager } = require('./manager');
 const router = new Router();
+
+router.use('/:inhabitantId/autorisation', AutorisationRouter)
+
 
 router.get('/', (req, res) => {
     try {
