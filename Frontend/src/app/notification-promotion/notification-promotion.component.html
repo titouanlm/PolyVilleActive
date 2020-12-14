@@ -3,5 +3,8 @@
   Last promotion : {{data.promotion.title}} <br>
   {{ data.promotion.description}} <br>
   Start : {{ data.promotion.startDate}} <br>
-  End : {{ data.promotion.endDate}}
+  End : {{ data.promotion.endDate}} <br>
+  Are you interested ?  <button (click)="interestedInPromotion(true)">Yes</button>
+  | <button (click)="interestedInPromotion(false)">No</button>
+
 </span>

@@ -31,12 +31,12 @@ export class PromotionService {
 
   private Url : string;
   private httpOptions = httpOptionsBase;
-  private currentSeller : Seller;
-  constructor(private http: HttpClient, public sellerService: SellerService) {
-    this.currentSeller = JSON.parse(localStorage.getItem('currentSeller'));
+  //private currentSeller : Seller;
+  constructor(private http: HttpClient) {
+    //this.currentSeller = JSON.parse(localStorage.getItem('currentSeller'));
     this.promotions$ = new BehaviorSubject(this.promotions);
-    this.Url = serverUrl + '/shops/' + this.currentSeller.shopId +'/promotions';
-    this.getPromotions()
+    //this.Url = serverUrl + '/shops/' + this.currentSeller.shopId +'/promotions';
+    //this.getPromotions()
   }
 
 
@@ -60,14 +60,14 @@ export class PromotionService {
   addPromotion(promo: Promotion) {
     return this.http.post<Promotion>(this.Url,promo,this.httpOptions)
       .pipe(map(promoCreated => {
-          this.getPromotions();
-          return promoCreated;
-    } ));
+        this.getPromotions();
+        return promoCreated;
+      } ));
   }
 
   updatePromotion(promo: Promotion) {
-    const url = this.Url + '/' + promo.id ;
-    this.http.put<Promotion>(url,promo,this.httpOptions).subscribe(() => this.getPromotions());
+    const url = 'http://localhost:9428/api/promotions' + '/' + promo.id ;
+    this.http.put<Promotion>(url,promo,this.httpOptions).subscribe();
   }
 
 }

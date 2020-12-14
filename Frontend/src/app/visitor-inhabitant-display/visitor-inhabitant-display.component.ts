@@ -25,7 +25,8 @@ export class VisitorInhabitantDisplayComponent {
   shopName: string;
   error: string;
 
-  constructor(public inhabitantService: InhabitantService, public shopService: ShopService, public dialog: MatDialog) {
+  constructor(public inhabitantService: InhabitantService,
+    public shopService: ShopService, public dialog: MatDialog) {
     this.shopName ='';
     this.inhabitantService.inhabitant$.subscribe((inhabitant) => this.inhabitant = inhabitant);
   }

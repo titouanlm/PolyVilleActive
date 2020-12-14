@@ -10,6 +10,7 @@ module.exports = new BaseModel('Promotion', {
     promoKeywords: Joi.string(),
     promoEventId: Joi.number(),
     promoType: Joi.number(),
+    customersNumberInterested: Joi.array(),
     condLeft: Joi.string(),
     condRight: Joi.string(),
     condSign: Joi.string(),

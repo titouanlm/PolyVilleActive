@@ -9,5 +9,6 @@ router.get('/status', (req, res) => res.status(200).json('ok'));
 router.use('/inhabitants', InhabitantsRouter);
 router.use('/sellers', SellersRouter);
 router.use('/shops', ShopsRouter);
+router.use('/promotions', PromotionsRouter);
 
 module.exports = router;
