@@ -1416,14 +1416,11 @@
     "lastName": "Reeves",
     "longitude": "60.30368",
     "latitude": "-50.94937",
-    "id": 2066
-  },
-  {
-    "firstName": "rtly",
-    "lastName": "Bush",
-    "longitude": "31.6077",
-    "latitude": "-68.74608",
-    "id": 1607596673992
+    "id": 2066,
+    "shopRated": [
+      1234573,
+      1234573
+    ]
   },
   {
     "firstName": "Isaac",
