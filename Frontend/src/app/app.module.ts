@@ -31,6 +31,7 @@ import { AdditionalShopInfoComponent } from './additional-shop-info/additional-s
 import { CityCenterInformationComponent } from './city-center-information/city-center-information.component';
 import { PromotionInformationComponent } from './promotion-information/promotion-information.component';
 import { DialogPromoInformationComponent } from './dialog-promo-information/dialog-promo-information.component';
+import { ThanksComponent } from './thanks/thanks.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { DialogPromoInformationComponent } from './dialog-promo-information/dial
     CityCenterInformationComponent,
     PromotionInformationComponent,
     DialogPromoInformationComponent,
+    ThanksComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +89,7 @@ import { DialogPromoInformationComponent } from './dialog-promo-information/dial
   providers: [ ],
   bootstrap: [AppComponent],
   exports: [RouterModule/*, NgbdRatingBasic*/],
-  entryComponents: [PopupVisitorInhabitantAuthenticationComponent],
+  entryComponents: [PopupVisitorInhabitantAuthenticationComponent,ThanksComponent],
 })
 
 export class AppModule { }

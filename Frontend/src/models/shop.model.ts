@@ -11,4 +11,8 @@ export interface Shop{
     voterNumber: number,
   },
   promotions: Promotion[];
+  averagePresenceBeforePurchase: {
+    numberOfPurchases: number,
+    numberOfPresence: number,
+  },
 }

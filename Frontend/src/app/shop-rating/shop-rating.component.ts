@@ -42,12 +42,12 @@ export class ShopRatingComponent implements OnInit {
       if (this.inhabitantService.currentInhabitant.shopRated == undefined){
         const array = [];
         array.push(Number(this.shopService.shopSelected.id));
-        this.inhabitantService.updateInhabitant(array);
+        this.inhabitantService.updateShopRatedInhabitant(array);
       }
       else {
         const array = this.inhabitantService.currentInhabitant.shopRated;
         array.push(Number(this.shopService.shopSelected.id));
-        this.inhabitantService.updateInhabitant(array);
+        this.inhabitantService.updateShopRatedInhabitant(array);
       }
     }
   }

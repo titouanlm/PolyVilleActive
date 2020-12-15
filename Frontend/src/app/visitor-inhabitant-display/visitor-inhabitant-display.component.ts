@@ -7,6 +7,7 @@ import {PopupSellerAuthenticationComponent} from "../popup-seller-authentication
 import {MatDialog} from "@angular/material/dialog";
 import {NotificationPromotionComponent} from "../notification-promotion/notification-promotion.component";
 import {Promotion} from "../../models/event.model";
+import {ThanksComponent} from "../thanks/thanks.component";
 
 export interface DialogData {
   shop: Shop;
@@ -23,12 +24,41 @@ export class VisitorInhabitantDisplayComponent {
   public inhabitant: Inhabitant;
   shopName: string;
   error: string;
+  shop: Shop;
 
   constructor(public inhabitantService: InhabitantService,
     public shopService: ShopService, public dialog: MatDialog) {
     this.shopName ='';
     this.inhabitant = this.inhabitantService.currentInhabitant;
-    //this.inhabitantService.inhabitant$.subscribe((inhabitant) => this.inhabitant = inhabitant);
+  }
+
+  achat(){
+    const dialogRef = this.dialog.open(ThanksComponent, {
+      width: '25%',
+      height: '10%',
+    });
+    this.shopService.verifyShopPosition(this.inhabitant.longitude, this.inhabitant.latitude).subscribe(
+      (shop) => {
+        this.shop = shop[0];
+        if(this.shop != undefined){
+          if (this.shop.averagePresenceBeforePurchase == undefined){
+            this.shop.averagePresenceBeforePurchase = { numberOfPurchases: 0, numberOfPresence: 0};
+          }
+          this.shop.averagePresenceBeforePurchase.numberOfPurchases++;
+          this.shop.averagePresenceBeforePurchase.numberOfPresence = this.inhabitant.positions
+            .filter((position) =>
+              position[0] == this.inhabitant.longitude && position[1] == this.inhabitant.latitude).length;
+          this.inhabitantService.updateInhabitantPosition(
+            this.inhabitant.positions
+              .filter((position) =>
+                position[0] != this.inhabitant.longitude || position[1] != this.inhabitant.latitude)
+          );
+          this.shopService.updateShop(this.shop);
+          this.inhabitantService.authenticateInhabitant(this.inhabitant.id).subscribe((inhabitant) => this.inhabitant = inhabitant);
+          this.shop = undefined;
+        }
+      }
+    );
   }
 
 
@@ -38,6 +68,8 @@ export class VisitorInhabitantDisplayComponent {
         shop => {
             this.error = '';
             this.inhabitantService.changeLocation(shop.longitude, shop.latitude);
+            this.inhabitant.latitude = Number(shop.latitude);
+            this.inhabitant.longitude = Number(shop.longitude);
             this.getPromotionShop(shop);
         },
         error => {
