@@ -54,6 +54,13 @@ export class ShopService {
     });
   }
 
+  verifyShopPosition(longitude: number, latitude: number){
+    return this.http.get<Shop[]>('http://localhost:9428/api/shops').pipe(map((shopsList) => {
+      return shopsList.filter( (shop) => Number(shop.longitude) == longitude && Number(shop.latitude == latitude));
+    }));
+
+  }
+
   addShop(shop: Shop) {
     this.http.post<Shop>(this.shopsUrl, shop, this.httpOptions).subscribe(() => this.getShopsFromUrl());
   }

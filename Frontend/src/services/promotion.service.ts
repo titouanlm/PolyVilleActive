@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Subject} from 'rxjs';
-import {httpOptionsBase} from '../configs/server.config';
+import {httpOptionsBase, serverUrl} from '../configs/server.config';
 import {Promotion} from "../models/event.model";
 import {map} from "rxjs/operators";
+import {Seller} from "../models/seller.model";
 
 @Injectable({
   providedIn: `root`
@@ -21,12 +22,12 @@ export class PromotionService {
 
   private Url : string;
   private httpOptions = httpOptionsBase;
-  //private currentSeller : Seller;
+  private currentSeller : Seller;
   constructor(private http: HttpClient) {
-    //this.currentSeller = JSON.parse(localStorage.getItem('currentSeller'));
+    this.currentSeller = JSON.parse(localStorage.getItem('currentSeller'));
     this.promotions$ = new BehaviorSubject(this.promotions);
-    //this.Url = serverUrl + '/shops/' + this.currentSeller.shopId +'/promotions';
-    //this.getPromotions()
+    this.Url = serverUrl + '/shops/' + this.currentSeller.shopId +'/promotions';
+    this.getPromotions()
   }
 
 

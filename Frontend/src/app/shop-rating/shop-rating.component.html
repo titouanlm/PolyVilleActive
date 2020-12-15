@@ -1,27 +1,33 @@
-<h1 style="position: absolute;top: 20%;left: 41%"> Rate the store !</h1>
-<ngb-rating [(rate)]="currentRate" class="ratingspecificshop" (click)="rateShop()"></ngb-rating>
+<div *ngIf="!inhabitantIsInsideShop">
+  Come to {{ shop.label }} !
+  <button id="runButton" type="button" class="btn btn-success" (click)="moveToTheShop()">Move to the shop</button><br>
+</div>
 
+<div class=" shopInfos" *ngIf="inhabitantIsInsideShop">
+  Welcome to {{ shop.label }} !
+
+  <h1 style="position: absolute;top: 20%;left: 41%"> Rate the store !</h1>
+  <ngb-rating [(rate)]="currentRate" class="ratingspecificshop" (click)="rateShop()"></ngb-rating>
+
+</div>
 
 <div style="position: relative;top: 55%;left: 46%">
   <a [routerLink]="['..']" class="increaseSize">
     <mat-icon [inline]="true" style="font-size: 8em;" >exit_to_app</mat-icon>
   </a>
 </div>
-
-<div style="font-size: 8em;position: relative;top: 60%;left: 42%">
-  <h1>
-    previous page
-  </h1>
-</div>
-
 <div style="position: absolute;top: 38%;left: 86%">
   <a [routerLink]="['additionalinfo']" (click)="setShop()" class="increaseSize">
     <mat-icon [inline]="true" style="font-size: 8em;" >live_help</mat-icon>
   </a>
 </div>
-
 <div style="font-size: 8em;position: absolute;top: 60%;left: 85%">
   <h1>
     additional shop info
+  </h1>
+</div>
+<div style="font-size: 8em;position: relative;top: 60%;left: 42%">
+  <h1>
+    previous page
   </h1>
 </div>

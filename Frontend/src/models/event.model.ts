@@ -17,11 +17,11 @@ export interface Event {
   startDate : string;
   endDate : string;
   shopId : number;
-  promoKeywords: string;
+  promoKeywords?: string;
   promoEventId?: number;
   promoType?: number;
-  customersNumberInterested: number[];
-  notifiedCustomersNumber: number[];
+  customersNumberInterested?: number[];
+  notifiedCustomersNumber?: number[];
   condLeft?: string;
   condRight?: string;
   condSign?: string;

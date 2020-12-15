@@ -39,7 +39,7 @@ export class InhabitantService {
     return (constante==-1)?undefined :constante;
   }
 
-  updateInhabitant(array: any[]){
+  updateShopRatedInhabitant(array: any[]){
     this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {shopRated: array })
       .subscribe(() => this.currentInhabitant);
   }
@@ -49,11 +49,28 @@ export class InhabitantService {
     this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {longitude: longitude, latitude: latitude })
       .subscribe(
         (res) => {
+          this.addPosition(res, longitude, latitude);
           this.currentInhabitant = res;
           localStorage.setItem('currentInhabitant', JSON.stringify(this.currentInhabitant));
           this.inhabitant$.next(this.currentInhabitant);
         },
       );
+  }
+
+  addPosition(inhabitant: Inhabitant,longitude: string, latitude: string){
+    if (inhabitant.positions == undefined){
+      inhabitant.positions = [];
+    }
+    const array = [];
+    array.push(Number(longitude));
+    array.push(Number(latitude));
+    inhabitant.positions.push(array);
+    this.updateInhabitantPositions(inhabitant.positions);
+  }
+
+  updateInhabitantPositions(array: any[]){
+    this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {positions: array })
+      .subscribe();
   }
 
   logout() {

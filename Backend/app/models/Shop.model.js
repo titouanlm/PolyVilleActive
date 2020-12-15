@@ -12,4 +12,8 @@ module.exports = new BaseModel('Shop', {
         voterNumber: Joi.number(),
     }),
     promotions: Joi.array(),
+    averagePresenceBeforePurchase: Joi.object({
+        numberOfPurchases: Joi.number(),
+        numberOfPresence: Joi.number(),
+    }),
 });

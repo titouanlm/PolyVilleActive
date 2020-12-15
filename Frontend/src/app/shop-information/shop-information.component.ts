@@ -17,6 +17,7 @@ import {Niche} from "../../models/niche.model";
 })
 export class ShopInformationComponent implements OnInit {
 
+  public presenceNeeded : number;
   public shop : Shop;
   public nbPeopleClose: number;
   public shopRate: number;
@@ -43,6 +44,9 @@ export class ShopInformationComponent implements OnInit {
     this.calculateShopRate();
     this.shopService.shopSelected$.subscribe((shop) => {
       this.shop = shop;
+      if (this.shop.averagePresenceBeforePurchase != undefined && this.shop.averagePresenceBeforePurchase.numberOfPurchases !=0){
+        this.presenceNeeded = this.shop.averagePresenceBeforePurchase.numberOfPresence / this.shop.averagePresenceBeforePurchase.numberOfPurchases;
+      }
       this.calculateNbPeopleClose();
       this.nicheService.getShopNichesFromUrl(this.shop.id+'');
       this.nicheService.niches$.subscribe((nichs)=>{
@@ -58,7 +62,7 @@ export class ShopInformationComponent implements OnInit {
     {
       if ( shop.storeRating != undefined
         && shop.storeRating.voterNumber !=0){
-        this.shopRate = shop.storeRating.averageRate;
+        this.shopRate = Math.round(shop.storeRating.averageRate*100)/100;
       }
     });
   }

@@ -33,6 +33,8 @@ import { PromotionInformationComponent } from './promotion-information/promotion
 import { DialogPromoInformationComponent } from './dialog-promo-information/dialog-promo-information.component';
 import {CulturalActorBlocksComponent} from "./CulturalActorBlocks/CulturalActorBlocks.component";
 import { MayorBlocksComponent } from './mayor-blocks/mayor-blocks.component';
+import { ThanksComponent } from './thanks/thanks.component';
+import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inhabitant-autorisation/popup-visitor-inhabitant-autorisation.component";
 
 
 @NgModule({
@@ -57,7 +59,9 @@ import { MayorBlocksComponent } from './mayor-blocks/mayor-blocks.component';
     PromotionInformationComponent,
     DialogPromoInformationComponent,
     CulturalActorBlocksComponent,
-    MayorBlocksComponent
+    MayorBlocksComponent,
+    ThanksComponent,
+    PopupVisitorInhabitantAutorisationComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +95,7 @@ import { MayorBlocksComponent } from './mayor-blocks/mayor-blocks.component';
   providers: [ ],
   bootstrap: [AppComponent],
   exports: [RouterModule/*, NgbdRatingBasic*/],
-  entryComponents: [PopupVisitorInhabitantAuthenticationComponent],
+  entryComponents: [PopupVisitorInhabitantAuthenticationComponent,ThanksComponent],
 })
 
 export class AppModule { }
