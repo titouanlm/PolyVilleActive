@@ -1,11 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Subject} from 'rxjs';
-import { serverUrl, httpOptionsBase } from '../configs/server.config';
-import  {Promotion} from "../models/event.model";
+import {httpOptionsBase} from '../configs/server.config';
+import {Promotion} from "../models/event.model";
 import {map} from "rxjs/operators";
-import {Seller} from "../models/seller.model";
-import {SellerService} from "./seller.service";
 
 @Injectable({
   providedIn: `root`
@@ -16,15 +14,7 @@ export class PromotionService {
    * https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
    */
 
-  /**
-   * The list .
-   */
-  public promotions: Promotion[];
-
-  /**
-   * Observables.
-   * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
-   */
+  private promotions: Promotion[];
   public promotions$: BehaviorSubject<Promotion[]>;
 
   public promotion$: Subject<Promotion> = new Subject();
@@ -42,6 +32,11 @@ export class PromotionService {
 
   //............................................... Promotions ..............................................
 
+  getPublicPromotions(){
+    return this.http.get<Promotion[]>('http://localhost:9428/api/promotions').pipe(map((promos) => {
+      return promos.filter(promotion => promotion.public == true);
+    }));
+  }
 
   getPromotions() {
     this.http.get<Promotion[]>('http://localhost:9428/api/promotions').subscribe((promos) => {
@@ -50,11 +45,11 @@ export class PromotionService {
     });
   }
 
-  getPromotion(promoId: string) {
-    const urlWithId = this.Url+'/'+promoId ;
-    this.http.get<Promotion>(urlWithId,this.httpOptions).subscribe((promo) => {
-      this.promotion$.next(promo);
-    });
+  getPromotion(promoId: number) {
+    return this.http.get<Promotion>('http://localhost:9428/api/promotions/'+promoId,this.httpOptions)
+      .pipe(map((promotion) => {
+      return promotion;
+    }));
   }
 
   addPromotion(promo: Promotion) {

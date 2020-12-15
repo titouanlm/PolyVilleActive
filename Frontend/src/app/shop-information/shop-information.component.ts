@@ -39,19 +39,16 @@ export class ShopInformationComponent implements OnInit {
     },
   ];
 
-  constructor(public shopService: ShopService,public nicheService: NicheService) {
-    console.log("constructeur");
+  constructor(public shopService: ShopService, public nicheService: NicheService) {
     this.calculateShopRate();
     this.shopService.shopSelected$.subscribe((shop) => {
       this.shop = shop;
+      this.calculateNbPeopleClose();
       this.nicheService.getShopNichesFromUrl(this.shop.id+'');
-      console.log('shop : '+this.shop);
       this.nicheService.niches$.subscribe((nichs)=>{
         this.niches=nichs;
-        console.log('niches : '+this.niches);
         this.buildListFreq();
       });
-      console.log('listfreq : '+this.listFreq)
     });
   }
 
@@ -73,7 +70,6 @@ export class ShopInformationComponent implements OnInit {
       .pipe(takeWhile(() => true))
       .subscribe(() =>
         this.calculateShopRate());*/
-
 
     interval(5000)
       .pipe(takeWhile(() => true))

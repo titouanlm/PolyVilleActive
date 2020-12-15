@@ -1,0 +1,28 @@
+<div class="sellersexit" >
+  <a [routerLink]="['..']" class="increaseSize">
+    <mat-icon [inline]="true" >exit_to_app</mat-icon>
+  </a>
+</div>
+
+<div>
+  <h3>
+    previous page
+  </h3>
+</div>
+
+<mat-form-field style="position: absolute;left: 45%;top: 25%;font-size: 2em;">
+  <mat-label>Promotion</mat-label>
+  <label>
+    <input matInput [(ngModel)]="number">
+  </label>
+</mat-form-field >
+<div mat-dialog-actions style="position: absolute;left: 48%;top: 40%;">
+  <button mat-button cdkFocusInitial (click)="displayPromotion()">Ok</button>
+</div>
+<div class="errorMessage">
+  <span *ngIf="error">
+    {{ error }}
+  </span>
+</div>
+
+

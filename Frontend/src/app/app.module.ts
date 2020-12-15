@@ -29,6 +29,8 @@ import {ChartsModule} from "ng2-charts";
 import { NotificationPromotionComponent } from './notification-promotion/notification-promotion.component';
 import { AdditionalShopInfoComponent } from './additional-shop-info/additional-shop-info.component';
 import { CityCenterInformationComponent } from './city-center-information/city-center-information.component';
+import { PromotionInformationComponent } from './promotion-information/promotion-information.component';
+import { DialogPromoInformationComponent } from './dialog-promo-information/dialog-promo-information.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { CityCenterInformationComponent } from './city-center-information/city-c
     NotificationPromotionComponent,
     AdditionalShopInfoComponent,
     CityCenterInformationComponent,
+    PromotionInformationComponent,
+    DialogPromoInformationComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,11 +65,13 @@ import { CityCenterInformationComponent } from './city-center-information/city-c
       {path: 'visitorinhabitant', component: VisitorInhabitantDisplayComponent},
       {path: 'seller', component: SellerDisplayComponent},
       {path: 'seller/shop-information', component: ShopInformationComponent},
+      {path: 'seller/shop-information/promotioninformation', component: PromotionInformationComponent},
       {path: 'seller/blockly', component: MyBlocksComponent},
       {path: 'visitorinhabitant/shoprating', component: ShopListRatingComponent},
       {path: 'visitorinhabitant/shoprating/shop', component: ShopRatingComponent},
       {path: 'visitorinhabitant/shoprating/shop/additionalinfo', component: AdditionalShopInfoComponent},
       {path: 'visitorinhabitant/citycenterinformation', component: CityCenterInformationComponent},
+      { path: '**', redirectTo: '' }
     ], {useHash: true}),
     NgxBlocklyModule,
     MatIconModule,

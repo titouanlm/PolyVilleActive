@@ -15,7 +15,7 @@ export class InhabitantService {
   public inhabitant$: BehaviorSubject<Inhabitant> ;
 
   constructor(private http: HttpClient) {
-    this.currentInhabitant = JSON.parse(localStorage.getItem('currentInhabitant'));
+    //this.currentInhabitant = JSON.parse(localStorage.getItem('currentInhabitant'));
     this.inhabitant$ = new BehaviorSubject<Inhabitant>(this.currentInhabitant);
   }
 
@@ -64,9 +64,7 @@ export class InhabitantService {
 
   getInhabitantsCloseTo(shop : Shop) {
     return this.http.get<any>('http://localhost:9428/api/inhabitants').pipe(map((inhabitantList => {
-      let test = inhabitantList.filter((inhabitant) => inhabitant.longitude === shop.longitude && inhabitant.latitude === shop.latitude);
-      //console.log(test);
-      return test;
+      return inhabitantList.filter((inhabitant) => inhabitant.longitude === shop.longitude && inhabitant.latitude === shop.latitude);
     })));
   }
 }

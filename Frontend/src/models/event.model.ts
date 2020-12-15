@@ -21,6 +21,7 @@ export interface Event {
   promoEventId?: number;
   promoType?: number;
   customersNumberInterested: number[];
+  notifiedCustomersNumber: number[];
   condLeft?: string;
   condRight?: string;
   condSign?: string;
@@ -28,7 +29,7 @@ export interface Event {
 }
 
  export interface Notification {
-   id: string;
+  id: string;
   notifDescription: string;
   notifType: number;
   notifEventId: number;

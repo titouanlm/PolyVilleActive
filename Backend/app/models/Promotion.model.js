@@ -11,6 +11,7 @@ module.exports = new BaseModel('Promotion', {
     promoEventId: Joi.number(),
     promoType: Joi.number(),
     customersNumberInterested: Joi.array(),
+    notifiedCustomersNumber: Joi.array(),
     condLeft: Joi.string(),
     condRight: Joi.string(),
     condSign: Joi.string(),

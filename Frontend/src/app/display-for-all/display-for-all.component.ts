@@ -4,10 +4,6 @@ import { PopupVisitorInhabitantAuthenticationComponent } from '../popup-visitor-
 import {PopupSellerAuthenticationComponent} from "../popup-seller-authentication/popup-seller-authentication.component";
 import {Promotion} from "../../models/event.model";
 
-export interface DialogData {
-  number: number;
-}
-
 @Component({
   selector: 'app-display-for-all',
   templateUrl: './display-for-all.component.html',
