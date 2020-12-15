@@ -62,13 +62,13 @@ export class InhabitantService {
       inhabitant.positions = [];
     }
     const array = [];
-    array.push(longitude);
-    array.push(latitude);
+    array.push(Number(longitude));
+    array.push(Number(latitude));
     inhabitant.positions.push(array);
-    this.updateInhabitantPosition(inhabitant.positions);
+    this.updateInhabitantPositions(inhabitant.positions);
   }
 
-  updateInhabitantPosition(array: any[]){
+  updateInhabitantPositions(array: any[]){
     this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {positions: array })
       .subscribe();
   }
