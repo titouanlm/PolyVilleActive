@@ -1,12 +1,7 @@
 [
   {
-    "id": 12345671867,
-    "id_shop": 1234567,
-    "id_inhabitant": 1867
-  },
-  {
-    "id": 12345671868,
-    "id_shop":1234567,
-    "id_inhabitant": 1868
+    "id": 1608036089963,
+    "shopId": 1234567,
+    "inhabitantId": 1867
   }
 ]

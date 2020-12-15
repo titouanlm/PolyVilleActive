@@ -6,7 +6,7 @@ const manageAllErrors = require('../../utils/routes/error-management');
 const { manager } = require('./manager');
 const router = new Router();
 
-router.use('/:inhabitantId/autorisation', AutorisationRouter)
+router.use('/:inhabitantId/autorisations', AutorisationRouter)
 
 
 router.get('/', (req, res) => {
