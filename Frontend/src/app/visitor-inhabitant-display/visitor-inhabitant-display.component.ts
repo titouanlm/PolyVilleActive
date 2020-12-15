@@ -13,7 +13,6 @@ export interface DialogData {
   promotion: Promotion;
 }
 
-
 @Component({
   selector: 'app-basic-display',
   templateUrl: './visitor-inhabitant-display.component.html',
@@ -25,7 +24,8 @@ export class VisitorInhabitantDisplayComponent {
   shopName: string;
   error: string;
 
-  constructor(public inhabitantService: InhabitantService, public shopService: ShopService, public dialog: MatDialog) {
+  constructor(public inhabitantService: InhabitantService,
+    public shopService: ShopService, public dialog: MatDialog) {
     this.shopName ='';
     this.inhabitantService.inhabitant$.subscribe((inhabitant) => this.inhabitant = inhabitant);
   }
@@ -49,7 +49,7 @@ export class VisitorInhabitantDisplayComponent {
   }
 
 
-  private getPromotionShop(shop: Shop) {
+  public getPromotionShop(shop: Shop) {
     const lastPromo = shop.promotions.slice(-1)[0];
     if(lastPromo){
       this.openPromoDialog(lastPromo , shop)

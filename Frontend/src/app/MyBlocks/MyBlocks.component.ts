@@ -96,11 +96,10 @@ export class MyBlocksComponent {
    // Blockly.mainWorkspace.newBlock(Blockly.mainWorkspace,'notification',1);
     try {
       eval(code);
-
       this.promotionService.addPromotion(this.promotion)
         .subscribe(
           promoCreated => {
-                alert("Votre nouvelle promotion : "+ promoCreated.title + "a été créé !")
+                alert("Votre nouvelle promotion : "+ promoCreated.title + " a été créé !")
           },
           error => {
             alert("Erreur : " + error);

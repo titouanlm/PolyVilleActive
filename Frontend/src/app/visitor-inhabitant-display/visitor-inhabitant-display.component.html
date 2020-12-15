@@ -2,7 +2,7 @@
 <p>Your location : {{ inhabitant.latitude}}; {{inhabitant.longitude}} </p>
 <div class="inhabitantinformation">
   <input matInput [(ngModel)]="shopName" placeholder="Shop's name"/> <br>
-  <button id="runButton" type="button" class="btn btn-success" (click)="move()">Move to the shop</button><br>
+  <button id="runButton" type="button" class="btn btn-success" (click)="move()">Move to a shop</button><br>
   <div class="errorMessage">
     <span *ngIf="error">
       {{ error }}
@@ -25,14 +25,18 @@
 </div>
 
 <div>
-  <h1 style="position: absolute;left: 18%;top: 70%">
-    Rate a shop
+  <h1 style="position: absolute;left: 20%;top: 70%">
+    Shops
   </h1>
 </div>
 
 <div>
-  <h1 style="position: absolute;left: 68%;top: 70%">
-    previous page
+  <h1 style="position: absolute;left: 72%;top: 70%">
+    Log out
   </h1>
+</div>
+
+<div>
+  <mat-icon [routerLink]="['citycenterinformation']" style="position: absolute;left: 85%;top: 26%;font-size: 4em;color: purple">announcement</mat-icon>
 </div>
 

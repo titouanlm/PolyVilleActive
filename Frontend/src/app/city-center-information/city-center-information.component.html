@@ -1,0 +1,28 @@
+<table>
+    <tr>
+      <th>Titre</th>
+      <th>Id Shop</th>
+      <th>Number of people interested</th>
+    </tr>
+    <tr *ngFor="let promotion of promotions;let i = index">
+      <!--<th [routerLink]="['shop']" (click)="setShop(i)">{{shop.label}}</th>-->
+      <th> {{promotion.title}}</th>
+      <th> {{promotion.shopId}}</th>
+      <th *ngIf="promotion.customersNumberInterested != undefined"> {{promotion.customersNumberInterested.length}}</th>
+    </tr>
+</table>
+
+
+
+<div class="inhabitantsExit" >
+  <a [routerLink]="['..']" class="increaseSize">
+    <mat-icon [inline]="true">exit_to_app</mat-icon>
+  </a>
+</div>
+
+
+<div>
+  <h1 style="position: absolute;left: 68%;top: 70%">
+    previous page
+  </h1>
+</div>

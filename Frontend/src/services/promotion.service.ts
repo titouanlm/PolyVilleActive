@@ -19,7 +19,7 @@ export class PromotionService {
   /**
    * The list .
    */
-  private promotions: Promotion[];
+  public promotions: Promotion[];
 
   /**
    * Observables.
@@ -32,7 +32,7 @@ export class PromotionService {
   private Url : string;
   private httpOptions = httpOptionsBase;
   private currentSeller : Seller;
-  constructor(private http: HttpClient, public sellerService: SellerService) {
+  constructor(private http: HttpClient) {
     this.currentSeller = JSON.parse(localStorage.getItem('currentSeller'));
     this.promotions$ = new BehaviorSubject(this.promotions);
     this.Url = serverUrl + '/shops/' + this.currentSeller.shopId +'/promotions';
@@ -44,7 +44,7 @@ export class PromotionService {
 
 
   getPromotions() {
-    this.http.get<Promotion[]>(this.Url).subscribe((promos) => {
+    this.http.get<Promotion[]>('http://localhost:9428/api/promotions').subscribe((promos) => {
       this.promotions=promos;
       this.promotions$.next(promos);
     });
@@ -60,14 +60,14 @@ export class PromotionService {
   addPromotion(promo: Promotion) {
     return this.http.post<Promotion>(this.Url,promo,this.httpOptions)
       .pipe(map(promoCreated => {
-          this.getPromotions();
-          return promoCreated;
-    } ));
+        this.getPromotions();
+        return promoCreated;
+      } ));
   }
 
   updatePromotion(promo: Promotion) {
-    const url = this.Url + '/' + promo.id ;
-    this.http.put<Promotion>(url,promo,this.httpOptions).subscribe(() => this.getPromotions());
+    const url = 'http://localhost:9428/api/promotions' + '/' + promo.id ;
+    this.http.put<Promotion>(url,promo,this.httpOptions).subscribe();
   }
 
 }

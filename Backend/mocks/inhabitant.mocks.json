@@ -216,8 +216,8 @@
   {
     "firstName": "Chandler",
     "lastName": "Brown",
-    "longitude": "16.11257",
-    "latitude": "-15.2561",
+    "longitude": "85.45452",
+    "latitude": "-2.24237",
     "id": 1897
   },
   {
@@ -938,8 +938,8 @@
   {
     "firstName": "Ralph",
     "lastName": "Lewis",
-    "longitude": "-164.12323",
-    "latitude": "29.84872",
+    "longitude": "-34.52381",
+    "latitude": "-44.95548",
     "id": 1999,
     "shopRated": [
       1234664,
