@@ -32,6 +32,7 @@ import { CityCenterInformationComponent } from './city-center-information/city-c
 import { PromotionInformationComponent } from './promotion-information/promotion-information.component';
 import { DialogPromoInformationComponent } from './dialog-promo-information/dialog-promo-information.component';
 import { ThanksComponent } from './thanks/thanks.component';
+import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inhabitant-autorisation/popup-visitor-inhabitant-autorisation.component";
 
 
 @NgModule({
@@ -56,6 +57,8 @@ import { ThanksComponent } from './thanks/thanks.component';
     PromotionInformationComponent,
     DialogPromoInformationComponent,
     ThanksComponent,
+    PopupVisitorInhabitantAutorisationComponent,
+
   ],
   imports: [
     BrowserModule,
