@@ -25,9 +25,9 @@ export class EventService {
    * Observables.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public events$: BehaviorSubject<Event[]> = new BehaviorSubject(this.events);
-  public promotions$: BehaviorSubject<Promotion[]> = new BehaviorSubject(this.promotions);
-  public notifications$: BehaviorSubject<Notification[]> = new BehaviorSubject(this.notifications);
+  public events$: BehaviorSubject<Event[]>;
+  public promotions$: BehaviorSubject<Promotion[]>;
+  public notifications$: BehaviorSubject<Notification[]>;
 
   public event$: Subject<Event> = new Subject();
   public promotion$: Subject<Promotion> = new Subject();
@@ -41,6 +41,9 @@ export class EventService {
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient) {
+  this.events$ = new BehaviorSubject(this.events);
+  this.promotions$ = new BehaviorSubject(this.promotions);
+  this.notifications$ = new BehaviorSubject(this.notifications);
   }
 
   //............................................... Events ..............................................

@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 router.get('/:promoId', (req, res) => {
     try {
-        const promo = buildAPromo(req.params.eventId);
+        const promo = buildAPromo(req.params.promoId);
         res.status(200).json(promo)
     } catch (err) {
         manageAllErrors(res, err)

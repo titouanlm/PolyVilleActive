@@ -24,15 +24,23 @@ export class NotificationPromotionComponent implements OnInit {
   public interestedInPromotion(interested: boolean){
     if (interested && this.data.promotion.customersNumberInterested == undefined){
       const array = [];
-      array.push(this.inhabitantService.currentInhabitant.id );
+      array.push(this.inhabitantService.currentInhabitant.id);
       this.data.promotion.customersNumberInterested = array;
-      this.promotionService.updatePromotion(this.data.promotion);
     }
     else if (interested) {
       if (this.data.promotion.customersNumberInterested.indexOf(this.inhabitantService.currentInhabitant.id) == -1)
       this.data.promotion.customersNumberInterested.push(this.inhabitantService.currentInhabitant.id);
-      this.promotionService.updatePromotion(this.data.promotion);
     }
+    if (this.data.promotion.notifiedCustomersNumber == undefined){
+      const array = [];
+      array.push(this.inhabitantService.currentInhabitant.id);
+      this.data.promotion.notifiedCustomersNumber = array;
+    }
+    else {
+      if (this.data.promotion.notifiedCustomersNumber.indexOf(this.inhabitantService.currentInhabitant.id) == -1)
+      this.data.promotion.notifiedCustomersNumber.push(this.inhabitantService.currentInhabitant.id);
+    }
+    this.promotionService.updatePromotion(this.data.promotion);
     this.dialogRef.close();
   }
 

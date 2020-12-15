@@ -12,11 +12,11 @@ export class CityCenterInformationComponent implements OnInit {
   public promotions: Promotion[];
 
   constructor(public promotionService: PromotionService) {
-    this.promotionService.getPromotions();
-    this.promotions = this.promotionService.promotions;
+    this.promotionService.getPublicPromotions().subscribe((promotions) => this.promotions = promotions);
   }
 
   ngOnInit(): void {
+
   }
 
 }
