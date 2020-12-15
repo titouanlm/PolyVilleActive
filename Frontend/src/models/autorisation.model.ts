@@ -1,4 +1,5 @@
 export interface Autorisation {
-  id_shop: number;
-  id_inhabitant: number;
+  id : number;
+  shopId: number;
+  inhabitantId: number;
 }
