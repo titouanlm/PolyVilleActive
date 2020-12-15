@@ -5,6 +5,8 @@ import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Shop} from '../models/shop.model';
 import  {Autorisation} from "../models/autorisation.model";
 import {Inhabitant} from "../models/inhabitant.model";
+import {map} from "rxjs/operators";
+import { ShopService} from "./shop.service";
 
 @Injectable({
   providedIn: `root`
@@ -35,10 +37,10 @@ export class AutorisationService {
 
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private shopService:ShopService) {
   }
 
-  //............................................... Niches ..............................................
+  //............................................... Autorisation ..............................................
 
 
   getInhabitantAutorisationFromUrl(inhabitantId: number) {
@@ -71,4 +73,10 @@ export class AutorisationService {
     this.http.put<Autorisation>(autorisationUrl, autorisation, this.httpOptions).subscribe(() => this.getInhabitantAutorisationFromUrl(autorisation.inhabitantId));
   }
 
+  verifyAutorisationExist(shopName: string,inhabitantId:number) {
+    const shop= this.shopService.verifyShopExist(shopName);
+    this.getInhabitantAutorisationFromUrl(inhabitantId);
+    return this.autorisations.filter((autorisation) => autorisation.inhabitantId === inhabitantId)
+
+  }
 }

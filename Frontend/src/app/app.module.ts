@@ -28,7 +28,7 @@ import { ShopRatingComponent } from './shop-rating/shop-rating.component';
 import {ChartsModule} from "ng2-charts";
 import { NotificationPromotionComponent } from './notification-promotion/notification-promotion.component';
 import { AdditionalShopInfoComponent } from './additional-shop-info/additional-shop-info.component';
-
+import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inhabitant-autorisation/popup-visitor-inhabitant-autorisation.component";
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { AdditionalShopInfoComponent } from './additional-shop-info/additional-s
     ShopInformationComponent,
     NotificationPromotionComponent,
     AdditionalShopInfoComponent,
+    PopupVisitorInhabitantAutorisationComponent,
   ],
   imports: [
     BrowserModule,
