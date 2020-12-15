@@ -31,6 +31,8 @@ import { AdditionalShopInfoComponent } from './additional-shop-info/additional-s
 import { CityCenterInformationComponent } from './city-center-information/city-center-information.component';
 import { PromotionInformationComponent } from './promotion-information/promotion-information.component';
 import { DialogPromoInformationComponent } from './dialog-promo-information/dialog-promo-information.component';
+import {CulturalActorBlocksComponent} from "./CulturalActorBlocks/CulturalActorBlocks.component";
+import { MayorBlocksComponent } from './mayor-blocks/mayor-blocks.component';
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import { DialogPromoInformationComponent } from './dialog-promo-information/dial
     CityCenterInformationComponent,
     PromotionInformationComponent,
     DialogPromoInformationComponent,
+    CulturalActorBlocksComponent,
+    MayorBlocksComponent
   ],
   imports: [
     BrowserModule,

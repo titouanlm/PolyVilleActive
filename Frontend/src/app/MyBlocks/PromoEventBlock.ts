@@ -1,5 +1,4 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
-import FieldDate from '@blockly/field-date';
 
 declare var Blockly: any;
 
