@@ -15,10 +15,10 @@ router.get('/', (req, res) => {
     }
 })
 
-router.get('/:eventId', (req, res) => {
+router.get('/:nicheId', (req, res) => {
     try {
-        const promo = buildANiche(req.params.shopId,req.params.eventId)
-        res.status(200).json(promo)
+        const niche = buildANiche(req.params.shopId,req.params.nicheId)
+        res.status(200).json(niche)
     } catch (err) {
         manageAllErrors(res, err)
     }
@@ -35,6 +35,7 @@ router.post('/', (req, res) => {
 
 router.put('/:nicheId', (req, res) => {
     try {
+        buildANiche(req.params.shopId,req.params.nicheId)
         res.status(200).json(Niche.update(req.params.nicheId, req.body))
     } catch (err) {
         manageAllErrors(res, err)
@@ -43,6 +44,7 @@ router.put('/:nicheId', (req, res) => {
 
 router.delete('/:nicheId', (req, res) => {
     try {
+        buildANiche(req.params.shopId,req.params.nicheId)
         Shop.delete(req.params.nicheId)
         res.status(204).end()
     } catch (err) {

@@ -25,6 +25,7 @@ import * as Blockly from "ngx-blockly/scripts/blockly/typings/blockly";
 export class MayorBlocksComponent implements OnInit {
 
   culturalevent = <CulturalEvent>{};
+  decision: boolean
 
   ngOnInit(): void {
   }
