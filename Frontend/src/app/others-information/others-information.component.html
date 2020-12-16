@@ -1,0 +1,42 @@
+<div class="sellersexit" >
+  <a [routerLink]="['..']" class="increaseSize">
+    <mat-icon [inline]="true" >exit_to_app</mat-icon>
+  </a>
+</div>
+
+<div>
+  <h3>
+    previous page
+  </h3>
+</div>
+
+<mat-label style="position: absolute;left: 41.5%;font-size: 2em;top: 25%">Promotion number</mat-label>
+<mat-form-field style="position: absolute;left: 25%;top: 25%;font-size: 2em;width: 50%">
+  <label>
+    <input matInput [(ngModel)]="number">
+  </label>
+</mat-form-field >
+<div mat-dialog-actions style="position: absolute;left: 48%;top: 40%;">
+  <button mat-button cdkFocusInitial (click)="displayPromotion()">Ok</button>
+</div>
+<div class="errorMessage">
+  <span *ngIf="error">
+    {{ error }}
+  </span>
+</div>
+
+<mat-label style="position: absolute;left: 42%;font-size: 2em;top: 45%">Inhabitant number</mat-label>
+<mat-form-field style="position: absolute;left: 25%;top: 46%;font-size: 2em;width: 50%">
+  <label>
+    <input matInput [(ngModel)]="inhabitantId">
+  </label>
+</mat-form-field >
+<div mat-dialog-actions style="position: absolute;left: 48%;top: 61%;">
+  <button mat-button cdkFocusInitial (click)="displayInhabitant()">Ok</button>
+</div>
+<div class="errorMessage2">
+  <span *ngIf="error2">
+    {{ error2 }}
+  </span>
+</div>
+

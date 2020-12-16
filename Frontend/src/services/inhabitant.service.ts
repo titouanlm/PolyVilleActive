@@ -39,9 +39,13 @@ export class InhabitantService {
     return (constante==-1)?undefined :constante;
   }
 
-  updateShopRatedInhabitant(array: any[]){
+  updateShopRatedByInhabitant(array: any[]){
     this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {shopRated: array })
       .subscribe(() => this.currentInhabitant);
+  }
+
+  updateInhabitant(inhabitant: Inhabitant){
+    this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/'+inhabitant.id, inhabitant).subscribe();
   }
 
 

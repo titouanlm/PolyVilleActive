@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {ShopService} from "../../services/shop.service";
 import {PromotionService} from "../../services/promotion.service";
 import {MAT_DIALOG_DATA} from "@angular/material/dialog";
-import {DialogData2} from "../promotion-information/promotion-information.component";
+import {DialogData2} from "../others-information/others-information.component";
 
 @Component({
   selector: 'app-dialog-promo-information',
