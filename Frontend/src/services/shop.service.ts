@@ -23,7 +23,6 @@ export class ShopService {
    */
 
   public shops: Shop[];
-
   public shopSelected: Shop;
   /**
    * Observable which contains the list of shop.
@@ -76,6 +75,15 @@ export class ShopService {
       this.shopSelected = shop;
       this.shopSelected$.next(shop);
     });
+  }
+
+  getShop(shopId: string){
+    const urlWithId = this.shopsUrl + '/' + shopId;
+    return this.http.get<Shop>(urlWithId, this.httpOptions).pipe(map((shop) => {
+      this.shopSelected = shop;
+      this.shopSelected$.next(shop);
+      return shop;
+    }));
   }
 
   addEvent(shop: Shop, event: Event) {

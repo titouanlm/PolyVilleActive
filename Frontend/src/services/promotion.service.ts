@@ -26,7 +26,6 @@ export class PromotionService {
   constructor(private http: HttpClient) {
     this.currentSeller = JSON.parse(localStorage.getItem('currentSeller'));
     this.promotions$ = new BehaviorSubject(this.promotions);
-    this.Url = serverUrl + '/shops/' + this.currentSeller.shopId +'/promotions';
     this.getPromotions()
   }
 
@@ -49,12 +48,12 @@ export class PromotionService {
   getPromotion(promoId: number) {
     return this.http.get<Promotion>('http://localhost:9428/api/promotions/'+promoId,this.httpOptions)
       .pipe(map((promotion) => {
-      return promotion;
-    }));
+        return promotion;
+      }));
   }
 
   addPromotion(promo: Promotion) {
-    return this.http.post<Promotion>(this.Url,promo,this.httpOptions)
+    return this.http.post<Promotion>(serverUrl + '/shops/' + this.currentSeller.shopId +'/promotions',promo,this.httpOptions)
       .pipe(map(promoCreated => {
         this.getPromotions();
         return promoCreated;

@@ -29,12 +29,14 @@ import {ChartsModule} from "ng2-charts";
 import { NotificationPromotionComponent } from './notification-promotion/notification-promotion.component';
 import { AdditionalShopInfoComponent } from './additional-shop-info/additional-shop-info.component';
 import { CityCenterInformationComponent } from './city-center-information/city-center-information.component';
-import { PromotionInformationComponent } from './promotion-information/promotion-information.component';
+import { OthersInformationComponent } from './others-information/others-information.component';
 import { DialogPromoInformationComponent } from './dialog-promo-information/dialog-promo-information.component';
 import {CulturalActorBlocksComponent} from "./CulturalActorBlocks/CulturalActorBlocks.component";
 import { MayorBlocksComponent } from './mayor-blocks/mayor-blocks.component';
 import { ThanksComponent } from './thanks/thanks.component';
+import { InhabitantForSellerComponent } from './inhabitant-for-seller/inhabitant-for-seller.component';
 import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inhabitant-autorisation/popup-visitor-inhabitant-autorisation.component";
+
 
 
 @NgModule({
@@ -56,11 +58,12 @@ import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inha
     NotificationPromotionComponent,
     AdditionalShopInfoComponent,
     CityCenterInformationComponent,
-    PromotionInformationComponent,
+    OthersInformationComponent,
     DialogPromoInformationComponent,
     CulturalActorBlocksComponent,
     MayorBlocksComponent,
     ThanksComponent,
+    InhabitantForSellerComponent,
     PopupVisitorInhabitantAutorisationComponent,
   ],
   imports: [
@@ -73,7 +76,7 @@ import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inha
       {path: 'visitorinhabitant', component: VisitorInhabitantDisplayComponent},
       {path: 'seller', component: SellerDisplayComponent},
       {path: 'seller/shop-information', component: ShopInformationComponent},
-      {path: 'seller/shop-information/promotioninformation', component: PromotionInformationComponent},
+      {path: 'seller/shop-information/othersinformation', component: OthersInformationComponent},
       {path: 'seller/blockly', component: MyBlocksComponent},
       {path: 'visitorinhabitant/shoprating', component: ShopListRatingComponent},
       {path: 'visitorinhabitant/shoprating/shop', component: ShopRatingComponent},

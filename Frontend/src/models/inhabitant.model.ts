@@ -6,4 +6,5 @@ export interface Inhabitant {
   id: number;
   shopRated : number[];
   positions : number[][];
+  objectPurchased: string[][];
 }

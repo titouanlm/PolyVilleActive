@@ -67,6 +67,10 @@ export class ShopInformationComponent implements OnInit {
     });
   }
 
+  public actualizeSeller(){
+    //this.shopService.getShopFromUrl(this.shop.id);
+  }
+
 
 
   ngOnInit(): void {
