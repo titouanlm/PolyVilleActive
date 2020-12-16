@@ -1,9 +1,9 @@
-<div *ngIf="!inhabitantIsInsideShop">
+<div *ngIf="!inhabitantIsInsideShop && shop ">
   Come to {{ shop.label }} !
   <button id="runButton" type="button" class="btn btn-success" (click)="moveToTheShop()">Move to the shop</button><br>
 </div>
 
-<div class=" shopInfos" *ngIf="inhabitantIsInsideShop">
+<div class=" shopInfos" *ngIf="inhabitantIsInsideShop && shop">
   Welcome to {{ shop.label }} !
 
   <h1 style="position: absolute;top: 20%;left: 41%"> Rate the store !</h1>
