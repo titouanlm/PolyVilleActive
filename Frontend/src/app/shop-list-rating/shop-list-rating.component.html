@@ -1,10 +1,31 @@
-<div *ngFor="let shop of shopList;let i = index">
-  <table>
+<main class="flex-container" role="main" >
+<section id="main-section">
+  <h1> Shops </h1>
+  <table class="table">
+    <thead>
     <tr>
-      <th [routerLink]="['shop']" (click)="setShop(i)">{{shop.label}}</th>
+      <th scope="col"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Location</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Select</th>
     </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let shop of shopList;let i = index">
+      <th scope="row">{{i}}</th>
+      <td>{{shop.label}}</td>
+      <td> ({{shop.longitude}}) ; ({{shop.latitude}})</td>
+      <td>{{shop.storeRating.averageRate}}</td>
+      <td>
+        <button [routerLink]="['shop']" id="runButton" type="button" class="btn btn-success" (click)="setShop(i)">Select</button><br>
+      </td>
+    </tr>
+    </tbody>
   </table>
-</div>
+</section>
+
+</main>
 
 <div>
   <a [routerLink]="['..']" class="increaseSize">
