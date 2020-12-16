@@ -57,7 +57,7 @@ export class VisitorInhabitantDisplayComponent {
           this.shop.averagePresenceBeforePurchase = { numberOfPurchases: 0, numberOfPresence: 0};
         }
         this.shop.averagePresenceBeforePurchase.numberOfPurchases = this.shop.averagePresenceBeforePurchase.numberOfPurchases+1;
-        this.shop.averagePresenceBeforePurchase.numberOfPresence = this.inhabitant.positions
+        this.shop.averagePresenceBeforePurchase.numberOfPresence += this.inhabitant.positions
           .filter((position) =>
             position[0] == this.inhabitant.longitude && position[1] == this.inhabitant.latitude).length;
         this.inhabitantService.updateInhabitantPositions(
