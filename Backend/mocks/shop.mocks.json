@@ -23,13 +23,14 @@
         ],
         "notifiedCustomersNumber": [
           1987,
-          1988
+          1988,
+          1999
         ]
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 2,
-      "numberOfPresence": 5
+      "numberOfPurchases": 5,
+      "numberOfPresence": 3
     }
   },
   {
@@ -42,16 +43,11 @@
       "averageRate": 8.2,
       "voterNumber": 5
     },
-    "promotions": [
-      {
-        "title": "TEST",
-        "description": "TEST",
-        "startDate": "2020-02-20",
-        "endDate": "2020-02-22",
-        "shopId": 1234568,
-        "id": 1607935006024
-      }
-    ]
+    "promotions": [],
+    "averagePresenceBeforePurchase": {
+      "numberOfPurchases": 5,
+      "numberOfPresence": 3
+    }
   },
   {
     "label": "Quis Arcu Industries",
