@@ -91,17 +91,17 @@ export class ShopRatingComponent implements OnInit {
   }
 
   public getPromotionShop(shop: Shop) {
-    const lastPromo = shop.promotions.slice(-1)[0];
-    if(lastPromo){
-      this.openPromoDialog(lastPromo , shop)
+    const promos = shop.promotions;
+    if(promos.length > 0){
+      this.openPromoDialog(promos , shop)
     }
   }
 
-  openPromoDialog(lastPromo, shop) {
+  openPromoDialog(promos, shop) {
     const dialogRef = this.dialog.open(NotificationPromotionComponent, {
       width: '40%',
       height: '40%',
-      data: {promotion: lastPromo, shop : shop}
+      data: {promotions: promos, shop : shop}
     });
   }
 }

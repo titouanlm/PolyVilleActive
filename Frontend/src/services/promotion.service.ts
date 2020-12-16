@@ -53,6 +53,9 @@ export class PromotionService {
   }
 
   addPromotion(promo: Promotion) {
+    this.currentSeller = JSON.parse(localStorage.getItem('currentSeller'));
+    promo.customersNumberInterested =[];
+    promo.notifiedCustomersNumber = [];
     return this.http.post<Promotion>(serverUrl + '/shops/' + this.currentSeller.shopId +'/promotions',promo,this.httpOptions)
       .pipe(map(promoCreated => {
         this.getPromotions();

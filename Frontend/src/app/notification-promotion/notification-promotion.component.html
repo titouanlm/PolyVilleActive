@@ -1,10 +1,28 @@
 <h2>Welcome to {{ data.shop.label }}</h2> <br>
-<span>
-  Last promotion : {{data.promotion.title}} <br>
-  {{ data.promotion.description}} <br>
-  Start : {{ data.promotion.startDate}} <br>
-  End : {{ data.promotion.endDate}} <br>
-  Are you interested ?  <button (click)="interestedInPromotion(true)">Yes</button>
-  | <button (click)="interestedInPromotion(false)">No</button>
-
-</span>
+<h3>Promotions availables </h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Start</th>
+      <th scope="col">End</th>
+      <th scope="col">Are you interested ?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let promotion of data.promotions;let i = index">
+      <td>{{ promotion.title}}</td>
+      <td> {{ promotion.description}}</td>
+      <td>{{ promotion.startDate}}</td>
+      <td>{{ promotion.endDate}}</td>
+      <td *ngIf="!answers[i]">
+         <button (click)="interestedInPromotion(promotion, i)">Yes</button>
+      </td>
+      <td *ngIf="answers[i]">
+        OK
+      </td>
+    </tr>
+    </tbody>
+  </table>
+<button id="runButton" type="button" class="btn btn-success" (click)="continue()">Continue</button><br>

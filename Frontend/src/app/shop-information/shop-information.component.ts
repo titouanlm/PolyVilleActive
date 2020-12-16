@@ -71,8 +71,6 @@ export class ShopInformationComponent implements OnInit {
     //this.shopService.getShopFromUrl(this.shop.id);
   }
 
-
-
   ngOnInit(): void {
     /*interval(1000)
       .pipe(takeWhile(() => true))
@@ -96,8 +94,6 @@ export class ShopInformationComponent implements OnInit {
       this.listFreq.push(niche.nbPersonneMoyenne);
     })
   }
-
-
 
 
 }

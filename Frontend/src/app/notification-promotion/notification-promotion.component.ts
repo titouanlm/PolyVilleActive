@@ -5,6 +5,7 @@ import {PromotionService} from "../../services/promotion.service";
 import {Inhabitant} from "../../models/inhabitant.model";
 import {ShopService} from "../../services/shop.service";
 import {InhabitantService} from "../../services/inhabitant.service";
+import {Promotion} from "../../models/event.model";
 
 @Component({
   selector: 'app-notification-promotion',
@@ -13,38 +14,39 @@ import {InhabitantService} from "../../services/inhabitant.service";
 })
 export class NotificationPromotionComponent implements OnInit {
 
+  public idCurrentInhabitant;
+  public answers : boolean[];
+
   constructor(public dialogRef: MatDialogRef<NotificationPromotionComponent>,
               public promotionService: PromotionService,
               public inhabitantService: InhabitantService,
-              @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+              @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+
+    this.idCurrentInhabitant = this.inhabitantService.currentInhabitant.id;
+    let i=0;
+    this.answers = [];
+    this.data.promotions.forEach((promotion) => {
+      if (!promotion.notifiedCustomersNumber.includes(this.idCurrentInhabitant)){
+        promotion.notifiedCustomersNumber.push(this.idCurrentInhabitant);
+        this.promotionService.updatePromotion(promotion);
+      }
+      this.answers[i++] = false;
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  public interestedInPromotion(interested: boolean){
-    if (interested && this.data.promotion.customersNumberInterested == undefined){
-      const array = [];
-      array.push(this.inhabitantService.currentInhabitant.id);
-      this.data.promotion.customersNumberInterested = array;
+  public interestedInPromotion(promotion : Promotion, i : number){
+    if (!promotion.customersNumberInterested.includes(this.idCurrentInhabitant)){
+      promotion.customersNumberInterested.push(this.idCurrentInhabitant);
     }
-    else if (interested) {
-      if (this.data.promotion.customersNumberInterested.indexOf(this.inhabitantService.currentInhabitant.id) == -1)
-      this.data.promotion.customersNumberInterested.push(this.inhabitantService.currentInhabitant.id);
-    }
-    if (this.data.promotion.notifiedCustomersNumber == undefined){
-      const array = [];
-      array.push(this.inhabitantService.currentInhabitant.id);
-      this.data.promotion.notifiedCustomersNumber = array;
-    }
-    else {
-      if (this.data.promotion.notifiedCustomersNumber.indexOf(this.inhabitantService.currentInhabitant.id) == -1)
-      this.data.promotion.notifiedCustomersNumber.push(this.inhabitantService.currentInhabitant.id);
-    }
-    this.promotionService.updatePromotion(this.data.promotion);
-    this.dialogRef.close();
+    this.answers[i]=true;
+    this.promotionService.updatePromotion(promotion);
   }
 
-
-
+  continue() {
+    this.dialogRef.close();
+  }
 }
 

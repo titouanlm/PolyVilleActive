@@ -1,14 +1,5 @@
 [
   {
-    "title": "Liquidation Totale",
-    "description": "-20% sur tous les articles",
-    "startDate": "2020-02-20",
-    "endDate": "2020-02-22",
-    "shopId": 1234665,
-    "id": 1607907896865,
-    "public": true
-  },
-  {
     "title": "50% off",
     "description": "only for shoes",
     "startDate": "2020-12-14",
@@ -25,5 +16,19 @@
       1988,
       1999
     ]
+  },
+  {
+    "title": "LALALA",
+    "description": "dqiodj",
+    "startDate": "2020-02-20",
+    "endDate": "2020-02-20",
+    "customersNumberInterested": [
+      1999
+    ],
+    "notifiedCustomersNumber": [
+      1999
+    ],
+    "shopId": 1234567,
+    "id": 1608149454567
   }
 ]
