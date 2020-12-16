@@ -81,7 +81,11 @@ export class VisitorInhabitantDisplayComponent {
             this.inhabitantService.changeLocation(shop.longitude, shop.latitude);
             this.inhabitant.latitude = Number(shop.latitude);
             this.inhabitant.longitude = Number(shop.longitude);
-            this.getPromotionShop(shop);
+            this.getAutorisation(shop)
+          var autorisation=this.autorisationService.verifyAutorisationExist(shop.label, this.inhabitant.id)
+          if(autorisation.length!=0)
+          {this.getPromotionShop(shop);}
+
         },
         error => {
           this.error = 'Unknown shop.';
@@ -94,30 +98,22 @@ export class VisitorInhabitantDisplayComponent {
 
 
 
+  private getAutorisation(shop:Shop)
+  {
+    var autorisation=this.autorisationService.verifyAutorisationExist(shop.label, this.inhabitant.id)
 
+    if (autorisation.length == 0)
+    {
+      this.openAuthorisationDialog(shop,this.inhabitant);
+    }
+  }
 
   private getPromotionShop(shop: Shop) {
     const lastPromo = shop.promotions.slice(-1)[0];
-    var autorisation=this.autorisationService.verifyAutorisationExist(shop.label, this.inhabitant.id)
-    console.log("Hello");
-    console.log(autorisation);
-    if (autorisation.length == 0)
-    {
-      console.log(shop);
-      console.log(this.inhabitant);
-       this.openAuthorisationDialog(shop,this.inhabitant);
 
-     // console.log("uhuhuh");
-     // console.log(autorisation);
-    }
-
-    //window.location.reload();
-
-    if (autorisation.length != 0){
-      console.log("AJUJGUG");
-    if(lastPromo){
+      if(lastPromo){
       this.openPromoDialog(lastPromo , shop)
-    }}
+    }
   }
 
   openAuthorisationDialog(shop,inhabitant) {
@@ -127,6 +123,15 @@ export class VisitorInhabitantDisplayComponent {
       height: '40%',
       data: {inhabitant: inhabitant, shop: shop}
     });
+
+    dialogRef.afterClosed().subscribe(
+      result=>{
+        if(result=='true')
+        {
+          this.getPromotionShop(shop)
+        }
+      }
+    )
   }
 
   openPromoDialog(lastPromo, shop) {

@@ -5,7 +5,6 @@ import {InhabitantService} from "../../services/inhabitant.service";
 import {AutorisationService} from "../../services/autorisation.service";
 import {Autorisation} from "../../models/autorisation.model";
 import {DialogDataAutorisation} from "../visitor-inhabitant-display/visitor-inhabitant-display.component";
-//import { VisitorInhabitantDisplayComponent} from "../visitor-inhabitant-display/visitor-inhabitant-display.component";
 
 
 @Component({
@@ -23,7 +22,6 @@ export class PopupVisitorInhabitantAutorisationComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<PopupVisitorInhabitantAutorisationComponent>,
               private router: Router, private inhabitantService: InhabitantService,
               private autorisationService:AutorisationService,
-              //private visitorinhabitantdisplay:VisitorInhabitantDisplayComponent,
               @Inject(MAT_DIALOG_DATA) public data:DialogDataAutorisation) { }
 
   ngOnInit(): void {
@@ -34,26 +32,15 @@ export class PopupVisitorInhabitantAutorisationComponent implements OnInit {
     this.autorisation.shopId=Number(this.data.shop.id);
     this.autorisation.inhabitantId=this.data.inhabitant.id;
     this.autorisationService.addAutorisation(this.autorisation);
-    this.dialogRef.close();
-    // this.visitorinhabitantdisplay.move();
+    this.dialogRef.close('true');
+
   }
 
   Refuse()
   {
-    this.dialogRef.close();
+    this.dialogRef.close('false');
   }
-  authenticate() {
-    this.inhabitantService.authenticateInhabitant(Number(this.number))
-      .subscribe(
-        data => {
-          this.dialogRef.close();
-          this.router.navigate(['visitorinhabitant']);
-        },
-        error => {
-          this.error = 'Unknown inhabitant.';
-          console.log(this.error);
-        });
-  }
+
 
 
 
