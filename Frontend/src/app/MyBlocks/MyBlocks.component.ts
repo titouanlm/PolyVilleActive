@@ -5,7 +5,6 @@ import {
   NgxBlocklyConfig,
   NgxBlocklyGeneratorConfig,
   NgxToolboxBuilderService,
-  TEXT_CATEGORY,
   Separator
 } from 'ngx-blockly';
 import {PromoBlock} from './PromoBlock';
@@ -24,6 +23,8 @@ import {NotifTempsBlock} from "./NotifTempsBlock";
 import {NotifFrequenceBlock} from "./NotifFrequence";
 import {PromotionService} from "../../services/promotion.service";
 import {Promotion} from "../../models/event.model";
+import {Event} from "../../models/event.model";
+import {EventService} from "../../services/event.service";
 
 
 declare var Blockly: any;
@@ -36,6 +37,7 @@ declare var Blockly: any;
 })
 export class MyBlocksComponent {
 
+  private events: Event[];
 
   public config: NgxBlocklyConfig = {};
 
@@ -70,8 +72,9 @@ export class MyBlocksComponent {
   public customBlocks: CustomBlock[] = this.customBlocks1.concat(this.customBlocks2.concat(this.customBlocks3.concat(this.customBlocks4)));
 
   public promotion = <Promotion>{};
+  public event=<Event>{};
 
-  constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public promotionService : PromotionService) {
+  constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public promotionService : PromotionService,public eventService: EventService) {
     ngxToolboxBuilder.nodes = [
       new Category('Evenement', '#cf9700', this.customBlocks2, null),
       new Category('Promotion', '#0f4f35', this.customBlocks1, null),
@@ -92,23 +95,57 @@ export class MyBlocksComponent {
   };
 
   execute() {
+    this.event=null;
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
-   // Blockly.mainWorkspace.newBlock(Blockly.mainWorkspace,'notification',1);
+    // Blockly.mainWorkspace.newBlock(Blockly.mainWorkspace,'notification',1);
     try {
       eval(code);
-      this.promotionService.addPromotion(this.promotion)
+
+      //CREATION D'UN EVENEMENT
+      if(this.event!=null){
+      this.eventService.addEvent(this.event)
         .subscribe(
-          promoCreated => {
-                alert("Votre nouvelle promotion : "+ promoCreated.title + " a été créé !")
+          eventCreated => {
+            alert("Votre nouvelle promotion : " + eventCreated.title + " a été créé !")
           },
           error => {
             alert("Erreur : " + error);
           });
+      /*
+    this.events=this.eventService.getEvent(this.event.shopId+'',this.event.title)
+      this.event.promotions.forEach(
+        promotion => {
+          this.eventService.addPromotion(this.event.shopId + '', this.events[0].id, promotion)
+            .subscribe(
+              promoCreated => {
+                alert("Votre nouvelle promotion : " + promoCreated.title + " a été créé !")
+              }, error => {
+                alert("Erreur : " + error);
+              });
+        }
+      )*/
+      /*  this.event.notification.forEach(
+          notification=>{
+            this.eventService.addNotification(this.event.shopId+'',this.event.id,notification)
+          }
+        )*/
+        }
 
-    } catch (e) {
-      alert(e);
+
+      //CREATION D'UNE PROMO
+        if(this.promotion!=null){
+        this.promotionService.addPromotion(this.promotion)
+          .subscribe(
+            promoCreated => {
+                  alert("Votre nouvelle promotion : "+ promoCreated.title + " a été créé !")
+            },
+            error => {
+              alert("Erreur : " + error);
+            });}
+
+      } catch (e) {
+        alert(e);
+      }
+      console.log(code);
     }
-    console.log(code);
-  }
-
 }

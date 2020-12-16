@@ -33,9 +33,7 @@ export class NotifEventBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var text_notif = this.block.getFieldValue('Texte de la notification');
-    var code ='var notif=new Notification();\n'+
-      'notif.text='+text_notif+';\n';
-
+    var code ='this.event.notification.text='+text_notif+';\n';
     return code;
   }
 

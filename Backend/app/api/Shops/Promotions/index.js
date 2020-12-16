@@ -1,10 +1,13 @@
 const { Router } = require('express')
 const manageAllErrors = require('../../../utils/routes/error-management')
 const { Promotion } = require('../../../models')
-const { buildPromos, buildAPromo } = require('./manager')
-
+const ConditionRouter  = require('./Conditions');
 
 const router = new Router({ mergeParams: true })
+
+router.use('/:promoId/conditions', ConditionRouter)
+
+
 
 router.get('/', (req, res) => {
     try {

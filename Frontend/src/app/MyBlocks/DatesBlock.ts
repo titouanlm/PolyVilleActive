@@ -35,7 +35,7 @@ export class DatesBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var begin_date=this.block.getFieldValue('BEGIN_DATE').toString();
     var end_date=this.block.getFieldValue('END_DATE').toString();
-    return 'promo.startdate=' + begin_date + ';\npromo.enddate=' + end_date + ';\n';
+    return 'this.promotion.startDate="' + begin_date + '";\nthis.promotion.endDate="' + end_date + '";\n';
   }
 
   toLuaCode(block: CustomBlock): string | any[] {

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {BehaviorSubject, Subject} from 'rxjs';
+import {BehaviorSubject, pipe, Subject} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Shop} from '../models/shop.model';
 import  {Event,Promotion,Notification} from "../models/event.model";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: `root`
@@ -51,7 +52,7 @@ export class EventService {
 
   getShopEventsFromUrl(shopId: string) {
     const url = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath ;
-    this.http.get<Event[]>(url).subscribe((eventList) => {
+    return this.http.get<Event[]>(url).subscribe((eventList) => {
       this.events = eventList;
       this.events$.next(this.events);
     });
@@ -59,14 +60,26 @@ export class EventService {
 
   getEventFromUrl(shopId:string,eventId: string) {
     const urlWithId = this.shopsUrl + '/' + shopId + '/'+this.eventsPath + '/'+ eventId;
-    this.http.get<Event>(urlWithId).subscribe((event) => {
-      this.event$.next(event);
-    });
+    return this.http.get<Event>(urlWithId).
+    pipe(map((event) => {
+      return event;
+    }));
+
+  }
+
+  getEvent(shopId:string,eventtitle:string)
+  {
+    const url = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath ;
+    return this.events.filter((event) => event.title === eventtitle)
   }
 
   addEvent(event: Event) {
     const eventUrl = this.shopsUrl + '/' + event.shopId + '/' + this.eventsPath;
-    this.http.post<Event>(eventUrl, event, this.httpOptions).subscribe(() => this.getShopEventsFromUrl(event.shopId+''));
+    return this.http.post<Event>(eventUrl, event, this.httpOptions)
+      .pipe(map(EventCreated => {
+      this.getShopEventsFromUrl(event.shopId+'');
+      return EventCreated;
+    } ));
   }
 
   deleteEvent(event: Event) {
@@ -90,6 +103,8 @@ export class EventService {
     });
   }
 
+
+
   getPromotion(shopId:string,eventId: string,promoId: string) {
     const urlWithId = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath + '/'+ eventId + '/'+this.promosPath +'/'+promoId ;
     this.http.get<Promotion>(urlWithId).subscribe((promo) => {
@@ -98,8 +113,14 @@ export class EventService {
   }
 
   addPromotion(shopId:string,eventId: string,promo: Promotion) {
-    const url = this.shopsUrl + '/' + shopId + this.eventsPath + '/'+ eventId + '/'+this.promosPath ;
-    this.http.post<Promotion>(url,promo, this.httpOptions).subscribe(() => this.getEventFromUrl(shopId,eventId));
+    const url = this.shopsUrl + '/' + shopId + '/'+this.eventsPath + '/'+ eventId + '/'+this.promosPath ;
+    return this.http.post<Promotion>(url,promo, this.httpOptions).
+      pipe(map(promoCreated => {
+      this.getPromotions(shopId, eventId);
+      return promoCreated;
+    } ));
+
+    //subscribe(() => this.getEventFromUrl(shopId,eventId));
   }
 
   updatePromotion(shopId:string, eventId: string, promo: Promotion) {

@@ -8,7 +8,7 @@ const {Notification} = require('../../../models');
  * @param eventId
  * @param shopId
  */
-const buildAnEvent = (shopId,eventId) => {
+const buildAnEvent = (eventId,shopId) => {
     const event = Event.getById(eventId);
     const shop = Shop.getById(shopId)
     const shopIdInt = parseInt(shopId, 10)
@@ -17,7 +17,7 @@ const buildAnEvent = (shopId,eventId) => {
     const notifications = Notification.get();
     const parsedId = parseInt(eventId, 10);
 
-    return { ...event, "notifications": notifications.filter((notif) => notif.notifEventId === parsedId) , "promotions": promotions.filter((promo) => promo.notifEventId === parsedId) }
+    return { ...event, "notifications": notifications.filter((notif) => notif.notifEventId === parsedId) , "promotions": promotions.filter((promo) => promo.promoEventId === parsedId) }
 };
 
 /**

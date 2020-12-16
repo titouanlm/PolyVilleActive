@@ -10,7 +10,8 @@ const TownHallEmployee= require('./TownHallEmployee.model')
 const CulturalActor = require('./CulturalActor.model')
 const CulturalEvent = require('./CulturalEvent.model')
 const ValidationRule = require('./ValidationRule.model')
+const Condition = require('./Condition.model')
 
 module.exports = {
-    Event,Shop,Seller,Promotion,Notification,Inhabitant,Niche,Autorisation,TownHallEmployee,CulturalActor,CulturalEvent,ValidationRule
+    Event,Shop,Seller,Promotion,Notification,Inhabitant,Niche,Autorisation,TownHallEmployee,CulturalActor,CulturalEvent,ValidationRule,Condition
 };

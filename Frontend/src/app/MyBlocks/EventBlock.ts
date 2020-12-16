@@ -57,13 +57,13 @@ export class EventBlock extends CustomBlock {
     var text_motscles = this.block.getFieldValue('MotsCles');
     var statements_promotions = Blockly.JavaScript.statementToCode(block, 'Promotions');
     var statements_notifications = Blockly.JavaScript.statementToCode(block, 'Notifications');
-    var code ='var event=new Event();\n'+
-              'event.title='+text_titre+';\n'+
-              'event.description='+text_description+';\n'+
-              'event.startdate='+text_datedebut+';\n'+
-              'event.endtdate='+text_datefin+';\n'+
-              'event.idmagasin='+text_numeromagasin+';\n'+
-              'event.motscles='+text_motscles+';\n'+
+    var code = 'this.event.title="'+text_titre+'";\n'+
+              'this.event.description="'+text_description+'";\n'+
+              'this.event.startDate="'+text_datedebut+'";\n'+
+              'this.event.endDate="'+text_datefin+'";\n'+
+              'this.event.shopId='+text_numeromagasin+';\n'+
+              'this.event.keywords="'+text_motscles+'";\n'+
+              'this.promotion.shipId='+text_numeromagasin+";\n"+
               statements_promotions +
               statements_notifications;
 

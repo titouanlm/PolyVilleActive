@@ -12,12 +12,9 @@ const {Shop }= require('../../../models');
 const buildAnAutorisation = (autorisationId,inhabitantId) => {
     const autorisation= Autorisation.getById(autorisationId);
     const inhabitant = Inhabitant.getById(inhabitantId);
-    //const shop = Shop.getById(shopId);
     const inhabitantIdInt=parseInt(inhabitantId);
-   // const shopIdInt=parseInt(shopId);
 
     if(autorisation.inhabitantId!==inhabitantIdInt) throw new NotFoundError('autorisation not found for inhabitantId=${inhabitantId}');
-   // if(autorisation.shopId!=shopIdInt) throw new NotFoundError('autorisation not found for the shop ${shop.label}');
 
     return autorisation;
 };

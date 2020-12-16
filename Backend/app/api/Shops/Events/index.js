@@ -12,7 +12,7 @@ router.use('/:eventId/notifications', NotificationsRouter)
 
 router.get('/', (req, res) => {
     try {
-        const events = buildEvents()
+        const events = buildEvents(req.params.shopId)
         res.status(200).json(events)
     } catch (err) {
         manageAllErrors(res, err)
@@ -21,7 +21,8 @@ router.get('/', (req, res) => {
 
 router.get('/:eventId', (req, res) => {
     try {
-        const event = buildAnEvent(req.params.shopId,req.params.eventId)
+
+        const event = buildAnEvent(req.params.eventId,req.params.shopId)
         res.status(200).json(event)
     } catch (err) {
         manageAllErrors(res, err)

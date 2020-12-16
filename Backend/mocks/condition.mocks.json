@@ -1,0 +1,16 @@
+[
+  {
+    "type": "NB_CUSTOMERS",
+    "nb_clients": 20,
+    "promoId": 1608134619050,
+    "shopId": 1234567,
+    "id": 1608142781374
+  },
+  {
+    "type": "NB_CUSTOMERS",
+    "nb_clients": 20,
+    "promoId": 1608134619050,
+    "shopId": 1234567,
+    "id": 1608143099553
+  }
+]

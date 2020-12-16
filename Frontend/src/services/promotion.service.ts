@@ -39,14 +39,14 @@ export class PromotionService {
   }
 
   getPromotions() {
-    this.http.get<Promotion[]>('http://localhost:9428/api/promotions').subscribe((promos) => {
+    this.http.get<Promotion[]>('http://localhost:9428/api/shops/'+this.currentSeller.shopId +'promotions').subscribe((promos) => {
       this.promotions=promos;
       this.promotions$.next(promos);
     });
   }
 
   getPromotion(promoId: number) {
-    return this.http.get<Promotion>('http://localhost:9428/api/promotions/'+promoId,this.httpOptions)
+    return this.http.get<Promotion>('http://localhost:9428/api/shops/'+this.currentSeller.shopId +'/promotions/'+promoId,this.httpOptions)
       .pipe(map((promotion) => {
         return promotion;
       }));
@@ -61,7 +61,7 @@ export class PromotionService {
   }
 
   updatePromotion(promo: Promotion) {
-    const url = 'http://localhost:9428/api/promotions' + '/' + promo.id ;
+    const url = 'http://localhost:9428/api/shops/' +this.currentSeller.shopId+ '/promotions/' + promo.id ;
     this.http.put<Promotion>(url,promo,this.httpOptions).subscribe();
   }
 

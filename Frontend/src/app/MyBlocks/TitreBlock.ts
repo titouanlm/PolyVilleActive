@@ -35,7 +35,7 @@ export class TitreBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
    var title=this.block.getFieldValue('TITLE');
    var description=this.block.getFieldValue('DESCRIPTION');
-   var code ='promo.title='+title+';\npromo.description='+description+';\n';
+   var code ='this.promotion.title="'+title+'";\nthis.promotion.description="'+description+'";\n';
     return code;
   }
 
