@@ -9,12 +9,14 @@
     "public": true,
     "customersNumberInterested": [
       1987,
-      1999
+      1999,
+      1867
     ],
     "notifiedCustomersNumber": [
       1987,
       1988,
-      1999
+      1999,
+      1867
     ]
   },
   {

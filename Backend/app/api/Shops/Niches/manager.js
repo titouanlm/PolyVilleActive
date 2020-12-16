@@ -1,4 +1,4 @@
-const {Niche } = require('../../../models')
+const {Niche,Shop } = require('../../../models')
 
 /**
  * Function buildANiche.

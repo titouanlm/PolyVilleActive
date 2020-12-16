@@ -16,7 +16,7 @@ const buildAnAutorisation = (autorisationId,inhabitantId) => {
     const inhabitantIdInt=parseInt(inhabitantId);
    // const shopIdInt=parseInt(shopId);
 
-    if(autorisation.inhabitantId!=inhabitantIdInt) throw new NotFoundError('autorisation not found for inhabitantId=${inhabitantId}');
+    if(autorisation.inhabitantId!==inhabitantIdInt) throw new NotFoundError('autorisation not found for inhabitantId=${inhabitantId}');
    // if(autorisation.shopId!=shopIdInt) throw new NotFoundError('autorisation not found for the shop ${shop.label}');
 
     return autorisation;

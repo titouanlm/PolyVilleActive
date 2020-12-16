@@ -6,7 +6,11 @@ const Seller = require('./Seller.model.js');
 const Inhabitant = require('./Inhabitant.model.js');
 const Niche = require('./Niche.model.js');
 const Autorisation = require('./Autorisation.model.js');
+const TownHallEmployee= require('./TownHallEmployee.model')
+const CulturalActor = require('./CulturalActor.model')
+const CulturalEvent = require('./CulturalEvent.model')
+const ValidationRule = require('./ValidationRule.model')
 
 module.exports = {
-    Event,Shop,Seller,Promotion,Notification,Inhabitant,Niche,Autorisation
+    Event,Shop,Seller,Promotion,Notification,Inhabitant,Niche,Autorisation,TownHallEmployee,CulturalActor,CulturalEvent,ValidationRule
 };
