@@ -31,8 +31,12 @@ import { AdditionalShopInfoComponent } from './additional-shop-info/additional-s
 import { CityCenterInformationComponent } from './city-center-information/city-center-information.component';
 import { OthersInformationComponent } from './others-information/others-information.component';
 import { DialogPromoInformationComponent } from './dialog-promo-information/dialog-promo-information.component';
+import {CulturalActorBlocksComponent} from "./CulturalActorBlocks/CulturalActorBlocks.component";
+import { MayorBlocksComponent } from './mayor-blocks/mayor-blocks.component';
 import { ThanksComponent } from './thanks/thanks.component';
 import { InhabitantForSellerComponent } from './inhabitant-for-seller/inhabitant-for-seller.component';
+import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inhabitant-autorisation/popup-visitor-inhabitant-autorisation.component";
+
 
 
 @NgModule({
@@ -56,8 +60,11 @@ import { InhabitantForSellerComponent } from './inhabitant-for-seller/inhabitant
     CityCenterInformationComponent,
     OthersInformationComponent,
     DialogPromoInformationComponent,
+    CulturalActorBlocksComponent,
+    MayorBlocksComponent,
     ThanksComponent,
     InhabitantForSellerComponent,
+    PopupVisitorInhabitantAutorisationComponent,
   ],
   imports: [
     BrowserModule,

@@ -37,3 +37,18 @@ export interface Event {
   condRight: string;
   condSign: string;
 }
+
+export interface CulturalEvent {
+  id: string;
+  title: string;
+  description: string;
+  dateDeut : string;
+  dateFin : string;
+  heureDebut: string;
+  heureFin : string;
+  nbrPresonneAttendu: number
+  lieu : string;
+  typeEvenement : string;
+  typePublic : string;
+  shopId : number;
+}
