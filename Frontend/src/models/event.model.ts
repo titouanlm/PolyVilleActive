@@ -17,6 +17,7 @@ export interface Event {
   startDate : string;
   endDate : string;
   shopId : number;
+  eventId?:number;
   promoKeywords?: string;
   promoEventId?: number;
   promoType?: number;
