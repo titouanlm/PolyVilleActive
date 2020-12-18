@@ -18,10 +18,18 @@ router.get('/', (req, res) => {
         manageAllErrors(res, err)
     }
 })
-
+/*
 router.get('/:eventId', (req, res) => {
     try {
-
+        const event = buildAnEvent(req.params.eventId,req.params.shopId)
+        res.status(200).json(event)
+    } catch (err) {
+        manageAllErrors(res, err)
+    }
+})
+*/
+router.get('/:eventId', (req, res) => {
+    try {
         const event = buildAnEvent(req.params.eventId,req.params.shopId)
         res.status(200).json(event)
     } catch (err) {

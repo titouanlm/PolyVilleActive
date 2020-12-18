@@ -6,7 +6,7 @@ export interface Event {
   endDate : string;
   promotions: Promotion[];
   notification: Notification[];
-  keywords: string;
+  keywords?: string;
   shopId : number;
 }
 

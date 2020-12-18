@@ -7,6 +7,7 @@ module.exports = new BaseModel('Promotion', {
     startDate : Joi.string().required(),
     endDate : Joi.string().required(),
     shopId : Joi.number().required(),
+    eventId:Joi.number(),
     promoKeywords: Joi.string(),
     promoEventId: Joi.number(),
     promoType: Joi.number(),

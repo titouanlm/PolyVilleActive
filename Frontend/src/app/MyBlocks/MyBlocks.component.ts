@@ -37,7 +37,6 @@ declare var Blockly: any;
 })
 export class MyBlocksComponent {
 
-  private events: Event[];
 
   public config: NgxBlocklyConfig = {};
 
@@ -73,6 +72,7 @@ export class MyBlocksComponent {
 
   public promotion = <Promotion>{};
   public event=<Event>{};
+  private events: Event[];
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public promotionService : PromotionService,public eventService: EventService) {
     ngxToolboxBuilder.nodes = [
@@ -95,7 +95,8 @@ export class MyBlocksComponent {
   };
 
   execute() {
-    this.event=null;
+   // this.event=null;
+    this.promotion=null;
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
     // Blockly.mainWorkspace.newBlock(Blockly.mainWorkspace,'notification',1);
     try {
@@ -103,7 +104,8 @@ export class MyBlocksComponent {
 
       //CREATION D'UN EVENEMENT
       if(this.event!=null){
-      this.eventService.addEvent(this.event)
+        console.log(this.event)
+        this.eventService.addEvent(this.event)
         .subscribe(
           eventCreated => {
             alert("Votre nouvelle promotion : " + eventCreated.title + " a été créé !")
@@ -111,19 +113,22 @@ export class MyBlocksComponent {
           error => {
             alert("Erreur : " + error);
           });
-      /*
-    this.events=this.eventService.getEvent(this.event.shopId+'',this.event.title)
-      this.event.promotions.forEach(
-        promotion => {
-          this.eventService.addPromotion(this.event.shopId + '', this.events[0].id, promotion)
+     // this.events=this.eventService.getShopEventsFromUrl(this.event.shopId+'');
+   // this.events=this.eventService.getEvent(this.event.shopId+'',this.event.title)
+        console.log(this.event.title)
+        console.log("Hello")
+    //    var idevent=this.eventService.getEvent(this.event.shopId+'',this.event.title).toString();
+      //  console.log(idevent);
+/*
+
+          this.eventService.addPromotion(this.event.shopId + '', this.events[0].id, this.promotion)
             .subscribe(
               promoCreated => {
                 alert("Votre nouvelle promotion : " + promoCreated.title + " a été créé !")
               }, error => {
                 alert("Erreur : " + error);
               });
-        }
-      )*/
+        */
       /*  this.event.notification.forEach(
           notification=>{
             this.eventService.addNotification(this.event.shopId+'',this.event.id,notification)
@@ -146,6 +151,8 @@ export class MyBlocksComponent {
       } catch (e) {
         alert(e);
       }
+    console.log(this.event.title)
+    console.log("Hello")
       console.log(code);
     }
 }

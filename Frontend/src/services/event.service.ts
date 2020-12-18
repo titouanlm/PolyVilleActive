@@ -67,11 +67,6 @@ export class EventService {
 
   }
 
-  getEvent(shopId:string,eventtitle:string)
-  {
-    const url = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath ;
-    return this.events.filter((event) => event.title === eventtitle)
-  }
 
   addEvent(event: Event) {
     const eventUrl = this.shopsUrl + '/' + event.shopId + '/' + this.eventsPath;
@@ -103,7 +98,11 @@ export class EventService {
     });
   }
 
-
+  getEvent(shopId:string,eventtitle:string)
+  {
+    const url = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath ;
+    return this.events.filter((event) => event.title === eventtitle)
+  }
 
   getPromotion(shopId:string,eventId: string,promoId: string) {
     const urlWithId = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath + '/'+ eventId + '/'+this.promosPath +'/'+promoId ;
