@@ -45,7 +45,12 @@ export class PromoEventBlock extends CustomBlock {
     var startDate=this.block.getFieldValue('Start_Date_promo').toString();
     var endDate=this.block.getFieldValue('End_Date_promo').toString();
 
-    return'this.event.promotions=[];\n'+ 'this.promotion.title="' + title + '";\nthis.promotion.description="' + description
+    /*return'this.event.promotions=[];\n'+ 'this.promotion.title="' + title + '";\nthis.promotion.description="' + description
+      + '";\nthis.promotion.startDate="' + startDate + '";\nthis.promotion.endDate="' + endDate + '";\n'
+      +'this.event.promotions.unshift(this.promotion);\n';
+     */
+
+    return 'this.promotion.title="'+ title +'";\nthis.promotion.description="' + description
       + '";\nthis.promotion.startDate="' + startDate + '";\nthis.promotion.endDate="' + endDate + '";\n'
       +'this.event.promotions.unshift(this.promotion);\n';
   }

@@ -6,7 +6,7 @@ export interface Event {
   endDate : string;
   promotions: Promotion[];
   notification: Notification[];
-  keywords: string;
+  keywords?: string;
   shopId : number;
 }
 
@@ -17,6 +17,7 @@ export interface Event {
   startDate : string;
   endDate : string;
   shopId : number;
+  eventId?:number;
   promoKeywords?: string;
   promoEventId?: number;
   promoType?: number;

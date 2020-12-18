@@ -39,7 +39,7 @@ export class PromotionService {
   }
 
   getPromotions() {
-    this.http.get<Promotion[]>('http://localhost:9428/api/shops/'+this.currentSeller.shopId +'promotions').subscribe((promos) => {
+    this.http.get<Promotion[]>('http://localhost:9428/api/shops/'+this.currentSeller.shopId +'/promotions').subscribe((promos) => {
       this.promotions=promos;
       this.promotions$.next(promos);
     });

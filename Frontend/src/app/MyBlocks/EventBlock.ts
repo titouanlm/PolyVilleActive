@@ -20,10 +20,10 @@ export class EventBlock extends CustomBlock {
       .appendField(new Blockly.FieldTextInput(""), "Description");
     this.block.appendDummyInput()
       .appendField("DateDebut")
-      .appendField(new Blockly.FieldTextInput(""), "DateDebut");
+      .appendField(new Blockly.FieldDate('2020-02-20'), "DateDebut");
     this.block.appendDummyInput()
       .appendField("DateFin")
-      .appendField(new Blockly.FieldTextInput(""), "DateFin");
+      .appendField(new Blockly.FieldDate('2020-02-20'), "DateFin");
     this.block.appendDummyInput()
       .appendField("NumeroMagasin")
       .appendField(new Blockly.FieldTextInput(""), "NumeroMagasin");
@@ -49,6 +49,7 @@ export class EventBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
+
     var text_titre = this.block.getFieldValue('Titre');
     var text_description = this.block.getFieldValue('Description');
     var text_datedebut = this.block.getFieldValue('DateDebut');
@@ -57,15 +58,27 @@ export class EventBlock extends CustomBlock {
     var text_motscles = this.block.getFieldValue('MotsCles');
     var statements_promotions = Blockly.JavaScript.statementToCode(block, 'Promotions');
     var statements_notifications = Blockly.JavaScript.statementToCode(block, 'Notifications');
-    var code = 'this.event.title="'+text_titre+'";\n'+
+    var code='';
+
+    if(text_motscles!==""){
+     code = 'this.event.title="'+text_titre+'";\n'+
               'this.event.description="'+text_description+'";\n'+
               'this.event.startDate="'+text_datedebut+'";\n'+
               'this.event.endDate="'+text_datefin+'";\n'+
               'this.event.shopId='+text_numeromagasin+';\n'+
               'this.event.keywords="'+text_motscles+'";\n'+
-              'this.promotion.shipId='+text_numeromagasin+";\n"+
+             // 'this.promotion.shopId='+text_numeromagasin+";\n"+
               statements_promotions +
-              statements_notifications;
+              statements_notifications;}
+    else {
+       code = 'this.event.title="'+text_titre+'";\n'+
+        'this.event.description="'+text_description+'";\n'+
+        'this.event.startDate="'+text_datedebut+'";\n'+
+        'this.event.endDate="'+text_datefin+'";\n'+
+        'this.event.shopId='+text_numeromagasin+';\n'+
+        statements_promotions +
+        statements_notifications;}
+
 
     return code;
   }

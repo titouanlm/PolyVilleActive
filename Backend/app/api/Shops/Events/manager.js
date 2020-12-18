@@ -1,4 +1,4 @@
-const {Event } = require('../../../models');
+const {Event} = require('../../../models');
 const {Promotion } = require('../../../models');
 const {Notification} = require('../../../models');
 
@@ -8,6 +8,7 @@ const {Notification} = require('../../../models');
  * @param eventId
  * @param shopId
  */
+/*
 const buildAnEvent = (eventId,shopId) => {
     const event = Event.getById(eventId);
     const shop = Shop.getById(shopId)
@@ -19,7 +20,17 @@ const buildAnEvent = (eventId,shopId) => {
 
     return { ...event, "notifications": notifications.filter((notif) => notif.notifEventId === parsedId) , "promotions": promotions.filter((promo) => promo.promoEventId === parsedId) }
 };
+*/
 
+const buildAnEvent = (eventId,shopId) => {
+    const event= Event.getById(eventId);
+    const shop = Shop.getById(shopId);
+    const shopIdInt=parseInt(shopId,10);
+
+    if(event.shopId!==shopIdInt) throw new NotFoundError(`event not found for shipId=${shopId}`);
+
+    return event;
+};
 /**
  * Function  buildEvents.
  * This function build all events with there promotions and notifications.
