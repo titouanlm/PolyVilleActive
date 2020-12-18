@@ -4,6 +4,7 @@ import {BehaviorSubject, Subject} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import  {ValidationRule} from "../models/validationRule.model";
 import  {TownHallEmployee} from "../models/townHallEmployee.model";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: `root`
@@ -26,6 +27,7 @@ export class TownHallEmployeeService {
    */
   public employees$: BehaviorSubject<TownHallEmployee[]>;
   public rules$: BehaviorSubject<ValidationRule[]>;
+  public employee: TownHallEmployee
 
   public employee$: Subject<TownHallEmployee> = new Subject();
   public rule$: Subject<ValidationRule> = new Subject();
@@ -36,7 +38,7 @@ export class TownHallEmployeeService {
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient) {
-    this.employee$ = new BehaviorSubject(this.employees);
+    this.employees$ = new BehaviorSubject(this.employees);
     this.rules$ = new BehaviorSubject(this.rules);
   }
 
@@ -59,6 +61,18 @@ export class TownHallEmployeeService {
 
   addEvent(empl: TownHallEmployee) {
     this.http.post<TownHallEmployee>(this.employeesUrl, empl, this.httpOptions).subscribe(() => this.getTownHallEmployeesFromUrl());
+  }
+
+
+  authenticateEmployee(employeeId: number){
+    return this.http.post<any>('http://localhost:9428/api/townHallEmployees/authenticate', { "id": employeeId })
+      .pipe(map(employee => {
+        // store user details and jwt token in local storage to keep user logged in between page refreshes
+        localStorage.setItem('currentActor', JSON.stringify(employee));
+        this.employee = employee;
+        this.employee$.next(this.employee);
+        return employee;
+      }));
   }
 /*
   deleteEvent(actor: CulturalActor) {

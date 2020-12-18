@@ -36,6 +36,10 @@ import { MayorBlocksComponent } from './mayor-blocks/mayor-blocks.component';
 import { ThanksComponent } from './thanks/thanks.component';
 import { InhabitantForSellerComponent } from './inhabitant-for-seller/inhabitant-for-seller.component';
 import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inhabitant-autorisation/popup-visitor-inhabitant-autorisation.component";
+import { PopupCulturalActorAuthentificationComponent } from './popup-cultural-actor-authentification/popup-cultural-actor-authentification.component';
+import { PopupTownHallEmployeeAuthentificationComponent } from './popup-town-hall-employee-authentification/popup-town-hall-employee-authentification.component';
+import { CulturalActorHomeComponent } from './cultural-actor-home/cultural-actor-home.component';
+import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-hall-employee-home.component';
 
 
 
@@ -65,6 +69,10 @@ import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inha
     ThanksComponent,
     InhabitantForSellerComponent,
     PopupVisitorInhabitantAutorisationComponent,
+    PopupCulturalActorAuthentificationComponent,
+    PopupTownHallEmployeeAuthentificationComponent,
+    CulturalActorHomeComponent,
+    TownHallEmployeeHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +90,8 @@ import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inha
       {path: 'visitorinhabitant/shoprating/shop', component: ShopRatingComponent},
       {path: 'visitorinhabitant/shoprating/shop/additionalinfo', component: AdditionalShopInfoComponent},
       {path: 'visitorinhabitant/citycenterinformation', component: CityCenterInformationComponent},
+      {path: 'cultural-actor', component: CulturalActorHomeComponent},
+      {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
       { path: '**', redirectTo: '' }
     ], {useHash: true}),
     NgxBlocklyModule,

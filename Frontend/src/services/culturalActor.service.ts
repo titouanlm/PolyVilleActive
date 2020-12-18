@@ -4,6 +4,7 @@ import {BehaviorSubject, Subject} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import  {CulturalActor} from "../models/CulturalActor.model";
 import  {CulturalEvent} from "../models/event.model";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: `root`
@@ -29,6 +30,8 @@ export class CulturalActorService {
 
   public cactor$: Subject<CulturalActor> = new Subject();
   public cevent$: Subject<CulturalEvent> = new Subject();
+
+  public cactor: CulturalActor
 
   private cActorsUrl = serverUrl + '/culturalActors';
   private cEventsPath = 'culturalEvents';
@@ -69,6 +72,17 @@ export class CulturalActorService {
   updateEvent(actor: CulturalActor) {
     const eventUrl = this.cActorsUrl + '/' + actor.id;
     this.http.put<CulturalActor>(eventUrl, actor, this.httpOptions).subscribe(() => this.getCulturalActorsFromUrl());
+  }
+
+  authenticateActor(actorId: number){
+    return this.http.post<any>('http://localhost:9428/api/culturalActors/authenticate', { "id": actorId })
+      .pipe(map(actor => {
+        // store user details and jwt token in local storage to keep user logged in between page refreshes
+        localStorage.setItem('currentActor', JSON.stringify(actor));
+        this.cactor = actor;
+        this.cactor$.next(this.cactor);
+        return actor;
+      }));
   }
 
   //............................................... Cultural events ..............................................

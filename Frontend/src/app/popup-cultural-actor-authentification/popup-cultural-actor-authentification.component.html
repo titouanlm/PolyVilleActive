@@ -1,0 +1,16 @@
+<mat-form-field class="fieldpopupmatdialog">
+  <mat-label>Id number</mat-label>
+  <input matInput [(ngModel)]="number">
+</mat-form-field >
+<div mat-dialog-actions class="okmatdialog">
+  <button mat-button cdkFocusInitial (click)="authenticate()">Entrer</button>
+</div>
+<div class="errorMessage">
+  <span *ngIf="error">
+    {{ error }}
+  </span>
+</div>
+
+
+
+
