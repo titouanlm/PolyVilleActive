@@ -14,18 +14,19 @@
     </a><br>
     <h1>Sellers</h1>
   </div>
-
-  <div class="actorDisplay">
-    <a (click)="openSellersDialog()" class="actorIcon">
-      <mat-icon [inline]="true">actor</mat-icon>
+<!--</div>-->
+  <div class="culturalActorDisplay">
+    <a class="actorIcon">
+      <mat-icon (click)="openTownHallEmployeesDialog()" [inline]="true">supervised_user_circle</mat-icon>
     </a><br>
-    <h1>actor</h1>
+    <h1>Cultural Actor</h1>
   </div>
 
-  <div class="emloyeeDisplay">
-    <a (click)="openSellersDialog()" class="emloyeeIcon">
-       <mat-icon [inline]="true">employee</mat-icon>
-      </a><br>
-      <h1>employee</h1>
-    </div>
+  <div class="TownHallemployeeDisplay">
+    <a class="TownHallemployeeIcon">
+      <mat-icon (click)="openCulturalActorsDialog()" [inline]="true">perm_identity</mat-icon>
+    </a><br>
+    <h1 style="position: absolute;left: -28%;white-space: nowrap;">Town Hall</h1>
+    <h1 style="position: absolute;top: 130%;left: -28%;">Employee</h1>
   </div>
+</div>

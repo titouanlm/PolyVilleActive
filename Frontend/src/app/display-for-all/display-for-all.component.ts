@@ -29,14 +29,14 @@ export class DisplayForAllComponent implements OnInit {
     });
   }
 
-  openEmployeesDialog() {
+  openTownHallEmployeesDialog() {
     const dialogRef = this.dialog.open(PopupTownHallEmployeeAuthentificationComponent, {
       width: '18%',
       height: '26%'
     });
   }
 
-  openActorsDialog() {
+  openCulturalActorsDialog() {
     const dialogRef = this.dialog.open(PopupCulturalActorAuthentificationComponent, {
       width: '18%',
       height: '26%'

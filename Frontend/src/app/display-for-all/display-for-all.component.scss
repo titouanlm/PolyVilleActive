@@ -20,6 +20,13 @@ h1 {
   height: 35%;
 }
 
+
+.TownHallemployeeIcon{
+  font-size: 7em;
+  cursor: pointer;
+
+}
+
 .sellerIcon {
   font-size: 7em;
   cursor: pointer;
@@ -30,18 +37,26 @@ h1 {
   cursor: pointer;
 }
 
-.actorDisplay{
+.actorIcon{
+  font-size: 7em;
+  cursor: pointer;
+}
+
+.culturalActorDisplay{
   position: absolute;
   text-align: center;
-  top: 50%;
-  left: 20%;
+  top: 28%;
+  left: 9%;
   height: 35%;
 }
 
-.employeeDisplay{
+.culturalActorIcon{
   position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 80%;
-  height: 35%;
+  font-size: 4em;
+}
+
+.TownHallemployeeDisplay{
+  position: absolute;
+  left: 79%;
+  top: 27.5%;
 }
