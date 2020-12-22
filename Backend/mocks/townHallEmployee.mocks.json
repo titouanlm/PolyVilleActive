@@ -1,17 +1,17 @@
 [
   {
-    "nom": "Eric",
-    "prenom": "Gagou",
+    "lastName": "Eric",
+    "firstName": "Gagou",
     "id": 1608130186291
   },
   {
-    "id": 123553,
-    "nom": "Knight",
-    "prenom": "Sopoline"
+    "id": 123483,
+    "lastName": "Knight",
+    "firstName": "Sopoline"
   },
   {
     "id": 123554,
-    "nom": "Cook",
-    "prenom": "Emery"
+    "lastName": "Cook",
+    "firstName": "Emery"
   }
 ]

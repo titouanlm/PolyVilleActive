@@ -72,6 +72,7 @@ import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-ha
     PopupCulturalActorAuthentificationComponent,
     PopupTownHallEmployeeAuthentificationComponent,
     CulturalActorHomeComponent,
+    CulturalActorBlocksComponent,
     TownHallEmployeeHomeComponent,
   ],
   imports: [
@@ -91,7 +92,9 @@ import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-ha
       {path: 'visitorinhabitant/shoprating/shop/additionalinfo', component: AdditionalShopInfoComponent},
       {path: 'visitorinhabitant/citycenterinformation', component: CityCenterInformationComponent},
       {path: 'cultural-actor', component: CulturalActorHomeComponent},
+      {path: 'cultural-actor/blockly', component: CulturalActorBlocksComponent},
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
+      {path: 'town-hall-employee/blockly', component: MayorBlocksComponent},
       { path: '**', redirectTo: '' }
     ], {useHash: true}),
     NgxBlocklyModule,

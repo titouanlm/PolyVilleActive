@@ -18,7 +18,7 @@ declare var Blockly: any;
 
 
 @Component({
-  selector: 'app-Mayorblocks',
+  selector: 'app-CulturalActorBlocks',
   templateUrl: './CulturalActorBlocks.component.html',
   styleUrls: ['./CulturalActorBlocks.component.scss']
 })
@@ -36,7 +36,7 @@ export class CulturalActorBlocksComponent {
 
   culturalEvent = <CulturalEvent>{};
 
-  constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public promotionService : PromotionService) {
+  constructor(ngxToolboxBuilder: NgxToolboxBuilderService) {
     ngxToolboxBuilder.nodes = [
       new Category('Evenement culturel', '#cf9700', this.customBlocks1, null),
     ];

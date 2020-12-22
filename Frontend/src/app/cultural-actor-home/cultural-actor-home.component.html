@@ -1,1 +1,17 @@
-<p>cultural-actor-home works!</p>
+<div  class="culturalActorHome">
+  <h4>Welcome {{ culturalActor.firstName }} {{ culturalActor.lastName }}</h4>
+
+  <div class="culturalActorblocklycreation" >
+    <a [routerLink]="['blockly']" class="increaseSize">
+      <mat-icon [inline]="true">add_box</mat-icon>
+    </a>
+  </div>
+
+
+  <div class="cActorExit" >
+    <a [routerLink]="['..']" class="increaseSize">
+      <mat-icon [inline]="true" (click)="logout()">exit_to_app</mat-icon>
+    </a>
+  </div>
+
+</div>

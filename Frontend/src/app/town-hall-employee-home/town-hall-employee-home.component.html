@@ -1,1 +1,17 @@
-<p>town-hall-employee-home works!</p>
+<div  class="townHallEmployeerHome">
+  <h4>Welcome {{ townHallEmployee.firstName }} {{ townHallEmployee.lastName }}</h4>
+
+  <div class="townHallEmployeeBlocklyCreation" >
+    <a [routerLink]="['blockly']" class="increaseSize">
+      <mat-icon [inline]="true">add_box</mat-icon>
+    </a>
+  </div>
+
+
+  <div class="townHallEmployeeExit" >
+    <a [routerLink]="['..']" class="increaseSize">
+      <mat-icon [inline]="true" (click)="logout()">exit_to_app</mat-icon>
+    </a>
+  </div>
+
+</div>

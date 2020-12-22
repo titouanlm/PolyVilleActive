@@ -2,6 +2,6 @@ const Joi = require('joi');
 const BaseModel = require('../utils/base-model.js');
 
 module.exports = new BaseModel('TownHallEmployee', {
-    nom : Joi.string(),
-    prenom: Joi.string()
+    lastName : Joi.string(),
+    firstName: Joi.string()
 });

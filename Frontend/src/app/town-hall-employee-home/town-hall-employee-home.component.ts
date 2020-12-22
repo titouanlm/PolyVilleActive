@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TownHallEmployee} from "../../models/townHallEmployee.model";
+import {TownHallEmployeeService} from "../../services/townHallEmployee.service";
 
 @Component({
   selector: 'app-town-hall-employee-home',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TownHallEmployeeHomeComponent implements OnInit {
 
-  constructor() { }
+  public townHallEmployee : TownHallEmployee;
+
+  constructor(public townHallEmployeeService: TownHallEmployeeService) {
+    this.townHallEmployee = this.townHallEmployeeService.employee;
+  }
 
   ngOnInit(): void {
   }
 
+  logout() {
+    this.townHallEmployeeService.logout();
+  }
 }

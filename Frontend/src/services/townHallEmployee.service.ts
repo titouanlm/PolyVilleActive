@@ -68,12 +68,18 @@ export class TownHallEmployeeService {
     return this.http.post<any>('http://localhost:9428/api/townHallEmployees/authenticate', { "id": employeeId })
       .pipe(map(employee => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
-        localStorage.setItem('currentActor', JSON.stringify(employee));
+        localStorage.setItem('currentEmployee', JSON.stringify(employee));
         this.employee = employee;
         this.employee$.next(this.employee);
         return employee;
       }));
   }
+
+  logout() {
+    localStorage.removeItem('currentEmployee');
+    this.employee$.next(null);
+  }
+
 /*
   deleteEvent(actor: CulturalActor) {
     const eventUrl = this.cActorsUrl + '/' + actor.id;

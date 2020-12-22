@@ -1,5 +1,5 @@
 export interface TownHallEmployee {
   id: number;
-  nom : string;
-  prenom: string;
+  lastName : string;
+  firstName: string;
 }

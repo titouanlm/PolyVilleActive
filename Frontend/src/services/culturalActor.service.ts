@@ -85,6 +85,12 @@ export class CulturalActorService {
       }));
   }
 
+  logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentActor');
+    this.cactor$.next(null);
+  }
+
   //............................................... Cultural events ..............................................
 
 

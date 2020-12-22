@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CulturalActor} from "../../models/culturalActor.model";
+import {CulturalActorService} from "../../services/culturalActor.service";
 
 @Component({
   selector: 'app-cultural-actor-home',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CulturalActorHomeComponent implements OnInit {
 
-  constructor() { }
+  public culturalActor: CulturalActor;
+
+  constructor(public culturalActorService: CulturalActorService) {
+    this.culturalActor = this.culturalActorService.cactor;
+  }
 
   ngOnInit(): void {
   }
 
+  logout() {
+    this.culturalActorService.logout();
+  }
 }

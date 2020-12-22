@@ -48,7 +48,7 @@ export class MayorBlocksComponent implements OnInit {
 
   culturalEvent = <CulturalEvent>{};
 
-  constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public promotionService : PromotionService) {
+  constructor(ngxToolboxBuilder: NgxToolboxBuilderService) {
     ngxToolboxBuilder.nodes = [
       new Category('Conditions', '#cf9700', this.customBlocks1, null),
     ];
