@@ -7,15 +7,16 @@ import {
   NgxBlocklyGeneratorConfig,
   NgxToolboxBuilderService
 } from "ngx-blockly";
-import {PromotionService} from "../../services/promotion.service";
 import {RegleBlock} from "./RegleBlock";
 import {EtBlock} from "./EtBlock";
 import {CondTypeBlock} from "./CondTypeBlock";
 import {CondPublicBlock} from "./CondPublicBlock";
-import {CondNbPersonneBlock} from "./CondNbPersonneBlock";
+import {MaxPeople} from "./MaxPeople";
 import {CondHeureFinBlock} from "./CondHeureFinBlock";
 import {AlorsBlock} from "./AlorsBlock";
-import * as Blockly from "ngx-blockly/scripts/blockly/typings/blockly";
+
+
+declare var Blockly: any;
 
 @Component({
   selector: 'app-mayor-blocks',
@@ -37,20 +38,18 @@ export class MayorBlocksComponent implements OnInit {
     new EtBlock('et' , null , null),
     new CondTypeBlock('condtype' , null , null),
     new CondPublicBlock('condpublic' , null , null),
-    new CondNbPersonneBlock('condnbpersonne' , null , null),
-    new CondNbPersonneBlock('condnbpersonne' , null , null),
+    new MaxPeople('maxPeople' , null , null),
+    new MaxPeople('minPeople' , null , null),
     new CondHeureFinBlock('condheurefin' , null , null),
     new AlorsBlock('alors' , null , null),
   ];
 
-
   public customBlocks: CustomBlock[] = this.customBlocks1;
-
-  culturalEvent = <CulturalEvent>{};
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService) {
     ngxToolboxBuilder.nodes = [
-      new Category('Conditions', '#cf9700', this.customBlocks1, null),
+      new Category('Cultural Event', '#cf9700', this.customBlocks1, null),
+      new Category('Seller Event', '#cf1000', this.customBlocks1, null),
     ];
     this.config.toolbox = ngxToolboxBuilder.build();
     this.config.scrollbars = false;
@@ -66,7 +65,7 @@ export class MayorBlocksComponent implements OnInit {
   };
 
   execute() {
-    var code// = Blockly.Javascript.workspaceToCode(Blockly.mainWorkspace);
+    var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
     try {
       eval(code);
 

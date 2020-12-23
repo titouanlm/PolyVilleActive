@@ -2,33 +2,34 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 
 declare var Blockly: any;
 
-export class CondTypeBlock extends CustomBlock {
+export class MaxPeople extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
-    this.class = CondTypeBlock;
+    this.class = MaxPeople;
 
 
   }
 
   defineBlock() {
     this.block.appendDummyInput()
-      .appendField("Si type d'évènement   = ")
-      .appendField(new Blockly.FieldDropdown([["Théatre","theatre"], ["Concert","concert"], ["Exposition","exposition"], ["Festival","festival"], ["Danse","danse"], ["All","all"]]), "type");
+      .appendField("If number of expected people over ")
+      .appendField(new Blockly.FieldNumber(999999999, 1), "max");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(230);
+    this.block.setColour(315);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }
 
   toXML() {
-    return '<block type="condtype"></block>';
+    return '<block type="maxPeople"></block>';
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    var dropdown_type = this.block.getFieldValue('type');
+    var number_min = this.block.getFieldValue('min');
+    var number_max = this.block.getFieldValue('max');
     // TODO: Assemble JavaScript into code variable.
-    var code = 'this.culturalevent.typeEvenement===;'+dropdown_type+'\n';
+    var code = 'this.culturalevent.nbrPresonneAttendu<=='+number_max+'\n';
     return code;
   }
 }

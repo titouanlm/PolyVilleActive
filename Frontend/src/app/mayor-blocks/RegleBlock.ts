@@ -12,13 +12,24 @@ export class RegleBlock extends CustomBlock {
   }
 
   defineBlock() {
-    this.block.appendStatementInput("regle")
+    this.block.appendDummyInput()
+      .appendField('Rule of prohibition');
+    this.block.appendDummyInput()
+      .appendField("Type of cultural event*")
+      .appendField(new Blockly.FieldDropdown([["Théatre","theatre"], ["Concert","concert"], ["Exposition","exposition"], ["Festival","festival"], ["Danse","danse"], ["All","all"]]), "type");
+
+    this.block.appendStatementInput("Additional conditions")
       .setCheck(null)
-      .appendField("Règle");
-    this.block.setColour(230);
-    this.block.setTooltip("");
-    this.block.setHelpUrl("");
+      .appendField("Additional conditions");
+
+
+    this.block.setPreviousStatement(true, null);
+    this.block.setNextStatement(true, null);
+    this.block.setColour(315);
+    this.block.setTooltip('');
+    this.block.setHelpUrl('');
   }
+
 
   toXML() {
     return '<block type="regle"></block>';
@@ -32,6 +43,11 @@ export class RegleBlock extends CustomBlock {
   }
 }
 
-
+//SI il y a des salles disponibles pour l'évènement cette période la
+//NOMBRE DE POMPIER/POLICIER DISPO
+//PERIODE
+//NOMBRE D'EVENEMENT DU MEME TYPE DANS LA MEME PERIODE
+//rules of prohibition
+//mandatory rules
 
 
