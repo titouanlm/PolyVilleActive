@@ -7,7 +7,6 @@ import {
   NgxBlocklyGeneratorConfig,
   NgxToolboxBuilderService
 } from "ngx-blockly";
-import {PromotionService} from "../../services/promotion.service";
 import {RegleBlock} from "./RegleBlock";
 import {EtBlock} from "./EtBlock";
 import {CondTypeBlock} from "./CondTypeBlock";
@@ -15,14 +14,16 @@ import {CondPublicBlock} from "./CondPublicBlock";
 import {CondNbPersonneBlock} from "./CondNbPersonneBlock";
 import {CondHeureFinBlock} from "./CondHeureFinBlock";
 import {AlorsBlock} from "./AlorsBlock";
-import * as Blockly from "ngx-blockly/scripts/blockly/typings/blockly";
+
+declare var Blockly: any;
+
 
 @Component({
   selector: 'app-mayor-blocks',
-  templateUrl: './mayor-blocks.component.html',
-  styleUrls: ['./mayor-blocks.component.scss']
+  templateUrl: './town-hall-employee-blocks.component.html',
+  styleUrls: ['./town-hall-employee-blocks.component.scss']
 })
-export class MayorBlocksComponent implements OnInit {
+export class TownHallEmployeeBlocksComponent implements OnInit {
 
   culturalevent = <CulturalEvent>{};
   decision: boolean
@@ -37,7 +38,6 @@ export class MayorBlocksComponent implements OnInit {
     new EtBlock('et' , null , null),
     new CondTypeBlock('condtype' , null , null),
     new CondPublicBlock('condpublic' , null , null),
-    new CondNbPersonneBlock('condnbpersonne' , null , null),
     new CondNbPersonneBlock('condnbpersonne' , null , null),
     new CondHeureFinBlock('condheurefin' , null , null),
     new AlorsBlock('alors' , null , null),
@@ -66,7 +66,7 @@ export class MayorBlocksComponent implements OnInit {
   };
 
   execute() {
-    var code// = Blockly.Javascript.workspaceToCode(Blockly.mainWorkspace);
+    var code = Blockly.Javascript.workspaceToCode(Blockly.mainWorkspace);
     try {
       eval(code);
 

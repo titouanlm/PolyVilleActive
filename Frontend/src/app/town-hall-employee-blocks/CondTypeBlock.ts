@@ -28,7 +28,7 @@ export class CondTypeBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var dropdown_type = this.block.getFieldValue('type');
     // TODO: Assemble JavaScript into code variable.
-    var code = 'this.culturalevent.typeEvenement===;'+dropdown_type+'\n';
+    var code = 'this.culturalevent.typeEvenement==='+dropdown_type+'\n';
     return code;
   }
 }
