@@ -9,6 +9,7 @@ module.exports = new BaseModel('CulturalEvent', {
     dateFin : Joi.string(),
     heureDebut: Joi.string(),
     heureFin : Joi.string(),
+    capacitesalle: Joi.number(),
     nbrPresonneAttendu: Joi.number(),
     lieu :Joi.string(),
     typeEvenement : Joi.string(),
