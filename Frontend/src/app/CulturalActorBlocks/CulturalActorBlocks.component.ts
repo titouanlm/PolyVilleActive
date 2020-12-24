@@ -8,8 +8,7 @@ import {
   TEXT_CATEGORY,
   Separator
 } from 'ngx-blockly';
-import {PromotionService} from "../../services/promotion.service";
-import {CulturalEvent, Promotion} from "../../models/event.model";
+import {CulturalEvent} from "../../models/event.model";
 import {CulturalEventBlock} from "./CulturalEventBlock"
 import {HourBlock} from "./HourBlock"
 
@@ -45,12 +44,12 @@ export class CulturalActorBlocksComponent {
   }
 
   public generatorConfig: NgxBlocklyGeneratorConfig = {
-    dart: true,
+    dart: false,
     javascript: true,
-    lua: true,
-    php: true,
-    python: true,
-    xml: true
+    lua: false,
+    php: false,
+    python: false,
+    xml: false
   };
 
   execute() {

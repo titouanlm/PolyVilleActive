@@ -19,7 +19,7 @@ declare var Blockly: any;
 
 
 @Component({
-  selector: 'app-mayor-blocks',
+  selector: 'app-town-hall-employee-blocks',
   templateUrl: './town-hall-employee-blocks.component.html',
   styleUrls: ['./town-hall-employee-blocks.component.scss']
 })
@@ -43,7 +43,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     new AlorsBlock('alors' , null , null),
   ];
 
-
+W
   public customBlocks: CustomBlock[] = this.customBlocks1;
 
   culturalEvent = <CulturalEvent>{};
@@ -57,16 +57,18 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   }
 
   public generatorConfig: NgxBlocklyGeneratorConfig = {
-    dart: true,
+    dart: false,
     javascript: true,
-    lua: true,
-    php: true,
-    python: true,
-    xml: true
+    lua: false,
+    php: false,
+    python: false,
+    xml: false
   };
 
   execute() {
-    var code = Blockly.Javascript.workspaceToCode(Blockly.mainWorkspace);
+
+   // Blockly.JavaScript.addReservedWords('code');
+    var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
     try {
       eval(code);
 

@@ -31,7 +31,7 @@ export class CondNbPersonneBlock extends CustomBlock {
     var number_min = this.block.getFieldValue('min');
     var number_max = this.block.getFieldValue('max');
     // TODO: Assemble JavaScript into code variable.
-    var code = 'this.culturalevent.nbrPresonneAttendu<=='+number_max+'&& this.culturalevent.nbrPresonneAttendu>=='+number_min+'\n';
+    var code = 'this.culturalevent.nbrPresonneAttendu <= '+number_max+' && this.culturalevent.nbrPresonneAttendu >= '+number_min+'\n';
     return code;
   }
 }

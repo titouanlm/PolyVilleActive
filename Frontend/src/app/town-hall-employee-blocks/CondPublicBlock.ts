@@ -28,7 +28,7 @@ export class CondPublicBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var dropdown_publicattendu = this.block.getFieldValue('publicattendu');
     // TODO: Assemble JavaScript into code variable.
-    var code = ' this.culturalevent.typePublic === '+dropdown_publicattendu;
+    var code = ' this.culturalevent.typePublic === \''+dropdown_publicattendu+'\'';
     return code;
   }
 }

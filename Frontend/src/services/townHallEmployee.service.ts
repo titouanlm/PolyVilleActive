@@ -91,7 +91,7 @@ export class TownHallEmployeeService {
     this.http.put<CulturalActor>(eventUrl, actor, this.httpOptions).subscribe(() => this.getCulturalActorsFromUrl());
   }*/
 
-  //............................................... Cultural events ..............................................
+  //............................................... Validation Rule ..............................................
 
 
   getValidationRules(empId:string) {

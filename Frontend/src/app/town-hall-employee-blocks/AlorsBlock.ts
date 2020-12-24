@@ -15,7 +15,7 @@ export class AlorsBlock extends CustomBlock {
       .appendField("Alors    ")
       .appendField(new Blockly.FieldCheckbox("TRUE"), "NAME");
     this.block.setPreviousStatement(true, null);
-    this.block.setColour(230);
+    this.block.setColour(130);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }
