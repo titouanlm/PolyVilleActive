@@ -32,7 +32,7 @@ import { CityCenterInformationComponent } from './city-center-information/city-c
 import { OthersInformationComponent } from './others-information/others-information.component';
 import { DialogPromoInformationComponent } from './dialog-promo-information/dialog-promo-information.component';
 import {CulturalActorBlocksComponent} from "./CulturalActorBlocks/CulturalActorBlocks.component";
-import { MayorBlocksComponent } from './mayor-blocks/mayor-blocks.component';
+import { TownHallEmployeeBlocksComponent } from './town-hall-employee-blocks/town-hall-employee-blocks.component';
 import { ThanksComponent } from './thanks/thanks.component';
 import { InhabitantForSellerComponent } from './inhabitant-for-seller/inhabitant-for-seller.component';
 import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inhabitant-autorisation/popup-visitor-inhabitant-autorisation.component";
@@ -65,7 +65,7 @@ import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-ha
     OthersInformationComponent,
     DialogPromoInformationComponent,
     CulturalActorBlocksComponent,
-    MayorBlocksComponent,
+    TownHallEmployeeBlocksComponent,
     ThanksComponent,
     InhabitantForSellerComponent,
     PopupVisitorInhabitantAutorisationComponent,
@@ -94,7 +94,7 @@ import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-ha
       {path: 'cultural-actor', component: CulturalActorHomeComponent},
       {path: 'cultural-actor/blockly', component: CulturalActorBlocksComponent},
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
-      {path: 'town-hall-employee/blockly', component: MayorBlocksComponent},
+      {path: 'town-hall-employee/blockly', component: TownHallEmployeeBlocksComponent},
       { path: '**', redirectTo: '' }
     ], {useHash: true}),
     NgxBlocklyModule,

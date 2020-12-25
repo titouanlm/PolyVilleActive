@@ -2,17 +2,17 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 
 declare var Blockly: any;
 
-export class MinPeople extends CustomBlock {
+export class MaxPeopleBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
-    this.class = MinPeople;
+    this.class = MaxPeopleBlock;
 
 
   }
 
   defineBlock() {
     this.block.appendDummyInput()
-      .appendField("If number of expected people under ")
+      .appendField("If number of expected people is over")
       .appendField(new Blockly.FieldNumber(999999999, 1), "max");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
@@ -22,13 +22,16 @@ export class MinPeople extends CustomBlock {
   }
 
   toXML() {
-    return '<block type="minPeople"></block>';
+    return '<block type="maxPeople"></block>';
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    var number_min = this.block.getFieldValue('min');
-    // TODO: Assemble JavaScript into code variable.
-    var code = 'this.culturalevent.nbrPresonneAttendu<=='+number_min+'\n';
+    var number_max = this.block.getFieldValue('max');
+    var code = 'this.prohibitionRule.numberMaxPeopleExpected="'+number_max+'";\n';
     return code;
   }
 }
+
+
+
+

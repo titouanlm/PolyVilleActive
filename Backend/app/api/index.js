@@ -5,6 +5,8 @@ const SellersRouter = require('./sellers');
 const ShopsRouter = require('./shops');
 const TownHallEmployeesRouter = require('./TownHallEmploye');
 const CulturalActorsRouter = require('./CulturalActor');
+const ProhibitionRulesRouter = require('./ProhibitionRule');
+
 
 const router = new Router();
 router.get('/status', (req, res) => res.status(200).json('ok'));
@@ -14,5 +16,7 @@ router.use('/shops', ShopsRouter);
 router.use('/promotions', PromotionsRouter);
 router.use('/townHallEmployees', TownHallEmployeesRouter);
 router.use('/culturalActors', CulturalActorsRouter);
+router.use('/prohibitionRules', ProhibitionRulesRouter);
+
 
 module.exports = router;

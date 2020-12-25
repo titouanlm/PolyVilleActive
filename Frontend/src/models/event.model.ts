@@ -47,7 +47,8 @@ export interface CulturalEvent {
   dateFin : string;
   heureDebut: string;
   heureFin : string;
-  nbrPresonneAttendu: number
+  nbrPresonneAttendu: number;
+  capacitesalle: number;
   lieu : string;
   typeEvenement : string;
   typePublic : string;

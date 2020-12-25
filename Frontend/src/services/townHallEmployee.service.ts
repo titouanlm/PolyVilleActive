@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, Subject} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
-import  {ValidationRule} from "../models/validationRule.model";
 import  {TownHallEmployee} from "../models/townHallEmployee.model";
 import {map} from "rxjs/operators";
 
@@ -19,27 +18,22 @@ export class TownHallEmployeeService {
    * The list .
    */
   private employees : TownHallEmployee[];
-  private rules : ValidationRule[];
 
   /**
    * Observables.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
   public employees$: BehaviorSubject<TownHallEmployee[]>;
-  public rules$: BehaviorSubject<ValidationRule[]>;
   public employee: TownHallEmployee
 
   public employee$: Subject<TownHallEmployee> = new Subject();
-  public rule$: Subject<ValidationRule> = new Subject();
 
   private employeesUrl = serverUrl + '/townHallEmployees';
-  private rulePath = 'validationRules';
 
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient) {
     this.employees$ = new BehaviorSubject(this.employees);
-    this.rules$ = new BehaviorSubject(this.rules);
   }
 
   //............................................... Town hall employee ..............................................
@@ -93,21 +87,6 @@ export class TownHallEmployeeService {
 
   //............................................... Cultural events ..............................................
 
-
-  getValidationRules(empId:string) {
-    const url = this.employeesUrl + '/' +empId+ '/' +this.rulePath;
-    this.http.get<ValidationRule[]>(url).subscribe((rules) => {
-      this.rules=rules;
-      this.rules$.next(rules);
-    });
-  }
-
-  getCulturalEvent(empId:string,ruleId: string) {
-    const url = this.employeesUrl + '/' +empId+ '/' +this.rulePath+'/'+ruleId;
-    this.http.get<ValidationRule>(url).subscribe((rule) => {
-      this.rule$.next(rule);
-    });
-  }
 
  /* addCulturalEvent(actorId:string,event: CulturalEvent) {
     const url = this.cActorsUrl + '/' +actorId+ '/' +this.cEventsPath;

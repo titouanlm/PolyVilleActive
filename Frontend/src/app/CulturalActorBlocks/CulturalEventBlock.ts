@@ -19,15 +19,18 @@ export class CulturalEventBlock extends CustomBlock {
               .appendField(new Blockly.FieldTextInput(""), "Description");
         this.block.appendDummyInput()
               .appendField("Date de début   ")
-              .appendField(new Blockly.FieldTextInput(""), "DateDebut")
+          .appendField(new Blockly.FieldDate('2020-02-20'), "DateDebut")
               .appendField("       Date de fin    ")
-              .appendField(new Blockly.FieldTextInput(""), "DateFin");
+          .appendField(new Blockly.FieldDate('2020-02-20'), "DateFin");
         this.block.appendValueInput("heureDebut")
               .setCheck(null)
               .appendField("Heure de debut");
         this.block.appendValueInput("NAME")
               .setCheck(null)
               .appendField("Heure de fin");
+    this.block.appendDummyInput()
+      .appendField("Capacité de la salle")
+      .appendField(new Blockly.FieldNumber(0, 0), "capacitesalle");
         this.block.appendDummyInput()
               .appendField("Nombre de personne attendu")
               .appendField(new Blockly.FieldNumber(0, 0), "nbpersonne");
@@ -57,6 +60,7 @@ export class CulturalEventBlock extends CustomBlock {
       var value_heuredebut = Blockly.JavaScript.valueToCode(block, 'heureDebut', Blockly.JavaScript.ORDER_ATOMIC);
       var value_heurefin = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
       var number_nbpersonne = this.block.getFieldValue('nbpersonne');
+      var number_capacitesalle = this.block.getFieldValue('capacitesalle');
       var text_lieu = this.block.getFieldValue('lieu');
       var dropdown_type = this.block.getFieldValue('type');
       var dropdown_public = this.block.getFieldValue('public');
@@ -67,6 +71,7 @@ export class CulturalEventBlock extends CustomBlock {
                 'this.culturalEvent.datefin='+text_datefin+';\n'+
                 'this.culturalEvent.heureDebut ='+ value_heuredebut+';\n'+
                 'this.culturalEvent.heureFin ='+ value_heurefin+';\n'+
+                'this.culturalEvent.capacitesalle='+number_capacitesalle+';\n'+
                 'this.culturalEvent.nbrPresonneAttendu='+number_nbpersonne+';\n'+
                 'this.culturalEvent.lieu='+text_lieu+';\n'+
                 'this.culturalEvent.typeEvenement='+dropdown_type+';\n'+

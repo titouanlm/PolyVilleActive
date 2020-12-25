@@ -1,0 +1,35 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  border:none;
+  position: absolute;
+  right: 0;
+}
+
+td, th {
+  text-align: left;
+  padding: 1%;
+  font-size: 1em;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#blockly {
+}
+
+ngx-blockly{
+  position: absolute;
+  width: 50%;
+  height: 70%;
+}
+
+#rules{
+  margin-top: 5%;
+  background-color: white;
+}
+
+#content {
+}

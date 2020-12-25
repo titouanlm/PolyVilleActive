@@ -1,4 +1,4 @@
-const {TownHallEmployee,ValidationRule } = require('../../../models')
+const {TownHallEmployee,ProhibitionRule } = require('../../models')
 
 /**
  * Function buildARule.
@@ -7,7 +7,7 @@ const {TownHallEmployee,ValidationRule } = require('../../../models')
  * @param ruleId
  */
 const buildARule = (thempId,ruleId) => {
-    const rule = ValidationRule.getById(ruleId);
+    const rule = ProhibitionRule.getById(ruleId);
     const themployee = TownHallEmployee.getById(thempId);
     const thempIdInt = parseInt(thempId, 10);
     if (rule.thEmployeeId!== thempIdInt) throw new NotFoundError(`$id=${ruleId} was not found for ${themployee.name}`);

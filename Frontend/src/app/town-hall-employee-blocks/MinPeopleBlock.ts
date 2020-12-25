@@ -2,37 +2,31 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 
 declare var Blockly: any;
 
-export class CondPublicBlock extends CustomBlock {
+export class MinPeopleBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
-    this.class = CondPublicBlock;
-
-
+    this.class = MinPeopleBlock;
   }
 
   defineBlock() {
     this.block.appendDummyInput()
-      .appendField("Si public attendu  =  ")
-      .appendField(new Blockly.FieldDropdown([["Jeunes","jeune"], ["Personnes agées","personnesagee"], ["Enfants","enfant"], ["Tout public","tout"]]), "publicattendu");
+      .appendField("If number of expected people is under")
+      .appendField(new Blockly.FieldNumber(0, 1), "min");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(230);
+    this.block.setColour(315);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }
 
   toXML() {
-    return '<block type="condpublic"></block>';
+    return '<block type="minPeople"></block>';
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    var dropdown_publicattendu = this.block.getFieldValue('publicattendu');
+    var number_min = this.block.getFieldValue('min');
     // TODO: Assemble JavaScript into code variable.
-    var code = ' this.culturalevent.typePublic === '+dropdown_publicattendu;
+    var code = 'this.prohibitionRule.numberMinPeopleExpected="'+number_min+'";\n';
     return code;
   }
 }
-
-
-
-

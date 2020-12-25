@@ -72,7 +72,6 @@ export class MyBlocksComponent {
 
   public promotion = <Promotion>{};
   public event=<Event>{};
-  private events: Event[];
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public promotionService : PromotionService,public eventService: EventService) {
     ngxToolboxBuilder.nodes = [

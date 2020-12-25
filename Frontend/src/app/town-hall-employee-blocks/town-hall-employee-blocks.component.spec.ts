@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MayorBlocksComponent } from './mayor-blocks.component';
+import { TownHallEmployeeBlocksComponent } from './town-hall-employee-blocks.component';
 
 describe('MayorBlocksComponent', () => {
-  let component: MayorBlocksComponent;
-  let fixture: ComponentFixture<MayorBlocksComponent>;
+  let component: TownHallEmployeeBlocksComponent;
+  let fixture: ComponentFixture<TownHallEmployeeBlocksComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MayorBlocksComponent ]
+      declarations: [ TownHallEmployeeBlocksComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MayorBlocksComponent);
+    fixture = TestBed.createComponent(TownHallEmployeeBlocksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

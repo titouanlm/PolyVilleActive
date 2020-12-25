@@ -1,0 +1,36 @@
+<div class="content">
+  <div class="blockly" >
+    <button id="runButton" type="button" class="btn btn-success" (click)="execute()">Create Rule</button><br>
+    <ngx-blockly [config]="config" [customBlocks]="customBlocks" [generatorConfig]="generatorConfig"></ngx-blockly>
+  </div>
+  <div class="rules">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Event Type</th>
+        <th scope="col">Created By</th>
+        <th scope="col">Number Max People Expected</th>
+        <th scope="col">Number Min People Expected</th>
+        <th scope="col">Target People</th>
+        <th scope="col">Delete Rule</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let rule of ruleList;let i = index">
+        <th scope="row">{{i}}</th>
+        <td>{{rule.type}}</td>
+        <td>{{rule.employeeId}}</td>
+        <td>{{rule.numberMaxPeopleExpected}}</td>
+        <td>{{rule.numberMinPeopleExpected}}</td>
+        <td>{{rule.targetPeople }}</td>
+        <td>
+          <button id="runButton2" type="button" class="btn btn-danger" (click)="deleteRule(rule)">Delete</button><br>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

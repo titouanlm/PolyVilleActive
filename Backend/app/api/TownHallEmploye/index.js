@@ -1,12 +1,8 @@
 const { Router } = require('express');
 const { TownHallEmployee } = require('../../models');
 const manageAllErrors = require('../../utils/routes/error-management');
-const ValidationRuleRouter  = require('./ValidationRule');
-
 
 const router = new Router();
-router.use('/:themployeeId/culturalEvents', ValidationRuleRouter)
-
 
 router.get('/', (req, res) => {
     try {
