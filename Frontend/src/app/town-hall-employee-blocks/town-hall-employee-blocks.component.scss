@@ -1,10 +1,7 @@
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-  border:none;
+.blockly {
   position: absolute;
-  right: 0;
+  width: 50%;
+  height: 70%;
 }
 
 td, th {
@@ -13,23 +10,36 @@ td, th {
   font-size: 1em;
 }
 
+tr {
+  width: 100%;
+  display: inline-table;
+  table-layout: fixed;
+}
+
 tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-#blockly {
-}
-
-ngx-blockly{
-  position: absolute;
+table{
   width: 50%;
-  height: 70%;
+  display: -moz-groupbox;    // Firefox Bad Effect
+  float: right;
+  font-family: arial, sans-serif;
+}
+tbody{
+  overflow-y: scroll;
+  height: 617px;            //  <-- Select the height of the body
+  width: 50%;
+  position: absolute;
 }
 
-#rules{
-  margin-top: 5%;
-  background-color: white;
+table, tbody, .blockly {
+  border-color: #1976d2;
+  border-style: solid;
+  border-width: 1px;
 }
 
-#content {
+.createRule {
+  position: absolute;
+  margin-top: 675px;
 }

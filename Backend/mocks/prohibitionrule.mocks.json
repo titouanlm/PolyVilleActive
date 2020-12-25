@@ -18,22 +18,5 @@
     "numberMaxPeopleExpected": "1500",
     "numberMinPeopleExpected": "100",
     "id": 1608859311839
-  },
-  {
-    "type": "theatre",
-    "employeeId": 1608130186291,
-    "id": 1608859411668
-  },
-  {
-    "type": "festival",
-    "employeeId": 1608130186291,
-    "targetPeople": "young",
-    "numberMaxPeopleExpected": "999999999",
-    "id": 1608859433121
-  },
-  {
-    "type": "theatre",
-    "employeeId": 1608130186291,
-    "id": 1608861169881
   }
 ]
