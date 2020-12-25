@@ -30,5 +30,10 @@
     "targetPeople": "young",
     "numberMaxPeopleExpected": "999999999",
     "id": 1608859433121
+  },
+  {
+    "type": "theatre",
+    "employeeId": 1608130186291,
+    "id": 1608861169881
   }
 ]

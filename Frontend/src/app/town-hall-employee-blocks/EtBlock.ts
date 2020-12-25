@@ -15,7 +15,7 @@ export class EtBlock extends CustomBlock {
       .appendField("  Et  ");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(230);
+    this.block.setColour(350);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }

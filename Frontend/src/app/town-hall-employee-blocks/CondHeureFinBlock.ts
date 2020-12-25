@@ -29,7 +29,7 @@ export class CondHeureFinBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var value_condheurefin = Blockly.JavaScript.valueToCode(block, 'condHeureFin', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = 'this.culturalevent.heureFin > '+value_condheurefin;
+    var code = 'this.culturalevent.heureFin > \''+value_condheurefin+'\'';
     return code;
   }
 }

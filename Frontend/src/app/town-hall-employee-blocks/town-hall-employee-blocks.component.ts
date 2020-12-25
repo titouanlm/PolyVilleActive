@@ -23,7 +23,7 @@ import {ShopService} from "../../services/shop.service";
 declare var Blockly: any;
 
 @Component({
-  selector: 'app-mayor-blocks',
+  selector: 'app-town-hall-employee-blocks',
   templateUrl: './town-hall-employee-blocks.component.html',
   styleUrls: ['./town-hall-employee-blocks.component.scss']
 })
@@ -52,6 +52,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.sellerEventBlocks);
   public ruleList: ProhibitionRule[];
 
+
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService) {
     ngxToolboxBuilder.nodes = [
       new Category('Cultural Event', '#cf9700', this.culturalEventBlocks, null),
@@ -64,12 +65,12 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   }
 
   public generatorConfig: NgxBlocklyGeneratorConfig = {
-    dart: true,
+    dart: false,
     javascript: true,
-    lua: true,
-    php: true,
-    python: true,
-    xml: true
+    lua: false,
+    php: false,
+    python: false,
+    xml: false
   };
 
   execute() {
