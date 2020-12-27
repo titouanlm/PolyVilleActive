@@ -27,7 +27,7 @@ export class MaxPeopleBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var number_max = this.block.getFieldValue('max');
-    var code = 'this.prohibitionRule.numberMaxPeopleExpected="'+number_max+'";\n';
+    var code = 'this.prohibitionRule.numberMaxPeopleExpected='+number_max+';\n';
     return code;
   }
 }

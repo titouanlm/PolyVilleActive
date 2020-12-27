@@ -1,6 +1,6 @@
 export interface ProhibitionRule {
   id: number;
-  employeeId: number;
+  createdBy: string;
   type: string;
   numberMaxPeopleExpected?: number;
   numberMinPeopleExpected?: number;

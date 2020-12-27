@@ -77,7 +77,7 @@ export class ShopInformationComponent implements OnInit {
       .subscribe(() =>
         this.calculateShopRate());*/
 
-    interval(5000)
+    interval(20000)
       .pipe(takeWhile(() => true))
       .subscribe(() => {
         this.calculateNbPeopleClose();

@@ -16,8 +16,6 @@ import {CondHeureFinBlock} from "./CondHeureFinBlock";
 import {AlorsBlock} from "./AlorsBlock";
 import {ProhibitionRule} from "../../models/prohibitionRule.model";
 import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
-import {Shop} from "../../models/shop.model";
-import {ShopService} from "../../services/shop.service";
 
 
 declare var Blockly: any;
@@ -34,10 +32,11 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public config: NgxBlocklyConfig = {};
   public prohibitionRule = <ProhibitionRule>{};
+  public rulesInConflict : ProhibitionRule[];
 
   public culturalEventBlocks: CustomBlock[] = [
     new ProhibitionRuleBlock('prohibitionRule' , null , null),
-    new EtBlock('et' , null , null),
+    new EtBlock('and' , null , null),
     new CondTypeBlock('condtype' , null , null),
     new PeopleTypeBlock('targetPeople' , null , null),
     new MaxPeopleBlock('maxPeople' , null , null),
@@ -74,19 +73,33 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   };
 
   execute() {
+    // Verification de la syntaxe de la règle --> Erreur si fausse
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
+
     try {
       eval(code);
 
-      this.prohibitionRuleService.addProhibitionRule(this.prohibitionRule)
-        .subscribe(
-          ruleCreated => {
-            alert("Votre nouvelle règle a été créé !")
-            Blockly.mainWorkspace.clear();
-          },
-          error => {
-            alert("Erreur : " + error);
-          });
+      // Verification des conflits potentiels avec les autres règles --> Affiche les règles avec lesquels elle est en conflit
+      this.rulesInConflict = [];
+      this.verifyPotentialConflict()
+      if(this.rulesInConflict.length === 0){
+         // Vérification de potentiel simple modification de règle (Règle existe déjà)
+         // Traduction de la règle créé --> Passage de la règle de la forme programmation à la forme langue francaise pour l'afficher sur la page web
+
+         this.prohibitionRuleService.addProhibitionRule(this.prohibitionRule)
+          .subscribe(
+            ruleCreated => {
+              alert("Votre nouvelle règle a été créé !")
+              Blockly.mainWorkspace.clear();
+            },
+            error => {
+              alert("Erreur : " + error);
+            });
+
+      }else{
+        alert("Your rule can't be created because there are conflicts with " + this.rulesInConflict.length + " rules.");
+        console.log(this.rulesInConflict)
+      }
 
     } catch (e) {
       alert(e);
@@ -98,4 +111,34 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   deleteRule(rule: ProhibitionRule) {
       this.prohibitionRuleService.deleteRule(rule);
   }
+
+
+  verifyPotentialConflict(){
+    if(this.prohibitionRule.numberMinPeopleExpected || this.prohibitionRule.numberMaxPeopleExpected){
+      this.prohibitionRuleService.rules$.subscribe((rules) => {
+        if(this.prohibitionRule.type === "all"){
+          this.verifyNbExceptedPeople(rules);
+        }else{
+          const rulesWithSameType = rules.filter(rule => rule.type === this.prohibitionRule.type || rule.type === "all");
+          this.verifyNbExceptedPeople(rulesWithSameType);
+        }
+      });
+    }
+  }
+
+  verifyNbExceptedPeople(rules :ProhibitionRule[]){
+    rules.forEach( (rule) => {
+      if(rule.numberMaxPeopleExpected && this.prohibitionRule.numberMinPeopleExpected){
+          if(this.prohibitionRule.numberMinPeopleExpected > rule.numberMaxPeopleExpected ){
+            this.rulesInConflict.push(rule);
+          }
+      }
+      if(rule.numberMinPeopleExpected && this.prohibitionRule.numberMaxPeopleExpected){
+        if( rule.numberMinPeopleExpected > this.prohibitionRule.numberMaxPeopleExpected){
+            this.rulesInConflict.push(rule);
+        }
+      }
+    });
+  }
+
 }

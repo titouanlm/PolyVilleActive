@@ -25,6 +25,7 @@ export class ShopRatingComponent implements OnInit {
   inhabitantIsInsideShop: boolean;
 
   constructor(private shopService: ShopService, private inhabitantService: InhabitantService, public dialog: MatDialog) {
+    console.log(this.inhabitantService.currentInhabitant)
     this.shopService.shopSelected$.subscribe((shop) =>{
       this.shop=shop;
       this.currentRate = shop.storeRating.averageRate;

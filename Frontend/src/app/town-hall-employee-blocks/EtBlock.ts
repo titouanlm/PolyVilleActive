@@ -12,7 +12,7 @@ export class EtBlock extends CustomBlock {
 
   defineBlock() {
     this.block.appendDummyInput()
-      .appendField("  Et  ");
+      .appendField("  And  ");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
     this.block.setColour(350);
@@ -21,7 +21,7 @@ export class EtBlock extends CustomBlock {
   }
 
   toXML() {
-    return '<block type="et"></block>';
+    return '<block type="and"></block>';
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {

@@ -1,27 +1,14 @@
 [
   {
-    "type": "concert",
-    "employeeId": 123483,
-    "id": 1608859199819
-  },
-  {
-    "type": "exposition",
-    "employeeId": 123483,
-    "targetPeople": "young",
-    "numberMaxPeopleExpected": "999",
-    "id": 1608859226985
+    "type": "all",
+    "numberMaxPeopleExpected": 188,
+    "createdBy": "Gagou Eric",
+    "id": 1609092264020
   },
   {
     "type": "theatre",
-    "employeeId": 123483,
-    "targetPeople": "young",
-    "numberMaxPeopleExpected": "1500",
-    "numberMinPeopleExpected": "100",
-    "id": 1608859311839
-  },
-  {
-    "type": "theatre",
-    "employeeId": 1608130186291,
-    "id": 1609006964309
+    "numberMinPeopleExpected": 10,
+    "createdBy": "Gagou Eric",
+    "id": 1609092728523
   }
 ]

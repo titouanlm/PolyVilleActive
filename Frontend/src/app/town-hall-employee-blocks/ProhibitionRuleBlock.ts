@@ -33,8 +33,14 @@ export class ProhibitionRuleBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     const type = this.block.getFieldValue('type');
     const statements_condition = Blockly.JavaScript.statementToCode(block, 'Additional conditions');
-    const code = 'this.prohibitionRule.type="' + type + '";\n' + statements_condition;
-    return code;
+    //Partie création des attributs de la règle
+    const codeCreationAttribut = 'this.prohibitionRule.type="' + type + '";\n' + statements_condition;
+
+    //Partie création de la règle en programmation
+    const codeCreationRuleConditions = "if(this.event.type === '"+type+"'){ }";
+
+
+    return codeCreationAttribut;
   }
 }
 

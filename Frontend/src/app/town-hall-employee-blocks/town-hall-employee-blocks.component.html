@@ -6,24 +6,20 @@
     <table class="table">
       <thead>
       <tr>
-        <th scope="col"></th>
-        <th scope="col" >Event Type</th>
-        <th scope="col" >Created By</th>
-        <th scope="col" >Max People Expected</th>
-        <th scope="col" >Min People Expected</th>
-        <th scope="col" >Target People</th>
-        <th scope="col">Delete Rule</th>
+        <th scope="col" style="width: 2%"></th>
+        <th scope="col" style="width: 70%" >Prohibition rules</th>
+        <th scope="col" style="width: 15%">Created By</th>
+        <th scope="col" style="width: 13%">Delete Rule</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let rule of ruleList;let i = index">
-        <th scope="row">{{i}}</th>
-        <td>{{rule.type}}</td>
-        <td >{{rule.employeeId}}</td>
-        <td >{{rule.numberMaxPeopleExpected}}</td>
-        <td >{{rule.numberMinPeopleExpected}}</td>
-        <td>{{rule.targetPeople }}</td>
-        <td>
+        <th scope="row" style="width: 2%" >{{i}}</th>
+        <td style="width: 70%">It's forbidden to create an event of type <b> {{rule.type }} </b>
+          <span *ngIf="rule.targetPeople"> if the target audience is <b> {{ rule.targetPeople }} </b></span>.
+        </td>
+        <td style="width: 15%">{{rule.createdBy}}</td>
+        <td style="width: 13%">
           <button id="runButton2" type="button" class="btn btn-danger" (click)="deleteRule(rule)">Delete</button><br>
         </td>
       </tr>

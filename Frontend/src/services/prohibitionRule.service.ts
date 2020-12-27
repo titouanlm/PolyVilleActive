@@ -33,6 +33,7 @@ export class ProhibitionRuleService {
 
   constructor(private http: HttpClient) {
     this.rules$ = new BehaviorSubject(this.rules);
+    this.getProhibitionRulesFromUrl();
   }
 
   getProhibitionRulesFromUrl() {
@@ -51,7 +52,7 @@ export class ProhibitionRuleService {
 
   addProhibitionRule(rule: ProhibitionRule) {
     const currentEmployee = JSON.parse(localStorage.getItem('currentEmployee'));
-    rule.employeeId = currentEmployee.id;
+    rule.createdBy = currentEmployee.firstName + " " + currentEmployee.lastName ;
     return this.http.post<ProhibitionRule>(this.rulesPath, rule, this.httpOptions)
       .pipe(map(ruleCreated => {
         this.getProhibitionRulesFromUrl();
