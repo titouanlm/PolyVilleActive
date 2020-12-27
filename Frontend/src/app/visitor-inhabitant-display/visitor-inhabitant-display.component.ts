@@ -30,7 +30,6 @@ export interface DialogDataAutorisation {
 })
 export class VisitorInhabitantDisplayComponent {
 
-  objectName: string;
   shopId: number;
   public autorisation=<Autorisation>{};
   public inhabitant: Inhabitant;
@@ -43,47 +42,6 @@ export class VisitorInhabitantDisplayComponent {
   constructor(public inhabitantService: InhabitantService, public shopService: ShopService,public autorisationService:AutorisationService, public dialog: MatDialog) {
     this.shopName ='';
     this.inhabitant = this.inhabitantService.currentInhabitant;
-  }
-
-  achat(){
-    const dialogRef = this.dialog.open(ThanksComponent, {
-      width: '25%',
-      height: '10%',
-    });
-    this.shopService.getShop(this.shopId.toString()).subscribe((shop) =>{
-      this.shop = shop;
-      if(this.shop != undefined){
-        if (this.shop.averagePresenceBeforePurchase == undefined){
-          this.shop.averagePresenceBeforePurchase = { numberOfPurchases: 0, numberOfPresence: 0};
-        }
-        this.shop.averagePresenceBeforePurchase.numberOfPurchases = this.shop.averagePresenceBeforePurchase.numberOfPurchases+1;
-        this.shop.averagePresenceBeforePurchase.numberOfPresence += this.inhabitant.positions
-          .filter((position) =>
-            position[0] == this.inhabitant.longitude && position[1] == this.inhabitant.latitude).length;
-        this.inhabitantService.updateInhabitantPositions(
-          this.inhabitant.positions
-            .filter((position) =>
-              position[0] != this.inhabitant.longitude || position[1] != this.inhabitant.latitude)
-        );
-
-        this.addItemsToInhabitant();
-
-        this.shopService.updateShop(this.shop);
-        this.inhabitantService.authenticateInhabitant(this.inhabitant.id).subscribe((inhabitant) => this.inhabitant = inhabitant);
-    }});
-  }
-
-  addItemsToInhabitant(){
-    if (this.inhabitant.objectPurchased == undefined){
-      this.inhabitant.objectPurchased = [];
-    }
-    const array = [];
-    array.push(this.objectName.toString());
-    array.push(this.shopId.toString());
-    this.inhabitant.objectPurchased.push(array);
-    this.inhabitantService.updateInhabitant(this.inhabitant);
-    this.objectName = undefined;
-    this.shopId = undefined;
   }
 
 
