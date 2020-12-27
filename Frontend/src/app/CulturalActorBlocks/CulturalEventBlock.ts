@@ -12,37 +12,37 @@ export class CulturalEventBlock extends CustomBlock {
 
   defineBlock() {
         this.block.appendDummyInput()
-          .appendField("Titre      ")
+          .appendField("Event title      ")
           .appendField(new Blockly.FieldTextInput(""), "Titre");
         this.block.appendDummyInput()
               .appendField("Description        ")
               .appendField(new Blockly.FieldTextInput(""), "Description");
         this.block.appendDummyInput()
-              .appendField("Date de début   ")
-          .appendField(new Blockly.FieldDate('2020-02-20'), "DateDebut")
-              .appendField("       Date de fin    ")
-          .appendField(new Blockly.FieldDate('2020-02-20'), "DateFin");
+              .appendField("Start date   ")
+          .appendField(new Blockly.FieldDate('2020-12-25'), "DateDebut")
+              .appendField("       End date    ")
+          .appendField(new Blockly.FieldDate('2020-12-26'), "DateFin");
         this.block.appendValueInput("heureDebut")
               .setCheck(null)
-              .appendField("Heure de debut");
+              .appendField("Start time");
         this.block.appendValueInput("NAME")
               .setCheck(null)
-              .appendField("Heure de fin");
+              .appendField("End time");
     this.block.appendDummyInput()
-      .appendField("Capacité de la salle")
+      .appendField("Place capacity")
       .appendField(new Blockly.FieldNumber(0, 0), "capacitesalle");
         this.block.appendDummyInput()
-              .appendField("Nombre de personne attendu")
+              .appendField("Number of people expected")
               .appendField(new Blockly.FieldNumber(0, 0), "nbpersonne");
         this.block.appendDummyInput()
-              .appendField("Lieu        ")
+              .appendField("Place name        ")
               .appendField(new Blockly.FieldTextInput(""), "lieu");
         this.block.appendDummyInput()
-              .appendField("Type d'évènement    ")
+              .appendField("Event type    ")
               .appendField(new Blockly.FieldDropdown([["Théâtre","theatre"], ["Concert","concert"], ["Festival","festival"], ["Exposition","exposition"], ["Danse","danse"]]), "type");
         this.block.appendDummyInput()
-              .appendField("Public attendu        ")
-              .appendField(new Blockly.FieldDropdown([["Jeunes","jeune"], ["Personnes âgées","pesonneagee"], ["Enfants","enfant"], ["Tout public","toutpublic"]]), "public");
+              .appendField("expected audience        ")
+              .appendField(new Blockly.FieldDropdown([["Young","young"], ["Old","old"], ["Adult","adult"], ["Children","children"], ["Everyone","everyone"]]), "public");
         this.block.setColour(165);
         this.block.setTooltip("");
         this.block.setHelpUrl("");
@@ -65,17 +65,17 @@ export class CulturalEventBlock extends CustomBlock {
       var dropdown_type = this.block.getFieldValue('type');
       var dropdown_public = this.block.getFieldValue('public');
 
-      var code ='this.culturalEvent.title='+text_titre+';\n'+
-                'this.culturalEvent.description='+text_description+';\n'+
-                'this.culturalEvent.datedebut='+text_datedebut+';\n'+
-                'this.culturalEvent.datefin='+text_datefin+';\n'+
-                'this.culturalEvent.heureDebut ='+ value_heuredebut+';\n'+
-                'this.culturalEvent.heureFin ='+ value_heurefin+';\n'+
+      var code ='this.culturalEvent.title=\''+text_titre+'\';\n'+
+                'this.culturalEvent.description=\''+text_description+'\';\n'+
+                'this.culturalEvent.dateDebut=\''+text_datedebut+'\';\n'+
+                'this.culturalEvent.dateFin=\''+text_datefin+'\';\n'+
+                'this.culturalEvent.heureDebut =\''+ value_heuredebut+'\';\n'+
+                'this.culturalEvent.heureFin =\''+ value_heurefin+'\';\n'+
                 'this.culturalEvent.capacitesalle='+number_capacitesalle+';\n'+
                 'this.culturalEvent.nbrPresonneAttendu='+number_nbpersonne+';\n'+
-                'this.culturalEvent.lieu='+text_lieu+';\n'+
-                'this.culturalEvent.typeEvenement='+dropdown_type+';\n'+
-                'this.culturalEvent.typePublic='+dropdown_public+';\n';
+                'this.culturalEvent.lieu=\''+text_lieu+'\';\n'+
+                'this.culturalEvent.typeEvenement=\''+dropdown_type+'\';\n'+
+                'this.culturalEvent.typePublic=\''+dropdown_public+'\';\n';
       return code;
   }
 }

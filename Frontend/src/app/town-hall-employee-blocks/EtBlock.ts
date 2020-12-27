@@ -1,4 +1,5 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
+import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 
 declare var Blockly: any;
 
@@ -12,7 +13,7 @@ export class EtBlock extends CustomBlock {
 
   defineBlock() {
     this.block.appendDummyInput()
-      .appendField("  Et  ");
+      .appendField("  And  ");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
     this.block.setColour(350);
@@ -26,7 +27,8 @@ export class EtBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     // TODO: Assemble JavaScript into code variable.
-    var code = ' && ';
+   // ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + ' && ';
+    var code = 'this.prohibitionRule.code = this.prohibitionRule.code + \' && \';\n' ;
     return code;
   }
 }

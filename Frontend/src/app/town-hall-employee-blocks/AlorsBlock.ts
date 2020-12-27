@@ -12,7 +12,7 @@ export class AlorsBlock extends CustomBlock {
 
   defineBlock() {
     this.block.appendDummyInput()
-      .appendField("Alors    ")
+      .appendField("Then    ")
       .appendField(new Blockly.FieldCheckbox("TRUE"), "NAME");
     this.block.setPreviousStatement(true, null);
     this.block.setColour(130);

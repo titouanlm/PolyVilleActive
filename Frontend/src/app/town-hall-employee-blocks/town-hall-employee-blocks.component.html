@@ -17,9 +17,9 @@
       </thead>
       <tbody>
       <tr *ngFor="let rule of ruleList;let i = index">
-        <th scope="row">{{i}}</th>
+        <th scope="row">{{i+1}}</th>
         <td>{{rule.type}}</td>
-        <td >{{rule.employeeId}}</td>
+        <td >{{getEmployeeName(rule.employeeId)}}</td>
         <td >{{rule.numberMaxPeopleExpected}}</td>
         <td >{{rule.numberMinPeopleExpected}}</td>
         <td>{{rule.targetPeople }}</td>

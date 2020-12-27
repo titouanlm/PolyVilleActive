@@ -25,7 +25,10 @@ export class MinPeopleBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var number_min = this.block.getFieldValue('min');
-    var code = 'this.prohibitionRule.numberMinPeopleExpected="'+number_min+'";\n';
+    //ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + 'this.culturalevent.nbrPresonneAttendu < "'+number_min+'";\n';
+    var code = 'this.prohibitionRule.numberMinPeopleExpected="'+number_min+'";\n'
+      + 'this.prohibitionRule.code = this.prohibitionRule.code + \'this.culturalEvent.nbrPresonneAttendu < '+number_min + '\';\n' ;
+
     return code;
   }
 }

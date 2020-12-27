@@ -1,4 +1,5 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
+import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 
 declare var Blockly: any;
 
@@ -25,8 +26,9 @@ export class PeopleTypeBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     const dropdown_targetpeople = this.block.getFieldValue('targetPeople');
-    // TODO: Assemble JavaScript into code variable.
-    const code = ' this.prohibitionRule.targetPeople="' + dropdown_targetpeople + '";\n';
+    //ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + ' this.culturalevent.typePublic === \''+dropdown_targetpeople+'\'';
+    const code = ' this.prohibitionRule.targetPeople="' + dropdown_targetpeople + '";\n'
+              + 'this.prohibitionRule.code = this.prohibitionRule.code + \'this.culturalEvent.typePublic === "'+dropdown_targetpeople + '"\';\n' ;
     return code;
   }
 }

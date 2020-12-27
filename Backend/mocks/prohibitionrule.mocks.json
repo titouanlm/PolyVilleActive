@@ -1,22 +1,16 @@
 [
   {
     "type": "concert",
+    "code": "if( this.culturalEvent.typeEvenement === \"concert\" && this.culturalEvent.typePublic === \"young\" && this.culturalEvent.heureFin > \"(23:00)\"){this.verified=true}else this.verified=false",
+    "targetPeople": "young",
     "employeeId": 123483,
-    "id": 1608859199819
+    "id": 1609092449560
   },
   {
-    "type": "exposition",
+    "type": "all",
+    "code": "if(this.culturalEvent.nbrPresonneAttendu > 100){this.verified=true}else this.verified=false",
+    "numberMaxPeopleExpected": "100",
     "employeeId": 123483,
-    "targetPeople": "young",
-    "numberMaxPeopleExpected": "999",
-    "id": 1608859226985
-  },
-  {
-    "type": "theatre",
-    "employeeId": 123483,
-    "targetPeople": "young",
-    "numberMaxPeopleExpected": "1500",
-    "numberMinPeopleExpected": "100",
-    "id": 1608859311839
+    "id": 1609102789640
   }
 ]

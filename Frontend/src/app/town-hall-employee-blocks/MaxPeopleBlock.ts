@@ -1,4 +1,5 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
+import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 
 declare var Blockly: any;
 
@@ -27,7 +28,10 @@ export class MaxPeopleBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var number_max = this.block.getFieldValue('max');
-    var code = 'this.prohibitionRule.numberMaxPeopleExpected="'+number_max+'";\n';
+   // ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + 'this.culturalevent.nbrPresonneAttendu > "'+number_max+'";\n';
+    var code = 'this.prohibitionRule.numberMaxPeopleExpected="'+number_max+'";\n'
+      + 'this.prohibitionRule.code = this.prohibitionRule.code + \'this.culturalEvent.nbrPresonneAttendu > '+number_max + '\';\n' ;
+
     return code;
   }
 }

@@ -21,7 +21,7 @@ const buildACulturalEvent = (caId,ceId) => {
 const buildActorCulturalEvents = (caId) => {
     const cevents = CulturalEvent.get()
     const parsedId = parseInt(caId, 10)
-    return niches.filter((cevent) =>cevent.caId === parsedId)
+    return cevents.filter((cevent) =>cevent.caId === parsedId)
 }
 
 module.exports = {

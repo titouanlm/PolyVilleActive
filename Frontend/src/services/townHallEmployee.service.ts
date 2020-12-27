@@ -17,7 +17,7 @@ export class TownHallEmployeeService {
   /**
    * The list .
    */
-  private employees : TownHallEmployee[];
+  public employees : TownHallEmployee[];
 
   /**
    * Observables.
@@ -34,6 +34,7 @@ export class TownHallEmployeeService {
 
   constructor(private http: HttpClient) {
     this.employees$ = new BehaviorSubject(this.employees);
+    this.getTownHallEmployeesFromUrl();
   }
 
   //............................................... Town hall employee ..............................................
