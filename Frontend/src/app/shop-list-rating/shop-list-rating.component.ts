@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ShopService} from "../../services/shop.service";
 import {Shop} from "../../models/shop.model";
+import {InhabitantService} from "../../services/inhabitant.service";
 
 @Component({
   selector: 'app-shop-rating',
@@ -11,7 +12,7 @@ export class ShopListRatingComponent implements OnInit {
 
   public shopList: Shop[];
 
-  constructor(public shopService: ShopService) {
+  constructor(public shopService: ShopService, public inhabitantService: InhabitantService) {
     this.shopService.getShopsFromUrl();
     this.shopService.shops$.subscribe((shops) => this.shopList = shops);
   }

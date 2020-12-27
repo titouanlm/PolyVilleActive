@@ -10,18 +10,6 @@
   </div>
 </div>
 
-<div mat-dialog-actions-2 >
-  <label>
-    <input matInput [(ngModel)]="objectName" placeholder="Object name" style="position: absolute;
-  left: 45.5%;top: 40%;width: 9.5%;background-color: #bfaaf4;"/>
-    <input matInput [(ngModel)]="shopId" placeholder="Shop id" style="position: absolute;
-  left: 45.5%;top: 44%;width: 9.5%;background-color: #bfaaf4;"/>
-  </label>
-  <button mat-button cdkFocusInitial (click)="achat()" style="position: absolute;
-  left: 45.5%;top: 48%;width: 9.5%;background-color:lightskyblue;" [disabled]="objectName==undefined || shopId== undefined">Purchase</button>
-</div>
-
-
 <div class="inhabitantsExit" >
   <a [routerLink]="['..']" class="increaseSize">
     <mat-icon [inline]="true" (click)="logout()">exit_to_app</mat-icon>

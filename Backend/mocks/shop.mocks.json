@@ -6,8 +6,8 @@
     "sellerId": 1854245,
     "id": 1234567,
     "storeRating": {
-      "averageRate": 9,
-      "voterNumber": 2
+      "averageRate": 6.333333333333333,
+      "voterNumber": 3
     },
     "promotions": [
       {
@@ -20,18 +20,42 @@
         "public": true,
         "customersNumberInterested": [
           1987,
-          1999
+          1999,
+          1867
         ],
         "notifiedCustomersNumber": [
           1987,
           1988,
-          1999
+          1999,
+          1867
         ]
+      },
+      {
+        "title": "Hello",
+        "description": "world",
+        "startDate": "2020-02-20",
+        "endDate": "2020-02-20",
+        "shopId": 1234567,
+        "id": 1608134619050
+      },
+      {
+        "title": "LALALA",
+        "description": "dqiodj",
+        "startDate": "2020-02-20",
+        "endDate": "2020-02-20",
+        "customersNumberInterested": [
+          1999
+        ],
+        "notifiedCustomersNumber": [
+          1999
+        ],
+        "shopId": 1234567,
+        "id": 1608149454567
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 6,
-      "numberOfPresence": 10
+      "numberOfPurchases": 14,
+      "numberOfPresence": 82
     }
   },
   {

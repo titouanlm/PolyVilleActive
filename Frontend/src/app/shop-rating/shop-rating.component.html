@@ -3,11 +3,20 @@
   <button id="runButton" type="button" class="btn btn-success" (click)="moveToTheShop()">Move to the shop</button><br>
 </div>
 
-<div class=" shopInfos" *ngIf="inhabitantIsInsideShop && shop">
-  Welcome to {{ shop.label }} !
+<div class=" shopInfos" *ngIf="shop">
+  <!--Welcome to {{ shop.label }} !-->
 
   <h1 style="position: absolute;top: 20%;left: 41%"> Rate the store !</h1>
   <ngb-rating [(rate)]="currentRate" class="ratingspecificshop" (click)="rateShop()"></ngb-rating>
+</div>
+
+<div mat-dialog-actions-2 >
+  <label>
+    <input matInput [(ngModel)]="objectName" placeholder="Object name" style="position: absolute;
+  left: 15.5%;top: 40%;width: 9.5%;background-color: #bfaaf4;"/>
+  </label>
+  <button mat-button cdkFocusInitial (click)="achat()" style="position: absolute;
+  left: 15.5%;top: 48%;width: 9.5%;background-color:lightskyblue;" [disabled]="objectName==undefined">Purchase</button>
 </div>
 
 <div style="position: relative;top: 55%;left: 46%">
