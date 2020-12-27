@@ -18,5 +18,10 @@
     "numberMaxPeopleExpected": "1500",
     "numberMinPeopleExpected": "100",
     "id": 1608859311839
+  },
+  {
+    "type": "theatre",
+    "employeeId": 1608130186291,
+    "id": 1609006964309
   }
 ]

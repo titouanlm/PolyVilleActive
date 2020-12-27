@@ -82,6 +82,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
         .subscribe(
           ruleCreated => {
             alert("Votre nouvelle règle a été créé !")
+            Blockly.mainWorkspace.clear();
           },
           error => {
             alert("Erreur : " + error);
@@ -91,7 +92,6 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
       alert(e);
     }
     console.log(code);
-    Blockly.mainWorkspace.clear();
     this.prohibitionRule = <ProhibitionRule>{};
   }
 

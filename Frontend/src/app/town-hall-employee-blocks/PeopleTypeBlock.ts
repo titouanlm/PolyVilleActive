@@ -27,6 +27,7 @@ export class PeopleTypeBlock extends CustomBlock {
     const dropdown_targetpeople = this.block.getFieldValue('targetPeople');
     // TODO: Assemble JavaScript into code variable.
     const code = ' this.prohibitionRule.targetPeople="' + dropdown_targetpeople + '";\n';
+
     return code;
   }
 }
