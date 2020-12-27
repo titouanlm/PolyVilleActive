@@ -26,7 +26,7 @@ export class PromotionService {
   constructor(private http: HttpClient) {
     this.currentSeller = JSON.parse(localStorage.getItem('currentSeller'));
     this.promotions$ = new BehaviorSubject(this.promotions);
-    this.getPromotions()
+    //this.getPromotions()
   }
 
 
