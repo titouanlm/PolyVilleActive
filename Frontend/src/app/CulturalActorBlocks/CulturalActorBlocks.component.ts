@@ -90,11 +90,11 @@ export class CulturalActorBlocksComponent {
 
       this.culturalActorService.addCulturalEvent(this.culturalEvent)
       alert('Votre evenement culturel a été créé avec succes');
+      Blockly.mainWorkspace.clear();
     } catch (e) {
       alert(e);
     }
 
     console.log(code);
-    Blockly.mainWorkspace.clear();
   }
 }
