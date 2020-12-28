@@ -85,7 +85,12 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
     try {
       eval(code);
-      eval(this.prohibitionRule.code);
+      try {
+        eval(this.prohibitionRule.code);
+      }
+      catch (e) {
+        throw 'Erreur : Verifiez si tous les "And" sont renseignés'
+      }
 
       this.prohibitionRuleService.addProhibitionRule(this.prohibitionRule)
         .subscribe(
