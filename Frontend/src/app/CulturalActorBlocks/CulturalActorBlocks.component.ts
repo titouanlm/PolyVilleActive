@@ -40,6 +40,7 @@ export class CulturalActorBlocksComponent {
   culturalEvent = <CulturalEvent>{};
   public prohibitionRules: ProhibitionRule[]
   public verified: boolean = false
+  public rulesInConflict : ProhibitionRule[];
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService,public culturalActorService: CulturalActorService,public prohibitionRuleService: ProhibitionRuleService) {
     ngxToolboxBuilder.nodes = [
@@ -62,6 +63,7 @@ export class CulturalActorBlocksComponent {
   };
 
   execute() {
+    this.rulesInConflict = [];
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
     try {
       eval(code);
@@ -69,17 +71,23 @@ export class CulturalActorBlocksComponent {
       console.log(this.prohibitionRules);
 
       this.prohibitionRules.forEach(rule =>{
+        this.verified = false;
         eval(rule.code);
-        if (this.verified===true){
-          throw 'Votre évènement ne peut etre créé, il ne respecte pas au moins une des regles de la mairie';
+        if (this.verified){
+          this.rulesInConflict.push(rule);
         }
       });
+
+      if(this.rulesInConflict.length > 0){
+        throw this.rulesInConflict;
+      }
 
       this.culturalActorService.addCulturalEvent(this.culturalEvent)
       alert('Votre evenement culturel a été créé avec succes');
     } catch (e) {
       alert(e);
     }
+
     console.log(code);
     Blockly.mainWorkspace.clear();
   }

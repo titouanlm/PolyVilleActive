@@ -15,9 +15,7 @@
       <tbody>
       <tr *ngFor="let rule of ruleList;let i = index">
         <th scope="row" style="width: 2%" >{{i+1}}</th>
-        <td style="width: 70%">It's forbidden to create an event of type <b> {{rule.type }} </b>
-          <span *ngIf="rule.targetPeople"> if the target audience is <b> {{ rule.targetPeople }} </b></span>.
-        </td>
+        <td style="width: 70%"> {{rule.text }} </td>
         <td style="width: 15%">{{rule.createdBy}}</td>
         <td style="width: 13%">
           <button id="runButton2" type="button" class="btn btn-danger" (click)="deleteRule(rule)">Delete</button><br>

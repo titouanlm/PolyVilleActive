@@ -18,6 +18,7 @@ import {ProhibitionRule} from "../../models/prohibitionRule.model";
 import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 import {HourBlock} from "../CulturalActorBlocks/HourBlock";
 import {TownHallEmployeeService} from "../../services/townHallEmployee.service";
+import {CulturalEvent} from "../../models/event.model";
 
 
 
@@ -36,6 +37,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public config: NgxBlocklyConfig = {};
   public prohibitionRule = <ProhibitionRule>{};
+  public culturalEvent = <CulturalEvent>{};
   public rulesInConflict : ProhibitionRule[];
 
 
@@ -91,8 +93,8 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
       this.rulesInConflict = [];
       this.verifyPotentialConflict()
       if(this.rulesInConflict.length === 0){
-         // Vérification de potentiel simple modification de règle (Règle existe déjà)
-         // Traduction de la règle créé --> Passage de la règle de la forme programmation à la forme langue francaise pour l'afficher sur la page web
+         // Vérification de potentiel simple modification de règle existante
+         this.defineRuleSentence(); // Traduction de la règle créé --> Passage de la règle de la forme programmation à la forme langue francaise pour l'afficher sur la page web
 
          this.prohibitionRuleService.addProhibitionRule(this.prohibitionRule)
           .subscribe(
@@ -146,6 +148,40 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
         }
       }
     });
+  }
+
+  private defineRuleSentence() {
+    var textRule = "";
+    if(this.prohibitionRule.type === "all"){
+      textRule+="It is forbidden to create an event";
+    }else{
+      textRule+='It is forbidden to create an event of type "' + this.prohibitionRule.type + '"';
+    }
+
+    var counter = 0;
+    for(const attribut in this.prohibitionRule){
+      if(attribut != "code" && attribut != "type"){
+        if(counter > 0){
+          textRule+= " and if ";
+        }else{
+          textRule+= " if "
+        }
+
+        if(attribut === "targetPeople"){
+          textRule+= ' the target audience is "' + this.prohibitionRule.targetPeople + '"';
+        }
+
+        if(attribut === "numberMaxPeopleExpected"){
+          textRule+= " the number of expected people is greater than " + this.prohibitionRule.numberMaxPeopleExpected;
+        }
+
+        if(attribut === "numberMinPeopleExpected"){
+          textRule+= " the number of expected people is less than " + this.prohibitionRule.numberMinPeopleExpected;
+        }
+        counter++;
+      }
+    }
+    this.prohibitionRule.text = textRule + ".";
   }
 
 }

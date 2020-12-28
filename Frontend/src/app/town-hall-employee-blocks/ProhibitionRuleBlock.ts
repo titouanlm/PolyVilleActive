@@ -57,13 +57,13 @@ export class ProhibitionRuleBlock extends CustomBlock {
         + 'this.prohibitionRule.code = \'if( this.culturalEvent.typeEvenement === "'+type+'"\';\n'
         + 'this.prohibitionRule.code = this.prohibitionRule.code + " && ";\n'
         + statements_condition
-        + 'this.prohibitionRule.code = this.prohibitionRule.code + "){this.verified=true}else this.verified=false";\n';
+        + 'this.prohibitionRule.code = this.prohibitionRule.code + "){this.verified=true}";\n';
     }
     else{
         code = 'this.prohibitionRule.type="' + type + '";\n'
           +'this.prohibitionRule.code = \'if(\';\n'
           + statements_condition
-          + 'this.prohibitionRule.code = this.prohibitionRule.code + "){this.verified=true}else this.verified=false";\n';
+          + 'this.prohibitionRule.code = this.prohibitionRule.code + "){this.verified=true}";\n';
     }
 
     return code;
