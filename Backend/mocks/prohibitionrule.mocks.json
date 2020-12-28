@@ -1,20 +1,10 @@
 [
   {
     "type": "theatre",
-    "code": "if( this.culturalEvent.typeEvenement === \"theatre\" && this.culturalEvent.typePublic === \"young\"){this.verified=true}",
-    "targetPeople": "young",
-    "text": "It is forbidden to create an event of type \"theatre\" if  the target audience is \"young\".",
-    "createdBy": "Gagou Eric",
-    "id": 1609186641432
-  },
-  {
-    "type": "festival",
-    "code": "if( this.culturalEvent.typeEvenement === \"festival\" && this.culturalEvent.typePublic === \"children\" && this.culturalEvent.nbrPresonneAttendu < 10 && this.culturalEvent.nbrPresonneAttendu > 100){this.verified=true}",
+    "code": "if( this.culturalEvent.typeEvenement === \"theatre\" && this.culturalEvent.typePublic === \"children\"){this.verified=true}",
     "targetPeople": "children",
-    "numberMinPeopleExpected": "10",
-    "numberMaxPeopleExpected": "100",
-    "text": "It is forbidden to create an event of type \"festival\" if  the target audience is \"children\" and if  the number of expected people is less than 10 and if  the number of expected people is greater than 100.",
+    "text": "It is forbidden to create an event of type \"theatre\" IF  the target audience is \"children\".",
     "createdBy": "Gagou Eric",
-    "id": 1609186695015
+    "id": 1609192323428
   }
 ]

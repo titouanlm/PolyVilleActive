@@ -10,8 +10,7 @@ import {ProhibitionRuleBlock} from "./ProhibitionRuleBlock";
 import {EtBlock} from "./EtBlock";
 import {CondTypeBlock} from "./CondTypeBlock";
 import {PeopleTypeBlock} from "./PeopleTypeBlock";
-import {MaxPeopleBlock} from "./MaxPeopleBlock";
-import {MinPeopleBlock} from "./MinPeopleBlock";
+import {NumberPeopleExpectedBlock} from "./NumberPeopleExpectedBlock";
 import {CondHeureFinBlock} from "./CondHeureFinBlock";
 import {AlorsBlock} from "./AlorsBlock";
 import {ProhibitionRule} from "../../models/prohibitionRule.model";
@@ -37,7 +36,6 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public config: NgxBlocklyConfig = {};
   public prohibitionRule = <ProhibitionRule>{};
-  public culturalEvent = <CulturalEvent>{};
   public rulesInConflict : ProhibitionRule[];
 
 
@@ -46,8 +44,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     new EtBlock('and' , null , null),
     new CondTypeBlock('condtype' , null , null),
     new PeopleTypeBlock('targetPeople' , null , null),
-    new MaxPeopleBlock('maxPeople' , null , null),
-    new MinPeopleBlock('minPeople' , null , null),
+    new NumberPeopleExpectedBlock('nbPeopleExpected' , null , null),
     new CondHeureFinBlock('condheurefin' , null , null),
     new AlorsBlock('alors' , null , null),
     new HourBlock('hourBlock' , null , null)
@@ -58,10 +55,8 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.sellerEventBlocks);
   public ruleList: ProhibitionRule[];
-  verified: boolean = false
+  verified: boolean = false;
   culturalEvent = <CulturalEvent>{};
-
-
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService,public townHallEmployeeService:TownHallEmployeeService) {
     ngxToolboxBuilder.nodes = [
@@ -84,11 +79,11 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   };
 
   execute() {
-    // Verification de la syntaxe de la règle --> Erreur si fausse
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
 
     try {
       eval(code);
+      // Verification de la syntaxe de la règle --> Erreur si fausse
       try {
         eval(this.prohibitionRule.code);
       }
@@ -98,11 +93,11 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
       // Verification des conflits potentiels avec les autres règles --> Affiche les règles avec lesquels elle est en conflit
       this.rulesInConflict = [];
-      this.verifyPotentialConflict()
-      if(this.rulesInConflict.length === 0){
-         // Vérification de potentiel simple modification de règle existante
-         this.defineRuleSentence(); // Traduction de la règle créé --> Passage de la règle de la forme programmation à la forme langue francaise pour l'afficher sur la page web
+      this.verifyPotentialConflict();
+      // Vérification de potentiel simple modification de règle existante
 
+      if(this.rulesInConflict.length === 0){
+         this.defineRuleSentence(); // Traduction de la règle en texte
          this.prohibitionRuleService.addProhibitionRule(this.prohibitionRule)
           .subscribe(
             ruleCreated => {
@@ -167,23 +162,19 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
     var counter = 0;
     for(const attribut in this.prohibitionRule){
-      if(attribut != "code" && attribut != "type"){
+      if(attribut != "code" && attribut != "type" && attribut != "numberMaxPeopleExpected"){
         if(counter > 0){
-          textRule+= " and if ";
+          textRule+= " AND IF ";
         }else{
-          textRule+= " if "
+          textRule+= " IF "
         }
 
         if(attribut === "targetPeople"){
           textRule+= ' the target audience is "' + this.prohibitionRule.targetPeople + '"';
         }
 
-        if(attribut === "numberMaxPeopleExpected"){
-          textRule+= " the number of expected people is greater than " + this.prohibitionRule.numberMaxPeopleExpected;
-        }
-
         if(attribut === "numberMinPeopleExpected"){
-          textRule+= " the number of expected people is less than " + this.prohibitionRule.numberMinPeopleExpected;
+          textRule+= " the expected number of people is less than " + this.prohibitionRule.numberMinPeopleExpected + " or greater than " + this.prohibitionRule.numberMaxPeopleExpected ;
         }
         counter++;
       }
