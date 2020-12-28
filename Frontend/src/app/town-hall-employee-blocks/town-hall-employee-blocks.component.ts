@@ -18,6 +18,7 @@ import {ProhibitionRule} from "../../models/prohibitionRule.model";
 import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 import {HourBlock} from "../CulturalActorBlocks/HourBlock";
 import {TownHallEmployeeService} from "../../services/townHallEmployee.service";
+import {CulturalEvent} from "../../models/event.model";
 
 
 
@@ -55,7 +56,9 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.sellerEventBlocks);
   public ruleList: ProhibitionRule[];
-  public verified: boolean = false
+  verified: boolean = false
+  culturalEvent = <CulturalEvent>{};
+
 
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService,public townHallEmployeeService:TownHallEmployeeService) {
