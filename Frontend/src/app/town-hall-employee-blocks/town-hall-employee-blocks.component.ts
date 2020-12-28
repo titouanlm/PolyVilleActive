@@ -109,7 +109,12 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
             });
 
       }else{
-        alert("Your rule can't be created because there are conflicts with " + this.rulesInConflict.length + " rules.");
+        let conflictsRules = "";
+        this.rulesInConflict.forEach((rule) => {
+          conflictsRules+=  " - " + rule.text + "\n";
+        });
+
+        alert("Your rule can't be created because it is in conflict with " + this.rulesInConflict.length + " rule(s) : \n" + conflictsRules);
         console.log(this.rulesInConflict)
       }
 
@@ -164,9 +169,9 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     for(const attribut in this.prohibitionRule){
       if(attribut != "code" && attribut != "type" && attribut != "numberMaxPeopleExpected"){
         if(counter > 0){
-          textRule+= " AND IF ";
+          textRule+= " AND If ";
         }else{
-          textRule+= " IF "
+          textRule+= " If "
         }
 
         if(attribut === "targetPeople"){

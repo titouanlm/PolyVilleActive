@@ -1,10 +1,10 @@
 [
   {
-    "type": "theatre",
-    "code": "if( this.culturalEvent.typeEvenement === \"theatre\" && this.culturalEvent.typePublic === \"children\"){this.verified=true}",
-    "targetPeople": "children",
-    "text": "It is forbidden to create an event of type \"theatre\" IF  the target audience is \"children\".",
+    "type": "all",
+    "code": "if(this.culturalEvent.typePublic === \"young\"){this.verified=true}",
+    "targetPeople": "young",
+    "text": "It is forbidden to create an event If  the target audience is \"young\".",
     "createdBy": "Gagou Eric",
-    "id": 1609192323428
+    "id": 1609194906838
   }
 ]

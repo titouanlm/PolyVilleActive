@@ -79,7 +79,13 @@ export class CulturalActorBlocksComponent {
       });
 
       if(this.rulesInConflict.length > 0){
-        throw this.rulesInConflict;
+        let conflictsRules = "";
+        this.rulesInConflict.forEach((rule) => {
+          conflictsRules+=  " - " + rule.text + "\n";
+        });
+
+        throw "Your event can't be created because it violates "
+        + this.rulesInConflict.length + " rule(s) : \n" + conflictsRules;
       }
 
       this.culturalActorService.addCulturalEvent(this.culturalEvent)
