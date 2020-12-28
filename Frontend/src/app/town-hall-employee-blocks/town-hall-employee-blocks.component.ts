@@ -56,6 +56,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.sellerEventBlocks);
   public ruleList: ProhibitionRule[];
+  public verified: boolean = false
 
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService,public townHallEmployeeService:TownHallEmployeeService) {
@@ -84,6 +85,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
     try {
       eval(code);
+      eval(this.prohibitionRule.code);
 
       // Verification des conflits potentiels avec les autres règles --> Affiche les règles avec lesquels elle est en conflit
       this.rulesInConflict = [];
