@@ -109,9 +109,10 @@ export class CulturalActorService {
     });
   }
 
-  addCulturalEvent(actorId:string,event: CulturalEvent) {
-    const url = this.cActorsUrl + '/' +actorId+ '/' +this.cEventsPath;
-    this.http.post<CulturalEvent>(url,event, this.httpOptions).subscribe(() => this.getCulturalEvents(actorId));
+  addCulturalEvent(event: CulturalEvent) {
+    const url = this.cActorsUrl + '/' +this.cactor.id+ '/' +this.cEventsPath;
+    event.caId=this.cactor.id;
+    this.http.post<CulturalEvent>(url,event, this.httpOptions).subscribe(() => this.getCulturalEvents(this.cactor.id+''));
   }
 
   updateCulturalEvent(actorId:string,event: CulturalEvent) {

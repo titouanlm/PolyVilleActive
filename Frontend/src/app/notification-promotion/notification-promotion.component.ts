@@ -26,7 +26,7 @@ export class NotificationPromotionComponent implements OnInit {
     let i=0;
     this.answers = [];
     this.data.promotions.forEach((promotion) => {
-      if (!promotion.notifiedCustomersNumber.includes(this.idCurrentInhabitant)){
+      if (promotion.customersNumberInterested != undefined && !promotion.notifiedCustomersNumber.includes(this.idCurrentInhabitant)){
         promotion.notifiedCustomersNumber.push(this.idCurrentInhabitant);
         this.promotionService.updatePromotion(promotion);
       }
@@ -38,7 +38,7 @@ export class NotificationPromotionComponent implements OnInit {
   }
 
   public interestedInPromotion(promotion : Promotion, i : number){
-    if (!promotion.customersNumberInterested.includes(this.idCurrentInhabitant)){
+    if (!promotion.customersNumberInterested!= undefined && !promotion.customersNumberInterested.includes(this.idCurrentInhabitant)){
       promotion.customersNumberInterested.push(this.idCurrentInhabitant);
     }
     this.answers[i]=true;

@@ -43,7 +43,7 @@ export interface CulturalEvent {
   id: string;
   title: string;
   description: string;
-  dateDeut : string;
+  dateDebut : string;
   dateFin : string;
   heureDebut: string;
   heureFin : string;
@@ -52,5 +52,5 @@ export interface CulturalEvent {
   lieu : string;
   typeEvenement : string;
   typePublic : string;
-  shopId : number;
+  caId : number;
 }

@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, Subject} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import  {ProhibitionRule} from "../models/prohibitionRule.model";
-import {Promotion} from "../models/event.model";
 import {map} from "rxjs/operators";
 
 @Injectable({
@@ -30,6 +29,9 @@ export class ProhibitionRuleService {
   private rulesPath = serverUrl + "/prohibitionRules";
 
   private httpOptions = httpOptionsBase;
+
+  //Code source de la regle créée par l'employé de mairie
+ // public static generatedCode: string = ''
 
   constructor(private http: HttpClient) {
     this.rules$ = new BehaviorSubject(this.rules);

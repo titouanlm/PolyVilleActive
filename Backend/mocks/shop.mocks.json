@@ -6,8 +6,8 @@
     "sellerId": 1854245,
     "id": 1234567,
     "storeRating": {
-      "averageRate": 6.333333333333333,
-      "voterNumber": 3
+      "averageRate": 7.25,
+      "voterNumber": 4
     },
     "promotions": [
       {
@@ -54,8 +54,8 @@
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 14,
-      "numberOfPresence": 82
+      "numberOfPurchases": 15,
+      "numberOfPresence": 88
     }
   },
   {

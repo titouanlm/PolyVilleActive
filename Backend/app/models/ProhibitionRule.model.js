@@ -7,4 +7,5 @@ module.exports = new BaseModel('ProhibitionRule', {
     numberMaxPeopleExpected: Joi.number(),
     numberMinPeopleExpected: Joi.number(),
     targetPeople: Joi.string(),
+    code: Joi.string()
 });

@@ -16,9 +16,13 @@ import {CondHeureFinBlock} from "./CondHeureFinBlock";
 import {AlorsBlock} from "./AlorsBlock";
 import {ProhibitionRule} from "../../models/prohibitionRule.model";
 import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
+import {HourBlock} from "../CulturalActorBlocks/HourBlock";
+import {TownHallEmployeeService} from "../../services/townHallEmployee.service";
+
 
 
 declare var Blockly: any;
+export declare var generatedCode: string;
 
 @Component({
   selector: 'app-town-hall-employee-blocks',
@@ -34,6 +38,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   public prohibitionRule = <ProhibitionRule>{};
   public rulesInConflict : ProhibitionRule[];
 
+
   public culturalEventBlocks: CustomBlock[] = [
     new ProhibitionRuleBlock('prohibitionRule' , null , null),
     new EtBlock('and' , null , null),
@@ -43,16 +48,17 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     new MinPeopleBlock('minPeople' , null , null),
     new CondHeureFinBlock('condheurefin' , null , null),
     new AlorsBlock('alors' , null , null),
+    new HourBlock('hourBlock' , null , null)
+
   ];
 
-  public sellerEventBlocks: CustomBlock[] = [
-  ];
+  public sellerEventBlocks: CustomBlock[] = [];
 
   public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.sellerEventBlocks);
   public ruleList: ProhibitionRule[];
 
 
-  constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService) {
+  constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService,public townHallEmployeeService:TownHallEmployeeService) {
     ngxToolboxBuilder.nodes = [
       new Category('Cultural Event', '#cf9700', this.culturalEventBlocks, null),
       new Category('Seller Event', '#cf1000', this.sellerEventBlocks, null),
@@ -111,7 +117,6 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   deleteRule(rule: ProhibitionRule) {
       this.prohibitionRuleService.deleteRule(rule);
   }
-
 
   verifyPotentialConflict(){
     if(this.prohibitionRule.numberMinPeopleExpected || this.prohibitionRule.numberMaxPeopleExpected){

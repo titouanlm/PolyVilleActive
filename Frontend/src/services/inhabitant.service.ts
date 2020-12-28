@@ -30,7 +30,7 @@ export class InhabitantService {
       }));
   }
 
-  getShopIfRatedByAnInhabitant(shopNumber: number){
+  getShopIfNotAlreadyRatedByAnInhabitant(shopNumber: number){
     if (this.currentInhabitant.shopRated == undefined) {
       this.currentInhabitant.shopRated = [];
       return undefined;

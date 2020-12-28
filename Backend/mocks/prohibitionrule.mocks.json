@@ -1,14 +1,1 @@
-[
-  {
-    "type": "all",
-    "numberMaxPeopleExpected": 188,
-    "createdBy": "Gagou Eric",
-    "id": 1609092264020
-  },
-  {
-    "type": "theatre",
-    "numberMinPeopleExpected": 10,
-    "createdBy": "Gagou Eric",
-    "id": 1609092728523
-  }
-]
+[]

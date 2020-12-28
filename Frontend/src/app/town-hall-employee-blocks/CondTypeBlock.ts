@@ -1,9 +1,10 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
+import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 
 declare var Blockly: any;
 
 export class CondTypeBlock extends CustomBlock {
-  constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
+  constructor(type: string, block: any, blockMutator: BlockMutator,...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = CondTypeBlock;
 
@@ -12,7 +13,7 @@ export class CondTypeBlock extends CustomBlock {
 
   defineBlock() {
     this.block.appendDummyInput()
-      .appendField("Si type d'évènement   = ")
+      .appendField("If event type   = ")
       .appendField(new Blockly.FieldDropdown([["Théatre","theatre"], ["Concert","concert"], ["Exposition","exposition"], ["Festival","festival"], ["Danse","danse"], ["All","all"]]), "type");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
@@ -28,7 +29,10 @@ export class CondTypeBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var dropdown_type = this.block.getFieldValue('type');
     // TODO: Assemble JavaScript into code variable.
-    var code = 'this.culturalevent.typeEvenement=== \''+dropdown_type+'\'\n';
+   // ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + 'this.culturalevent.typeEvenement=== \''+dropdown_type+'\'\n';
+    var code = 'this.prohibitionRule.code = this.prohibitionRule.code + \'this.culturalEvent.typeEvenement === "'+dropdown_type + '"\';\n' ;
+
+    //'this.culturalevent.typeEvenement=== \''+dropdown_type+'\'\n';
     return code;
   }
 }

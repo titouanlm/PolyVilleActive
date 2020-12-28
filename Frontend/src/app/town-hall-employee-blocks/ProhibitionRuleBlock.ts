@@ -1,4 +1,6 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
+import {TownHallEmployeeBlocksComponent} from "./town-hall-employee-blocks.component";
+import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 
 declare var Blockly: any;
 
@@ -13,7 +15,7 @@ export class ProhibitionRuleBlock extends CustomBlock {
       .appendField('Prohibition Rule');
     this.block.appendDummyInput()
       .appendField("Type of cultural event*")
-      .appendField(new Blockly.FieldDropdown([["Théatre","theatre"], ["Concert","concert"], ["Exposition","exposition"], ["Festival","festival"], ["Danse","danse"], ["All","all"]]), "type");
+      .appendField(new Blockly.FieldDropdown([["Théatre","theatre"], ["Concert","concert"], ["Exposition","exposition"], ["Festival","festival"], ["Danse","danse"], ["No specified","all"]]), "type");
 
     this.block.appendStatementInput("Additional conditions")
       .setCheck(null)
@@ -33,17 +35,41 @@ export class ProhibitionRuleBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     const type = this.block.getFieldValue('type');
     const statements_condition = Blockly.JavaScript.statementToCode(block, 'Additional conditions');
-    //Partie création des attributs de la règle
+
+    /*//Partie création des attributs de la règle
     const codeCreationAttribut = 'this.prohibitionRule.type="' + type + '";\n' + statements_condition;
 
     //Partie création de la règle en programmation
     const codeCreationRuleConditions = "if(this.event.type === '"+type+"'){ }";
 
 
-    return codeCreationAttribut;
+    return codeCreationAttribut;*/
+
+  /*  if (type!="all"){
+      ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode +'if( this.culturalevent.typeEvenement=== \''+type+'\' && '+statements_condition+ '){}'; //\nthis.decision ='+ checkbox_decision+';\n
+    }
+    else ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode +'if('+statements_condition+ '){}';
+*/
+    let code;
+
+    if (type!="all"){
+      code = 'this.prohibitionRule.type="' + type + '";\n'
+        + 'this.prohibitionRule.code = \'if( this.culturalEvent.typeEvenement === "'+type+'"\';\n'
+        + 'this.prohibitionRule.code = this.prohibitionRule.code + " && ";\n'
+        + statements_condition
+        + 'this.prohibitionRule.code = this.prohibitionRule.code + "){this.verified=true}else this.verified=false";\n';
+    }
+    else{
+        code = 'this.prohibitionRule.type="' + type + '";\n'
+          +'this.prohibitionRule.code = \'if(\';\n'
+          + statements_condition
+          + 'this.prohibitionRule.code = this.prohibitionRule.code + "){this.verified=true}else this.verified=false";\n';
+    }
+
+    return code;
   }
 }
-
+//\''+text_titre+'\';\n'+
 //SI il y a des salles disponibles pour l'évènement cette période la
 //NOMBRE DE POMPIER/POLICIER DISPO
 //PERIODE

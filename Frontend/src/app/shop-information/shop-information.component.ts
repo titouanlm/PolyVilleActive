@@ -46,11 +46,12 @@ export class ShopInformationComponent implements OnInit {
       this.shop = shop;
       if (this.shop.averagePresenceBeforePurchase != undefined && this.shop.averagePresenceBeforePurchase.numberOfPurchases !=0){
         this.presenceNeeded = this.shop.averagePresenceBeforePurchase.numberOfPresence / this.shop.averagePresenceBeforePurchase.numberOfPurchases;
+        this.presenceNeeded = Math.round(this.presenceNeeded*100)/100;
       }
       this.calculateNbPeopleClose();
       this.nicheService.getShopNichesFromUrl(this.shop.id+'');
-      this.nicheService.niches$.subscribe((nichs)=>{
-        this.niches=nichs;
+      this.nicheService.niches$.subscribe((niche)=>{
+        this.niches=niche;
         this.buildListFreq();
       });
     });
