@@ -55,6 +55,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.sellerEventBlocks);
   public ruleList: ProhibitionRule[];
+  public verified: boolean = false
 
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService,public townHallEmployeeService:TownHallEmployeeService) {
@@ -81,6 +82,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
     try {
       eval(code);
+      eval(this.prohibitionRule.code);
 
       this.prohibitionRuleService.addProhibitionRule(this.prohibitionRule)
         .subscribe(
