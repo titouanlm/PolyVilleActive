@@ -11,7 +11,6 @@ import {
 import {CulturalEvent} from "../../models/event.model";
 import {CulturalEventBlock} from "./CulturalEventBlock"
 import {HourBlock} from "./HourBlock"
-import {CulturalActor} from "../../models/culturalActor.model";
 import {CulturalActorService} from "../../services/culturalActor.service";
 import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 import {ProhibitionRule} from "../../models/prohibitionRule.model";

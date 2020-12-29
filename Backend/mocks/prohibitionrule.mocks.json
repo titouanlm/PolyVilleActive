@@ -6,5 +6,12 @@
     "text": "It is forbidden to create an event If  the target audience is \"young\".",
     "createdBy": "Gagou Eric",
     "id": 1609194906838
+  },
+  {
+    "type": "theatre",
+    "code": "if( this.culturalEvent.typeEvenement === \"theatre\"){this.verified=true}",
+    "text": "It is forbidden to create an event of type \"theatre\".",
+    "createdBy": "Gagou Eric",
+    "id": 1609242477443
   }
 ]
