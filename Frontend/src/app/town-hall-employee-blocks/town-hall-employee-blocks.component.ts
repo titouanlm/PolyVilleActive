@@ -7,7 +7,7 @@ import {
   NgxToolboxBuilderService
 } from "ngx-blockly";
 import {ProhibitionRuleBlock} from "./ProhibitionRuleBlock";
-import {EtBlock} from "./EtBlock";
+import {AndBlock} from "./AndBlock";
 import {CondTypeBlock} from "./CondTypeBlock";
 import {PeopleTypeBlock} from "./PeopleTypeBlock";
 import {NumberPeopleExpectedBlock} from "./NumberPeopleExpectedBlock";
@@ -18,6 +18,7 @@ import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 import {HourBlock} from "../CulturalActorBlocks/HourBlock";
 import {TownHallEmployeeService} from "../../services/townHallEmployee.service";
 import {CulturalEvent} from "../../models/event.model";
+import {OrBlock} from "./OrBlock";
 
 
 
@@ -41,7 +42,8 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public culturalEventBlocks: CustomBlock[] = [
     new ProhibitionRuleBlock('prohibitionRule' , null , null),
-    new EtBlock('and' , null , null),
+    new AndBlock('and' , null , null),
+    new OrBlock('or' , null , null),
     new CondTypeBlock('condtype' , null , null),
     new PeopleTypeBlock('targetPeople' , null , null),
     new NumberPeopleExpectedBlock('nbPeopleExpected' , null , null),
@@ -99,7 +101,6 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
       // Vérification de potentiel simple modification de règle existante
 
       if(this.rulesInConflict.length === 0){
-         this.defineRuleSentence(); // Traduction de la règle en texte
          this.prohibitionRuleService.addProhibitionRule(this.prohibitionRule)
           .subscribe(
             ruleCreated => {
@@ -157,36 +158,6 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
         }
       }
     });
-  }
-
-  private defineRuleSentence() {
-    var textRule = "";
-    if(this.prohibitionRule.type === "all"){
-      textRule+="It is forbidden to create an event";
-    }else{
-      textRule+='It is forbidden to create an event of type "' + this.prohibitionRule.type + '"';
-    }
-
-    var counter = 0;
-    for(const attribut in this.prohibitionRule){
-      if(attribut != "code" && attribut != "type" && attribut != "numberMaxPeopleExpected"){
-        if(counter > 0){
-          textRule+= " AND If ";
-        }else{
-          textRule+= " If "
-        }
-
-        if(attribut === "targetPeople"){
-          textRule+= ' the target audience is "' + this.prohibitionRule.targetPeople + '"';
-        }
-
-        if(attribut === "numberMinPeopleExpected"){
-          textRule+= " the expected number of people is less than " + this.prohibitionRule.numberMinPeopleExpected + " or greater than " + this.prohibitionRule.numberMaxPeopleExpected ;
-        }
-        counter++;
-      }
-    }
-    this.prohibitionRule.text = textRule + ".";
   }
 
 }

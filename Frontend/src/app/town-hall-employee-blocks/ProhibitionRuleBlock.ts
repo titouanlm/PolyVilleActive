@@ -38,18 +38,22 @@ export class ProhibitionRuleBlock extends CustomBlock {
     let code;
     code = 'this.prohibitionRule.type="' + type + '";\n'
     code += 'this.prohibitionRule.code = \'if(\';\n';
+    code += 'this.prohibitionRule.text = \"It is forbidden to create an event\";\n';
     if (type!="all"){
       code += 'this.prohibitionRule.code += \' this.culturalEvent.typeEvenement === "'+ type +'"\';\n';
+      code += 'this.prohibitionRule.text += \' of type \"'+ type +'\"\';\n';
     }else{
       code += 'this.prohibitionRule.code += \' true \';\n';
     }
 
     if(statements_condition){
       code += 'this.prohibitionRule.code += " && ";\n';
+      code += 'this.prohibitionRule.text += \" If \";\n';
     }
 
     code +=  statements_condition;
     code += 'this.prohibitionRule.code += "){this.verified=true}";\n';
+    code += 'this.prohibitionRule.text += \".\";\n';
     return code;
   }
 }
