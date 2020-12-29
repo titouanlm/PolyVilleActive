@@ -55,8 +55,10 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.sellerEventBlocks);
   public ruleList: ProhibitionRule[];
-  verified: boolean = false;
-  culturalEvent = <CulturalEvent>{};
+
+  //variables à ne pas supprimer car utilisé dans eval()
+    verified: boolean = false
+    culturalEvent = <CulturalEvent>{};
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService,public townHallEmployeeService:TownHallEmployeeService) {
     ngxToolboxBuilder.nodes = [

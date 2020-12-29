@@ -15,7 +15,7 @@ export class ProhibitionRuleBlock extends CustomBlock {
       .appendField('Prohibition Rule');
     this.block.appendDummyInput()
       .appendField("Type of cultural event*")
-      .appendField(new Blockly.FieldDropdown([["No specified","all"], ["Théatre","theatre"], ["Concert","concert"], ["Exposition","exposition"], ["Festival","festival"], ["Danse","danse"]]), "type");
+      .appendField(new Blockly.FieldDropdown([["Not specified","all"], ["Théatre","theatre"], ["Concert","concert"], ["Exposition","exposition"], ["Festival","festival"], ["Danse","danse"]]), "type");
 
     this.block.appendStatementInput("Additional conditions")
       .setCheck(null)

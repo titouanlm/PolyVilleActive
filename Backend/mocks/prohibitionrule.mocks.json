@@ -13,5 +13,15 @@
     "text": "It is forbidden to create an event of type \"theatre\".",
     "createdBy": "Gagou Eric",
     "id": 1609242477443
+  },
+  {
+    "type": "all",
+    "code": "if( true  && (this.culturalEvent.nbrPresonneAttendu <= 0 || this.culturalEvent.nbrPresonneAttendu >= 200) && this.culturalEvent.typePublic === \"adult\"){this.verified=true}",
+    "numberMinPeopleExpected": "0",
+    "numberMaxPeopleExpected": "200",
+    "targetPeople": "adult",
+    "text": "It is forbidden to create an event If  the expected number of people is less than 0 or greater than 200 AND If  the target audience is \"adult\".",
+    "createdBy": "Sopoline Knight",
+    "id": 1609255682823
   }
 ]
