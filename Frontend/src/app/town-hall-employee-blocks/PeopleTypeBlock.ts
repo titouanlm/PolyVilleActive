@@ -26,9 +26,9 @@ export class PeopleTypeBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     const dropdown_targetpeople = this.block.getFieldValue('targetPeople');
-    //ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + ' this.culturalevent.typePublic === \''+dropdown_targetpeople+'\'';
-    const code = ' this.prohibitionRule.targetPeople="' + dropdown_targetpeople + '";\n'
+    var code = ' this.prohibitionRule.targetPeople="' + dropdown_targetpeople + '";\n'
               + 'this.prohibitionRule.code = this.prohibitionRule.code + \'this.culturalEvent.typePublic === "'+dropdown_targetpeople + '"\';\n' ;
+    code += 'this.prohibitionRule.text += \' the target audience is \"' + dropdown_targetpeople + '\"\';\n';
     return code;
   }
 }

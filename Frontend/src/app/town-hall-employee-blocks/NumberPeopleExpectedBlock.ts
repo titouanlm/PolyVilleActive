@@ -28,9 +28,10 @@ export class NumberPeopleExpectedBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     const number_min = this.block.getFieldValue('min');
     const number_max = this.block.getFieldValue('max');
-    const code = 'this.prohibitionRule.numberMinPeopleExpected="' + number_min + '";\n' +
+    var code = 'this.prohibitionRule.numberMinPeopleExpected="' + number_min + '";\n' +
       'this.prohibitionRule.numberMaxPeopleExpected="' + number_max + '";\n' +
       'this.prohibitionRule.code +=  \'(this.culturalEvent.nbrPresonneAttendu <= ' + number_min + ' || this.culturalEvent.nbrPresonneAttendu >= ' + number_max + ')\';\n';
+    code += 'this.prohibitionRule.text += \' the expected number of people is less than \"'+ number_min + '\" or greater than \"' + number_max + '\"\';\n';
     return code;
   }
 }
