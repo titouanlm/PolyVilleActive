@@ -1,17 +1,22 @@
 [
   {
-    "type": "all",
-    "code": "if(this.culturalEvent.typePublic === \"young\"){this.verified=true}",
+    "type": "concert",
+    "code": "if( this.culturalEvent.typeEvenement === \"concert\"){ if( this.culturalEvent.typePublic === \"young\" || (this.culturalEvent.nbrPresonneAttendu <= 0 || this.culturalEvent.nbrPresonneAttendu >= 100)){this.verified=true}}",
+    "text": "It is forbidden to create an event of type \"concert\" If the target audience is \"young\" OR If the expected number of people is less than \"0\" or greater than \"100\".",
     "targetPeople": "young",
-    "text": "It is forbidden to create an event If  the target audience is \"young\".",
+    "numberMinPeopleExpected": "0",
+    "numberMaxPeopleExpected": "100",
     "createdBy": "Gagou Eric",
-    "id": 1609194906838
+    "id": 1609285470610
   },
   {
     "type": "theatre",
-    "code": "if( this.culturalEvent.typeEvenement === \"theatre\"){this.verified=true}",
-    "text": "It is forbidden to create an event of type \"theatre\".",
+    "code": "if( this.culturalEvent.typeEvenement === \"theatre\"){ if( this.culturalEvent.typePublic === \"young\" && (this.culturalEvent.nbrPresonneAttendu <= 200 || this.culturalEvent.nbrPresonneAttendu >= 1000000)){this.verified=true}}",
+    "text": "It is forbidden to create an event of type \"theatre\" If the target audience is \"young\" AND If the expected number of people is less than \"200\" or greater than \"1000000\".",
+    "targetPeople": "young",
+    "numberMinPeopleExpected": "200",
+    "numberMaxPeopleExpected": "1000000",
     "createdBy": "Gagou Eric",
-    "id": 1609242477443
+    "id": 1609285509534
   }
 ]

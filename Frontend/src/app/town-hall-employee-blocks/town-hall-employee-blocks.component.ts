@@ -120,7 +120,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
       }
 
     } catch (e) {
-      alert(e);
+      alert("Erreur : " + code);
     }
     console.log(code);
     this.prohibitionRule = <ProhibitionRule>{};
