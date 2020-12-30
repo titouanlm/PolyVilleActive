@@ -28,9 +28,6 @@ export class CulturalEventBlock extends CustomBlock {
         this.block.appendValueInput("NAME")
               .setCheck(null)
               .appendField("End time");
-    this.block.appendDummyInput()
-      .appendField("Place capacity")
-      .appendField(new Blockly.FieldNumber(0, 0), "capacitesalle");
         this.block.appendDummyInput()
               .appendField("Number of people expected")
               .appendField(new Blockly.FieldNumber(0, 0), "nbpersonne");
@@ -60,7 +57,6 @@ export class CulturalEventBlock extends CustomBlock {
       var value_heuredebut = Blockly.JavaScript.valueToCode(block, 'heureDebut', Blockly.JavaScript.ORDER_ATOMIC);
       var value_heurefin = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
       var number_nbpersonne = this.block.getFieldValue('nbpersonne');
-      var number_capacitesalle = this.block.getFieldValue('capacitesalle');
       var text_lieu = this.block.getFieldValue('lieu');
       var dropdown_type = this.block.getFieldValue('type');
       var dropdown_public = this.block.getFieldValue('public');
@@ -71,7 +67,6 @@ export class CulturalEventBlock extends CustomBlock {
                 'this.culturalEvent.dateFin=\''+text_datefin+'\';\n'+
                 'this.culturalEvent.heureDebut =\''+ value_heuredebut+'\';\n'+
                 'this.culturalEvent.heureFin =\''+ value_heurefin+'\';\n'+
-                'this.culturalEvent.capacitesalle='+number_capacitesalle+';\n'+
                 'this.culturalEvent.nbrPresonneAttendu='+number_nbpersonne+';\n'+
                 'this.culturalEvent.lieu=\''+text_lieu+'\';\n'+
                 'this.culturalEvent.typeEvenement=\''+dropdown_type+'\';\n'+

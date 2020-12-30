@@ -8,19 +8,14 @@ import {
 } from "ngx-blockly";
 import {ProhibitionRuleBlock} from "./ProhibitionRuleBlock";
 import {AndBlock} from "./AndBlock";
-import {CondTypeBlock} from "./CondTypeBlock";
 import {TargetPeopleBlock} from "./TargetPeopleBlock";
 import {NumberPeopleExpectedBlock} from "./NumberPeopleExpectedBlock";
 import {CondHeureFinBlock} from "./CondHeureFinBlock";
-import {AlorsBlock} from "./AlorsBlock";
 import {ProhibitionRule} from "../../models/prohibitionRule.model";
 import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 import {HourBlock} from "../CulturalActorBlocks/HourBlock";
-import {TownHallEmployeeService} from "../../services/townHallEmployee.service";
 import {CulturalEvent} from "../../models/event.model";
 import {OrBlock} from "./OrBlock";
-
-
 
 declare var Blockly: any;
 export declare var generatedCode: string;
@@ -42,28 +37,33 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public culturalEventBlocks: CustomBlock[] = [
     new ProhibitionRuleBlock('prohibitionRule' , null , null),
-    new AndBlock('and' , null , null),
-    new OrBlock('or' , null , null),
-    new CondTypeBlock('condtype' , null , null),
-    new TargetPeopleBlock('targetPeople' , null , null),
-    new NumberPeopleExpectedBlock('nbPeopleExpected' , null , null),
-    new CondHeureFinBlock('condheurefin' , null , null),
-    new AlorsBlock('alors' , null , null),
     new HourBlock('hourBlock' , null , null)
 
   ];
 
-  public sellerEventBlocks: CustomBlock[] = [];
+  public ConnectorsBlocks: CustomBlock[] = [
+    new AndBlock('and' , null , null),
+    new OrBlock('or' , null , null),
+  ];
 
-  public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.sellerEventBlocks);
+  public ConditionsBlocks: CustomBlock[] = [
+    new TargetPeopleBlock('targetPeople' , null , null),
+    new NumberPeopleExpectedBlock('nbPeopleExpected' , null , null),
+    new CondHeureFinBlock('condheurefin' , null , null),
+    ];
+
+  public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.ConditionsBlocks.concat(this.ConnectorsBlocks));
   public ruleList: ProhibitionRule[];
-  verified: boolean = false;
-  culturalEvent = <CulturalEvent>{};
 
-  constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService,public townHallEmployeeService:TownHallEmployeeService) {
+  //variables à ne pas supprimer car utilisé dans eval()
+    verified: boolean = false
+    culturalEvent = <CulturalEvent>{};
+
+  constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService) {
     ngxToolboxBuilder.nodes = [
-      new Category('Cultural Event', '#cf9700', this.culturalEventBlocks, null),
-      new Category('Seller Event', '#cf1000', this.sellerEventBlocks, null),
+      new Category('Base blocks', '#cf9700', this.culturalEventBlocks, null),
+      new Category('Conditions', '#cf1000', this.ConditionsBlocks, null),
+      new Category('Logic connectors', '#ef0009', this.ConnectorsBlocks, null),
     ];
     this.config.toolbox = ngxToolboxBuilder.build();
     this.config.scrollbars = false;

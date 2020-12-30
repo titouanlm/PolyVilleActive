@@ -12,7 +12,7 @@ export class OrBlock extends CustomBlock {
       .appendField("  OR  ");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(350);
+    this.block.setColour(100);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }
@@ -22,7 +22,6 @@ export class OrBlock extends CustomBlock {
   }
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
-    // ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + ' && ';
     var code = 'this.prohibitionRule.code += \' || \';\n' ;
     code += 'this.prohibitionRule.nbOr += 1;\n';
     code += 'this.prohibitionRule.text += " OR If";\n' ;

@@ -7,8 +7,6 @@ export class CondHeureFinBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = CondHeureFinBlock;
-
-
   }
 
   defineBlock() {
@@ -17,7 +15,7 @@ export class CondHeureFinBlock extends CustomBlock {
       .appendField("If end time greater than");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(230);
+    this.block.setColour(330);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }
@@ -28,8 +26,6 @@ export class CondHeureFinBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var value_condheurefin = Blockly.JavaScript.valueToCode(block, 'condHeureFin', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble JavaScript into code variable.
-   // ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + 'this.culturalevent.heureFin > \''+value_condheurefin+'\'';
     var code = 'this.prohibitionRule.code = this.prohibitionRule.code + \'this.culturalEvent.heureFin > "'+value_condheurefin + '"\';\n' ;
 // 'this.culturalevent.heureFin > \''+value_condheurefin+'\'';
     return code;

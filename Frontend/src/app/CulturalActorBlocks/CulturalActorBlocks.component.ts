@@ -14,6 +14,9 @@ import {HourBlock} from "./HourBlock"
 import {CulturalActorService} from "../../services/culturalActor.service";
 import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 import {ProhibitionRule} from "../../models/prohibitionRule.model";
+import {DatePipe} from "@angular/common";
+import {interval} from "rxjs";
+import {takeWhile} from "rxjs/operators";
 
 
 declare var Blockly: any;
@@ -22,7 +25,8 @@ declare var Blockly: any;
 @Component({
   selector: 'app-CulturalActorBlocks',
   templateUrl: './CulturalActorBlocks.component.html',
-  styleUrls: ['./CulturalActorBlocks.component.scss']
+  styleUrls: ['./CulturalActorBlocks.component.scss'],
+  providers: [DatePipe]
 })
 export class CulturalActorBlocksComponent {
 
@@ -40,8 +44,10 @@ export class CulturalActorBlocksComponent {
   public prohibitionRules: ProhibitionRule[]
   public verified: boolean = false
   public rulesInConflict : ProhibitionRule[];
+  currentDate: string = new Date().toString();
+  currentTime: string = new Date().toString();
 
-  constructor(ngxToolboxBuilder: NgxToolboxBuilderService,public culturalActorService: CulturalActorService,public prohibitionRuleService: ProhibitionRuleService) {
+  constructor(ngxToolboxBuilder: NgxToolboxBuilderService,public culturalActorService: CulturalActorService,public prohibitionRuleService: ProhibitionRuleService,private datePipe: DatePipe) {
     ngxToolboxBuilder.nodes = [
       new Category('Evenement culturel', '#cf9700', this.customBlocks1, null),
     ];
@@ -50,6 +56,24 @@ export class CulturalActorBlocksComponent {
     prohibitionRuleService.rules$.subscribe(rules=>{
       this.prohibitionRules=rules;
     })
+
+    this.currentDate = this.datePipe.transform(this.currentDate, 'yyyy-MM-dd');
+
+    interval(10000)
+      .pipe(takeWhile(() => true))
+      .subscribe(() => {
+        let a = new Date().getHours().toString();
+        let b = parseInt(a)
+        this.currentTime = (b>9) ? '('+a:'(0'+a;
+        this.currentTime += ":";
+        a = new Date().getMinutes().toString();
+        b = parseInt(a)
+        this.currentTime += (b>9) ? a+')':'0'+a+')';
+
+        console.log(this.currentDate)
+        console.log(this.currentTime)
+      });
+
   }
 
   public generatorConfig: NgxBlocklyGeneratorConfig = {
@@ -68,6 +92,9 @@ export class CulturalActorBlocksComponent {
       eval(code);
       console.log(this.culturalEvent);
       console.log(this.prohibitionRules);
+
+      //Verification de la coherence des attributs renseignés par l'utilisation
+      this.checkAttributes();
 
       this.prohibitionRules.forEach(rule =>{
         this.verified = false;
@@ -95,5 +122,52 @@ export class CulturalActorBlocksComponent {
     }
 
     console.log(code);
+  }
+
+  checkDates(){
+
+    if (this.culturalEvent.dateDebut == "" || this.culturalEvent.dateFin == ""){
+      throw "You have to fill in the dates of your event"
+    }
+
+    if (this.culturalEvent.dateDebut < this.currentDate){
+        throw "The start date of the event must be greater or equal to today's date"
+    }
+
+    if (this.culturalEvent.dateDebut>this.culturalEvent.dateFin){
+      throw "The end date of the event must be greater or equal to the start date"
+    }
+
+  }
+
+  checkTimes(){
+    if (this.culturalEvent.heureDebut == "" || this.culturalEvent.heureFin == ""){
+      throw "You have to fill in the times of your event"
+    }
+
+
+    if (this.culturalEvent.dateDebut === this.currentDate && this.culturalEvent.dateDebut === this.culturalEvent.dateFin){
+
+        if (this.culturalEvent.heureDebut < this.currentTime){
+          throw "The start time of the event must be greater or equal to the current hour"
+        }
+
+        if (this.culturalEvent.heureDebut > this.culturalEvent.heureFin){
+          throw "The end time of the event must be greater than the start time"
+        }
+
+        if (this.culturalEvent.heureDebut === this.culturalEvent.heureFin){
+          throw "The end time can't be the same as the start time"
+        }
+    }
+
+  }
+
+  checkAttributes(){
+    if (this.culturalEvent.title == ""){
+      throw 'You have to fill in the title of your event'
+    }
+    this.checkDates();
+    this.checkTimes();
   }
 }
