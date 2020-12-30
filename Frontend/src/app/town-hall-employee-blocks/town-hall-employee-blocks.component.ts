@@ -8,7 +8,6 @@ import {
 } from "ngx-blockly";
 import {ProhibitionRuleBlock} from "./ProhibitionRuleBlock";
 import {AndBlock} from "./AndBlock";
-import {CondTypeBlock} from "./CondTypeBlock";
 import {TargetPeopleBlock} from "./TargetPeopleBlock";
 import {NumberPeopleExpectedBlock} from "./NumberPeopleExpectedBlock";
 import {CondHeureFinBlock} from "./CondHeureFinBlock";
