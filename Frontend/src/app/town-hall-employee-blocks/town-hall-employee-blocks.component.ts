@@ -62,8 +62,8 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public prohibitionRuleService: ProhibitionRuleService) {
     ngxToolboxBuilder.nodes = [
       new Category('Base blocks', '#cf9700', this.culturalEventBlocks, null),
-      new Category('Conditions', '#cf1000', this.ConditionsBlocks, null),
-      new Category('Logic connectors', '#ef0009', this.ConnectorsBlocks, null),
+      new Category('Conditions', '#A55B80', this.ConditionsBlocks, null),
+      new Category('Logic connectors', '#5B67A5', this.ConnectorsBlocks, null),
     ];
     this.config.toolbox = ngxToolboxBuilder.build();
     this.config.scrollbars = false;

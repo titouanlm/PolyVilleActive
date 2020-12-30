@@ -23,7 +23,9 @@ export class ProhibitionRuleBlock extends CustomBlock {
 
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(230);
+    Blockly.HSV_SATURATION =0.75;
+    Blockly.HSV_VALUE = 0.81;
+    this.block.setColour(44);
     this.block.setTooltip('');
     this.block.setHelpUrl('');
   }
