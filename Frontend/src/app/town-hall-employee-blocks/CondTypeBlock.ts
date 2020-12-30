@@ -30,7 +30,7 @@ export class CondTypeBlock extends CustomBlock {
     var dropdown_type = this.block.getFieldValue('type');
     // TODO: Assemble JavaScript into code variable.
    // ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + 'this.culturalevent.typeEvenement=== \''+dropdown_type+'\'\n';
-    var code = 'this.prohibitionRule.code = this.prohibitionRule.code + \'this.culturalEvent.typeEvenement === "'+dropdown_type + '"\';\n' ;
+    var code = 'this.prohibitionRule.code +=\'this.culturalEvent.typeEvenement === "'+dropdown_type + '"\';\n' ;
 
     //'this.culturalevent.typeEvenement=== \''+dropdown_type+'\'\n';
     return code;

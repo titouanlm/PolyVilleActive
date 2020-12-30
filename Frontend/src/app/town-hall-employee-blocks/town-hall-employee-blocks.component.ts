@@ -88,7 +88,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
       // Verification de la syntaxe de la règle --> Erreur si fausse
       try {
         eval(this.prohibitionRule.code);
-        if(this.testOrAndInSameRule()){
+        if(this.testOrAndInSameRule() || this.testWithAndSameTypeOfCondition()){
           throw "error";
         }
       }
@@ -96,7 +96,8 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
         throw 'Your rule is syntactically incorrect\n' + "" +
         "Reminder : \n" +
         "- You cannot use AND and OR in the same rule.\n" +
-        "- The use of AND and OR must be done between 2 conditions."
+        "- The use of AND and OR must be done between 2 conditions.\n" +
+        "- You cannot use AND in a rule where there is more than once the same type of condition. (USE OR)"
       }
 
       // Verification des conflits potentiels avec les autres règles --> Affiche les règles avec lesquels elle est en conflit
@@ -164,16 +165,15 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   }
 
   private testOrAndInSameRule() {
-    const allBlocks = Blockly.mainWorkspace.getAllBlocks(true);
-    let or, and = false;
-    allBlocks.forEach((block) =>{
-      if(block.type === "or"){
-        or = true;
-      }
-      if(block.type === "and"){
-        and = true
-      }
-    });
-    return or && and;
+    const andBlocks = Blockly.mainWorkspace.getBlocksByType("and");
+    const orBlocks  = Blockly.mainWorkspace.getBlocksByType("or");
+    return andBlocks.length > 0 && orBlocks.length > 0;
   }
+
+  private testWithAndSameTypeOfCondition() {
+    const andBlocks = Blockly.mainWorkspace.getBlocksByType("and");
+    const targetBlocks = Blockly.mainWorkspace.getBlocksByType("targetPeople");
+    return andBlocks.length > 0 && (targetBlocks.length >= 2) ;
+  }
+
 }
