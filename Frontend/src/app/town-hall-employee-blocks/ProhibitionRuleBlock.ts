@@ -1,6 +1,4 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
-import {TownHallEmployeeBlocksComponent} from "./town-hall-employee-blocks.component";
-import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 
 declare var Blockly: any;
 
@@ -23,7 +21,7 @@ export class ProhibitionRuleBlock extends CustomBlock {
 
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    Blockly.HSV_SATURATION =0.75;
+    Blockly.HSV_SATURATION =0.6;
     Blockly.HSV_VALUE = 0.81;
     this.block.setColour(44);
     this.block.setTooltip('');

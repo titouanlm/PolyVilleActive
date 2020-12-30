@@ -67,6 +67,7 @@ export class CulturalEventBlock extends CustomBlock {
                 'this.culturalEvent.dateFin=\''+text_datefin+'\';\n'+
                 'this.culturalEvent.heureDebut =\''+ value_heuredebut+'\';\n'+
                 'this.culturalEvent.heureFin =\''+ value_heurefin+'\';\n'+
+        //CALCULER NB JOUR DE LEVENEMENT
                 'this.culturalEvent.nbrPresonneAttendu='+number_nbpersonne+';\n'+
                 'this.culturalEvent.lieu=\''+text_lieu+'\';\n'+
                 'this.culturalEvent.typeEvenement=\''+dropdown_type+'\';\n'+

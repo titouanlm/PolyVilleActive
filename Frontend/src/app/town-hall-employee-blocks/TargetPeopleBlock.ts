@@ -1,5 +1,4 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
-import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 
 declare var Blockly: any;
 

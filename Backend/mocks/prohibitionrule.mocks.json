@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "type": "all",
+    "targetPeople": [
+      "young"
+    ],
+    "nbAnd": 0,
+    "nbOr": 1,
+    "code": "if(true){ if( this.culturalEvent.typePublic === \"young\" || (this.culturalEvent.nbrPresonneAttendu <= 0 || this.culturalEvent.nbrPresonneAttendu >= 1000000)){this.verified=true}}",
+    "text": "It is forbidden to create an event If the target audience is \"young\" OR If the expected number of people is less than \"0\" or greater than \"1000000\".",
+    "numberMinPeopleExpected": "0",
+    "numberMaxPeopleExpected": "1000000",
+    "createdBy": "Gagou Eric",
+    "id": 1609355255414
+  },
+  {
+    "type": "all",
+    "targetPeople": [],
+    "nbAnd": 0,
+    "nbOr": 0,
+    "code": "if(true){ if( (this.culturalEvent.nbDayDuration <= 1 || this.culturalEvent.nbDayDuration >= 10)){this.verified=true}}",
+    "text": "It is forbidden to create an event If the duration of the event is less than 1 days or more than 10 days.",
+    "numberMinEventDuration": "1",
+    "numberMaxEventDuration": "10",
+    "createdBy": "Gagou Eric",
+    "id": 1609356789890
+  }
+]

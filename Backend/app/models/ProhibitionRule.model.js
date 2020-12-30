@@ -6,6 +6,8 @@ module.exports = new BaseModel('ProhibitionRule', {
     createdBy: Joi.string().required(),
     numberMaxPeopleExpected: Joi.number(),
     numberMinPeopleExpected: Joi.number(),
+    numberMinEventDuration: Joi.number(),
+    numberMaxEventDuration: Joi.number(),
     targetPeople: Joi.array(),
     nbAnd: Joi.number().required(),
     nbOr: Joi.number().required(),
