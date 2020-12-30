@@ -16,6 +16,7 @@ import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 import {HourBlock} from "../CulturalActorBlocks/HourBlock";
 import {CulturalEvent} from "../../models/event.model";
 import {OrBlock} from "./OrBlock";
+import {CondTypeBlock} from "./CondTypeBlock";
 
 
 
@@ -52,6 +53,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     new TargetPeopleBlock('targetPeople' , null , null),
     new NumberPeopleExpectedBlock('nbPeopleExpected' , null , null),
     new CondHeureFinBlock('condheurefin' , null , null),
+    new CondTypeBlock('condtype' ,null ,null)
     ];
 
   public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.ConditionsBlocks.concat(this.ConnectorsBlocks));

@@ -1,5 +1,4 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
-import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 
 declare var Blockly: any;
 
@@ -17,7 +16,7 @@ export class CondTypeBlock extends CustomBlock {
       .appendField(new Blockly.FieldDropdown([["Théatre","theatre"], ["Concert","concert"], ["Exposition","exposition"], ["Festival","festival"], ["Danse","danse"], ["All","all"]]), "type");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(230);
+    this.block.setColour(330);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }
