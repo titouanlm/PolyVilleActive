@@ -10,16 +10,6 @@
     "id": 1609285470610
   },
   {
-    "type": "theatre",
-    "code": "if( this.culturalEvent.typeEvenement === \"theatre\"){ if( this.culturalEvent.typePublic === \"young\" && (this.culturalEvent.nbrPresonneAttendu <= 200 || this.culturalEvent.nbrPresonneAttendu >= 1000000)){this.verified=true}}",
-    "text": "It is forbidden to create an event of type \"theatre\" If the target audience is \"young\" AND If the expected number of people is less than \"200\" or greater than \"1000000\".",
-    "targetPeople": "young",
-    "numberMinPeopleExpected": "200",
-    "numberMaxPeopleExpected": "1000000",
-    "createdBy": "Gagou Eric",
-    "id": 1609285509534
-  },
-  {
     "type": "all",
     "code": "if(true){this.verified=true}",
     "text": "It is forbidden to create an event.",
@@ -41,5 +31,20 @@
     "targetPeople": "young",
     "createdBy": "Gagou Eric",
     "id": 1609323889130
+  },
+  {
+    "type": "all",
+    "code": "if(true){this.verified=true}",
+    "text": "It is forbidden to create an event.",
+    "createdBy": "Gagou Eric",
+    "id": 1609326836787
+  },
+  {
+    "type": "all",
+    "code": "if(true){ if( this.culturalEvent.typePublic === \"young\"){this.verified=true}}",
+    "text": "It is forbidden to create an event If the target audience is \"young\".",
+    "targetPeople": "young",
+    "createdBy": "Gagou Eric",
+    "id": 1609326846451
   }
 ]

@@ -85,25 +85,32 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
     try {
       eval(code);
-      // Verification de la syntaxe de la règle --> Erreur si fausse
+      /* Verification de la syntaxe de la règle */
       try {
         eval(this.prohibitionRule.code);
-        if(this.testOrAndInSameRule() || this.testWithAndSameTypeOfCondition()){
-          throw "error";
-        }
       }
       catch (e) {
         throw 'Your rule is syntactically incorrect\n' + "" +
-        "Reminder : \n" +
-        "- You cannot use AND and OR in the same rule.\n" +
-        "- The use of AND and OR must be done between 2 conditions.\n" +
-        "- You cannot use AND in a rule where there is more than once the same type of condition. (USE OR)"
+        "Reminder : The use of AND and OR must be done between 2 conditions.";
       }
+
+      /* TEST DE POTENTIEL ERREUR */
+      if(this.testOrAndInSameRule()){
+        throw "You cannot use AND and OR in the same rule." ;
+      }else if(this.testSameTypeOfConditionWithAnd()){
+        throw "You cannot use AND in a rule where there is more than once the same type of condition. (USE OR)";
+      }else if(this.testCondNbExpectedPeopleMoreThan1Time()){
+        throw "You cannot use the expected number of people condition more then 1 time in the same rule.";
+      }else if(this.inconsistentCondNbExpectedPeopleMore()){
+        throw "The minimum number of people expected cannot be greater than the maximum number.";
+      }
+
+      // Vérification de potentiel simple modification de règle existante
+
 
       // Verification des conflits potentiels avec les autres règles --> Affiche les règles avec lesquels elle est en conflit
       this.rulesInConflict = [];
       this.verifyPotentialConflict();
-      // Vérification de potentiel simple modification de règle existante
 
       if(this.rulesInConflict.length === 0){
          this.prohibitionRuleService.addProhibitionRule(this.prohibitionRule)
@@ -170,10 +177,18 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     return andBlocks.length > 0 && orBlocks.length > 0;
   }
 
-  private testWithAndSameTypeOfCondition() {
+  private testSameTypeOfConditionWithAnd() {
     const andBlocks = Blockly.mainWorkspace.getBlocksByType("and");
     const targetBlocks = Blockly.mainWorkspace.getBlocksByType("targetPeople");
     return andBlocks.length > 0 && (targetBlocks.length >= 2) ;
   }
 
+  private testCondNbExpectedPeopleMoreThan1Time() {
+    const nbEPBlocks = Blockly.mainWorkspace.getBlocksByType("nbPeopleExpected");
+    return nbEPBlocks.length > 1;
+  }
+
+  private inconsistentCondNbExpectedPeopleMore() {
+    return this.prohibitionRule.numberMinPeopleExpected > this.prohibitionRule.numberMaxPeopleExpected;
+  }
 }
