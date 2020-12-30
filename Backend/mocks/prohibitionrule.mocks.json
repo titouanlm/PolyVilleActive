@@ -18,5 +18,42 @@
     "numberMaxPeopleExpected": "1000000",
     "createdBy": "Gagou Eric",
     "id": 1609285509534
+  },
+  {
+    "type": "all",
+    "code": "if(true){this.verified=true}",
+    "text": "It is forbidden to create an event.",
+    "createdBy": "Gagou Eric",
+    "id": 1609321783590
+  },
+  {
+    "type": "all",
+    "code": "if(true){this.verified=true}",
+    "text": "It is forbidden to create an event.",
+    "createdBy": "Gagou Eric",
+    "id": 1609321967510
+  },
+  {
+    "type": "all",
+    "code": "if(true){this.verified=true}",
+    "text": "It is forbidden to create an event.",
+    "createdBy": "Gagou Eric",
+    "id": 1609323280519
+  },
+  {
+    "type": "all",
+    "code": "if(true){ if( this.culturalEvent.typePublic === \"young\" && this.culturalEvent.typePublic === \"young\"){this.verified=true}}",
+    "text": "It is forbidden to create an event If the target audience is \"young\" AND If the target audience is \"young\".",
+    "targetPeople": "young",
+    "createdBy": "Gagou Eric",
+    "id": 1609323876660
+  },
+  {
+    "type": "all",
+    "code": "if(true){ if( this.culturalEvent.typePublic === \"young\" || this.culturalEvent.typePublic === \"young\"){this.verified=true}}",
+    "text": "It is forbidden to create an event If the target audience is \"young\" OR If the target audience is \"young\".",
+    "targetPeople": "young",
+    "createdBy": "Gagou Eric",
+    "id": 1609323889130
   }
 ]

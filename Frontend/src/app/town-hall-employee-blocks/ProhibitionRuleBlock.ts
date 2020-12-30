@@ -37,7 +37,7 @@ export class ProhibitionRuleBlock extends CustomBlock {
     const statements_condition = Blockly.JavaScript.statementToCode(block, 'Additional conditions');
     let code;
     code = 'this.prohibitionRule.type="' + type + '";\n';
-    code += 'this.prohibitionRule.code = \'if(\';\n';
+    code += 'this.prohibitionRule.code = "if(";\n';
     code += 'this.prohibitionRule.text = \"It is forbidden to create an event\";\n';
     if (type!="all"){
       code += 'this.prohibitionRule.code += \' this.culturalEvent.typeEvenement === "'+ type +'"\';\n';

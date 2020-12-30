@@ -88,9 +88,15 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
       // Verification de la syntaxe de la règle --> Erreur si fausse
       try {
         eval(this.prohibitionRule.code);
+        if(this.testOrAndInSameRule()){
+          throw "error";
+        }
       }
       catch (e) {
-        throw 'Erreur : Verifiez si tous les "And" sont renseignés'
+        throw 'Your rule is syntactically incorrect\n' + "" +
+        "Reminder : \n" +
+        "- You cannot use AND and OR in the same rule.\n" +
+        "- The use of AND and OR must be done between 2 conditions."
       }
 
       // Verification des conflits potentiels avec les autres règles --> Affiche les règles avec lesquels elle est en conflit
@@ -102,11 +108,11 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
          this.prohibitionRuleService.addProhibitionRule(this.prohibitionRule)
           .subscribe(
             ruleCreated => {
-              alert("Votre nouvelle règle a été créé !")
+              alert("Your new rule has been created !")
               Blockly.mainWorkspace.clear();
             },
             error => {
-              alert("Erreur : " + error);
+              throw "Server unavailable. ";
             });
 
       }else{
@@ -115,12 +121,11 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
           conflictsRules+=  " - " + rule.text + "\n";
         });
 
-        alert("Your rule can't be created because it is in conflict with " + this.rulesInConflict.length + " rule(s) : \n" + conflictsRules);
-        console.log(this.rulesInConflict)
+        throw "Your rule can't be created because it is in conflict with " + this.rulesInConflict.length + " rule(s) : \n" + conflictsRules;
       }
 
     } catch (e) {
-      alert("Erreur : " + code);
+      alert("Error : "+  e);
     }
     console.log(code);
     this.prohibitionRule = <ProhibitionRule>{};
@@ -158,4 +163,17 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     });
   }
 
+  private testOrAndInSameRule() {
+    const allBlocks = Blockly.mainWorkspace.getAllBlocks(true);
+    let or, and = false;
+    allBlocks.forEach((block) =>{
+      if(block.type === "or"){
+        or = true;
+      }
+      if(block.type === "and"){
+        and = true
+      }
+    });
+    return or && and;
+  }
 }
