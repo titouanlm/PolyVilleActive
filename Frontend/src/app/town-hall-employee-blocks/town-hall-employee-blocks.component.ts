@@ -8,7 +8,8 @@ import {
 } from "ngx-blockly";
 import {ProhibitionRuleBlock} from "./ProhibitionRuleBlock";
 import {AndBlock} from "./AndBlock";
-import {PeopleTypeBlock} from "./PeopleTypeBlock";
+import {CondTypeBlock} from "./CondTypeBlock";
+import {TargetPeopleBlock} from "./TargetPeopleBlock";
 import {NumberPeopleExpectedBlock} from "./NumberPeopleExpectedBlock";
 import {CondHeureFinBlock} from "./CondHeureFinBlock";
 import {ProhibitionRule} from "../../models/prohibitionRule.model";
@@ -49,7 +50,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   ];
 
   public ConditionsBlocks: CustomBlock[] = [
-    new PeopleTypeBlock('targetPeople' , null , null),
+    new TargetPeopleBlock('targetPeople' , null , null),
     new NumberPeopleExpectedBlock('nbPeopleExpected' , null , null),
     new CondHeureFinBlock('condheurefin' , null , null),
     ];
@@ -87,28 +88,45 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
     try {
       eval(code);
-      // Verification de la syntaxe de la règle --> Erreur si fausse
+      /* Verification de la syntaxe de la règle */
       try {
         eval(this.prohibitionRule.code);
       }
       catch (e) {
-        throw 'Erreur : Verifiez si tous les "And" sont renseignés'
+        throw 'Your rule is syntactically incorrect\n' + "" +
+        "Reminder : \n" +
+        "- The use of AND and OR must be done between 2 conditions.\n";
       }
+
+      /* TEST DE POTENTIEL ERREUR */
+      if(this.testOrAndInSameRule()){
+        throw "You cannot use AND and OR in the same rule." ;
+      }else if(this.testSameTypeOfConditionWithAnd()){
+        throw "You cannot use AND in a rule where there is more than once the same type of condition. (USE OR)";
+      }else if(this.testCondNbExpectedPeopleMoreThan1Time()){
+        throw "You cannot use the expected number of people condition more then 1 time in the same rule.";
+      }else if(this.inconsistentCondNbExpectedPeopleMore()){
+        throw "The minimum number of people expected cannot be greater than the maximum number.";
+      }else if(this.sameValueForTargetPeople()){
+        throw "You have defined the same value several times for target people.";
+      }
+
+      // Vérification de potentiel simple modification de règle existante
+
 
       // Verification des conflits potentiels avec les autres règles --> Affiche les règles avec lesquels elle est en conflit
       this.rulesInConflict = [];
       this.verifyPotentialConflict();
-      // Vérification de potentiel simple modification de règle existante
 
       if(this.rulesInConflict.length === 0){
          this.prohibitionRuleService.addProhibitionRule(this.prohibitionRule)
           .subscribe(
             ruleCreated => {
-              alert("Votre nouvelle règle a été créé !")
+              alert("Your new rule has been created !")
               Blockly.mainWorkspace.clear();
             },
             error => {
-              alert("Erreur : " + error);
+              throw "Server unavailable. ";
             });
 
       }else{
@@ -117,12 +135,11 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
           conflictsRules+=  " - " + rule.text + "\n";
         });
 
-        alert("Your rule can't be created because it is in conflict with " + this.rulesInConflict.length + " rule(s) : \n" + conflictsRules);
-        console.log(this.rulesInConflict)
+        throw "Your rule can't be created because it is in conflict with " + this.rulesInConflict.length + " rule(s) : \n" + conflictsRules;
       }
 
     } catch (e) {
-      alert(e);
+      alert("Error : "+  e);
     }
     console.log(code);
     this.prohibitionRule = <ProhibitionRule>{};
@@ -160,4 +177,35 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     });
   }
 
+  private testOrAndInSameRule() {
+    const andBlocks = Blockly.mainWorkspace.getBlocksByType("and");
+    const orBlocks  = Blockly.mainWorkspace.getBlocksByType("or");
+    return andBlocks.length > 0 && orBlocks.length > 0;
+  }
+
+  private testSameTypeOfConditionWithAnd() {
+    const andBlocks = Blockly.mainWorkspace.getBlocksByType("and");
+    const targetBlocks = Blockly.mainWorkspace.getBlocksByType("targetPeople");
+    return andBlocks.length > 0 && (targetBlocks.length >= 2) ;
+  }
+
+  private testCondNbExpectedPeopleMoreThan1Time() {
+    const nbEPBlocks = Blockly.mainWorkspace.getBlocksByType("nbPeopleExpected");
+    return nbEPBlocks.length > 1;
+  }
+
+  private inconsistentCondNbExpectedPeopleMore() {
+    return this.prohibitionRule.numberMinPeopleExpected > this.prohibitionRule.numberMaxPeopleExpected;
+  }
+
+  private sameValueForTargetPeople() {
+    if(this.prohibitionRule.targetPeople.length < 2){
+      return false;
+    }else{
+      const arrayWithoutDoublons = this.prohibitionRule.targetPeople.filter((item, index) =>{
+          return this.prohibitionRule.targetPeople.indexOf(item) === index;
+      });
+      return arrayWithoutDoublons.length < this.prohibitionRule.targetPeople.length;
+    }
+  }
 }
