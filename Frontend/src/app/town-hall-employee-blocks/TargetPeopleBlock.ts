@@ -3,10 +3,10 @@ import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 
 declare var Blockly: any;
 
-export class PeopleTypeBlock extends CustomBlock {
+export class TargetPeopleBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
-    this.class = PeopleTypeBlock;
+    this.class = TargetPeopleBlock;
   }
 
   defineBlock() {
@@ -26,8 +26,8 @@ export class PeopleTypeBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     const dropdown_targetpeople = this.block.getFieldValue('targetPeople');
-    var code = ' this.prohibitionRule.targetPeople="' + dropdown_targetpeople + '";\n'
-              + 'this.prohibitionRule.code = this.prohibitionRule.code + \'this.culturalEvent.typePublic === "'+dropdown_targetpeople + '"\';\n' ;
+    var code = ' this.prohibitionRule.targetPeople.push(\'' + dropdown_targetpeople + '\');\n'
+              + 'this.prohibitionRule.code += \'this.culturalEvent.typePublic === "'+dropdown_targetpeople + '"\';\n' ;
     code += 'this.prohibitionRule.text += \' the target audience is \"' + dropdown_targetpeople + '\"\';\n';
     return code;
   }

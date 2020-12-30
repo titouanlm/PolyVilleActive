@@ -4,7 +4,7 @@ export interface ProhibitionRule {
   type: string;
   numberMaxPeopleExpected?: number;
   numberMinPeopleExpected?: number;
-  targetPeople?: string;
+  targetPeople?: string[];
   code: string;
   text: string;
 }

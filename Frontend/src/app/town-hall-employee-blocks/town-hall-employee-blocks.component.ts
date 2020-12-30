@@ -9,7 +9,7 @@ import {
 import {ProhibitionRuleBlock} from "./ProhibitionRuleBlock";
 import {AndBlock} from "./AndBlock";
 import {CondTypeBlock} from "./CondTypeBlock";
-import {PeopleTypeBlock} from "./PeopleTypeBlock";
+import {TargetPeopleBlock} from "./TargetPeopleBlock";
 import {NumberPeopleExpectedBlock} from "./NumberPeopleExpectedBlock";
 import {CondHeureFinBlock} from "./CondHeureFinBlock";
 import {AlorsBlock} from "./AlorsBlock";
@@ -45,7 +45,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     new AndBlock('and' , null , null),
     new OrBlock('or' , null , null),
     new CondTypeBlock('condtype' , null , null),
-    new PeopleTypeBlock('targetPeople' , null , null),
+    new TargetPeopleBlock('targetPeople' , null , null),
     new NumberPeopleExpectedBlock('nbPeopleExpected' , null , null),
     new CondHeureFinBlock('condheurefin' , null , null),
     new AlorsBlock('alors' , null , null),
@@ -91,7 +91,8 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
       }
       catch (e) {
         throw 'Your rule is syntactically incorrect\n' + "" +
-        "Reminder : The use of AND and OR must be done between 2 conditions.";
+        "Reminder : \n" +
+        "- The use of AND and OR must be done between 2 conditions.\n";
       }
 
       /* TEST DE POTENTIEL ERREUR */
@@ -103,6 +104,8 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
         throw "You cannot use the expected number of people condition more then 1 time in the same rule.";
       }else if(this.inconsistentCondNbExpectedPeopleMore()){
         throw "The minimum number of people expected cannot be greater than the maximum number.";
+      }else if(this.sameValueForTargetPeople()){
+        throw "You have defined the same value several times for target people.";
       }
 
       // Vérification de potentiel simple modification de règle existante
@@ -190,5 +193,16 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   private inconsistentCondNbExpectedPeopleMore() {
     return this.prohibitionRule.numberMinPeopleExpected > this.prohibitionRule.numberMaxPeopleExpected;
+  }
+
+  private sameValueForTargetPeople() {
+    if(this.prohibitionRule.targetPeople.length < 2){
+      return false;
+    }else{
+      const arrayWithoutDoublons = this.prohibitionRule.targetPeople.filter((item, index) =>{
+          return this.prohibitionRule.targetPeople.indexOf(item) === index;
+      });
+      return arrayWithoutDoublons.length < this.prohibitionRule.targetPeople.length;
+    }
   }
 }
