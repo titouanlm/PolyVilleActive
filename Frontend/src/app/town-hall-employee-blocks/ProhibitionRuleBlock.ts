@@ -23,7 +23,7 @@ export class ProhibitionRuleBlock extends CustomBlock {
 
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(315);
+    this.block.setColour(230);
     this.block.setTooltip('');
     this.block.setHelpUrl('');
   }

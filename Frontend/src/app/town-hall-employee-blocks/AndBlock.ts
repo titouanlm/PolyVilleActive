@@ -15,7 +15,7 @@ export class AndBlock extends CustomBlock {
       .appendField("  AND  ");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(350);
+    this.block.setColour(100);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }

@@ -15,7 +15,7 @@ export class PeopleTypeBlock extends CustomBlock {
       .appendField(new Blockly.FieldDropdown([["Young","young"], ["Old","old"], ["Adult","adult"], ["Children","children"], ["Everyone","everyone"]]), "targetPeople");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(315);
+    this.block.setColour(330);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }

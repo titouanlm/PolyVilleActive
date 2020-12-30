@@ -16,7 +16,7 @@ export class NumberPeopleExpectedBlock extends CustomBlock {
       .appendField(new Blockly.FieldNumber(1000000, 1), "max");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(315);
+    this.block.setColour(330);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }

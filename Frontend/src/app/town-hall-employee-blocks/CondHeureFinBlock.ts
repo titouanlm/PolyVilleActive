@@ -17,7 +17,7 @@ export class CondHeureFinBlock extends CustomBlock {
       .appendField("If end time greater than");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
-    this.block.setColour(230);
+    this.block.setColour(330);
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }
