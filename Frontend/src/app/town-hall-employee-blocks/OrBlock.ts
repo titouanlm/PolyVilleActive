@@ -24,6 +24,7 @@ export class OrBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     // ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + ' && ';
     var code = 'this.prohibitionRule.code += \' || \';\n' ;
+    code += 'this.prohibitionRule.nbOr += 1;\n';
     code += 'this.prohibitionRule.text += " OR If";\n' ;
     return code;
   }

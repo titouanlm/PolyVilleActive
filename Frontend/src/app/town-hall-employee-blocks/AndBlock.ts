@@ -28,6 +28,7 @@ export class AndBlock extends CustomBlock {
     // TODO: Assemble JavaScript into code variable.
    // ProhibitionRuleService.generatedCode = ProhibitionRuleService.generatedCode + ' && ';
     var code = 'this.prohibitionRule.code += " && ";\n' ;
+    code += 'this.prohibitionRule.nbAnd += 1;\n';
     code += 'this.prohibitionRule.text += " AND If";\n' ;
     return code;
   }

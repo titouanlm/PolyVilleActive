@@ -106,6 +106,8 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
         throw "The minimum number of people expected cannot be greater than the maximum number.";
       }else if(this.sameValueForTargetPeople()){
         throw "You have defined the same value several times for target people.";
+      }else if(this.testRuleAlreadyExists()){
+        throw "This rule already exists.";
       }
 
       // Vérification de potentiel simple modification de règle existante
@@ -148,14 +150,12 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   verifyPotentialConflict(){
     if(this.prohibitionRule.numberMinPeopleExpected || this.prohibitionRule.numberMaxPeopleExpected){
-      this.prohibitionRuleService.rules$.subscribe((rules) => {
         if(this.prohibitionRule.type === "all"){
-          this.verifyNbExceptedPeople(rules);
+          this.verifyNbExceptedPeople(this.ruleList);
         }else{
-          const rulesWithSameType = rules.filter(rule => rule.type === this.prohibitionRule.type || rule.type === "all");
+          const rulesWithSameType = this.ruleList.filter(rule => rule.type === this.prohibitionRule.type || rule.type === "all");
           this.verifyNbExceptedPeople(rulesWithSameType);
         }
-      });
     }
   }
 
@@ -204,5 +204,28 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
       });
       return arrayWithoutDoublons.length < this.prohibitionRule.targetPeople.length;
     }
+  }
+
+  private testRuleAlreadyExists() {
+    var ruleAlreadyExists = false;
+    this.ruleList.forEach((rule) => {
+      if(((!this.prohibitionRule.numberMaxPeopleExpected && !rule.numberMaxPeopleExpected)
+        || (this.prohibitionRule.numberMaxPeopleExpected && rule.numberMaxPeopleExpected))&&
+        (this.prohibitionRule.type === rule.type || rule.type === "all") &&
+        this.prohibitionRule.nbOr === rule.nbOr &&
+        this.prohibitionRule.nbAnd === rule.nbAnd
+      ){
+        if(this.prohibitionRule.targetPeople && rule.targetPeople){
+          if(this.prohibitionRule.targetPeople.sort().join(',')=== rule.targetPeople.sort().join(',')){
+            ruleAlreadyExists =true;
+            return;
+          }
+        }else if(!this.prohibitionRule.targetPeople && !rule.targetPeople){
+          ruleAlreadyExists =true;
+          return;
+        }
+      }
+    });
+    return ruleAlreadyExists;
   }
 }
