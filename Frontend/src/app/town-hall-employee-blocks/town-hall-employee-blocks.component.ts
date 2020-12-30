@@ -10,13 +10,14 @@ import {ProhibitionRuleBlock} from "./ProhibitionRuleBlock";
 import {AndBlock} from "./AndBlock";
 import {TargetPeopleBlock} from "./TargetPeopleBlock";
 import {NumberPeopleExpectedBlock} from "./NumberPeopleExpectedBlock";
-import {CondHeureFinBlock} from "./CondHeureFinBlock";
+import {HourEndBlock} from "./HourEndBlock";
 import {ProhibitionRule} from "../../models/prohibitionRule.model";
 import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 import {HourBlock} from "../CulturalActorBlocks/HourBlock";
 import {CulturalEvent} from "../../models/event.model";
 import {OrBlock} from "./OrBlock";
 import {DurationBlock} from "./DurationBlock";
+import {ShowHallCapacityBlock} from "./ShowHallCapacityBlock";
 
 declare var Blockly: any;
 export declare var generatedCode: string;
@@ -38,8 +39,6 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
 
   public culturalEventBlocks: CustomBlock[] = [
     new ProhibitionRuleBlock('prohibitionRule' , null , null),
-    new HourBlock('hourBlock' , null , null)
-
   ];
 
   public ConnectorsBlocks: CustomBlock[] = [
@@ -50,8 +49,9 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   public ConditionsBlocks: CustomBlock[] = [
     new TargetPeopleBlock('targetPeople' , null , null),
     new NumberPeopleExpectedBlock('nbPeopleExpected' , null , null),
-    new CondHeureFinBlock('condheurefin' , null , null),
-    new DurationBlock('eventDuration', null, null)
+    new HourEndBlock('condheurefin' , null , null),
+    new DurationBlock('eventDuration', null, null),
+    new ShowHallCapacityBlock('showHallCapacity', null, null)
     ];
 
   public customBlocks: CustomBlock[] = this.culturalEventBlocks.concat(this.ConditionsBlocks.concat(this.ConnectorsBlocks));

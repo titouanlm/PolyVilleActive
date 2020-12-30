@@ -8,6 +8,8 @@ module.exports = new BaseModel('ProhibitionRule', {
     numberMinPeopleExpected: Joi.number(),
     numberMinEventDuration: Joi.number(),
     numberMaxEventDuration: Joi.number(),
+    operandShowHallCondition: Joi.string(),
+    percentageShowHallCondition: Joi.number(),
     targetPeople: Joi.array(),
     nbAnd: Joi.number().required(),
     nbOr: Joi.number().required(),

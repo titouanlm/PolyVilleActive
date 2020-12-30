@@ -6,6 +6,8 @@ export interface ProhibitionRule {
   numberMinPeopleExpected?: number;
   numberMinEventDuration?: number;
   numberMaxEventDuration?: number;
+  operandShowHallCondition?: string;
+  percentageShowHallCondition? : number;
   targetPeople?: string[];
   nbAnd:number;
   nbOr:number;

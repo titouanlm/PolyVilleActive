@@ -10,7 +10,7 @@ export class NumberPeopleExpectedBlock extends CustomBlock {
 
   defineBlock() {
     this.block.appendDummyInput()
-      .appendField("If number of expected people is not between ")
+      .appendField("If the number of people expected is not between ")
       .appendField(new Blockly.FieldNumber(0, 0), "min")
       .appendField("  and  ")
       .appendField(new Blockly.FieldNumber(1000000, 1), "max");

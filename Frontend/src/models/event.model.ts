@@ -49,6 +49,7 @@ export interface CulturalEvent {
   heureFin : string;
   nbrPresonneAttendu: number;
   nbDayDuration: number;
+  fillingPercentageShowHall: number;
   //capacitesalle: number;
   lieu : string;
   typeEvenement : string;

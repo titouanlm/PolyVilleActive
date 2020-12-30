@@ -3,10 +3,10 @@ import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
 
 declare var Blockly: any;
 
-export class CondHeureFinBlock extends CustomBlock {
+export class HourEndBlock extends CustomBlock {
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
-    this.class = CondHeureFinBlock;
+    this.class = HourEndBlock;
   }
 
   defineBlock() {
