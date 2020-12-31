@@ -11,7 +11,8 @@ const CulturalActor = require('./CulturalActor.model')
 const CulturalEvent = require('./CulturalEvent.model')
 const ProhibitionRule = require('./ProhibitionRule.model')
 const Condition = require('./Condition.model')
+const ShowHall = require('./ShowHall.model')
 
 module.exports = {
-    Event,Shop,Seller,Promotion,Notification,Inhabitant,Niche,Autorisation,TownHallEmployee,CulturalActor,CulturalEvent,ProhibitionRule,Condition
+    Event,Shop,Seller,Promotion,Notification,Inhabitant,Niche,Autorisation,TownHallEmployee,CulturalActor,CulturalEvent,ProhibitionRule,Condition, ShowHall
 };

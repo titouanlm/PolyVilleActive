@@ -6,6 +6,8 @@ const ShopsRouter = require('./shops');
 const TownHallEmployeesRouter = require('./TownHallEmploye');
 const CulturalActorsRouter = require('./CulturalActor');
 const ProhibitionRulesRouter = require('./ProhibitionRule');
+const ShowHallsRouter = require('./ShowHall');
+
 
 
 const router = new Router();
@@ -17,6 +19,6 @@ router.use('/promotions', PromotionsRouter);
 router.use('/townHallEmployees', TownHallEmployeesRouter);
 router.use('/culturalActors', CulturalActorsRouter);
 router.use('/prohibitionRules', ProhibitionRulesRouter);
-
+router.use('/showHalls', ShowHallsRouter);
 
 module.exports = router;
