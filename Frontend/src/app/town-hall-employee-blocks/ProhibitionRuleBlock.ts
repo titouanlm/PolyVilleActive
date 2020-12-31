@@ -19,8 +19,8 @@ export class ProhibitionRuleBlock extends CustomBlock {
       .setCheck(null)
       .appendField("Additional conditions");
 
-    this.block.setPreviousStatement(true, null);
-    this.block.setNextStatement(true, null);
+    this.block.setPreviousStatement(false, null);
+    this.block.setNextStatement(false, null);
     Blockly.HSV_SATURATION =0.6;
     Blockly.HSV_VALUE = 0.81;
     this.block.setColour(44);

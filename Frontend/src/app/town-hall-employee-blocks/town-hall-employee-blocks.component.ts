@@ -13,7 +13,6 @@ import {NumberPeopleExpectedBlock} from "./NumberPeopleExpectedBlock";
 import {HourEndBlock} from "./HourEndBlock";
 import {ProhibitionRule} from "../../models/prohibitionRule.model";
 import {ProhibitionRuleService} from "../../services/prohibitionRule.service";
-import {HourBlock} from "../CulturalActorBlocks/HourBlock";
 import {CulturalEvent} from "../../models/event.model";
 import {OrBlock} from "./OrBlock";
 import {DurationBlock} from "./DurationBlock";
@@ -49,7 +48,7 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
   public ConditionsBlocks: CustomBlock[] = [
     new TargetPeopleBlock('targetPeople' , null , null),
     new NumberPeopleExpectedBlock('nbPeopleExpected' , null , null),
-    new HourEndBlock('condheurefin' , null , null),
+    new HourEndBlock('hourEndBlock' , null , null),
     new DurationBlock('eventDuration', null, null),
     new ShowHallCapacityBlock('showHallCapacity', null, null)
     ];
