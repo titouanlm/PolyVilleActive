@@ -55,7 +55,7 @@ export class CulturalActorBlocksComponent {
     this.config.scrollbars = false;
     prohibitionRuleService.rules$.subscribe(rules=>{
       this.prohibitionRules=rules;
-    })
+    });
 
     this.currentDate = this.datePipe.transform(this.currentDate, 'yyyy-MM-dd');
 

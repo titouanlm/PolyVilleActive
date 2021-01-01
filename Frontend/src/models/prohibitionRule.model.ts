@@ -8,9 +8,8 @@ export interface ProhibitionRule {
   numberMaxEventDuration?: number;
   operandShowHallCondition?: string;
   percentageShowHallCondition? : number;
+  endHourMax? : number;
   targetPeople?: string[];
-  nbAnd:number;
-  nbOr:number;
   code: string;
   text: string;
 }

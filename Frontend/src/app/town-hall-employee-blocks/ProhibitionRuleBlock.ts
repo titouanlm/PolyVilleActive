@@ -13,7 +13,7 @@ export class ProhibitionRuleBlock extends CustomBlock {
       .appendField('Prohibition Rule');
     this.block.appendDummyInput()
       .appendField("Type of cultural event*")
-      .appendField(new Blockly.FieldDropdown([["Not specified","all"], ["Théatre","theatre"], ["Concert","concert"], ["Exposition","exposition"], ["Festival","festival"], ["Danse","danse"]]), "type");
+      .appendField(new Blockly.FieldDropdown([["All types","all"], ["Théatre","theatre"], ["Concert","concert"], ["Exposition","exposition"], ["Festival","festival"], ["Danse","danse"]]), "type");
 
     this.block.appendStatementInput("Additional conditions")
       .setCheck(null)
@@ -38,8 +38,6 @@ export class ProhibitionRuleBlock extends CustomBlock {
     let code;
     code = 'this.prohibitionRule.type="' + type + '";\n';
     code += 'this.prohibitionRule.targetPeople = [];\n';
-    code += 'this.prohibitionRule.nbAnd = 0;\n';
-    code += 'this.prohibitionRule.nbOr = 0;\n';
     code += 'this.prohibitionRule.code = "if(";\n';
     code += 'this.prohibitionRule.text = \"It is forbidden to create an event\";\n';
     if (type!="all"){

@@ -103,12 +103,16 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
         throw "You cannot use AND in a rule where there is more than once the same type of condition. (USE OR)";
       }else if(this.testCondNbExpectedPeopleMoreThan1Time()){
         throw "You cannot use the expected number of people condition more then 1 time in the same rule.";
+      }else if(this.testCondHourEndMoreThan1Time()){
+        throw "You cannot use the end hour condition condition more then 1 time in the same rule.";
+      }else if(this.testCondDurationMoreThan1Time()){
+        throw "You cannot use the event duration condition more then 1 time in the same rule.";
       }else if(this.inconsistentCondNbExpectedPeopleMore()){
         throw "The minimum number of people expected cannot be greater than the maximum number.";
       }else if(this.sameValueForTargetPeople()){
         throw "You have defined the same value several times for target people.";
       }else if(this.testRuleAlreadyExists()){
-        throw "This rule already exists.";
+        throw "This rule already exists or is in conflict with another.";
       }
 
       // Vérification de potentiel simple modification de règle existante
@@ -192,6 +196,16 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
     return nbEPBlocks.length > 1;
   }
 
+  private testCondHourEndMoreThan1Time() {
+    const nbHEBlocks = Blockly.mainWorkspace.getBlocksByType("hourEndBlock");
+    return nbHEBlocks.length > 1;
+  }
+
+  private testCondDurationMoreThan1Time() {
+    const nbEDBlocks = Blockly.mainWorkspace.getBlocksByType("eventDuration");
+    return nbEDBlocks.length > 1;
+  }
+
   private inconsistentCondNbExpectedPeopleMore() {
     return this.prohibitionRule.numberMinPeopleExpected > this.prohibitionRule.numberMaxPeopleExpected;
   }
@@ -213,8 +227,13 @@ export class TownHallEmployeeBlocksComponent implements OnInit {
       if(((!this.prohibitionRule.numberMaxPeopleExpected && !rule.numberMaxPeopleExpected)
         || (this.prohibitionRule.numberMaxPeopleExpected && rule.numberMaxPeopleExpected))&&
         (this.prohibitionRule.type === rule.type || rule.type === "all") &&
-        this.prohibitionRule.nbOr === rule.nbOr &&
-        this.prohibitionRule.nbAnd === rule.nbAnd
+        ((!this.prohibitionRule.numberMaxEventDuration && !rule.numberMaxEventDuration)
+          || (this.prohibitionRule.numberMaxEventDuration && rule.numberMaxEventDuration)) &&
+        ((!this.prohibitionRule.endHourMax && !rule.endHourMax)
+        || (this.prohibitionRule.endHourMax && rule.endHourMax)) &&
+        ((!this.prohibitionRule.operandShowHallCondition && !rule.operandShowHallCondition)
+          || (this.prohibitionRule.operandShowHallCondition && rule.operandShowHallCondition))
+
       ){
         if(this.prohibitionRule.targetPeople && rule.targetPeople){
           if(this.prohibitionRule.targetPeople.sort().join(',')=== rule.targetPeople.sort().join(',')){

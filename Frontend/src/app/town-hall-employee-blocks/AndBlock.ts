@@ -26,7 +26,6 @@ export class AndBlock extends CustomBlock {
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var code = 'this.prohibitionRule.code += " && ";\n' ;
-    code += 'this.prohibitionRule.nbAnd += 1;\n';
     code += 'this.prohibitionRule.text += " AND If";\n' ;
     return code;
   }

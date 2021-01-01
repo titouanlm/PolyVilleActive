@@ -34,6 +34,7 @@ export class HourEndBlock extends CustomBlock {
       timeInMinutes+= (24*60);
     }
     var code = 'this.prohibitionRule.code += \'this.culturalEvent.heureFin > '+ timeInMinutes + '\';\n';
+    code+='this.prohibitionRule.endHourMax=' + timeInMinutes + ';\n';
     code+= 'this.prohibitionRule.text += \' the end time is greater than '+ dropdown_h + 'H' +  dropdown_m + '\';\n';
     return code;
   }

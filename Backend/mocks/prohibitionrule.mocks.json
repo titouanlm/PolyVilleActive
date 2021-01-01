@@ -1,16 +1,1 @@
-[
-  {
-    "type": "all",
-    "targetPeople": [
-      "young"
-    ],
-    "nbAnd": 0,
-    "nbOr": 1,
-    "code": "if(true){ if( this.culturalEvent.typePublic === \"young\" || (this.culturalEvent.nbrPresonneAttendu <= 0 || this.culturalEvent.nbrPresonneAttendu >= 1000000)){this.verified=true}}",
-    "text": "It is forbidden to create an event If the target audience is \"young\" OR If the expected number of people is less than \"0\" or greater than \"1000000\".",
-    "numberMinPeopleExpected": "0",
-    "numberMaxPeopleExpected": "1000000",
-    "createdBy": "Gagou Eric",
-    "id": 1609355255414
-  }
-]
+[]

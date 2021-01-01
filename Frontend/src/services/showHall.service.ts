@@ -47,7 +47,7 @@ export class ShowHallService {
     const showHallToDeleteUrl = this.showHallUrl + '/' + showHall.id;
     this.http.delete<ShowHall>(showHallToDeleteUrl, this.httpOptions).subscribe(() => this.getShowHalls());
   }
-  
+
   updateShowHall(showHall: ShowHall) {
     const showHallToUpdateUrl = this.showHallUrl + '/' + showHall.id;
     this.http.put<ShowHall>(showHallToUpdateUrl, showHall, this.httpOptions).subscribe(() => this.getShowHalls());
