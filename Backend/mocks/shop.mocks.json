@@ -54,9 +54,19 @@
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 15,
-      "numberOfPresence": 88
-    }
+      "numberOfPurchases": 16,
+      "numberOfPresence": 91
+    },
+    "availableItems": [
+      "Flashbang",
+      "Rocket launcher",
+      "Rocket",
+      " Incendiary",
+      "Desert eagle",
+      "Kevlar",
+      "Helmet",
+      "AWP"
+    ]
   },
   {
     "label": "Auctor Ullam",

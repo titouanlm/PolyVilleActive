@@ -41,6 +41,7 @@ import { PopupTownHallEmployeeAuthentificationComponent } from './popup-town-hal
 import { CulturalActorHomeComponent } from './cultural-actor-home/cultural-actor-home.component';
 import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-hall-employee-home.component';
 import { StoreItemsComponent } from './store-items/store-items.component';
+import { DialogAlertShopComponent } from './dialog-alert-shop/dialog-alert-shop.component';
 
 
 
@@ -76,6 +77,7 @@ import { StoreItemsComponent } from './store-items/store-items.component';
     CulturalActorBlocksComponent,
     TownHallEmployeeHomeComponent,
     StoreItemsComponent,
+    DialogAlertShopComponent,
   ],
   imports: [
     BrowserModule,
