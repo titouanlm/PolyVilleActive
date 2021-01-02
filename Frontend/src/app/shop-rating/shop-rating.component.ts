@@ -6,6 +6,9 @@ import {NotificationPromotionComponent} from "../notification-promotion/notifica
 import {MatDialog} from "@angular/material/dialog";
 import {ThanksComponent} from "../thanks/thanks.component";
 import {Inhabitant} from "../../models/inhabitant.model";
+import {ActivatedRoute, Router} from "@angular/router";
+import {PopupVisitorInhabitantAutorisationComponent} from "../popup-visitor-inhabitant-autorisation/popup-visitor-inhabitant-autorisation.component";
+import {DialogAlertShopComponent} from "../dialog-alert-shop/dialog-alert-shop.component";
 
 @Component({
   selector: 'app-shop-rating',
@@ -18,14 +21,37 @@ export class ShopRatingComponent implements OnInit {
   votersNumber: number;
   idShop: string;
   public inhabitant: Inhabitant;
-  objectName: string;
 
   shop: Shop;
   inhabitantIsInsideShop: boolean;
+  private name: any;
 
-  constructor(private shopService: ShopService, private inhabitantService: InhabitantService, public dialog: MatDialog) {
+  constructor(private shopService: ShopService,
+              private inhabitantService: InhabitantService,
+              public dialog: MatDialog,
+              private router: Router,
+              private route: ActivatedRoute,) {
     this.setUpShop();
     this.initializeInhabitant();
+  }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.name = params['name'];
+    });
+  }
+
+  UponClicking(){
+    if (this.shop.purchasedItems != undefined && this.shop.purchasedItems.length != 0){
+      this.router.navigate(['items'], { relativeTo: this.route });
+    }
+    else {
+      const dialogRef = this.dialog.open(DialogAlertShopComponent, {
+        width: '20%',
+        height: '15%',
+        role: "alertdialog",
+      });
+    }
   }
 
   setUpShop(){
@@ -51,63 +77,6 @@ export class ShopRatingComponent implements OnInit {
         this.inhabitant = this.inhabitantService.currentInhabitant;
       }
     );
-  }
-
-  openThanksDialog(){
-    const dialogRef = this.dialog.open(ThanksComponent, {
-      width: '25%',
-      height: '10%',
-    });
-  }
-
-  inhabitantControl(){
-    if (this.shop.averagePresenceBeforePurchase == undefined) {
-      this.shop.averagePresenceBeforePurchase = {numberOfPurchases: 0, numberOfPresence: 0};
-    }
-  }
-
-  addInhabitantAttendanceToShop(){
-    if (this.inhabitant.positions != undefined) {
-      this.shop.averagePresenceBeforePurchase.numberOfPresence += this.inhabitant.positions
-        .filter((position) =>
-          position[0] == this.inhabitant.longitude && position[1] == this.inhabitant.latitude).length;
-    }
-    else {
-      this.inhabitant.positions = [];
-      this.shop.averagePresenceBeforePurchase.numberOfPresence ++;
-    }
-
-    this.shop.averagePresenceBeforePurchase.numberOfPurchases = this.shop.averagePresenceBeforePurchase.numberOfPurchases + 1;
-  }
-
-  purchase() {
-    this.openThanksDialog();
-    this.inhabitantControl();
-    this.addInhabitantAttendanceToShop();
-    this.addItemsToInhabitant();
-    this.manageInhabitantAttendance();
-    this.inhabitantService.updateInhabitant(this.inhabitant);
-    this.shopService.updateShop(this.shop);
-    this.inhabitantService.authenticateInhabitant(this.inhabitant.id).subscribe((inhabitant) => this.inhabitant = inhabitant);
-    this.objectName = undefined;
-  }
-
-  addItemsToInhabitant(){
-    if (this.inhabitant.objectPurchased == undefined){
-      this.inhabitant.objectPurchased = [];
-    }
-    const array = [];array.push(this.objectName.toString());array.push(this.idShop.toString());
-    this.inhabitant.objectPurchased.push(array);
-
-  }
-
-  manageInhabitantAttendance(){
-    this.inhabitant.positions = this.inhabitant.positions
-      .filter((position) =>
-        position[0] != this.inhabitant.longitude || position[1] != this.inhabitant.latitude);
-  }
-
-  ngOnInit(): void {
   }
 
   rateShop(){

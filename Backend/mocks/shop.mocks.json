@@ -6,8 +6,8 @@
     "sellerId": 1854245,
     "id": 1234567,
     "storeRating": {
-      "averageRate": 7.25,
-      "voterNumber": 4
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": [
       {
@@ -17,18 +17,7 @@
         "endDate": "2020-12-15",
         "shopId": 1234567,
         "id": 1607911981694,
-        "public": true,
-        "customersNumberInterested": [
-          1987,
-          1999,
-          1867
-        ],
-        "notifiedCustomersNumber": [
-          1987,
-          1988,
-          1999,
-          1867
-        ]
+        "public": true
       },
       {
         "title": "Hello",
@@ -43,20 +32,25 @@
         "description": "dqiodj",
         "startDate": "2020-02-20",
         "endDate": "2020-02-20",
-        "customersNumberInterested": [
-          1999
-        ],
-        "notifiedCustomersNumber": [
-          1999
-        ],
         "shopId": 1234567,
         "id": 1608149454567
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 15,
-      "numberOfPresence": 88
-    }
+      "numberOfPurchases": 0,
+      "numberOfPresence": 0
+    },
+    "purchasedItems": [
+      ["Flashbang","0"],
+      ["Rocket launcher","0"],
+      ["Rocket","0"],
+      [" Incendiary","0"],
+      ["Desert eagle","0"],
+      ["Kevlar","0"],
+      ["Helmet","0"],
+      ["AWP","0"],
+      ["Ak-47","0"]
+    ]
   },
   {
     "label": "Auctor Ullam",
@@ -65,14 +59,29 @@
     "sellerId": 1854246,
     "id": 1234568,
     "storeRating": {
-      "averageRate": 8.2,
-      "voterNumber": 5
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": [],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 6,
-      "numberOfPresence": 20
-    }
+      "numberOfPurchases": 0,
+      "numberOfPresence": 0
+    },
+    "purchasedItems": [
+      ["Jean chino clair","0"],
+      ["Pantalon slim noir","0"],
+      ["Pantalon slim gris","0"],
+      ["Pantalon slim bordeaux","0"],
+      ["Pantalon large noir","0"],
+      ["Pantalon large gris","0"],
+      ["Pantalon large bordeaux","0"],
+      ["Chemise grise","0"],
+      ["Chemise noire","0"],
+      ["Chemise blanche","0"],
+      ["Pull bleu marine coupe serré","0"],
+      ["Ceinture marron","0"],
+      ["Centure noire deuxième dan en C++","0"]
+    ]
   },
   {
     "label": "Quis Arcu Industries",
@@ -83,7 +92,21 @@
     "storeRating": {
       "averageRate": 0,
       "voterNumber": 0
-    }
+    },
+    "purchasedItems": [
+      ["Chaussure marron collection 54-98K","0"],
+      ["Basket Nike noire","0"],
+      ["Basket Addidas blanche","0"],
+      ["Chaussure en cuire marron","0"],
+      ["Chaussure mérino","0"],
+      ["Dr. Martens","0"],
+      ["Converse numéro 85-H8","0"],
+      ["Tommy Hilfiger Gris","0"],
+      ["Basket Air Jordan rouge","0"],
+      ["Timberland Pro grise","0"],
+      ["New Balance bleu","0"],
+      ["Chaussure homme J.M. Weston","0"]
+    ]
   },
   {
     "label": "Velit Cras Lorem LLC",
@@ -103,10 +126,25 @@
     "sellerId": 1854249,
     "id": 1234571,
     "storeRating": {
-      "averageRate": 9,
-      "voterNumber": 1
+      "averageRate": 0,
+      "voterNumber": 0
     },
-    "promotions": []
+    "promotions": [],
+    "purchasedItems": [
+      ["Blouson gris","0"],
+      ["Blouson noir","0"],
+      ["Manteau gris","0"],
+      ["Manteau noir","0"],
+      ["Cahouet noir","0"],
+      ["Cahouet gris","0"],
+      ["Veste d'été marron","0"],
+      ["Veste d'été noire","0"],
+      ["Veste d'été grise","0"],
+      ["Gants d'hiver enfant noir","0"],
+      ["Gants d'hiver enfant gris","0"],
+      ["Gants d'hiver adulte noir","0"],
+      ["Gants d'hiver adulte gris","0"]
+  ]
   },
   {
     "label": "Placerat Associates",
@@ -117,7 +155,26 @@
     "storeRating": {
       "averageRate": 0,
       "voterNumber": 0
-    }
+    },
+    "purchasedItems": [
+      ["Boxer noir Calvin Klein","0"],
+      ["Boxer blanc Calvin Klein","0"],
+      ["Lot 2 boxers Calvin Klein","0"],
+      ["Lot 3 boxers Calvin Klean","0"],
+      ["Boxer Ck One Calvin Klein","0"],
+      ["Boxer Dim noir","0"],
+      ["Boxer Dim blanc","0"],
+      ["Soutien-gorge noire Calvin Klein","0"],
+      ["Soutien-gorge blanc Calvin Klein","0"],
+      ["Culotte noire Calvin Klein","0"],
+      ["Culotte blanche Calvin Klein","0"],
+      ["Chaussette homme noire","0"],
+      ["Chaussette homme marron","0"],
+      ["Chaussette homme blanche","0"],
+      ["Chaussette femme noire","0"],
+      ["Chaussette femme marron","0"],
+      ["Chaussette femme blanche","0"]
+  ]
   },
   {
     "label": "At Associates",
@@ -139,7 +196,22 @@
     "storeRating": {
       "averageRate": 0,
       "voterNumber": 0
-    }
+    },
+    "purchasedItems": [
+      ["Costume noir homme","0"],
+      ["Costume gris homme","0"],
+      ["Costume bleu homme","0"],
+      ["Costume noir femme","0"],
+      ["Costume gris femme","0"],
+      ["Costume bleu femme","0"],
+      ["Produit nettoyant costume","0"],
+      ["Veste de costume homme noir","0"],
+      ["Veste de costume homme gris","0"],
+      ["Veste de costume homme bleu marine","0"],
+      ["Veste de costume femme noir","0"],
+      ["Veste de costume femme gris","0"],
+      ["Veste de costume femme bleu marine","0"]
+  ]
   },
   {
     "label": "Tellus Justo Sit Corp.",
@@ -148,8 +220,8 @@
     "sellerId": 1854253,
     "id": 1234575,
     "storeRating": {
-      "averageRate": 10,
-      "voterNumber": 1
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": []
   },
@@ -162,7 +234,25 @@
     "storeRating": {
       "averageRate": 0,
       "voterNumber": 0
-    }
+    },
+    "purchasedItems": [
+      ["Canapé large noir","0"],
+      ["Canapé large gris","0"],
+      ["Canapé large marron","0"],
+      ["Canapé large blanc","0"],
+      ["Canapé serré noir","0"],
+      ["Canapé serré gris","0"],
+      ["Canapé serré marron","0"],
+      ["Canapé serré blanc","0"],
+      ["Fauteuil large noir","0"],
+      ["Fauteuil large gris","0"],
+      ["Fauteuil large marron","0"],
+      ["Fauteuil large blanc","0"],
+      ["Fauteuil serré noir","0"],
+      ["Fauteuil serré gris","0"],
+      ["Fauteuil serré marron","0"],
+      ["Fauteuil serré blanc","0"]
+  ]
   },
   {
     "label": "Dui Nec Tempus Associates",
@@ -185,6 +275,22 @@
       "averageRate": 9,
       "voterNumber": 1
     },
-    "promotions": []
+    "promotions": [],
+    "purchasedItems": [
+      ["Atelier cuisine bleu marine","0"],
+      ["Atelier cuisine noir","0"],
+      ["Atelier cuisine blanche","0"],
+      ["Atelier cuisine grise","0"],
+      ["Atelier cuisine marbre gris-noir","0"],
+      ["Meuble PM-9897O","0"],
+      ["Meuble OK-98","0"],
+      ["Meuble AS-O54 édition limitée jaune","0"],
+      ["Meuble AS-O54 édition limitée gris","0"],
+      ["Meuble AS-O54 édition limitée noir","0"],
+      ["Meuble AS-O54 édition limitée blanc","0"],
+      ["Meuble TR-KJ-V2 édition gold noir","0"],
+      ["Meuble TR-KJ-V2 édition gold gris","0"],
+      ["Meuble TR-KJ-V2 édition gold blanc","0"]
+  ]
   }
 ]

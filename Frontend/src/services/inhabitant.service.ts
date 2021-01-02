@@ -85,7 +85,6 @@ export class InhabitantService {
 
   getInhabitantsCloseTo(shop : Shop) {
     return this.http.get<any>('http://localhost:9428/api/inhabitants').pipe(map((inhabitantList => {
-      console.log('YAAAA')
       return inhabitantList.filter((inhabitant) => inhabitant.longitude === shop.longitude && inhabitant.latitude === shop.latitude);
     })));
   }

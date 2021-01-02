@@ -1,0 +1,22 @@
+<section>
+  <table id="customers">
+    <tr>
+      <th>Item</th>
+      <th>Add</th>
+    </tr>
+    <tr *ngFor="let item of items; index as i;">
+      <td>{{item[0]}}</td>
+      <td><button (click)="purchase(i)">Add</button></td>
+    </tr>
+  </table>
+</section>
+
+<div style="position: relative; text-align: center;">
+  <a [routerLink]="['../..']" >
+    <mat-icon [inline]="true" style="font-size: 8em;" >exit_to_app</mat-icon>
+  </a>
+</div>
+
+<h1 style="position: relative; text-align: center;">
+  previous page
+</h1>

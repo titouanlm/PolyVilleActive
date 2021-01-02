@@ -10,32 +10,36 @@
   <ngb-rating [(rate)]="currentRate" class="ratingspecificshop" (click)="rateShop()"></ngb-rating>
 </div>
 
-<div mat-dialog-actions-2 >
-  <label>
-    <input matInput [(ngModel)]="objectName" placeholder="Object name" style="position: absolute;
-  left: 15.5%;top: 40%;width: 9.5%;background-color: #bfaaf4;"/>
-  </label>
-  <button mat-button cdkFocusInitial (click)="purchase()" style="position: absolute;
-  left: 15.5%;top: 48%;width: 9.5%;background-color:lightskyblue;" [disabled]="objectName==undefined">Purchase</button>
+<div style="position: absolute;top: 48%;left: 15%">
+  <button mat-icon-button color="primary" (click)="UponClicking()" >
+    <mat-icon [inline]="true" style="font-size: 8em;">shopping_cart</mat-icon>
+  </button>
+
 </div>
 
-<div style="position: relative;top: 55%;left: 46%">
-  <a [routerLink]="['..']" class="increaseSize">
+<h1 style="position: absolute; left: 13.5%; top: 60%;">
+  add items
+</h1>
+
+<div style="position: relative; text-align: center; top: 50%">
+  <a [routerLink]="['..']" >
     <mat-icon [inline]="true" style="font-size: 8em;" >exit_to_app</mat-icon>
   </a>
 </div>
+
 <div style="position: absolute;top: 38%;left: 86%">
   <a [routerLink]="['additionalinfo']" (click)="getShopFromUrl()" class="increaseSize">
     <mat-icon [inline]="true" style="font-size: 8em;" >live_help</mat-icon>
   </a>
 </div>
+
 <div style="font-size: 8em;position: absolute;top: 60%;left: 85%">
   <h1>
     additional shop info
   </h1>
 </div>
-<div style="font-size: 8em;position: absolute;top: 87%;left: 42%">
-  <h1>
-    previous page
-  </h1>
-</div>
+
+<h1 style="position: relative; text-align: center; top: 45%;">
+  previous page
+</h1>
+

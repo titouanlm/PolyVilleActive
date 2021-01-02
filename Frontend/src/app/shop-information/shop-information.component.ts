@@ -68,16 +68,7 @@ export class ShopInformationComponent implements OnInit {
     });
   }
 
-  public actualizeSeller(){
-    //this.shopService.getShopFromUrl(this.shop.id);
-  }
-
   ngOnInit(): void {
-    /*interval(1000)
-      .pipe(takeWhile(() => true))
-      .subscribe(() =>
-        this.calculateShopRate());*/
-
     interval(20000)
       .pipe(takeWhile(() => true))
       .subscribe(() => {

@@ -40,6 +40,9 @@ import { PopupCulturalActorAuthentificationComponent } from './popup-cultural-ac
 import { PopupTownHallEmployeeAuthentificationComponent } from './popup-town-hall-employee-authentification/popup-town-hall-employee-authentification.component';
 import { CulturalActorHomeComponent } from './cultural-actor-home/cultural-actor-home.component';
 import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-hall-employee-home.component';
+import { StoreItemsComponent } from './store-items/store-items.component';
+import { DialogAlertShopComponent } from './dialog-alert-shop/dialog-alert-shop.component';
+import { ItemStatisticsComponent } from './item-statistics/item-statistics.component';
 
 
 
@@ -74,6 +77,9 @@ import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-ha
     CulturalActorHomeComponent,
     CulturalActorBlocksComponent,
     TownHallEmployeeHomeComponent,
+    StoreItemsComponent,
+    DialogAlertShopComponent,
+    ItemStatisticsComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,9 +92,11 @@ import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-ha
       {path: 'seller', component: SellerDisplayComponent},
       {path: 'seller/shop-information', component: ShopInformationComponent},
       {path: 'seller/shop-information/othersinformation', component: OthersInformationComponent},
+      {path: 'seller/shop-information/othersinformation/itemstatistics', component: ItemStatisticsComponent},
       {path: 'seller/blockly', component: MyBlocksComponent},
       {path: 'visitorinhabitant/shoprating', component: ShopListRatingComponent},
       {path: 'visitorinhabitant/shoprating/shop', component: ShopRatingComponent},
+      {path: 'visitorinhabitant/shoprating/shop/items', component: StoreItemsComponent},
       {path: 'visitorinhabitant/shoprating/shop/additionalinfo', component: AdditionalShopInfoComponent},
       {path: 'visitorinhabitant/citycenterinformation', component: CityCenterInformationComponent},
       {path: 'cultural-actor', component: CulturalActorHomeComponent},
@@ -96,7 +104,7 @@ import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-ha
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
       {path: 'town-hall-employee/blockly', component: TownHallEmployeeBlocksComponent},
       { path: '**', redirectTo: '' }
-    ], {useHash: true}),
+    ], { relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
     NgxBlocklyModule,
     MatIconModule,
     MatButtonModule,
