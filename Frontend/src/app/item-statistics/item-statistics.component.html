@@ -1,13 +1,26 @@
-<p>item-statistics works!</p>
-<div class="sellersexit" >
-  <a [routerLink]="['..']" class="increaseSize">
-    <mat-icon [inline]="true" >exit_to_app</mat-icon>
+<section>
+  <table id="customers">
+    <tr>
+      <th>Item</th>
+      <th>number of times purchased</th>
+    </tr>
+    <tr *ngFor="let item of items;">
+      <td>{{item[0]}}</td>
+      <td>{{item[1]}}</td>
+    </tr>
+  </table>
+</section>
+
+<div *ngIf="items==undefined || items.length == 0">
+  <h1> No items yet purchased</h1>
+</div>
+
+<div style="position: relative; text-align: center;">
+  <a [routerLink]="['..']" >
+    <mat-icon [inline]="true" style="font-size: 8em;" >exit_to_app</mat-icon>
   </a>
 </div>
 
-<div>
-  <h3>
-    previous page
-  </h3>
-</div>
-
+<h1 style="position: relative; text-align: center;">
+  previous page
+</h1>
