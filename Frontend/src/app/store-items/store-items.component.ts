@@ -23,7 +23,7 @@ export class StoreItemsComponent implements OnInit {
               public dialog: MatDialog) {
     this.shop = shopService.shopSelected;
     this.inhabitant = inhabitantService.currentInhabitant;
-    this.items = this.shop.availableItems;
+    this.items = this.shop.purchasedItems;
   }
 
   ngOnInit(): void {
@@ -74,8 +74,8 @@ export class StoreItemsComponent implements OnInit {
   }
 
   purchase(number: number) {
-    this.objectName = this.shop.availableItems[number];
-    if (this.objectName != undefined){
+    if (this.shop.purchasedItems != undefined && this.shop.purchasedItems.length != 0){
+      this.objectName = this.shop.purchasedItems[number][0];
       this.openThanksDialog();
       this.inhabitantControl();
       this.addInhabitantAttendanceToShop();
@@ -86,7 +86,6 @@ export class StoreItemsComponent implements OnInit {
       this.inhabitantService.authenticateInhabitant(this.inhabitant.id).subscribe((inhabitant) => this.inhabitant = inhabitant);
       this.objectName = undefined;
     }
-
   }
 
 }

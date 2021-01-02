@@ -27,7 +27,6 @@ export class OthersInformationComponent implements OnInit {
   number: number;
   inhabitant: Inhabitant;
   shop: Shop;
-  private name: any;
 
   constructor(public dialog: MatDialog,
               private promotionService: PromotionService,

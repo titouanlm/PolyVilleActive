@@ -42,7 +42,7 @@ export class ShopRatingComponent implements OnInit {
   }
 
   UponClicking(){
-    if (this.shop.availableItems != undefined && this.shop.availableItems.length != 0){
+    if (this.shop.purchasedItems != undefined && this.shop.purchasedItems.length != 0){
       this.router.navigate(['items'], { relativeTo: this.route });
     }
     else {
