@@ -74,6 +74,10 @@ export class StoreItemsComponent implements OnInit {
         position[0] != this.shop.longitude || position[1] != this.shop.latitude);
   }
 
+  addPurchaseToAShop(number: number){
+    this.shopService.shopSelected.purchasedItems[number][1] = (Number(this.shopService.shopSelected.purchasedItems[number][1])+1).toString();
+  }
+
   purchase(number: number) {
     if (this.shop.purchasedItems != undefined && this.shop.purchasedItems.length != 0){
       this.objectName = this.shop.purchasedItems[number][0];
@@ -82,6 +86,7 @@ export class StoreItemsComponent implements OnInit {
       this.addInhabitantAttendanceToShop();
       this.addItemsToInhabitant();
       this.manageInhabitantAttendance();
+      this.addPurchaseToAShop(number);
       this.inhabitantService.updateInhabitant(this.inhabitant);
       this.shopService.updateShop(this.shop);
       this.inhabitantService.authenticateInhabitant(this.inhabitant.id).subscribe((inhabitant) => this.inhabitant = inhabitant);

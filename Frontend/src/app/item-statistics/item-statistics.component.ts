@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ShopService} from "../../services/shop.service";
 
 @Component({
   selector: 'app-item-statistics',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemStatisticsComponent implements OnInit {
 
-  constructor() { }
+  items: string[][];
+
+  constructor(public shopService: ShopService) {
+    this.items = shopService.shopSelected.purchasedItems;
+  }
 
   ngOnInit(): void {
   }
