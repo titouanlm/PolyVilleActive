@@ -42,6 +42,7 @@ import { CulturalActorHomeComponent } from './cultural-actor-home/cultural-actor
 import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-hall-employee-home.component';
 import { StoreItemsComponent } from './store-items/store-items.component';
 import { DialogAlertShopComponent } from './dialog-alert-shop/dialog-alert-shop.component';
+import { ItemStatisticsComponent } from './item-statistics/item-statistics.component';
 
 
 
@@ -78,6 +79,7 @@ import { DialogAlertShopComponent } from './dialog-alert-shop/dialog-alert-shop.
     TownHallEmployeeHomeComponent,
     StoreItemsComponent,
     DialogAlertShopComponent,
+    ItemStatisticsComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,6 +92,7 @@ import { DialogAlertShopComponent } from './dialog-alert-shop/dialog-alert-shop.
       {path: 'seller', component: SellerDisplayComponent},
       {path: 'seller/shop-information', component: ShopInformationComponent},
       {path: 'seller/shop-information/othersinformation', component: OthersInformationComponent},
+      {path: 'seller/shop-information/othersinformation/itemstatistics', component: ItemStatisticsComponent},
       {path: 'seller/blockly', component: MyBlocksComponent},
       {path: 'visitorinhabitant/shoprating', component: ShopListRatingComponent},
       {path: 'visitorinhabitant/shoprating/shop', component: ShopRatingComponent},
@@ -101,7 +104,7 @@ import { DialogAlertShopComponent } from './dialog-alert-shop/dialog-alert-shop.
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
       {path: 'town-hall-employee/blockly', component: TownHallEmployeeBlocksComponent},
       { path: '**', redirectTo: '' }
-    ], {useHash: true}),
+    ], { relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
     NgxBlocklyModule,
     MatIconModule,
     MatButtonModule,
