@@ -1,12 +1,15 @@
 import {BlockMutator, CustomBlock} from 'ngx-blockly';
+import { DatePipe } from '@angular/common';
 
 declare var Blockly: any;
 
 export class CulturalEventBlock extends CustomBlock {
+  currentDate: string = new Date().toString();
+  datePipe = new DatePipe('en-US').transform(this.currentDate,'yyyy-MM-dd')
+
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = CulturalEventBlock;
-
 
   }
 
@@ -19,9 +22,9 @@ export class CulturalEventBlock extends CustomBlock {
               .appendField(new Blockly.FieldTextInput(""), "Description");
         this.block.appendDummyInput()
               .appendField("Start date   ")
-          .appendField(new Blockly.FieldDate('2020-12-25'), "DateDebut")
+          .appendField(new Blockly.FieldDate(this.datePipe), "DateDebut")
               .appendField("       End date    ")
-          .appendField(new Blockly.FieldDate('2020-12-26'), "DateFin");
+          .appendField(new Blockly.FieldDate(this.datePipe), "DateFin");
         this.block.appendValueInput("heureDebut")
               .setCheck(null)
               .appendField("Start time");
@@ -67,7 +70,6 @@ export class CulturalEventBlock extends CustomBlock {
                 'this.culturalEvent.dateFin=\''+text_datefin+'\';\n'+
                 'this.culturalEvent.heureDebut =\''+ value_heuredebut+'\';\n'+
                 'this.culturalEvent.heureFin =\''+ value_heurefin+'\';\n'+
-        //CALCULER NB JOUR DE LEVENEMENT
                 'this.culturalEvent.nbrPresonneAttendu='+number_nbpersonne+';\n'+
                 'this.culturalEvent.lieu=\''+text_lieu+'\';\n'+
                 'this.culturalEvent.typeEvenement=\''+dropdown_type+'\';\n'+
