@@ -40,6 +40,7 @@ import { PopupCulturalActorAuthentificationComponent } from './popup-cultural-ac
 import { PopupTownHallEmployeeAuthentificationComponent } from './popup-town-hall-employee-authentification/popup-town-hall-employee-authentification.component';
 import { CulturalActorHomeComponent } from './cultural-actor-home/cultural-actor-home.component';
 import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-hall-employee-home.component';
+import { StoreItemsComponent } from './store-items/store-items.component';
 
 
 
@@ -74,6 +75,7 @@ import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-ha
     CulturalActorHomeComponent,
     CulturalActorBlocksComponent,
     TownHallEmployeeHomeComponent,
+    StoreItemsComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,6 +91,7 @@ import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-ha
       {path: 'seller/blockly', component: MyBlocksComponent},
       {path: 'visitorinhabitant/shoprating', component: ShopListRatingComponent},
       {path: 'visitorinhabitant/shoprating/shop', component: ShopRatingComponent},
+      {path: 'visitorinhabitant/shoprating/shop/items', component: StoreItemsComponent},
       {path: 'visitorinhabitant/shoprating/shop/additionalinfo', component: AdditionalShopInfoComponent},
       {path: 'visitorinhabitant/citycenterinformation', component: CityCenterInformationComponent},
       {path: 'cultural-actor', component: CulturalActorHomeComponent},
