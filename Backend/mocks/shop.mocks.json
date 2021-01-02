@@ -6,8 +6,8 @@
     "sellerId": 1854245,
     "id": 1234567,
     "storeRating": {
-      "averageRate": 7.25,
-      "voterNumber": 4
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": [
       {
@@ -17,18 +17,7 @@
         "endDate": "2020-12-15",
         "shopId": 1234567,
         "id": 1607911981694,
-        "public": true,
-        "customersNumberInterested": [
-          1987,
-          1999,
-          1867
-        ],
-        "notifiedCustomersNumber": [
-          1987,
-          1988,
-          1999,
-          1867
-        ]
+        "public": true
       },
       {
         "title": "Hello",
@@ -43,19 +32,13 @@
         "description": "dqiodj",
         "startDate": "2020-02-20",
         "endDate": "2020-02-20",
-        "customersNumberInterested": [
-          1999
-        ],
-        "notifiedCustomersNumber": [
-          1999
-        ],
         "shopId": 1234567,
         "id": 1608149454567
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 16,
-      "numberOfPresence": 91
+      "numberOfPurchases": 0,
+      "numberOfPresence": 0
     },
     "purchasedItems": [
       ["Flashbang","0"],
@@ -76,13 +59,13 @@
     "sellerId": 1854246,
     "id": 1234568,
     "storeRating": {
-      "averageRate": 8.2,
-      "voterNumber": 5
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": [],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 6,
-      "numberOfPresence": 20
+      "numberOfPurchases": 0,
+      "numberOfPresence": 0
     },
     "purchasedItems": [
       ["Jean chino clair","0"],
@@ -143,8 +126,8 @@
     "sellerId": 1854249,
     "id": 1234571,
     "storeRating": {
-      "averageRate": 9,
-      "voterNumber": 1
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": [],
     "purchasedItems": [
@@ -237,8 +220,8 @@
     "sellerId": 1854253,
     "id": 1234575,
     "storeRating": {
-      "averageRate": 10,
-      "voterNumber": 1
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": []
   },
