@@ -30,16 +30,16 @@ export class InhabitantService {
       }));
   }
 
-  getShopIfNotAlreadyRatedByAnInhabitant(shopNumber: number){
+  isShopAlreadyRatedByInhabitantNumber(shopNumber: number){
     if (this.currentInhabitant.shopRated == undefined) {
       this.currentInhabitant.shopRated = [];
-      return undefined;
+      return false;
     }
     const constante = this.currentInhabitant.shopRated.indexOf(shopNumber);
-    return (constante==-1)?undefined :constante;
+    return (constante != -1);
   }
 
-  updateShopRatedByInhabitant(array: any[]){
+  updateInhabitantRating(array: any[]){
     this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/' + this.currentInhabitant.id, {shopRated: array })
       .subscribe();
   }

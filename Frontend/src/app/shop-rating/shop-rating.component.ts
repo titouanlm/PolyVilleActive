@@ -82,20 +82,19 @@ export class ShopRatingComponent implements OnInit {
   rateShop(){
     setTimeout(
       () => {
-        if (this.inhabitantService.getShopIfNotAlreadyRatedByAnInhabitant(Number(this.shopService.shopSelected.id)) == undefined) {
+        if (!this.inhabitantService.isShopAlreadyRatedByInhabitantNumber(Number(this.shopService.shopSelected.id))) {
           this.inhabitantService.currentInhabitant.shopRated.push(Number(this.shopService.shopSelected.id));
           this.setRateWait();
           const array = this.inhabitantService.currentInhabitant.shopRated;
           array.push(Number(this.shopService.shopSelected.id));
-          this.inhabitantService.updateShopRatedByInhabitant(array);
+          this.inhabitantService.updateInhabitantRating(array);
         }
       }
       , 500);
   }
 
   setShopRate() {
-    this.votersNumber = this.shopService.shopSelected.storeRating.voterNumber;
-    this.votersNumber++;
+    this.votersNumber = this.shopService.shopSelected.storeRating.voterNumber +1;
 
     this.shopService.shopSelected.storeRating.averageRate = (this.shopService.shopSelected.storeRating.averageRate *
       this.shopService.shopSelected.storeRating.voterNumber +
@@ -114,7 +113,7 @@ export class ShopRatingComponent implements OnInit {
   setRateWait(){
     setTimeout(
       () => this.setShopRate()
-      , 20);
+      , 200);
   }
 
   private testInsideShop() {
