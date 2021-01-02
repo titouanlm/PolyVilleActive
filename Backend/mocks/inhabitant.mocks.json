@@ -866,12 +866,14 @@
   {
     "firstName": "Griffin",
     "lastName": "Ball",
-    "longitude": "-34.52381",
-    "latitude": "-44.95548",
+    "longitude": "85.45452",
+    "latitude": "-2.24237",
     "id": 1987,
     "shopRated": [
       1234567,
-      1234567
+      1234567,
+      1234578,
+      1234578
     ],
     "positions": [
       [
@@ -929,6 +931,10 @@
       [
         -34.52381,
         -44.95548
+      ],
+      [
+        85.45452,
+        -2.24237
       ]
     ],
     "objectPurchased": [
