@@ -99,8 +99,8 @@ import { ItemStatisticsComponent } from './item-statistics/item-statistics.compo
       {path: 'cultural-actor/blockly', component: CulturalActorBlocksComponent},
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
       {path: 'town-hall-employee/blockly', component: TownHallEmployeeBlocksComponent},
-      { path: '**', redirectTo: '' }
-    ], { relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
+      /*{ path: '**', redirectTo: '' }*/
+    ], { onSameUrlNavigation: 'reload', relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
     NgxBlocklyModule,
     MatIconModule,
     MatButtonModule,
