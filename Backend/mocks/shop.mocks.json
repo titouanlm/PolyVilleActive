@@ -27,16 +27,9 @@
           1987,
           1988,
           1999,
-          1867
+          1867,
+          1
         ]
-      },
-      {
-        "title": "Hello",
-        "description": "world",
-        "startDate": "2020-02-20",
-        "endDate": "2020-02-20",
-        "shopId": 1234567,
-        "id": 1608134619050
       },
       {
         "title": "LALALA",
@@ -49,20 +42,21 @@
         ],
         "notifiedCustomersNumber": [
           1999,
-          1987
+          1987,
+          1
         ],
         "shopId": 1234567,
         "id": 1608149454567
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 12,
-      "numberOfPresence": 17
+      "numberOfPurchases": 14,
+      "numberOfPresence": 19
     },
     "purchasedItems": [
       [
         "Flashbang",
-        "0"
+        "1"
       ],
       [
         "Rocket launcher",
@@ -94,7 +88,7 @@
       ],
       [
         "Ak-47",
-        "1"
+        "2"
       ]
     ],
     "numberOfPurchaseByAgeRang": [
@@ -103,11 +97,11 @@
       74,
       8,
       69,
-      48
+      50
     ],
     "numberOfPurchaseBySexRang": [
       200,
-      103
+      105
     ]
   },
   {
