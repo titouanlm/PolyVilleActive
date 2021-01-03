@@ -96,9 +96,9 @@ export class CulturalActorService {
 
   getCulturalEvents(actorId:string) {
     const url = this.cActorsUrl + '/' +actorId+ '/' +this.cEventsPath;
-    this.http.get<CulturalEvent[]>(url).subscribe((evnts) => {
-      this.cevents=evnts;
-      this.cevents$.next(evnts);
+    this.http.get<CulturalEvent[]>(url).subscribe((events) => {
+      this.cevents=events;
+      this.cevents$.next(events);
     });
   }
 

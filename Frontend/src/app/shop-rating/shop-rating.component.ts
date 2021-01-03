@@ -4,10 +4,8 @@ import {InhabitantService} from "../../services/inhabitant.service";
 import {Shop} from "../../models/shop.model";
 import {NotificationPromotionComponent} from "../notification-promotion/notification-promotion.component";
 import {MatDialog} from "@angular/material/dialog";
-import {ThanksComponent} from "../thanks/thanks.component";
 import {Inhabitant} from "../../models/inhabitant.model";
 import {ActivatedRoute, Router} from "@angular/router";
-import {PopupVisitorInhabitantAutorisationComponent} from "../popup-visitor-inhabitant-autorisation/popup-visitor-inhabitant-autorisation.component";
 import {DialogAlertShopComponent} from "../dialog-alert-shop/dialog-alert-shop.component";
 
 @Component({
@@ -136,7 +134,7 @@ export class ShopRatingComponent implements OnInit {
   openPromoDialog(promos, shop) {
     const dialogRef = this.dialog.open(NotificationPromotionComponent, {
       width: '40%',
-      height: '40%',
+      height: '50%',
       data: {promotions: promos, shop : shop}
     });
   }

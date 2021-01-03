@@ -86,6 +86,4 @@ export class ShopInformationComponent implements OnInit {
       this.listFreq.push(niche.nbPersonneMoyenne);
     })
   }
-
-
 }
