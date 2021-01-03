@@ -1,6 +1,5 @@
 const {Event} = require('../../../models');
 const {Promotion } = require('../../../models');
-const {Notification} = require('../../../models');
 
 /**
  * Function buildAnEvent.

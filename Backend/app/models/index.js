@@ -1,7 +1,6 @@
 const Event = require('./Event.model.js');
 const Shop = require('./Shop.model.js');
 const Promotion = require('./Promotion.model.js');
-const Notification = require('./Notification.model.js');
 const Seller = require('./Seller.model.js');
 const Inhabitant = require('./Inhabitant.model.js');
 const Niche = require('./Niche.model.js');
@@ -14,5 +13,5 @@ const Condition = require('./Condition.model')
 const ShowHall = require('./ShowHall.model')
 
 module.exports = {
-    Event,Shop,Seller,Promotion,Notification,Inhabitant,Niche,Autorisation,TownHallEmployee,CulturalActor,CulturalEvent,ProhibitionRule,Condition, ShowHall
+    Event,Shop,Seller,Promotion,Inhabitant,Niche,Autorisation,TownHallEmployee,CulturalActor,CulturalEvent,ProhibitionRule,Condition, ShowHall
 };
