@@ -112,6 +112,9 @@ export class CulturalActorBlocksComponent {
       this.culturalEvent.fillingPercentageShowHall= (this.culturalEvent.nbrPresonneAttendu/showHallAvailable.capacity)*100;
       this.culturalEvent.lieu = showHallAvailable.name;
 
+      //Calcul de la duree de l'evenement en nombre de jour
+      this.culturalEvent.nbDayDuration = this.computeNumberOfDay()
+
       this.prohibitionRules.forEach(rule =>{
         this.verified = false;
         eval(rule.code);
@@ -189,6 +192,20 @@ export class CulturalActorBlocksComponent {
     }
     this.checkDates();
     this.checkTimes();
+  }
+
+  computeNumberOfDay(): number {
+    var nombreJr = 0;
+    var parts1, parts2;
+    parts1 = this.culturalEvent.dateDebut.split('-');
+    let dateDeb = new Date(parts1[0], parts1[1] - 1, parts1[2]);
+    let dateDebInt = dateDeb.getTime();
+    parts2 = this.culturalEvent.dateFin.split('-');
+    let dateFin = new Date(parts2[0], parts2[1] - 1, parts2[2]);
+    let dateFinInt = dateFin.getTime();
+    nombreJr = Math.round(((dateFinInt - dateDebInt) / (1000 * 3600 * 24)));
+
+    return nombreJr;
   }
 
   private verifyIfShowHallAvailables() {
