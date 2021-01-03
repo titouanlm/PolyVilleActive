@@ -17,6 +17,8 @@ import {ProhibitionRule} from "../../models/prohibitionRule.model";
 import {DatePipe} from "@angular/common";
 import {interval} from "rxjs";
 import {takeWhile} from "rxjs/operators";
+import {ShowHallService} from "../../services/showHall.service";
+import {ShowHall} from "../../models/showHall.model";
 
 
 declare var Blockly: any;
@@ -47,7 +49,9 @@ export class CulturalActorBlocksComponent {
   currentDate: string = new Date().toString();
   currentTime: string = new Date().toString();
 
-  constructor(ngxToolboxBuilder: NgxToolboxBuilderService,public culturalActorService: CulturalActorService,public prohibitionRuleService: ProhibitionRuleService,private datePipe: DatePipe) {
+  public showHalls : ShowHall[];
+
+  constructor(ngxToolboxBuilder: NgxToolboxBuilderService,public culturalActorService: CulturalActorService,public prohibitionRuleService: ProhibitionRuleService, private showHallService: ShowHallService,private datePipe: DatePipe) {
     ngxToolboxBuilder.nodes = [
       new Category('Evenement culturel', '#cf9700', this.customBlocks1, null),
     ];
@@ -58,7 +62,8 @@ export class CulturalActorBlocksComponent {
       this.prohibitionRules=rules;
     });
 
-    this.currentDate = this.datePipe.transform(this.currentDate, 'yyyy-MM-dd');
+    this.showHallService.showHalls$.subscribe((showHalls) => this.showHalls = showHalls);
+      this.currentDate = this.datePipe.transform(this.currentDate, 'yyyy-MM-dd');
 
     interval(10000)
       .pipe(takeWhile(() => true))
@@ -88,6 +93,7 @@ export class CulturalActorBlocksComponent {
 
   updateRules() {
     this.prohibitionRuleService.getProhibitionRulesFromUrl();
+    this.showHallService.getShowHalls();
     setTimeout(() => this.execute(), 100);
   }
 
@@ -97,11 +103,14 @@ export class CulturalActorBlocksComponent {
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
     try {
       eval(code);
-      console.log(this.culturalEvent);
       console.log(this.prohibitionRules);
 
       //Verification de la coherence des attributs renseignés par l'utilisation
       this.checkAttributes();
+      const showHallAvailable = this.verifyIfShowHallAvailables();
+
+      this.culturalEvent.fillingPercentageShowHall= (this.culturalEvent.nbrPresonneAttendu/showHallAvailable.capacity)*100;
+      this.culturalEvent.lieu = showHallAvailable.name;
 
       //Calcul de la duree de l'evenement en nombre de jour
       this.culturalEvent.nbDayDuration = this.computeNumberOfDay()
@@ -124,7 +133,10 @@ export class CulturalActorBlocksComponent {
         + this.rulesInConflict.length + " rule(s) : \n" + conflictsRules;
       }
 
-      this.culturalActorService.addCulturalEvent(this.culturalEvent)
+      //update show hall
+      this.showHallService.updateShowHall(showHallAvailable);
+      this.culturalActorService.addCulturalEvent(this.culturalEvent);
+
       alert('Votre evenement culturel a été créé avec succes');
       Blockly.mainWorkspace.clear();
     } catch (e) {
@@ -182,17 +194,64 @@ export class CulturalActorBlocksComponent {
     this.checkTimes();
   }
 
-  computeNumberOfDay(): number{
+  computeNumberOfDay(): number {
     var nombreJr = 0;
-    var parts1,parts2;
+    var parts1, parts2;
     parts1 = this.culturalEvent.dateDebut.split('-');
-    let dateDeb= new Date(parts1[0],parts1[1]-1,parts1[2]);
-    let dateDebInt=dateDeb.getTime();
+    let dateDeb = new Date(parts1[0], parts1[1] - 1, parts1[2]);
+    let dateDebInt = dateDeb.getTime();
     parts2 = this.culturalEvent.dateFin.split('-');
-    let dateFin= new Date(parts2[0],parts2[1]-1,parts2[2]);
-    let dateFinInt=dateFin.getTime();
-    nombreJr = Math.round(((dateFinInt-dateDebInt) / (1000 * 3600 * 24)));
+    let dateFin = new Date(parts2[0], parts2[1] - 1, parts2[2]);
+    let dateFinInt = dateFin.getTime();
+    nombreJr = Math.round(((dateFinInt - dateDebInt) / (1000 * 3600 * 24)));
 
     return nombreJr;
+  }
+
+  private verifyIfShowHallAvailables() {
+    var dateDebut = new Date(Date.parse(this.culturalEvent.dateDebut));
+    var dateFin = new Date(Date.parse(this.culturalEvent.dateFin));
+    var datesArray = this.getDates(dateDebut,dateFin);
+    console.log(datesArray);
+    var showHallsAvailables = [];
+    this.showHalls.forEach((showHall) => {
+      if((showHall.type.includes(this.culturalEvent.typeEvenement) || showHall.type.includes("all"))
+        && showHall.capacity >= this.culturalEvent.nbrPresonneAttendu){
+        const intersection = showHall.unavailableSlots?.filter(date => datesArray.includes(date));
+        console.log(intersection)
+        if(!intersection || intersection.length === 0){
+          showHallsAvailables.push(showHall);
+        }
+      }
+    });
+
+    if(showHallsAvailables.length === 0){
+      throw "No show hall is available for this event. Try to change dates."
+    }else{
+      if(!showHallsAvailables[0].unavailableSlots){
+        showHallsAvailables[0].unavailableSlots = datesArray;
+      }else{
+        showHallsAvailables[0].unavailableSlots = showHallsAvailables[0].unavailableSlots.concat(datesArray);
+      }
+    }
+
+    return showHallsAvailables[0];
+  }
+
+  private addDays(currentDate, days) {
+    var dat = new Date(currentDate.valueOf());
+    dat.setDate(dat.getDate() + days);
+    return dat;
+  }
+
+  private getDates(startDate : Date, stopDate : Date) {
+      var dateArray = [];
+      var currentDate = startDate;
+      while (currentDate <= stopDate) {
+        var currentDateString = currentDate.getFullYear() + "-" + (currentDate.getMonth()+1) + "-" + currentDate.getDate();
+        dateArray.push(currentDateString)
+        currentDate = this.addDays(currentDate, 1);
+      }
+      return dateArray;
   }
 }

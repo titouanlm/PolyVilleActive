@@ -44,31 +44,33 @@
         "startDate": "2020-02-20",
         "endDate": "2020-02-20",
         "customersNumberInterested": [
-          1999
+          1999,
+          1987
         ],
         "notifiedCustomersNumber": [
-          1999
+          1999,
+          1987
         ],
         "shopId": 1234567,
         "id": 1608149454567
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 0,
-      "numberOfPresence": 0
+      "numberOfPurchases": 5,
+      "numberOfPresence": 10
     },
     "purchasedItems": [
       [
         "Flashbang",
-        "0"
+        "1"
       ],
       [
         "Rocket launcher",
-        "0"
+        "3"
       ],
       [
         "Rocket",
-        "0"
+        "1"
       ],
       [
         " Incendiary",

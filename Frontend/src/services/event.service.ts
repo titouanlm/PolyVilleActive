@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, pipe, Subject} from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Shop} from '../models/shop.model';
-import  {Event,Promotion,Notification} from "../models/event.model";
+import  {Event,Promotion} from "../models/event.model";
 import {map} from "rxjs/operators";
 
 @Injectable({
@@ -127,30 +127,4 @@ export class EventService {
     this.http.put<Promotion>(url,promo, this.httpOptions).subscribe(() => this.getEventFromUrl(shopId,eventId));
   }
 
-  //............................................... Notifications ..............................................
-
-  getNotifications(shopId:string, eventId: string) {
-    const url = this.shopsUrl + '/' + shopId + '/'+this.eventsPath + '/'+ eventId + '/'+this.notifsPath ;
-    this.http.get<Notification[]>(url).subscribe((notifs) => {
-      this.notifications=notifs;
-      this.notifications$.next(notifs);
-    });
-  }
-
-  getNotification(shopId:string, eventId: string, notifId: string) {
-    const urlWithId = this.shopsUrl + '/' + shopId + '/'+this.eventsPath + '/'+ eventId + '/'+this.notifsPath +'/'+notifId ;
-    this.http.get<Notification>(urlWithId).subscribe((notif) => {
-      this.notification$.next(notif);
-    });
-  }
-
-  addNotification(shopId:string, eventId: string, notif: Notification) {
-    const url = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath + '/'+ eventId + '/'+this.notifsPath ;
-    this.http.post<Notification>(url,notif).subscribe(() => this.getEventFromUrl(shopId,eventId));
-  }
-
-  updateNotification(shopId:string, eventId: string, notif: Notification) {
-    const url = this.shopsUrl + '/' + shopId +'/'+ this.eventsPath + '/'+ eventId + '/'+this.notifsPath +'/'+ notif.id ;
-    this.http.put<Notification>(url,notif).subscribe(() => this.getEventFromUrl(shopId,eventId));
-  }
 }

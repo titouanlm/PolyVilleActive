@@ -1,15 +1,14 @@
 h4{
-  position: relative;
-  top: 10%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
   font-size: 4em;
 }
 
 .culturalActorblocklycreation {
-  position: absolute;
-  top: 50%;
   text-align: center;
-  left: 45%;
+  padding-top: 10%;
 }
 
 .cActorExit {

@@ -29,16 +29,6 @@ export interface Event {
   public: boolean;
 }
 
- export interface Notification {
-  id: string;
-  notifDescription: string;
-  notifType: number;
-  notifEventId: number;
-  condLeft: string;
-  condRight: string;
-  condSign: string;
-}
-
 export interface CulturalEvent {
   id: string;
   title: string;
@@ -50,7 +40,6 @@ export interface CulturalEvent {
   nbrPresonneAttendu: number;
   nbDayDuration: number;
   fillingPercentageShowHall: number;
-  //capacitesalle: number;
   lieu : string;
   typeEvenement : string;
   typePublic : string;
