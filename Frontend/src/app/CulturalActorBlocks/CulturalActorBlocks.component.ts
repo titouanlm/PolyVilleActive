@@ -53,7 +53,8 @@ export class CulturalActorBlocksComponent {
     ];
     this.config.toolbox = ngxToolboxBuilder.build();
     this.config.scrollbars = false;
-    prohibitionRuleService.rules$.subscribe(rules=>{
+    this.prohibitionRuleService.getProhibitionRulesFromUrl();
+    this.prohibitionRuleService.rules$.subscribe((rules)=>{
       this.prohibitionRules=rules;
     });
 
@@ -85,7 +86,13 @@ export class CulturalActorBlocksComponent {
     xml: false
   };
 
-  execute() {
+  updateRules() {
+    this.prohibitionRuleService.getProhibitionRulesFromUrl();
+    setTimeout(() => this.execute(), 100);
+  }
+
+
+  private execute() {
     this.rulesInConflict = [];
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
     try {
@@ -122,6 +129,7 @@ export class CulturalActorBlocksComponent {
     }
 
     console.log(code);
+    return null;
   }
 
   checkDates(){

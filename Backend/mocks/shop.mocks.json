@@ -568,9 +568,10 @@
     "sellerId": 1854256,
     "id": 1234578,
     "storeRating": {
-      "averageRate": 0,
-      "voterNumber": 0
+      "averageRate": 9,
+      "voterNumber": 1
     },
+    "promotions": [],
     "purchasedItems": [
       [
         "Atelier cuisine bleu marine",

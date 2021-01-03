@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "type": "theatre",
+    "targetPeople": [
+      "young"
+    ],
+    "code": "if( this.culturalEvent.typeEvenement === \"theatre\"){ if( this.culturalEvent.typePublic === \"young\"){this.verified=true}}",
+    "text": "It is forbidden to create an event of type \"theatre\" If the target audience is \"young\".",
+    "createdBy": "Gagou Eric",
+    "id": 1609627107874
+  }
+]
