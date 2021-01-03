@@ -7,6 +7,8 @@ module.exports = new BaseModel('Shop', {
     latitude:  Joi.number().required(),
     sellerId: Joi.number().required(),
     id: Joi.number(),
+    numberOfPurchaseByAgeRang: Joi.array(),  //0-14,15-29,30-44,45-59,60-74,75-+
+    numberOfPurchaseBySexRang: Joi.array(),
     storeRating: Joi.object({
         averageRate: Joi.number().min(0).max(10),
         voterNumber: Joi.number(),
