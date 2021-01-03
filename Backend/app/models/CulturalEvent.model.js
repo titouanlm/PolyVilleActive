@@ -8,7 +8,7 @@ module.exports = new BaseModel('CulturalEvent', {
     dateFin : Joi.string(),
     heureDebut: Joi.string(),
     heureFin : Joi.string(),
-    nbDayDuration : Joi.number().required(),
+    nbDayDuration : Joi.number(),
     fillingPercentageShowHall: Joi.number().required(),
     nbrPresonneAttendu: Joi.number(),
     lieu :Joi.string(),

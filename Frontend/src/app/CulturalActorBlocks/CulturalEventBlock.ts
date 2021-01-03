@@ -18,6 +18,12 @@ export class CulturalEventBlock extends CustomBlock {
               .appendField("Description        ")
               .appendField(new Blockly.FieldTextInput(""), "Description");
         this.block.appendDummyInput()
+          .appendField("Event type    ")
+          .appendField(new Blockly.FieldDropdown([["Théâtre","theatre"], ["Concert","concert"], ["Festival","festival"], ["Exposition","exposition"], ["Danse","danse"]]), "type");
+        this.block.appendDummyInput()
+          .appendField("expected audience        ")
+          .appendField(new Blockly.FieldDropdown([["Young","young"], ["Old","old"], ["Adult","adult"], ["Children","children"], ["Everyone","everyone"]]), "public");
+        this.block.appendDummyInput()
               .appendField("Start date   ")
           .appendField(new Blockly.FieldDate('2020-12-25'), "DateDebut")
               .appendField("       End date    ")
@@ -30,16 +36,7 @@ export class CulturalEventBlock extends CustomBlock {
               .appendField("End time");
         this.block.appendDummyInput()
               .appendField("Number of people expected")
-              .appendField(new Blockly.FieldNumber(0, 0), "nbpersonne");
-        this.block.appendDummyInput()
-              .appendField("Place name        ")
-              .appendField(new Blockly.FieldTextInput(""), "lieu");
-        this.block.appendDummyInput()
-              .appendField("Event type    ")
-              .appendField(new Blockly.FieldDropdown([["Théâtre","theatre"], ["Concert","concert"], ["Festival","festival"], ["Exposition","exposition"], ["Danse","danse"]]), "type");
-        this.block.appendDummyInput()
-              .appendField("expected audience        ")
-              .appendField(new Blockly.FieldDropdown([["Young","young"], ["Old","old"], ["Adult","adult"], ["Children","children"], ["Everyone","everyone"]]), "public");
+              .appendField(new Blockly.FieldNumber(1, 1), "nbpersonne");
         this.block.setColour(165);
         this.block.setTooltip("");
         this.block.setHelpUrl("");
@@ -57,7 +54,6 @@ export class CulturalEventBlock extends CustomBlock {
       var value_heuredebut = Blockly.JavaScript.valueToCode(block, 'heureDebut', Blockly.JavaScript.ORDER_ATOMIC);
       var value_heurefin = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
       var number_nbpersonne = this.block.getFieldValue('nbpersonne');
-      var text_lieu = this.block.getFieldValue('lieu');
       var dropdown_type = this.block.getFieldValue('type');
       var dropdown_public = this.block.getFieldValue('public');
 
@@ -69,7 +65,6 @@ export class CulturalEventBlock extends CustomBlock {
                 'this.culturalEvent.heureFin =\''+ value_heurefin+'\';\n'+
         //CALCULER NB JOUR DE LEVENEMENT
                 'this.culturalEvent.nbrPresonneAttendu='+number_nbpersonne+';\n'+
-                'this.culturalEvent.lieu=\''+text_lieu+'\';\n'+
                 'this.culturalEvent.typeEvenement=\''+dropdown_type+'\';\n'+
                 'this.culturalEvent.typePublic=\''+dropdown_public+'\';\n';
       return code;

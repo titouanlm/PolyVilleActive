@@ -131,6 +131,7 @@ export class CulturalActorBlocksComponent {
       //update show hall
       this.showHallService.updateShowHall(showHallAvailable);
       this.culturalEvent.fillingPercentageShowHall= (this.culturalEvent.nbrPresonneAttendu/showHallAvailable.capacity)*100;
+      this.culturalEvent.lieu = showHallAvailable.name;
       this.culturalActorService.addCulturalEvent(this.culturalEvent);
 
       alert('Votre evenement culturel a été créé avec succes');
