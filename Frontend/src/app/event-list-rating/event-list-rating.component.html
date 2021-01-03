@@ -9,23 +9,18 @@
         <th scope="col">Start Date</th>
         <th scope="col">End Date</th>
         <th scope="col">Location</th>
-        <th scope="col">Status</th>
-        <th scope="col">ShowHall % (100%=Filled)</th>
-
+        <th scope="col">Select</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let event of eventList;let i = index">
+      <tr *ngFor="let culturalevent of eventList;let i = index">
         <th scope="row">{{i}}</th>
-        <td>{{event.title}}</td>
-        <td> {{event.dateDebut}} </td>
-        <td> {{event.dateFin}}</td>
-        <td>{{event.lieu}}</td>
+        <td>{{culturalevent.title}}</td>
+        <td> {{culturalevent.dateDebut}} </td>
+        <td> {{culturalevent.dateFin}}</td>
+        <td>{{culturalevent.lieu}}</td>
         <td>
-          {{status(event.dateDebut,event.dateFin)}}
-        </td>
-        <td>
-          {{event.fillingPercentageShowHall}}
+          <button [routerLink]="['event']" id="runButton" type="button" class="btn btn-success" >Select</button><br>
         </td>
       </tr>
       </tbody>
@@ -40,8 +35,8 @@
   </a>
 </div>
 
-<div style="font-size: 8em;position: relative;left: 40%">
-  <h1>
+<div style="position: relative;top: -5%">
+  <h1 style="text-align: center">
     previous page
   </h1>
 </div>

@@ -45,13 +45,19 @@ export class CulturalActorService {
 
   //............................................... Cultural Actors ..............................................
 
-
   getCulturalActorsFromUrl() {
-    this.http.get<CulturalActor[]>(this.cActorsUrl).subscribe((cactorList) => {
+    this.http.get<any>(this.cActorsUrl).subscribe((cactorList) => {
       this.cactors = cactorList;
       this.cactors$.next(this.cactors);
     });
   }
+  /*
+  getCulturalActorsFromUrl() {
+
+    return this.http.get<any>(this.cActorsUrl).pipe(map((CActorsList => {
+      return CActorsList;
+    })));
+  }*/
 
   getCulturalActorFromUrl(cactortId: string) {
     const urlWithId = this.cActorsUrl + '/' +cactortId ;

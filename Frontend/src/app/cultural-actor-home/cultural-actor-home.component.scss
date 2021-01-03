@@ -1,3 +1,4 @@
+@@ -0,0 +1,46 @@
 h4{
   display: flex;
   justify-content: center;
@@ -6,7 +7,7 @@ h4{
   font-size: 4em;
 }
 
-h1 {
+h1{
   right: 0;
   left: 0;
   background-color: inherit;
@@ -21,7 +22,7 @@ h1 {
   align-items: center;
   text-align: center;
   font-size: medium;
-//  padding-top: 10%;
+
 }
 
 .cActorExit {
@@ -33,13 +34,13 @@ h1 {
 
 .cActorEvents {
   position: absolute;
+  align-items: center;
   top: 50%;
-  right: 65%;
-
+  left:-20%;
+  //right: 65%;
 }
 
 .increaseSize
 {
   font-size: 800%;
 }
-
