@@ -125,7 +125,7 @@ export class StoreItemsComponent implements OnInit {
     if (this.inhabitant.age>74)
       this.shop.numberOfPurchaseByAgeRang[5]+=1;
 
-    if (this.inhabitant.sex=="M"){
+    if (this.inhabitant.gender=="Male"){
       this.shop.numberOfPurchaseBySexRang[0]+=1;
     }
     else this.shop.numberOfPurchaseBySexRang[1]+=1;
