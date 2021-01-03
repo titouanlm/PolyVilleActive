@@ -41,6 +41,8 @@ import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-ha
 import { StoreItemsComponent } from './store-items/store-items.component';
 import { DialogAlertShopComponent } from './dialog-alert-shop/dialog-alert-shop.component';
 import { ItemStatisticsComponent } from './item-statistics/item-statistics.component';
+import {CulturalActorEventsComponent} from "./cultural-actor-events/cultural-actor-events.component";
+import {DatePipe} from "@angular/common";
 
 
 
@@ -76,6 +78,8 @@ import { ItemStatisticsComponent } from './item-statistics/item-statistics.compo
     StoreItemsComponent,
     DialogAlertShopComponent,
     ItemStatisticsComponent,
+    CulturalActorEventsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -97,10 +101,11 @@ import { ItemStatisticsComponent } from './item-statistics/item-statistics.compo
       {path: 'visitorinhabitant/citycenterinformation', component: CityCenterInformationComponent},
       {path: 'cultural-actor', component: CulturalActorHomeComponent},
       {path: 'cultural-actor/blockly', component: CulturalActorBlocksComponent},
+      {path: 'cultural-actor/events', component: CulturalActorEventsComponent},
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
       {path: 'town-hall-employee/blockly', component: TownHallEmployeeBlocksComponent},
-      { path: '**', redirectTo: '' }
-    ], { relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
+      /*{ path: '**', redirectTo: '' }*/
+    ], { onSameUrlNavigation: 'reload', relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
     NgxBlocklyModule,
     MatIconModule,
     MatButtonModule,
@@ -112,7 +117,7 @@ import { ItemStatisticsComponent } from './item-statistics/item-statistics.compo
     NgbRatingModule,
     ChartsModule
   ],
-  providers: [ ],
+  providers: [ DatePipe],
   bootstrap: [AppComponent],
   exports: [RouterModule/*, NgbdRatingBasic*/],
   entryComponents: [PopupVisitorInhabitantAuthenticationComponent,ThanksComponent],

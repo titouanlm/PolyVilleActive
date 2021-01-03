@@ -13,7 +13,10 @@ import {Niche} from "../models/niche.model";
 export class InhabitantService {
 
   public currentInhabitant: Inhabitant;
-  public inhabitant$: BehaviorSubject<Inhabitant> ;
+  public inhabitant$: BehaviorSubject<Inhabitant>;
+
+  /*public inhabitants: Inhabitant[];
+  public inhabitants$: BehaviorSubject<Inhabitant[]>;*/
 
   private inhabitants: Inhabitant[]=[];
   public inhabitants$: BehaviorSubject<Inhabitant[]> = new BehaviorSubject(this.inhabitants);
@@ -42,6 +45,12 @@ export class InhabitantService {
     }
     const constante = this.currentInhabitant.shopRated.indexOf(shopNumber);
     return (constante != -1);
+  }
+
+  getAllInhabitants(){
+    return this.http.get<any>('http://localhost:9428/api/inhabitants').pipe(map((inhabitantList => {
+      return inhabitantList;
+    })));
   }
 
   updateInhabitantRating(array: any[]){

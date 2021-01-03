@@ -6,18 +6,40 @@ h4{
   font-size: 4em;
 }
 
-.culturalActorblocklycreation {
+h1 {
+  right: 0;
+  left: 0;
+  background-color: inherit;
   text-align: center;
-  padding-top: 10%;
+  height: 20%;
+}
+
+.culturalActorblocklycreation {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  align-items: center;
+  text-align: center;
+  font-size: medium;
+//  padding-top: 10%;
 }
 
 .cActorExit {
   position: absolute;
+  align-items: center;
   top: 50%;
   left: 72%;
+}
+
+.cActorEvents {
+  position: absolute;
+  top: 50%;
+  right: 65%;
+
 }
 
 .increaseSize
 {
   font-size: 800%;
 }
+

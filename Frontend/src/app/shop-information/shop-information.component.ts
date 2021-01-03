@@ -12,7 +12,7 @@ import {Niche} from "../../models/niche.model";
   selector: 'app-shop-information',
   templateUrl: './shop-information.component.html',
   styleUrls: ['./shop-information.component.scss'],
-  providers:[ShopService],
+  providers: [ShopService],
 
 })
 export class ShopInformationComponent implements OnInit {
@@ -127,4 +127,5 @@ export class ShopInformationComponent implements OnInit {
     })
 
   }
+
 }
