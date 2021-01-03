@@ -6,9 +6,11 @@
       <tr>
         <th scope="col"></th>
         <th scope="col">Name</th>
-        <th scope="col">Date</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
         <th scope="col">Location</th>
         <th scope="col">Status</th>
+        <th scope="col">ShowHall % (100%=Filled)</th>
 
       </tr>
       </thead>
@@ -16,10 +18,14 @@
       <tr *ngFor="let event of eventList;let i = index">
         <th scope="row">{{i}}</th>
         <td>{{event.title}}</td>
-        <td> ({{event.dateDebut}}) ; ({{event.dateFin}})</td>
+        <td> ({{event.dateDebut}}) </td>
+        <td> ({{event.dateFin}})</td>
         <td>{{event.lieu}}</td>
         <td>
           {{status(event.dateDebut,event.dateFin)}}
+        </td>
+        <td>
+          {{event.fillingPercentageShowHall}}
         </td>
       </tr>
       </tbody>
