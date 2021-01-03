@@ -10,4 +10,6 @@ module.exports = new BaseModel('Inhabitant', {
     shopRated: Joi.array().items(Joi.number()),
     positions: Joi.array().items(Joi.array().min(2).max(2)),
     objectPurchased: Joi.array().items(Joi.array()),
+    gender: Joi.string(),
+    age: Joi.number(),
 });
