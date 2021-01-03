@@ -3,7 +3,7 @@
   <p class="shopInformation2">People near the shop : {{ nbPeopleClose }} </p> <br>
 </div>
 
-
+<br><br><br><br><br><br><br>
 <div class="sellersexit" >
   <a [routerLink]="['..']" class="increaseSize">
     <mat-icon [inline]="true" >exit_to_app</mat-icon>
@@ -28,6 +28,7 @@
   </h2>
 </div>
 
+<br><br><br><br><br><br><br>
 <div>
   <h3>
     previous page
@@ -50,6 +51,35 @@
     </div>
   </table>
 </div>
+
+<table class="tble2">
+  <tr>
+    <b> Percentage of purchase by age</b>
+  </tr>
+  <tr>
+    <div class="chart-wrapper trclas">
+      <canvas baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType">
+      </canvas>
+    </div>
+  </tr>
+  <tr>
+    <b> Percentage of purchase by gender</b>
+  </tr>
+  <tr >
+
+    <div class="chart-wrapper">
+      <canvas baseChart
+              [data]="doughnutChartData2"
+              [labels]="doughnutChartLabels2"
+              [chartType]="doughnutChartType2">
+      </canvas>
+    </div>
+  </tr>
+
+</table>
 
 <div>
   <a [routerLink]="['othersinformation']" >

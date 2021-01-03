@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {BehaviorSubject} from "rxjs";
 import {Shop} from "../models/shop.model";
+import {Niche} from "../models/niche.model";
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,10 @@ export class InhabitantService {
 
   public currentInhabitant: Inhabitant;
   public inhabitant$: BehaviorSubject<Inhabitant> ;
+
+  private inhabitants: Inhabitant[]=[];
+  public inhabitants$: BehaviorSubject<Inhabitant[]> = new BehaviorSubject(this.inhabitants);
+
 
   constructor(private http: HttpClient) {
     //this.currentInhabitant = JSON.parse(localStorage.getItem('currentInhabitant'));
@@ -87,5 +92,13 @@ export class InhabitantService {
     return this.http.get<any>('http://localhost:9428/api/inhabitants').pipe(map((inhabitantList => {
       return inhabitantList.filter((inhabitant) => inhabitant.longitude === shop.longitude && inhabitant.latitude === shop.latitude);
     })));
+  }
+
+  getInhabitantsFromUrl() {
+    const url = 'http://localhost:9428/api/inhabitants' ;
+    this.http.get<Inhabitant[]>(url).subscribe((IList) => {
+      this.inhabitants= IList;
+      this.inhabitants$.next(this.inhabitants);
+    });
   }
 }

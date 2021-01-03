@@ -3,8 +3,8 @@ import {Shop} from "../../models/shop.model";
 import {ShopService} from "../../services/shop.service";
 import { interval } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
-import { ChartDataSets, ChartOptions } from 'chart.js';
-import { Color, Label } from 'ng2-charts';
+import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
+import {Color, Label, MultiDataSet} from 'ng2-charts';
 import {NicheService} from "../../services/niche.service";
 import {Niche} from "../../models/niche.model";
 
@@ -23,6 +23,8 @@ export class ShopInformationComponent implements OnInit {
   public shopRate: number;
   public niches: Niche[];
   public listFreq:number[] =[];
+  averageOfPurchaseByAgeRang: number[]=[];
+  averageOfPurchaseBySexRang: number[]=[];
   lineChartLegend = true;
   lineChartPlugins = [];
   lineChartType = 'line';
@@ -40,10 +42,24 @@ export class ShopInformationComponent implements OnInit {
     },
   ];
 
+  doughnutChartLabels: Label[] = ['0-14 ans', '15-29 ans', '30-44 ans','45-59 ans','60-74 ans','75 ans-+'];
+  doughnutChartData: MultiDataSet=[[0,0,0,0,0,0]];
+  doughnutChartType: ChartType = 'doughnut';
+
+  doughnutChartLabels2: Label[] = ['Masculin','Feminin'];
+  doughnutChartData2: MultiDataSet=[[0,0]];
+  doughnutChartType2: ChartType = 'doughnut';
+
   constructor(public shopService: ShopService, public nicheService: NicheService) {
     this.calculateShopRate();
     this.shopService.shopSelected$.subscribe((shop) => {
       this.shop = shop;
+      this.computeAverageOfPurchaseByAgeRang();
+      this.computeAverageOfPurchaseBySexRang();
+      this.doughnutChartData = [this.averageOfPurchaseByAgeRang];
+      this.doughnutChartData2 = [this.averageOfPurchaseBySexRang];
+
+      console.log(this.doughnutChartData)
       if (this.shop.averagePresenceBeforePurchase != undefined && this.shop.averagePresenceBeforePurchase.numberOfPurchases !=0){
         this.presenceNeeded = this.shop.averagePresenceBeforePurchase.numberOfPresence / this.shop.averagePresenceBeforePurchase.numberOfPurchases;
         this.presenceNeeded = Math.round(this.presenceNeeded*100)/100;
@@ -56,6 +72,7 @@ export class ShopInformationComponent implements OnInit {
       });
     });
   }
+
 
 
   private calculateShopRate(){
@@ -87,5 +104,27 @@ export class ShopInformationComponent implements OnInit {
     })
   }
 
+  computeAverageOfPurchaseByAgeRang(){
+    let total=0;
+    this.shop.numberOfPurchaseByAgeRang.forEach(nbr =>{
+      total+=nbr;
+    })
 
+    this.shop.numberOfPurchaseByAgeRang.forEach(nbr =>{
+      this.averageOfPurchaseByAgeRang.push(parseFloat(((nbr*100)/total).toFixed(2)));
+    })
+
+  }
+
+  computeAverageOfPurchaseBySexRang(){
+    let total=0;
+    this.shop.numberOfPurchaseBySexRang.forEach(nbr =>{
+      total+=nbr;
+    })
+
+    this.shop.numberOfPurchaseBySexRang.forEach(nbr =>{
+      this.averageOfPurchaseBySexRang.push(parseFloat(((nbr*100)/total).toFixed(2)));
+    })
+
+  }
 }
