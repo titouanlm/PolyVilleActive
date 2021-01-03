@@ -6,8 +6,8 @@
     "sellerId": 1854245,
     "id": 1234567,
     "storeRating": {
-      "averageRate": 0,
-      "voterNumber": 0
+      "averageRate": 10,
+      "voterNumber": 1
     },
     "promotions": [
       {
@@ -56,17 +56,17 @@
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 5,
-      "numberOfPresence": 10
+      "numberOfPurchases": 9,
+      "numberOfPresence": 14
     },
     "purchasedItems": [
       [
         "Flashbang",
-        "1"
+        "2"
       ],
       [
         "Rocket launcher",
-        "3"
+        "4"
       ],
       [
         "Rocket",
@@ -78,7 +78,7 @@
       ],
       [
         "Desert eagle",
-        "0"
+        "1"
       ],
       [
         "Kevlar",
@@ -94,7 +94,7 @@
       ],
       [
         "Ak-47",
-        "0"
+        "1"
       ]
     ]
   },
