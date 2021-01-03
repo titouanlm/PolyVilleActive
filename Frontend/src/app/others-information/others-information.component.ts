@@ -26,11 +26,17 @@ export class OthersInformationComponent implements OnInit {
   inhabitantId: number;
   number: number;
   inhabitant: Inhabitant;
+  shop: Shop;
 
   constructor(public dialog: MatDialog,
               private promotionService: PromotionService,
               private inhabitantService: InhabitantService,
-              private shopService: ShopService) { }
+              public shopService: ShopService) {
+    this.shopService.shopSelected$.subscribe((shop) => {
+      this.shop = shop;
+      console.log(this.shop);
+    });
+  }
 
   ngOnInit(): void {
   }
@@ -49,7 +55,6 @@ export class OthersInformationComponent implements OnInit {
   }
 
   displayInhabitant(){
-    this.shopService.getShopFromUrl(this.shopService.shopSelected.id);
     this.inhabitantService.authenticateInhabitant(Number(this.inhabitantId))
       .subscribe(
         next => {

@@ -15,5 +15,5 @@ export interface Shop{
     numberOfPurchases: number,
     numberOfPresence: number,
   },
-  availableItems: string[],
+  purchasedItems: string[][],
 }

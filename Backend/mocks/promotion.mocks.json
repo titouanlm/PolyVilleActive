@@ -27,17 +27,18 @@
     "shopId": 1234567,
     "id": 1608134619050
   },
-  
   {
     "title": "LALALA",
     "description": "dqiodj",
     "startDate": "2020-02-20",
     "endDate": "2020-02-20",
     "customersNumberInterested": [
-      1999
+      1999,
+      1987
     ],
     "notifiedCustomersNumber": [
-      1999
+      1999,
+      1987
     ],
     "shopId": 1234567,
     "id": 1608149454567

@@ -6,8 +6,8 @@
     "sellerId": 1854245,
     "id": 1234567,
     "storeRating": {
-      "averageRate": 7.25,
-      "voterNumber": 4
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": [
       {
@@ -54,19 +54,46 @@
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 19,
-      "numberOfPresence": 94
+      "numberOfPurchases": 0,
+      "numberOfPresence": 0
     },
-    "availableItems": [
-      "Flashbang",
-      "Rocket launcher",
-      "Rocket",
-      " Incendiary",
-      "Desert eagle",
-      "Kevlar",
-      "Helmet",
-      "AWP",
-      "Ak-47"
+    "purchasedItems": [
+      [
+        "Flashbang",
+        "0"
+      ],
+      [
+        "Rocket launcher",
+        "0"
+      ],
+      [
+        "Rocket",
+        "0"
+      ],
+      [
+        " Incendiary",
+        "0"
+      ],
+      [
+        "Desert eagle",
+        "0"
+      ],
+      [
+        "Kevlar",
+        "0"
+      ],
+      [
+        "Helmet",
+        "0"
+      ],
+      [
+        "AWP",
+        "0"
+      ],
+      [
+        "Ak-47",
+        "0"
+      ]
     ]
   },
   {
@@ -76,28 +103,67 @@
     "sellerId": 1854246,
     "id": 1234568,
     "storeRating": {
-      "averageRate": 8.2,
-      "voterNumber": 5
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": [],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 6,
-      "numberOfPresence": 20
+      "numberOfPurchases": 0,
+      "numberOfPresence": 0
     },
-    "availableItems": [
-      "Jean chino clair",
-      "Pantalon slim noir",
-      "Pantalon slim gris",
-      "Pantalon slim bordeaux",
-      "Pantalon large noir",
-      "Pantalon large gris",
-      "Pantalon large bordeaux",
-      "Chemise grise",
-      "Chemise noire",
-      "Chemise blanche",
-      "Pull bleu marine coupe serré",
-      "Ceinture marron",
-      "Centure noire deuxième dan en C++"
+    "purchasedItems": [
+      [
+        "Jean chino clair",
+        "0"
+      ],
+      [
+        "Pantalon slim noir",
+        "0"
+      ],
+      [
+        "Pantalon slim gris",
+        "0"
+      ],
+      [
+        "Pantalon slim bordeaux",
+        "0"
+      ],
+      [
+        "Pantalon large noir",
+        "0"
+      ],
+      [
+        "Pantalon large gris",
+        "0"
+      ],
+      [
+        "Pantalon large bordeaux",
+        "0"
+      ],
+      [
+        "Chemise grise",
+        "0"
+      ],
+      [
+        "Chemise noire",
+        "0"
+      ],
+      [
+        "Chemise blanche",
+        "0"
+      ],
+      [
+        "Pull bleu marine coupe serré",
+        "0"
+      ],
+      [
+        "Ceinture marron",
+        "0"
+      ],
+      [
+        "Centure noire deuxième dan en C++",
+        "0"
+      ]
     ]
   },
   {
@@ -110,19 +176,55 @@
       "averageRate": 0,
       "voterNumber": 0
     },
-    "availableItems": [
-      "Chaussure marron collection 54-98K",
-      "Basket Nike noire",
-      "Basket Addidas blanche",
-      "Chaussure en cuire marron",
-      "Chaussure mérino",
-      "Dr. Martens",
-      "Converse numéro 85-H8",
-      "Tommy Hilfiger Gris",
-      "Basket Air Jordan rouge",
-      "Timberland Pro grise",
-      "New Balance bleu",
-      "Chaussure homme J.M. Weston"
+    "purchasedItems": [
+      [
+        "Chaussure marron collection 54-98K",
+        "0"
+      ],
+      [
+        "Basket Nike noire",
+        "0"
+      ],
+      [
+        "Basket Addidas blanche",
+        "0"
+      ],
+      [
+        "Chaussure en cuire marron",
+        "0"
+      ],
+      [
+        "Chaussure mérino",
+        "0"
+      ],
+      [
+        "Dr. Martens",
+        "0"
+      ],
+      [
+        "Converse numéro 85-H8",
+        "0"
+      ],
+      [
+        "Tommy Hilfiger Gris",
+        "0"
+      ],
+      [
+        "Basket Air Jordan rouge",
+        "0"
+      ],
+      [
+        "Timberland Pro grise",
+        "0"
+      ],
+      [
+        "New Balance bleu",
+        "0"
+      ],
+      [
+        "Chaussure homme J.M. Weston",
+        "0"
+      ]
     ]
   },
   {
@@ -143,24 +245,63 @@
     "sellerId": 1854249,
     "id": 1234571,
     "storeRating": {
-      "averageRate": 9,
-      "voterNumber": 1
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": [],
-    "availableItems": [
-      "Blouson gris",
-      "Blouson noir",
-      "Manteau gris",
-      "Manteau noir",
-      "Cahouet noir",
-      "Cahouet gris",
-      "Veste d'été marron",
-      "Veste d'été noire",
-      "Veste d'été grise",
-      "Gants d'hiver enfant noir",
-      "Gants d'hiver enfant gris",
-      "Gants d'hiver adulte noir",
-      "Gants d'hiver adulte gris"
+    "purchasedItems": [
+      [
+        "Blouson gris",
+        "0"
+      ],
+      [
+        "Blouson noir",
+        "0"
+      ],
+      [
+        "Manteau gris",
+        "0"
+      ],
+      [
+        "Manteau noir",
+        "0"
+      ],
+      [
+        "Cahouet noir",
+        "0"
+      ],
+      [
+        "Cahouet gris",
+        "0"
+      ],
+      [
+        "Veste d'été marron",
+        "0"
+      ],
+      [
+        "Veste d'été noire",
+        "0"
+      ],
+      [
+        "Veste d'été grise",
+        "0"
+      ],
+      [
+        "Gants d'hiver enfant noir",
+        "0"
+      ],
+      [
+        "Gants d'hiver enfant gris",
+        "0"
+      ],
+      [
+        "Gants d'hiver adulte noir",
+        "0"
+      ],
+      [
+        "Gants d'hiver adulte gris",
+        "0"
+      ]
     ]
   },
   {
@@ -173,24 +314,75 @@
       "averageRate": 0,
       "voterNumber": 0
     },
-    "availableItems": [
-      "Boxer noir Calvin Klein",
-      "Boxer blanc Calvin Klein",
-      "Lot 2 boxers Calvin Klein",
-      "Lot 3 boxers Calvin Klean",
-      "Boxer Ck One Calvin Klein",
-      "Boxer Dim noir",
-      "Boxer Dim blanc",
-      "Soutien-gorge noire Calvin Klein",
-      "Soutien-gorge blanc Calvin Klein",
-      "Culotte noire Calvin Klein",
-      "Culotte blanche Calvin Klein",
-      "Chaussette homme noire",
-      "Chaussette homme marron",
-      "Chaussette homme blanche",
-      "Chaussette femme noire",
-      "Chaussette femme marron",
-      "Chaussette femme blanche"
+    "purchasedItems": [
+      [
+        "Boxer noir Calvin Klein",
+        "0"
+      ],
+      [
+        "Boxer blanc Calvin Klein",
+        "0"
+      ],
+      [
+        "Lot 2 boxers Calvin Klein",
+        "0"
+      ],
+      [
+        "Lot 3 boxers Calvin Klean",
+        "0"
+      ],
+      [
+        "Boxer Ck One Calvin Klein",
+        "0"
+      ],
+      [
+        "Boxer Dim noir",
+        "0"
+      ],
+      [
+        "Boxer Dim blanc",
+        "0"
+      ],
+      [
+        "Soutien-gorge noire Calvin Klein",
+        "0"
+      ],
+      [
+        "Soutien-gorge blanc Calvin Klein",
+        "0"
+      ],
+      [
+        "Culotte noire Calvin Klein",
+        "0"
+      ],
+      [
+        "Culotte blanche Calvin Klein",
+        "0"
+      ],
+      [
+        "Chaussette homme noire",
+        "0"
+      ],
+      [
+        "Chaussette homme marron",
+        "0"
+      ],
+      [
+        "Chaussette homme blanche",
+        "0"
+      ],
+      [
+        "Chaussette femme noire",
+        "0"
+      ],
+      [
+        "Chaussette femme marron",
+        "0"
+      ],
+      [
+        "Chaussette femme blanche",
+        "0"
+      ]
     ]
   },
   {
@@ -214,20 +406,59 @@
       "averageRate": 0,
       "voterNumber": 0
     },
-    "availableItems": [
-      "Costume noir homme",
-      "Costume gris homme",
-      "Costume bleu homme",
-      "Costume noir femme",
-      "Costume gris femme",
-      "Costume bleu femme",
-      "Produit nettoyant costume",
-      "Veste de costume homme noir",
-      "Veste de costume homme gris",
-      "Veste de costume homme bleu marine",
-      "Veste de costume femme noir",
-      "Veste de costume femme gris",
-      "Veste de costume femme bleu marine"
+    "purchasedItems": [
+      [
+        "Costume noir homme",
+        "0"
+      ],
+      [
+        "Costume gris homme",
+        "0"
+      ],
+      [
+        "Costume bleu homme",
+        "0"
+      ],
+      [
+        "Costume noir femme",
+        "0"
+      ],
+      [
+        "Costume gris femme",
+        "0"
+      ],
+      [
+        "Costume bleu femme",
+        "0"
+      ],
+      [
+        "Produit nettoyant costume",
+        "0"
+      ],
+      [
+        "Veste de costume homme noir",
+        "0"
+      ],
+      [
+        "Veste de costume homme gris",
+        "0"
+      ],
+      [
+        "Veste de costume homme bleu marine",
+        "0"
+      ],
+      [
+        "Veste de costume femme noir",
+        "0"
+      ],
+      [
+        "Veste de costume femme gris",
+        "0"
+      ],
+      [
+        "Veste de costume femme bleu marine",
+        "0"
+      ]
     ]
   },
   {
@@ -237,8 +468,8 @@
     "sellerId": 1854253,
     "id": 1234575,
     "storeRating": {
-      "averageRate": 10,
-      "voterNumber": 1
+      "averageRate": 0,
+      "voterNumber": 0
     },
     "promotions": []
   },
@@ -252,23 +483,71 @@
       "averageRate": 0,
       "voterNumber": 0
     },
-    "availableItems": [
-      "Canapé large noir",
-      "Canapé large gris",
-      "Canapé large marron",
-      "Canapé large blanc",
-      "Canapé serré noir",
-      "Canapé serré gris",
-      "Canapé serré marron",
-      "Canapé serré blanc",
-      "Fauteuil large noir",
-      "Fauteuil large gris",
-      "Fauteuil large marron",
-      "Fauteuil large blanc",
-      "Fauteuil serré noir",
-      "Fauteuil serré gris",
-      "Fauteuil serré marron",
-      "Fauteuil serré blanc"
+    "purchasedItems": [
+      [
+        "Canapé large noir",
+        "0"
+      ],
+      [
+        "Canapé large gris",
+        "0"
+      ],
+      [
+        "Canapé large marron",
+        "0"
+      ],
+      [
+        "Canapé large blanc",
+        "0"
+      ],
+      [
+        "Canapé serré noir",
+        "0"
+      ],
+      [
+        "Canapé serré gris",
+        "0"
+      ],
+      [
+        "Canapé serré marron",
+        "0"
+      ],
+      [
+        "Canapé serré blanc",
+        "0"
+      ],
+      [
+        "Fauteuil large noir",
+        "0"
+      ],
+      [
+        "Fauteuil large gris",
+        "0"
+      ],
+      [
+        "Fauteuil large marron",
+        "0"
+      ],
+      [
+        "Fauteuil large blanc",
+        "0"
+      ],
+      [
+        "Fauteuil serré noir",
+        "0"
+      ],
+      [
+        "Fauteuil serré gris",
+        "0"
+      ],
+      [
+        "Fauteuil serré marron",
+        "0"
+      ],
+      [
+        "Fauteuil serré blanc",
+        "0"
+      ]
     ]
   },
   {
@@ -289,24 +568,67 @@
     "sellerId": 1854256,
     "id": 1234578,
     "storeRating": {
-      "averageRate": 0,
-      "voterNumber": 0
+      "averageRate": 9,
+      "voterNumber": 1
     },
-    "availableItems": [
-      "Atelier cuisine bleu marine",
-      "Atelier cuisine noir",
-      "Atelier cuisine blanche",
-      "Atelier cuisine grise",
-      "Atelier cuisine marbre gris-noir",
-      "Meuble PM-9897O",
-      "Meuble OK-98",
-      "Meuble AS-O54 édition limitée jaune",
-      "Meuble AS-O54 édition limitée gris",
-      "Meuble AS-O54 édition limitée noir",
-      "Meuble AS-O54 édition limitée blanc",
-      "Meuble TR-KJ-V2 édition gold noir",
-      "Meuble TR-KJ-V2 édition gold gris",
-      "Meuble TR-KJ-V2 édition gold blanc"
+    "promotions": [],
+    "purchasedItems": [
+      [
+        "Atelier cuisine bleu marine",
+        "0"
+      ],
+      [
+        "Atelier cuisine noir",
+        "0"
+      ],
+      [
+        "Atelier cuisine blanche",
+        "0"
+      ],
+      [
+        "Atelier cuisine grise",
+        "0"
+      ],
+      [
+        "Atelier cuisine marbre gris-noir",
+        "0"
+      ],
+      [
+        "Meuble PM-9897O",
+        "0"
+      ],
+      [
+        "Meuble OK-98",
+        "0"
+      ],
+      [
+        "Meuble AS-O54 édition limitée jaune",
+        "0"
+      ],
+      [
+        "Meuble AS-O54 édition limitée gris",
+        "0"
+      ],
+      [
+        "Meuble AS-O54 édition limitée noir",
+        "0"
+      ],
+      [
+        "Meuble AS-O54 édition limitée blanc",
+        "0"
+      ],
+      [
+        "Meuble TR-KJ-V2 édition gold noir",
+        "0"
+      ],
+      [
+        "Meuble TR-KJ-V2 édition gold gris",
+        "0"
+      ],
+      [
+        "Meuble TR-KJ-V2 édition gold blanc",
+        "0"
+      ]
     ]
   }
 ]

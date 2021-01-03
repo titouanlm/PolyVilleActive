@@ -16,5 +16,5 @@ module.exports = new BaseModel('Shop', {
         numberOfPurchases: Joi.number(),
         numberOfPresence: Joi.number(),
     }),
-    availableItems: Joi.array().items(Joi.string()),
+    purchasedItems: Joi.array().items(Joi.array()),
 });

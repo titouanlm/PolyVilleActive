@@ -61,12 +61,12 @@ export class ShopService {
   }
 
   addShop(shop: Shop) {
-    this.http.post<Shop>(this.shopsUrl, shop, this.httpOptions).subscribe(() => this.getShopsFromUrl());
+    this.http.post<Shop>(this.shopsUrl, shop, this.httpOptions).subscribe();
   }
 
   deleteShop(shop: Shop) {
     const urlWithId = this.shopsUrl + '/' + shop.id;
-    this.http.delete<Shop>(urlWithId, this.httpOptions).subscribe(() => this.getShopsFromUrl());
+    this.http.delete<Shop>(urlWithId, this.httpOptions).subscribe();
   }
 
   getShopFromUrl(shopId: string) {
@@ -88,23 +88,22 @@ export class ShopService {
 
   addEvent(shop: Shop, event: Event) {
     const eventUrl = this.shopsUrl + '/' + shop.id + '/' + this.eventsPath;
-    this.http.post<Event>(eventUrl, event, this.httpOptions).subscribe(() => this.getShopFromUrl(shop.id));
+    this.http.post<Event>(eventUrl, event, this.httpOptions).subscribe();
   }
 
   deleteEvent(shop: Shop, event: Event) {
     const eventUrl = this.shopsUrl + '/' + shop.id + '/' + this.eventsPath + '/' + event.id;
-    this.http.delete<Event>(eventUrl, this.httpOptions).subscribe(() => this.getShopFromUrl(shop.id));
+    this.http.delete<Event>(eventUrl, this.httpOptions).subscribe();
   }
 
 
   updateShop(shop: Shop) {
-    const shopUrl = this.shopsUrl + '/' + shop.id ;
-    this.http.put<Shop>(shopUrl, shop, this.httpOptions).subscribe(() => this.getShopsFromUrl());
+    this.http.put<Shop>('http://localhost:9428/api/shops/' + shop.id, shop).subscribe();
   }
 
   updateEvent(shop: Shop, event: Event) {
     const eventUrl = this.shopsUrl + '/' + shop.id + '/' + this.eventsPath + '/' + event.id;
-    this.http.put<Event>(eventUrl, event, this.httpOptions).subscribe(() => this.getShopFromUrl(shop.id));
+    this.http.put<Event>(eventUrl, event, this.httpOptions).subscribe();
   }
 
   verifyShopExist(shopName: string) {

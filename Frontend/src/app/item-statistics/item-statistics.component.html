@@ -2,17 +2,21 @@
   <table id="customers">
     <tr>
       <th>Item</th>
-      <th>Add</th>
+      <th>number of times purchased</th>
     </tr>
-    <tr *ngFor="let item of items; index as i;">
+    <tr *ngFor="let item of items;">
       <td>{{item[0]}}</td>
-      <td><button (click)="purchase(i)">Add</button></td>
+      <td>{{item[1]}}</td>
     </tr>
   </table>
 </section>
 
+<div *ngIf="items==undefined || items.length == 0">
+  <h1> No items yet purchased</h1>
+</div>
+
 <div style="position: relative; text-align: center;">
-  <a [routerLink]="['../..']" >
+  <a [routerLink]="['..']" >
     <mat-icon [inline]="true" style="font-size: 8em;" >exit_to_app</mat-icon>
   </a>
 </div>

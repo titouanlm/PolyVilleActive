@@ -23,7 +23,7 @@ export class StoreItemsComponent implements OnInit {
               public dialog: MatDialog) {
     this.shop = shopService.shopSelected;
     this.inhabitant = inhabitantService.currentInhabitant;
-    this.items = this.shop.availableItems;
+    this.items = this.shop.purchasedItems;
   }
 
   ngOnInit(): void {
@@ -44,16 +44,17 @@ export class StoreItemsComponent implements OnInit {
 
   addInhabitantAttendanceToShop(){
     if (this.inhabitant.positions != undefined) {
-      this.shop.averagePresenceBeforePurchase.numberOfPresence += this.inhabitant.positions
+      let count = this.inhabitant.positions
         .filter((position) =>
-          position[0] == this.inhabitant.longitude && position[1] == this.inhabitant.latitude).length;
+          position[0] == this.shop.longitude && position[1] == this.shop.latitude).length;
+      this.shop.averagePresenceBeforePurchase.numberOfPresence += (count >=1 ? count : 1);
+      console.log(count);
     }
     else {
       this.inhabitant.positions = [];
-      this.shop.averagePresenceBeforePurchase.numberOfPresence ++;
+      this.shop.averagePresenceBeforePurchase.numberOfPresence++;
     }
-
-    this.shop.averagePresenceBeforePurchase.numberOfPurchases = this.shop.averagePresenceBeforePurchase.numberOfPurchases + 1;
+    this.shop.averagePresenceBeforePurchase.numberOfPurchases++;
   }
 
   addItemsToInhabitant(){
@@ -70,23 +71,27 @@ export class StoreItemsComponent implements OnInit {
   manageInhabitantAttendance(){
     this.inhabitant.positions = this.inhabitant.positions
       .filter((position) =>
-        position[0] != this.inhabitant.longitude || position[1] != this.inhabitant.latitude);
+        position[0] != this.shop.longitude || position[1] != this.shop.latitude);
+  }
+
+  addPurchaseToAShop(number: number){
+    this.shopService.shopSelected.purchasedItems[number][1] = (Number(this.shopService.shopSelected.purchasedItems[number][1])+1).toString();
   }
 
   purchase(number: number) {
-    this.objectName = this.shop.availableItems[number];
-    if (this.objectName != undefined){
+    if (this.shop.purchasedItems != undefined && this.shop.purchasedItems.length != 0){
+      this.objectName = this.shop.purchasedItems[number][0];
       this.openThanksDialog();
       this.inhabitantControl();
       this.addInhabitantAttendanceToShop();
       this.addItemsToInhabitant();
       this.manageInhabitantAttendance();
+      this.addPurchaseToAShop(number);
       this.inhabitantService.updateInhabitant(this.inhabitant);
       this.shopService.updateShop(this.shop);
       this.inhabitantService.authenticateInhabitant(this.inhabitant.id).subscribe((inhabitant) => this.inhabitant = inhabitant);
       this.objectName = undefined;
     }
-
   }
 
 }
