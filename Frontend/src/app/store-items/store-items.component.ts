@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ShopService} from "../../services/shop.service";
 import {InhabitantService} from "../../services/inhabitant.service";
 import {ThanksComponent} from "../thanks/thanks.component";
@@ -17,6 +17,8 @@ export class StoreItemsComponent implements OnInit {
   inhabitant: Inhabitant;
   objectName;
   items;
+  shops: Shop[];
+  inhabitants: Inhabitant[];
 
   constructor(private shopService: ShopService,
               private inhabitantService: InhabitantService,
@@ -24,6 +26,14 @@ export class StoreItemsComponent implements OnInit {
     this.shop = shopService.shopSelected;
     this.inhabitant = inhabitantService.currentInhabitant;
     this.items = this.shop.purchasedItems;
+    shopService.getShopsFromUrl();
+    shopService.shops$.subscribe(shopList =>{
+      this.shops=shopList;
+    });
+    inhabitantService.getInhabitantsFromUrl();
+    inhabitantService.inhabitants$.subscribe(Ilist =>{
+      this.inhabitants=Ilist;
+    })
   }
 
   ngOnInit(): void {
@@ -87,6 +97,7 @@ export class StoreItemsComponent implements OnInit {
       this.addItemsToInhabitant();
       this.manageInhabitantAttendance();
       this.addPurchaseToAShop(number);
+      this.updateNumberfSexfAge()
       this.inhabitantService.updateInhabitant(this.inhabitant);
       this.shopService.updateShop(this.shop);
       this.inhabitantService.authenticateInhabitant(this.inhabitant.id).subscribe((inhabitant) => this.inhabitant = inhabitant);
@@ -94,4 +105,32 @@ export class StoreItemsComponent implements OnInit {
     }
   }
 
+  updateNumberfSexfAge(){
+    //0-14,15-29,30-44,45-59,60-74,75
+    if (this.inhabitant.age<15 && this.inhabitant.age>-1)
+      this.shop.numberOfPurchaseByAgeRang[0]+=1;
+
+    if (this.inhabitant.age<30 && this.inhabitant.age>14)
+      this.shop.numberOfPurchaseByAgeRang[1]+=1;
+
+    if (this.inhabitant.age<45 && this.inhabitant.age>29)
+      this.shop.numberOfPurchaseByAgeRang[2]+=1;
+
+    if (this.inhabitant.age<60 && this.inhabitant.age>44)
+      this.shop.numberOfPurchaseByAgeRang[3]+=1;
+
+    if (this.inhabitant.age<75 && this.inhabitant.age>59)
+      this.shop.numberOfPurchaseByAgeRang[4]+=1;
+
+    if (this.inhabitant.age>74)
+      this.shop.numberOfPurchaseByAgeRang[5]+=1;
+
+    if (this.inhabitant.sex=="M"){
+      this.shop.numberOfPurchaseBySexRang[0]+=1;
+    }
+    else this.shop.numberOfPurchaseBySexRang[1]+=1;
+
+      console.log(this.shop)
+
+  }
 }
