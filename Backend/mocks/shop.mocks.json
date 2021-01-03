@@ -50,8 +50,9 @@
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 14,
-      "numberOfPresence": 19
+
+      "numberOfPurchases": 15,
+      "numberOfPresence": 20
     },
     "purchasedItems": [
       [
@@ -72,7 +73,7 @@
       ],
       [
         "Desert eagle",
-        "1"
+        "2"
       ],
       [
         "Kevlar",
@@ -80,7 +81,7 @@
       ],
       [
         "Helmet",
-        "0"
+        "1"
       ],
       [
         "AWP",
@@ -96,12 +97,12 @@
       28,
       74,
       8,
-      69,
-      50
+      72,
+      48
     ],
     "numberOfPurchaseBySexRang": [
       200,
-      105
+      106
     ]
   },
   {
