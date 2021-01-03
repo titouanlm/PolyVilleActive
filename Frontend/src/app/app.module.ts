@@ -42,6 +42,7 @@ import { StoreItemsComponent } from './store-items/store-items.component';
 import { DialogAlertShopComponent } from './dialog-alert-shop/dialog-alert-shop.component';
 import { ItemStatisticsComponent } from './item-statistics/item-statistics.component';
 import {CulturalActorEventsComponent} from "./cultural-actor-events/cultural-actor-events.component";
+import {DatePipe} from "@angular/common";
 
 
 
@@ -78,6 +79,7 @@ import {CulturalActorEventsComponent} from "./cultural-actor-events/cultural-act
     DialogAlertShopComponent,
     ItemStatisticsComponent,
     CulturalActorEventsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -115,7 +117,7 @@ import {CulturalActorEventsComponent} from "./cultural-actor-events/cultural-act
     NgbRatingModule,
     ChartsModule
   ],
-  providers: [ ],
+  providers: [ DatePipe],
   bootstrap: [AppComponent],
   exports: [RouterModule/*, NgbdRatingBasic*/],
   entryComponents: [PopupVisitorInhabitantAuthenticationComponent,ThanksComponent],
