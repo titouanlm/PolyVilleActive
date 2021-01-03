@@ -14,6 +14,9 @@
 <div *ngIf="items==undefined || items.length == 0">
   <h1> No items yet purchased</h1>
 </div>
+<button mat-button (click)="getMale()">Male</button>
+<button mat-button (click)="getFemale()">Female</button>
+<button mat-button (click)="getAll()">All</button>
 
 <div style="position: relative; text-align: center;">
   <a [routerLink]="['..']" >

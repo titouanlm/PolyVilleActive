@@ -56,21 +56,21 @@
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 9,
-      "numberOfPresence": 14
+      "numberOfPurchases": 12,
+      "numberOfPresence": 17
     },
     "purchasedItems": [
       [
         "Flashbang",
-        "2"
+        "0"
       ],
       [
         "Rocket launcher",
-        "4"
+        "0"
       ],
       [
         "Rocket",
-        "1"
+        "0"
       ],
       [
         " Incendiary",
@@ -110,8 +110,8 @@
     },
     "promotions": [],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 0,
-      "numberOfPresence": 0
+      "numberOfPurchases": 4,
+      "numberOfPresence": 4
     },
     "purchasedItems": [
       [

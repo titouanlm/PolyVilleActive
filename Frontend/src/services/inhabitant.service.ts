@@ -12,7 +12,10 @@ import {Shop} from "../models/shop.model";
 export class InhabitantService {
 
   public currentInhabitant: Inhabitant;
-  public inhabitant$: BehaviorSubject<Inhabitant> ;
+  public inhabitant$: BehaviorSubject<Inhabitant>;
+
+  /*public inhabitants: Inhabitant[];
+  public inhabitants$: BehaviorSubject<Inhabitant[]>;*/
 
   constructor(private http: HttpClient) {
     //this.currentInhabitant = JSON.parse(localStorage.getItem('currentInhabitant'));
@@ -37,6 +40,12 @@ export class InhabitantService {
     }
     const constante = this.currentInhabitant.shopRated.indexOf(shopNumber);
     return (constante != -1);
+  }
+
+  getAllInhabitants(){
+    return this.http.get<any>('http://localhost:9428/api/inhabitants').pipe(map((inhabitantList => {
+      return inhabitantList;
+    })));
   }
 
   updateInhabitantRating(array: any[]){
