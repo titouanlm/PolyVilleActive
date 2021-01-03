@@ -1,7 +1,8 @@
 h4{
-  position: relative;
-  top: 10%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
   font-size: 4em;
 }
 
@@ -9,7 +10,7 @@ h4{
   position: absolute;
   top: 50%;
   text-align: center;
-  left: 45%;
+  left: 46%;
 }
 
 .townHallEmployeeExit {
