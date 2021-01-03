@@ -3,6 +3,8 @@ export interface Inhabitant {
   lastName: string;
   longitude: number;
   latitude: number;
+  age: number;
+  sex: string;
   id: number;
   shopRated : number[];
   positions : number[][];
