@@ -74,4 +74,5 @@ export class CulturalEventBlock extends CustomBlock {
                 'this.culturalEvent.typePublic=\''+dropdown_public+'\';\n';
       return code;
   }
+
 }
