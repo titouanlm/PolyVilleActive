@@ -7,34 +7,12 @@
     "id": 1867,
     "age": 61,
     "shopRated": [
-      1234568,
-      1234568,
       1234567,
-      1234567
-    ],
-    "objectPurchased": [
-      [
-        " Incendiary",
-        "1234567"
-      ],
-      [
-        "Helmet",
-        "1234567"
-      ],
-      [
-        "Ak-47",
-        "1234567"
-      ]
+      1234567,
+      1234568,
+      1234568
     ],
     "positions": [
-      [
-        -34.52381,
-        -44.95548
-      ],
-      [
-        85.45452,
-        -2.24237
-      ],
       [
         -34.52381,
         -44.95548
@@ -45,93 +23,113 @@
   {
     "firstName": "Griffin",
     "lastName": "Ball",
-    "longitude": "85.45452",
-    "latitude": "-2.24237",
+    "longitude": "-121.19373",
+    "latitude": "44.47807",
     "id": 1987,
-    "shopRated": [
-      1234578,
-      1234578
-    ],
     "positions": [
-      [
-        -121.19373,
-        44.47807
-      ],
       [
         107.99904,
         -30.43336
       ],
       [
-        -121.19373,
-        44.47807
-      ],
-      [
-        -34.52381,
-        -44.95548
-      ],
-      [
-        -34.52381,
-        -44.95548
-      ]
-    ],
-    "objectPurchased": [
-      [
-        "Flashbang",
-        "1234567"
-      ],
-      [
-        "Rocket launcher",
-        "1234567"
-      ],
-      [
-        "Rocket launcher",
-        "1234567"
-      ],
-      [
-        "Rocket launcher",
-        "1234567"
-      ],
-      [
-        "Rocket",
-        "1234567"
-      ],
-      [
-        "Flashbang",
-        "1234567"
-      ],
-      [
-        "Desert eagle",
-        "1234567"
-      ],
-      [
-        "Rocket launcher",
-        "1234567"
-      ],
-      [
-        "Ak-47",
-        "1234567"
+        85.45452,
+        -2.24237
       ]
     ],
     "age": 84,
-    "gender": "Male"
+    "gender": "Male",
+    "objectPurchased": [
+      [
+        "Pantalon slim noir",
+        "1234568"
+      ],
+      [
+        "Jean chino clair",
+        "1234568"
+      ],
+      [
+        "Basket Nike noire",
+        "1234569"
+      ],
+      [
+        "Chaussure mérino",
+        "1234569"
+      ],
+      [
+        "Converse numéro 85-H8",
+        "1234569"
+      ],
+      [
+        "Basket Air Jordan rouge",
+        "1234569"
+      ],
+      [
+        "Chaussure homme J.M. Weston",
+        "1234569"
+      ]
+    ],
+    "shopRated": [
+      1234569,
+      1234569
+    ]
   },
   {
     "id": 1,
     "firstName": "Mirabella",
     "lastName": "Poolman",
-    "longitude": "85.45452",
-    "latitude": "-2.24237",
+    "longitude": "-121.19373",
+    "latitude": "44.47807",
     "gender": "Female",
     "age": 83,
     "positions": [],
     "objectPurchased": [
       [
-        "Flashbang",
-        "1234567"
+        "Pantalon slim bordeaux",
+        "1234568"
       ],
       [
-        "Ak-47",
-        "1234567"
+        "Pantalon slim gris",
+        "1"
+      ],
+      [
+        "Pull bleu marine coupe serré",
+        "1234568"
+      ],
+      [
+        "Ceinture marron",
+        "1234568"
+      ],
+      [
+        "Basket Nike noire",
+        "1234569"
+      ],
+      [
+        "Basket Addidas blanche",
+        "1234569"
+      ],
+      [
+        "Tommy Hilfiger Gris",
+        "1234569"
+      ],
+      [
+        "Dr. Martens",
+        "1234569"
+      ],
+      [
+        "New Balance bleu",
+        "1234569"
+      ],
+      [
+        "Tommy Hilfiger Gris",
+        "1234569"
+      ],
+      [
+        "Basket Air Jordan rouge",
+        "1234569"
+      ],
+      [
+        "Basket Nike noire",
+        "1234569"
       ]
     ]
   },
@@ -139,10 +137,16 @@
     "id": 2,
     "firstName": "Emilee",
     "lastName": "Kneller",
-    "longitude": 118.565462,
-    "latitude": 31.753884,
+    "longitude": "-34.52381",
+    "latitude": "-44.95548",
     "gender": "Female",
-    "age": 40
+    "age": 40,
+    "positions": [
+      [
+        -34.52381,
+        -44.95548
+      ]
+    ]
   },
   {
     "id": 3,

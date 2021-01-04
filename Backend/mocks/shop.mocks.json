@@ -111,8 +111,8 @@
     "sellerId": 1854246,
     "id": 1234568,
     "storeRating": {
-      "averageRate": 0,
-      "voterNumber": 0
+      "averageRate": 10,
+      "voterNumber": 1
     },
     "promotions": [
       {
@@ -213,8 +213,8 @@
     "sellerId": 1854247,
     "id": 1234569,
     "storeRating": {
-      "averageRate": 0,
-      "voterNumber": 0
+      "averageRate": 5,
+      "voterNumber": 1
     },
     "purchasedItems": [
       [
