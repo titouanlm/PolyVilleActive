@@ -44,7 +44,7 @@ export class MyBlocksComponent {
     new PromoBlock('promotion', null, null),
     new TitreBlock( 'titredescription' , null , null),
     new DatesBlock('dates' , null, null),
-    new CondPromoBlock( 'condpromo' , null , null)
+   // new CondPromoBlock( 'condpromo' , null , null)
   ];
   public customBlocks2: CustomBlock[] = [
     new EventBlock( 'Event' , null , null),

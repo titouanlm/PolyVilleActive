@@ -15,8 +15,9 @@ import {CulturalActorService} from "../../services/culturalActor.service";
   templateUrl: './event-rating.component.html',
   styleUrls: ['./event-rating.component.scss']
 })
-export class EventRatingComponent implements OnInit {
 
+export class EventRatingComponent {
+/*
   currentRate: number;
   votersNumber: number;
   idActor: string;
@@ -129,5 +130,5 @@ export class EventRatingComponent implements OnInit {
       height: '50%',
       data: {promotions: promos, shop : shop}
     });
-  }
+  }*/
 }
