@@ -35,8 +35,8 @@ export interface CulturalEvent {
   description: string;
   dateDebut : string;
   dateFin : string;
-  heureDebut: string;
-  heureFin : string;
+  heureDebut: number;
+  heureFin : number;
   nbrPresonneAttendu: number;
   nbDayDuration: number;
   fillingPercentageShowHall: number;

@@ -1,14 +1,1 @@
-[
-  {
-    "type": "theatre",
-    "targetPeople": [
-      "young"
-    ],
-    "code": "if( this.culturalEvent.typeEvenement === \"theatre\"){ if( this.culturalEvent.fillingPercentageShowHall >60  || this.culturalEvent.typePublic === \"young\"){this.verified=true}}",
-    "text": "It is forbidden to create an event of type \"theatre\" If the number of people expected is superior than 60% of the show hall capacity OR If the target audience is \"young\".",
-    "operandShowHallCondition": ">",
-    "percentageShowHallCondition": 60,
-    "createdBy": "Gagou Eric",
-    "id": 1609673213748
-  }
-]
+[]

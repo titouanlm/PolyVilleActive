@@ -11,7 +11,7 @@ export class TargetPeopleBlock extends CustomBlock {
   defineBlock() {
     this.block.appendDummyInput()
       .appendField("If target people are")
-      .appendField(new Blockly.FieldDropdown([["Young","young"], ["Old","old"], ["Adult","adult"], ["Children","children"], ["Everyone","everyone"]]), "targetPeople");
+      .appendField(new Blockly.FieldDropdown([["Young","young"], ["Old","old"], ["Adult","adult"], ["Children","children"]]), "targetPeople");
     this.block.setPreviousStatement(true, null);
     this.block.setNextStatement(true, null);
     this.block.setColour(330);

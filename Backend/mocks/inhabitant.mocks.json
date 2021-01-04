@@ -32,8 +32,8 @@
   {
     "firstName": "Griffin",
     "lastName": "Ball",
-    "longitude": "-34.52381",
-    "latitude": "-44.95548",
+    "longitude": "85.45452",
+    "latitude": "-2.24237",
     "id": 1987,
     "shopRated": [
       1234578,
@@ -80,6 +80,22 @@
       ],
       [
         "Rocket",
+        "1234567"
+      ],
+      [
+        "Flashbang",
+        "1234567"
+      ],
+      [
+        "Desert eagle",
+        "1234567"
+      ],
+      [
+        "Rocket launcher",
+        "1234567"
+      ],
+      [
+        "Ak-47",
         "1234567"
       ]
     ],

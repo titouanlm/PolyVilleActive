@@ -164,20 +164,20 @@ export class CulturalActorBlocksComponent {
   }
 
   checkTimes(){
-    if (this.culturalEvent.heureDebut == "" || this.culturalEvent.heureFin == ""){
+    if (!this.culturalEvent.heureDebut || !this.culturalEvent.heureFin){
       throw "You have to fill in the times of your event"
     }
 
 
     if (this.culturalEvent.dateDebut === this.currentDate && this.culturalEvent.dateDebut === this.culturalEvent.dateFin){
 
-        if (this.culturalEvent.heureDebut < this.currentTime){
+        /*if (this.culturalEvent.heureDebut < this.currentTime){
           throw "The start time of the event must be greater or equal to the current hour"
-        }
+        }*/
 
-        if (this.culturalEvent.heureDebut > this.culturalEvent.heureFin){
+        /*if (this.culturalEvent.heureDebut > this.culturalEvent.heureFin){
           throw "The end time of the event must be greater than the start time"
-        }
+        }*/
 
         if (this.culturalEvent.heureDebut === this.culturalEvent.heureFin){
           throw "The end time can't be the same as the start time"

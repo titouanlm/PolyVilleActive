@@ -60,12 +60,13 @@ export class CulturalEventBlock extends CustomBlock {
       var dropdown_type = this.block.getFieldValue('type');
       var dropdown_public = this.block.getFieldValue('public');
 
+
       var code ='this.culturalEvent.title=\''+text_titre+'\';\n'+
                 'this.culturalEvent.description=\''+text_description+'\';\n'+
                 'this.culturalEvent.dateDebut=\''+text_datedebut+'\';\n'+
                 'this.culturalEvent.dateFin=\''+text_datefin+'\';\n'+
-                'this.culturalEvent.heureDebut =\''+ value_heuredebut+'\';\n'+
-                'this.culturalEvent.heureFin =\''+ value_heurefin+'\';\n'+
+                'this.culturalEvent.heureDebut ='+ value_heuredebut+';\n'+
+                'this.culturalEvent.heureFin ='+ value_heurefin+';\n'+
                 'this.culturalEvent.nbrPresonneAttendu='+number_nbpersonne+';\n'+
                 'this.culturalEvent.typeEvenement=\''+dropdown_type+'\';\n'+
                 'this.culturalEvent.typePublic=\''+dropdown_public+'\';\n';

@@ -28,9 +28,12 @@ export class HourBlock extends CustomBlock {
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var dropdown_h = this.block.getFieldValue('H');
     var dropdown_m = this.block.getFieldValue('M');
-    // TODO: Assemble JavaScript into code variable.
-    var code = dropdown_h+':'+dropdown_m;
+    let timeInMinutes = parseInt(dropdown_h) * 60 + parseInt(dropdown_m);
+    if(dropdown_h < 6){
+      timeInMinutes+= (24*60);
+    }
+    var code = timeInMinutes;
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_NONE];
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
   }
 }

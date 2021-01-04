@@ -31,14 +31,6 @@
         ]
       },
       {
-        "title": "Hello",
-        "description": "world",
-        "startDate": "2020-02-20",
-        "endDate": "2020-02-20",
-        "shopId": 1234567,
-        "id": 1608134619050
-      },
-      {
         "title": "LALALA",
         "description": "dqiodj",
         "startDate": "2020-02-20",
@@ -56,17 +48,17 @@
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 12,
-      "numberOfPresence": 17
+      "numberOfPurchases": 16,
+      "numberOfPresence": 21
     },
     "purchasedItems": [
       [
         "Flashbang",
-        "0"
+        "1"
       ],
       [
         "Rocket launcher",
-        "0"
+        "1"
       ],
       [
         "Rocket",
@@ -78,7 +70,7 @@
       ],
       [
         "Desert eagle",
-        "1"
+        "2"
       ],
       [
         "Kevlar",
@@ -94,7 +86,7 @@
       ],
       [
         "Ak-47",
-        "1"
+        "2"
       ]
     ],
     "numberOfPurchaseByAgeRang": [
@@ -103,11 +95,11 @@
       74,
       8,
       69,
-      48
+      52
     ],
     "numberOfPurchaseBySexRang": [
       200,
-      103
+      107
     ]
   },
   {
