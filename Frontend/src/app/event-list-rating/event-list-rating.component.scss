@@ -1,0 +1,34 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border:none;
+}
+
+td, th {
+  text-align: left;
+  padding: 1%;
+  font-size: 1.5em;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+#main-section{
+  margin-top: 5%;
+  width: 80%;
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.flex-container{
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

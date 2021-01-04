@@ -13,5 +13,4 @@ module.exports = new BaseModel('Inhabitant', {
     positions: Joi.array().items(Joi.array().min(2).max(2)),
     objectPurchased: Joi.array().items(Joi.array()),
     gender: Joi.string(),
-    age: Joi.number(),
 });

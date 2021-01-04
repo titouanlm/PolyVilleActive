@@ -34,15 +34,16 @@ import { TownHallEmployeeBlocksComponent } from './town-hall-employee-blocks/tow
 import { ThanksComponent } from './thanks/thanks.component';
 import { InhabitantForSellerComponent } from './inhabitant-for-seller/inhabitant-for-seller.component';
 import { PopupVisitorInhabitantAutorisationComponent} from "./popup-visitor-inhabitant-autorisation/popup-visitor-inhabitant-autorisation.component";
-import { PopupCulturalActorAuthentificationComponent } from './popup-cultural-actor-authentification/popup-cultural-actor-authentification.component';
-import { PopupTownHallEmployeeAuthentificationComponent } from './popup-town-hall-employee-authentification/popup-town-hall-employee-authentification.component';
-import { CulturalActorHomeComponent } from './cultural-actor-home/cultural-actor-home.component';
-import { TownHallEmployeeHomeComponent } from './town-hall-employee-home/town-hall-employee-home.component';
-import { StoreItemsComponent } from './store-items/store-items.component';
-import { DialogAlertShopComponent } from './dialog-alert-shop/dialog-alert-shop.component';
-import { ItemStatisticsComponent } from './item-statistics/item-statistics.component';
+import { PopupCulturalActorAuthentificationComponent } from "./popup-cultural-actor-authentification/popup-cultural-actor-authentification.component";
+import { PopupTownHallEmployeeAuthentificationComponent } from "./popup-town-hall-employee-authentification/popup-town-hall-employee-authentification.component";
+import { CulturalActorHomeComponent } from "./cultural-actor-home/cultural-actor-home.component";
+import { TownHallEmployeeHomeComponent } from "./town-hall-employee-home/town-hall-employee-home.component";
+import { StoreItemsComponent } from "./store-items/store-items.component";
+import { DialogAlertShopComponent } from "./dialog-alert-shop/dialog-alert-shop.component";
+import { ItemStatisticsComponent } from "./item-statistics/item-statistics.component";
 import {CulturalActorEventsComponent} from "./cultural-actor-events/cultural-actor-events.component";
 import {DatePipe} from "@angular/common";
+import {EventListRatingComponent} from "./event-list-rating/event-list-rating.component";
 
 
 
@@ -79,7 +80,7 @@ import {DatePipe} from "@angular/common";
     DialogAlertShopComponent,
     ItemStatisticsComponent,
     CulturalActorEventsComponent,
-
+    EventListRatingComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,6 +100,7 @@ import {DatePipe} from "@angular/common";
       {path: 'visitorinhabitant/shoprating/shop/items', component: StoreItemsComponent},
       {path: 'visitorinhabitant/shoprating/shop/additionalinfo', component: AdditionalShopInfoComponent},
       {path: 'visitorinhabitant/citycenterinformation', component: CityCenterInformationComponent},
+      {path: 'visitorinhabitant/eventrating',component: EventListRatingComponent},
       {path: 'cultural-actor', component: CulturalActorHomeComponent},
       {path: 'cultural-actor/blockly', component: CulturalActorBlocksComponent},
       {path: 'cultural-actor/events', component: CulturalActorEventsComponent},

@@ -1,12 +1,22 @@
 <div  class="culturalActorHome">
   <h4>Welcome {{ culturalActor.firstName }} {{ culturalActor.lastName }}</h4>
 
+  <div class="cActorEvents" >
+    <a [routerLink]="['events']" class="increaseSize">
+      <mat-icon [inline]="true" >View events</mat-icon>
+    </a>
+    <h1>
+      My events
+    </h1>
+  </div>
+
+
   <div class="culturalActorblocklycreation" >
     <a [routerLink]="['blockly']" class="increaseSize">
       <mat-icon [inline]="true">add_box</mat-icon>
     </a>
     <h1>
-      new event
+      New event
     </h1>
   </div>
 
@@ -20,20 +30,9 @@
     </h1>
   </div>
 
-  <div class="cActorEvents" >
-    <a [routerLink]="['events']" class="increaseSize">
-      <mat-icon [inline]="true" >View events</mat-icon>
-    </a>
-    <h1>My events
-    </h1>
-  </div>
 
 
 </div>
-
-
-
-
 
 
 
