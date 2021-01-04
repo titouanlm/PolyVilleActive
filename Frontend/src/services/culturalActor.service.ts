@@ -18,15 +18,15 @@ export class CulturalActorService {
   /**
    * The list .
    */
-  private cactors : CulturalActor[];
-  private cevents : CulturalEvent[];
+  private cactors : CulturalActor[]=[];
+  public cevents : CulturalEvent[]=[];
 
   /**
    * Observables.
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
-  public cactors$: BehaviorSubject<CulturalActor[]>;
-  public cevents$: BehaviorSubject<CulturalEvent[]>;
+  public cactors$: BehaviorSubject<CulturalActor[]>=new BehaviorSubject<CulturalActor[]>(this.cactors);
+  public cevents$: BehaviorSubject<CulturalEvent[]>=new BehaviorSubject<CulturalEvent[]>(this.cevents);
 
   public cactor$: Subject<CulturalActor> = new Subject();
   public cevent$: Subject<CulturalEvent> = new Subject();
@@ -46,7 +46,7 @@ export class CulturalActorService {
   //............................................... Cultural Actors ..............................................
 
   getCulturalActorsFromUrl() {
-    this.http.get<any>(this.cActorsUrl).subscribe((cactorList) => {
+    this.http.get<CulturalActor[]>(this.cActorsUrl).subscribe((cactorList) => {
       this.cactors = cactorList;
       this.cactors$.next(this.cactors);
     });
@@ -103,6 +103,8 @@ export class CulturalActorService {
   getCulturalEvents(actorId:string) {
     const url = this.cActorsUrl + '/' +actorId+ '/' +this.cEventsPath;
     this.http.get<CulturalEvent[]>(url).subscribe((events) => {
+      this.cevents=[];
+      this.cevents$.next(events);
       this.cevents=events;
       this.cevents$.next(events);
     });

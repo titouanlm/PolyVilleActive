@@ -14,12 +14,19 @@ import {CulturalActor} from "../../models/culturalActor.model";
 })
 export class EventListRatingComponent implements OnInit {
 
-  public eventList: CulturalEvent[];
-  public culturalActors:CulturalActor[];
+  public eventList: CulturalEvent[]=[];
+  public culturalActors:CulturalActor[]=[];
 
   constructor(public culturalActorService: CulturalActorService, public inhabitantService: InhabitantService) {
     this.culturalActorService.getCulturalActorsFromUrl();
-    this.culturalActorService.cactors$.subscribe((cactors) => this.culturalActors = cactors);
+    this.culturalActorService.cactors$.subscribe((cactors) =>{
+      this.culturalActors = cactors;
+      this.getevents();
+      //console.log(this.culturalActors);
+
+    });
+
+
     // this.culturalActors=[];
     /* this.culturalActorService.cevents$.subscribe((cevents)=>
        {this.culturalActors.forEach((actor)=>
@@ -29,20 +36,26 @@ export class EventListRatingComponent implements OnInit {
        })
 
      })*/
-    console.log(this.culturalActors);
-    for(let actor in this.culturalActors)
-    {
-      console.log(actor);
-      this.culturalActorService.getCulturalEvents(String(actor));
-      this.culturalActorService.cevents$.subscribe((cevents)=>this.eventList=this.eventList.concat(cevents));
-    }
-
 
   }
 
   ngOnInit(): void {
+
   }
+  getevents()
+  {
+    this.culturalActors.forEach(actor=>
+    {
+      this.culturalActorService.getCulturalEvents(String(actor.id));
+      this.culturalActorService.cevents$.subscribe((cevents)=>
+      {
+        cevents.forEach(event=>
+        {
+          this.eventList.push(event);
+        })
+      });
+    })
 
-
+  }
 
 }
