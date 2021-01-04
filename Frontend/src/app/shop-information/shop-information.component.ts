@@ -108,7 +108,7 @@ export class ShopInformationComponent implements OnInit {
     let total=0;
     this.shop.numberOfPurchaseByAgeRang.forEach(nbr =>{
       total+=nbr;
-    })
+    });
 
     this.shop.numberOfPurchaseByAgeRang.forEach(nbr =>{
       this.averageOfPurchaseByAgeRang.push(parseFloat(((nbr*100)/total).toFixed(2)));
@@ -120,7 +120,7 @@ export class ShopInformationComponent implements OnInit {
     let total=0;
     this.shop.numberOfPurchaseBySexRang.forEach(nbr =>{
       total+=nbr;
-    })
+    });
 
     this.shop.numberOfPurchaseBySexRang.forEach(nbr =>{
       this.averageOfPurchaseBySexRang.push(parseFloat(((nbr*100)/total).toFixed(2)));

@@ -18,6 +18,7 @@ export class ItemStatisticsComponent implements OnInit {
     this.shopService.shopSelected$.subscribe((shop) => {
       this.items = shop.purchasedItems;
     });
+
   }
 
   resetItemsNumber(){
@@ -37,8 +38,15 @@ export class ItemStatisticsComponent implements OnInit {
   }
 
   getAll(){
-    this.shopService.shopSelected$.subscribe((shop) => {
-      this.items = shop.purchasedItems;
+    this.inhabitantService.getAllInhabitants().subscribe((inhabitants) =>{
+      this.inhabitantList = inhabitants;
+      this.resetItemsNumber();
+      for (let i=0; i<this.inhabitantList.length;i++){
+        if (this.inhabitantList[i].objectPurchased != undefined
+          && this.inhabitantList[i].objectPurchased.length != 0){
+          this.incrementArray(this.inhabitantList[i].objectPurchased);
+        }
+      }
     });
   }
 
@@ -49,7 +57,7 @@ export class ItemStatisticsComponent implements OnInit {
       for (let i=0; i<this.inhabitantList.length;i++){
         if (this.inhabitantList[i].gender === "Male"
           && this.inhabitantList[i].objectPurchased != undefined
-          && this.inhabitantList[i].objectPurchased.length != 0 ){
+          && this.inhabitantList[i].objectPurchased.length != 0){
           this.incrementArray(this.inhabitantList[i].objectPurchased);
         }
       }

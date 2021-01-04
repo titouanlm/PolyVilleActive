@@ -6,15 +6,13 @@
     "latitude": "-2.24237",
     "id": 1867,
     "age": 61,
-    "sex": "Male",
     "shopRated": [
       1234568,
       1234568,
       1234567,
       1234567
     ],
-    "objectPurchased": [],
-    "positions": [
+    "objectPurchased": [
       [
         " Incendiary",
         "1234567"
@@ -27,7 +25,9 @@
         "Ak-47",
         "1234567"
       ]
-    ]
+    ],
+    "positions": [],
+    "gender": "Male"
   },
   {
     "firstName": "Griffin",
@@ -83,17 +83,28 @@
         "1234567"
       ]
     ],
-    "sex": "Female",
-    "age": 84
+    "age": 84,
+    "gender": "Male"
   },
   {
     "id": 1,
     "firstName": "Mirabella",
     "lastName": "Poolman",
-    "longitude": 129.7905786,
-    "latitude": 49.7634887,
+    "longitude": "85.45452",
+    "latitude": "-2.24237",
     "gender": "Female",
-    "age": 83
+    "age": 83,
+    "positions": [],
+    "objectPurchased": [
+      [
+        "Flashbang",
+        "1234567"
+      ],
+      [
+        "Ak-47",
+        "1234567"
+      ]
+    ]
   },
   {
     "id": 2,
