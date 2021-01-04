@@ -36,5 +36,24 @@
     ],
     "shopId": 1234567,
     "id": 1608149454567
+  },
+  {
+    "title": "Venez",
+    "description": "-70%",
+    "startDate": "2021-01-01",
+    "endDate": "2021-01-20",
+    "public": true,
+    "customersNumberInterested": [
+      1987,
+      1
+    ],
+    "notifiedCustomersNumber": [
+      1987,
+      1,
+      2,
+      1867
+    ],
+    "shopId": 1234568,
+    "id": 1608149454587
   }
 ]

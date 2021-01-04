@@ -19,6 +19,7 @@ export class ShopInformationComponent implements OnInit {
 
   public presenceNeeded : number;
   public shop : Shop;
+  error: string;
   public nbPeopleClose: number;
   public shopRate: number;
   public niches: Niche[];

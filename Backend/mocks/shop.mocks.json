@@ -50,21 +50,21 @@
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 16,
-      "numberOfPresence": 21
+      "numberOfPurchases": 15,
+      "numberOfPresence": 20
     },
     "purchasedItems": [
       [
         "Flashbang",
-        "1"
+        "0"
       ],
       [
         "Rocket launcher",
-        "1"
+        "0"
       ],
       [
         "Rocket",
-        "3"
+        "0"
       ],
       [
         " Incendiary",
@@ -72,7 +72,7 @@
       ],
       [
         "Desert eagle",
-        "2"
+        "0"
       ],
       [
         "Kevlar",
@@ -80,7 +80,7 @@
       ],
       [
         "Helmet",
-        "1"
+        "0"
       ],
       [
         "AWP",
@@ -88,7 +88,7 @@
       ],
       [
         "Ak-47",
-        "2"
+        "0"
       ]
     ],
     "numberOfPurchaseByAgeRang": [
@@ -96,12 +96,12 @@
       28,
       74,
       8,
-      69,
-      52
+      72,
+      48
     ],
     "numberOfPurchaseBySexRang": [
       200,
-      107
+      106
     ]
   },
   {
@@ -114,27 +114,47 @@
       "averageRate": 0,
       "voterNumber": 0
     },
-    "promotions": [],
+    "promotions": [
+      {
+        "title": "Venez",
+        "description": "-70%",
+        "startDate": "2021-01-01",
+        "endDate": "2021-01-20",
+        "public": true,
+        "customersNumberInterested": [
+          1987,
+          1
+        ],
+        "notifiedCustomersNumber": [
+          1987,
+          1,
+          2,
+          1867
+        ],
+        "shopId": 1234568,
+        "id": 1608149454587
+      }
+    ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 4,
-      "numberOfPresence": 4
+      "numberOfPurchases": 6,
+      "numberOfPresence": 10
     },
     "purchasedItems": [
       [
         "Jean chino clair",
-        "0"
+        "1"
       ],
       [
         "Pantalon slim noir",
-        "0"
+        "1"
       ],
       [
         "Pantalon slim gris",
-        "0"
+        "1"
       ],
       [
         "Pantalon slim bordeaux",
-        "0"
+        "1"
       ],
       [
         "Pantalon large noir",
@@ -162,11 +182,11 @@
       ],
       [
         "Pull bleu marine coupe serré",
-        "0"
+        "1"
       ],
       [
         "Ceinture marron",
-        "0"
+        "1"
       ],
       [
         "Centure noire deuxième dan en C++",
@@ -179,11 +199,11 @@
       57,
       28,
       16,
-      42
+      48
     ],
     "numberOfPurchaseBySexRang": [
-      63,
-      110
+      65,
+      114
     ]
   },
   {
@@ -203,11 +223,11 @@
       ],
       [
         "Basket Nike noire",
-        "0"
+        "3"
       ],
       [
         "Basket Addidas blanche",
-        "0"
+        "2"
       ],
       [
         "Chaussure en cuire marron",
@@ -215,23 +235,23 @@
       ],
       [
         "Chaussure mérino",
-        "0"
+        "1"
       ],
       [
         "Dr. Martens",
-        "0"
+        "1"
       ],
       [
         "Converse numéro 85-H8",
-        "0"
+        "1"
       ],
       [
         "Tommy Hilfiger Gris",
-        "0"
+        "3"
       ],
       [
         "Basket Air Jordan rouge",
-        "0"
+        "2"
       ],
       [
         "Timberland Pro grise",
@@ -239,11 +259,11 @@
       ],
       [
         "New Balance bleu",
-        "0"
+        "2"
       ],
       [
         "Chaussure homme J.M. Weston",
-        "0"
+        "1"
       ]
     ],
     "promotions": [],
@@ -253,12 +273,16 @@
       24,
       13,
       89,
-      73
+      89
     ],
     "numberOfPurchaseBySexRang": [
-      240,
-      7
-    ]
+      247,
+      16
+    ],
+    "averagePresenceBeforePurchase": {
+      "numberOfPurchases": 16,
+      "numberOfPresence": 18
+    }
   },
   {
     "label": "Velit Cras Lorem LLC",
