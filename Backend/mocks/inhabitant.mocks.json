@@ -14,6 +14,20 @@
     ],
     "objectPurchased": [
       [
+        "Desert eagle",
+        "1234567"
+      ],
+      [
+        "Helmet",
+        "1234567"
+      ],
+      [
+        "Flashbang",
+        "1234567"
+      ]
+    ],
+    "positions": [
+      [
         " Incendiary",
         "1234567"
       ],
@@ -26,7 +40,6 @@
         "1234567"
       ]
     ],
-    "positions": [],
     "gender": "Male"
   },
   {
