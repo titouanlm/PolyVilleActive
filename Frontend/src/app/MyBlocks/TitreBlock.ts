@@ -3,12 +3,15 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 declare var Blockly: any;
 
 export class TitreBlock extends CustomBlock {
+
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = TitreBlock;
-
-
   }
+
+  /**
+   * Define conditionals block
+   */
 
   defineBlock() {
 
@@ -24,6 +27,7 @@ export class TitreBlock extends CustomBlock {
     this.block.setTooltip('');
     this.block.setHelpUrl('');
   }
+
   toXML() {
     return '<block type="titredescription"></block>';
   }
@@ -31,6 +35,13 @@ export class TitreBlock extends CustomBlock {
   toDartCode(block: CustomBlock): string | any[] {
     return 'Not implemented';
   }
+
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
    var title=this.block.getFieldValue('TITLE');

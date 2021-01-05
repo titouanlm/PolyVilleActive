@@ -1,1 +1,43 @@
-[]
+[
+  {
+    "type": "festival",
+    "targetPeople": [],
+    "code": "if( this.culturalEvent.typeEvenement === \"festival\"){ if( (this.culturalEvent.nbDayDuration <= 1 || this.culturalEvent.nbDayDuration >= 7)){this.verified=true}}",
+    "text": "It is forbidden to create an event of type \"festival\" If the duration of the event is less than 1 days or more than 7 days.",
+    "numberMinEventDuration": "1",
+    "numberMaxEventDuration": "7",
+    "createdBy": "Jean Dupond",
+    "id": 1609755772575
+  },
+  {
+    "type": "concert",
+    "targetPeople": [
+      "children"
+    ],
+    "code": "if( this.culturalEvent.typeEvenement === \"concert\"){ if( this.culturalEvent.typePublic === \"children\" && this.culturalEvent.heureFin > 1560){this.verified=true}}",
+    "text": "It is forbidden to create an event of type \"concert\" If the target audience is \"children\" AND If the end time is greater than 02H00.",
+    "endHourMax": 1560,
+    "createdBy": "Jean Dupond",
+    "id": 1609755819623
+  },
+  {
+    "type": "all",
+    "targetPeople": [],
+    "code": "if(true){ if( (this.culturalEvent.nbrPresonneAttendu < 10 || this.culturalEvent.nbrPresonneAttendu > 10000)){this.verified=true}}",
+    "text": "It is forbidden to create an event If the expected number of people is less than \"10\" or greater than \"10000\".",
+    "numberMinPeopleExpected": "10",
+    "numberMaxPeopleExpected": "10000",
+    "createdBy": "Jean Dupond",
+    "id": 1609755864516
+  },
+  {
+    "type": "all",
+    "targetPeople": [],
+    "code": "if(true){ if( this.culturalEvent.fillingPercentageShowHall <50 ){this.verified=true}}",
+    "text": "It is forbidden to create an event If the number of people expected is lower than 50% of the show hall capacity.",
+    "operandShowHallCondition": "<",
+    "percentageShowHallCondition": 50,
+    "createdBy": "Jean Dupond",
+    "id": 1609755976755
+  }
+]

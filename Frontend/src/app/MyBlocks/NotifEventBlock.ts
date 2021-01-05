@@ -3,15 +3,17 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 declare var Blockly: any;
 
 export class NotifEventBlock extends CustomBlock {
+
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = NotifEventBlock;
-
-
   }
 
-  defineBlock() {
+  /**
+   * Define conditionals block
+   */
 
+  defineBlock() {
     this.block.appendDummyInput()
       .appendField('Notification');
     this.block.appendDummyInput()
@@ -23,6 +25,7 @@ export class NotifEventBlock extends CustomBlock {
     this.block.setTooltip('');
     this.block.setHelpUrl('');
   }
+
   toXML() {
     return '<block type="NotifEvent"></block>';
   }
@@ -30,6 +33,13 @@ export class NotifEventBlock extends CustomBlock {
   toDartCode(block: CustomBlock): string | any[] {
     return 'Not implemented';
   }
+
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var text_notif = this.block.getFieldValue('Texte de la notification');

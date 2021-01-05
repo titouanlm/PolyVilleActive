@@ -3,13 +3,17 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 declare var Blockly: any;
 
 export class PromoEventBlock extends CustomBlock {
+
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = PromoEventBlock;
   }
 
-  defineBlock() {
+  /**
+   * Define conditionals block
+   */
 
+  defineBlock() {
     this.block.appendDummyInput()
       .appendField('Promotion');
     this.block.appendDummyInput()
@@ -31,6 +35,7 @@ export class PromoEventBlock extends CustomBlock {
     this.block.setTooltip('');
     this.block.setHelpUrl('');
   }
+
   toXML() {
     return '<block type="PromoEvent"></block>';
   }
@@ -39,16 +44,18 @@ export class PromoEventBlock extends CustomBlock {
     return 'Not implemented';
   }
 
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
+
   toJavaScriptCode(block: CustomBlock): string | any[] {
     const title = this.block.getFieldValue('Title_promo');
     var description=this.block.getFieldValue('Description_promo');
     var startDate=this.block.getFieldValue('Start_Date_promo').toString();
     var endDate=this.block.getFieldValue('End_Date_promo').toString();
-
-    /*return'this.event.promotions=[];\n'+ 'this.promotion.title="' + title + '";\nthis.promotion.description="' + description
-      + '";\nthis.promotion.startDate="' + startDate + '";\nthis.promotion.endDate="' + endDate + '";\n'
-      +'this.event.promotions.unshift(this.promotion);\n';
-     */
 
     return 'this.promotion.title="'+ title +'";\nthis.promotion.description="' + description
       + '";\nthis.promotion.startDate="' + startDate + '";\nthis.promotion.endDate="' + endDate + '";\n'

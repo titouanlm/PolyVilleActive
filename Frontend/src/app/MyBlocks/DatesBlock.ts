@@ -9,6 +9,10 @@ export class DatesBlock extends CustomBlock {
     this.class = DatesBlock;
   }
 
+  /**
+   * Define a Blocky block
+   */
+
   defineBlock() {
 
     this.block.appendDummyInput()
@@ -31,6 +35,13 @@ export class DatesBlock extends CustomBlock {
   toDartCode(block: CustomBlock): string | any[] {
     return 'Not implemented';
   }
+
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var begin_date=this.block.getFieldValue('BEGIN_DATE').toString();
