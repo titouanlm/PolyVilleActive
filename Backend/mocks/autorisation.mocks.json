@@ -3,5 +3,30 @@
     "shopId": 1234567,
     "inhabitantId": 1987,
     "id": 1609008146038
+  },
+  {
+    "shopId": 1234567,
+    "inhabitantId": 1987,
+    "id": 1609751319635
+  },
+  {
+    "shopId": 1234567,
+    "inhabitantId": 9,
+    "id": 1609754559387
+  },
+  {
+    "shopId": 1234568,
+    "inhabitantId": 1,
+    "id": 1609754583345
+  },
+  {
+    "shopId": 1234569,
+    "inhabitantId": 1987,
+    "id": 1609755034017
+  },
+  {
+    "shopId": 1234569,
+    "inhabitantId": 1867,
+    "id": 1609756782800
   }
 ]

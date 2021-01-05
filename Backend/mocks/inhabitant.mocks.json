@@ -2,20 +2,26 @@
   {
     "firstName": "Jonas",
     "lastName": "Head",
-    "longitude": "-34.52381",
-    "latitude": "-44.95548",
+    "longitude": "-121.19373",
+    "latitude": "44.47807",
     "id": 1867,
     "age": 61,
     "shopRated": [
       1234567,
       1234567,
       1234568,
-      1234568
+      1234568,
+      1234570,
+      1234570
     ],
     "positions": [
       [
         -34.52381,
         -44.95548
+      ],
+      [
+        -121.19373,
+        44.47807
       ]
     ],
     "gender": "Male"
@@ -23,13 +29,33 @@
   {
     "firstName": "Griffin",
     "lastName": "Ball",
-    "longitude": "-121.19373",
-    "latitude": "44.47807",
+    "longitude": "85.45452",
+    "latitude": "-2.24237",
     "id": 1987,
     "positions": [
       [
         107.99904,
         -30.43336
+      ],
+      [
+        85.45452,
+        -2.24237
+      ],
+      [
+        85.45452,
+        -2.24237
+      ],
+      [
+        -121.19373,
+        44.47807
+      ],
+      [
+        85.45452,
+        -2.24237
+      ],
+      [
+        -121.19373,
+        44.47807
       ],
       [
         85.45452,
@@ -77,11 +103,32 @@
     "id": 1,
     "firstName": "Mirabella",
     "lastName": "Poolman",
-    "longitude": "-121.19373",
-    "latitude": "44.47807",
+    "longitude": "-34.52381",
+    "latitude": "-44.95548",
     "gender": "Female",
     "age": 83,
-    "positions": [],
+    "positions": [
+      [
+        -34.52381,
+        -44.95548
+      ],
+      [
+        85.45452,
+        -2.24237
+      ],
+      [
+        -34.52381,
+        -44.95548
+      ],
+      [
+        85.45452,
+        -2.24237
+      ],
+      [
+        -34.52381,
+        -44.95548
+      ]
+    ],
     "objectPurchased": [
       [
         "Pantalon slim bordeaux",
@@ -206,10 +253,16 @@
     "id": 9,
     "firstName": "Say",
     "lastName": "Wimpeney",
-    "longitude": 13.1609554,
-    "latitude": 56.1304492,
+    "longitude": "85.45452",
+    "latitude": "-2.24237",
     "gender": "Male",
-    "age": 58
+    "age": 58,
+    "positions": [
+      [
+        85.45452,
+        -2.24237
+      ]
+    ]
   },
   {
     "id": 10,
@@ -218,7 +271,11 @@
     "longitude": 112.279737,
     "latitude": 31.566634,
     "gender": "Male",
-    "age": 25
+    "age": 25,
+    "shopRated": [
+      1234578,
+      1234578
+    ]
   },
   {
     "id": 11,

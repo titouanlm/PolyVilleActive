@@ -17,12 +17,13 @@
       1988,
       1999,
       1867,
-      1
+      1,
+      9
     ]
   },
   {
-    "title": "LALALA",
-    "description": "dqiodj",
+    "title": "70% off",
+    "description": "only for t-shirts",
     "startDate": "2020-02-20",
     "endDate": "2020-02-20",
     "customersNumberInterested": [
@@ -32,14 +33,15 @@
     "notifiedCustomersNumber": [
       1999,
       1987,
-      1
+      1,
+      9
     ],
     "shopId": 1234567,
     "id": 1608149454567
   },
   {
-    "title": "Venez",
-    "description": "-70%",
+    "title": "Come !",
+    "description": "-70% off ",
     "startDate": "2021-01-01",
     "endDate": "2021-01-20",
     "public": true,
@@ -55,5 +57,44 @@
     ],
     "shopId": 1234568,
     "id": 1608149454587
+  },
+  {
+    "title": "10% off",
+    "description": "for everything",
+    "startDate": "2020-02-20",
+    "endDate": "2020-02-20",
+    "customersNumberInterested": [],
+    "notifiedCustomersNumber": [
+      1987,
+      9,
+      1
+    ],
+    "shopId": 1234567,
+    "id": 1609751185673
+  },
+  {
+    "title": "Basket 30% off",
+    "description": "Come and enjoy ",
+    "startDate": "2021-01-04",
+    "endDate": "2021-01-11",
+    "customersNumberInterested": [],
+    "notifiedCustomersNumber": [
+      1987,
+      1867
+    ],
+    "shopId": 1234569,
+    "id": 1609755098285
+  },
+  {
+    "title": "Come",
+    "description": "-99%",
+    "startDate": "2021-01-04",
+    "endDate": "2021-01-05",
+    "customersNumberInterested": [],
+    "notifiedCustomersNumber": [
+      1867
+    ],
+    "shopId": 1234569,
+    "id": 1609756485177
   }
 ]
