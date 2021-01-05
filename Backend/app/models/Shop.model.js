@@ -19,4 +19,14 @@ module.exports = new BaseModel('Shop', {
         numberOfPresence: Joi.number(),
     }),
     purchasedItems: Joi.array().items(Joi.array()),
+
+    parkingSpace: Joi.object({
+        nbrPlace: Joi.number(),
+        nbrPlaceFree: Joi.number(),
+        places : Joi.array().items(Joi.object({
+
+            name : Joi.string(),
+            availability : Joi.boolean()
+        }))
+    })
 });
