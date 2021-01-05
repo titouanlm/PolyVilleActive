@@ -1,62 +1,77 @@
 h1 {
-  right: 0;
-  left: 0;
   background-color: inherit;
-  text-align: center;
   height: 20%;
 }
 
-.inhabitantDisplay{
-  align-items: center;
-  text-align: center;
-  align-content: center;
-  height: 30%;
-}
-
-.sellerDisplay{
-  align-items: center;
-  text-align: center;
-  align-content: center;
-  height: 35%;
-}
-
-
-.TownHallemployeeIcon{
+.TownHallemployeeIcon mat-icon{
   font-size: 7em;
   cursor: pointer;
-
-}
-
-.sellerIcon {
-  font-size: 7em;
-  cursor: pointer;
-}
-
-.inhabitantIcon {
-  font-size: 7em;
-  cursor: pointer;
-}
-
-.actorIcon{
-  font-size: 7em;
-  cursor: pointer;
-}
-
-.culturalActorDisplay{
   position: absolute;
-  text-align: center;
+  left: 84%;
+  top: 28%;
+}
+
+.sellerIcon mat-icon{
+  font-size: 7em;
+  cursor: pointer;
+  position: absolute;
+  left: 59%;
+  top: 28%;
+}
+
+.inhabitantIcon mat-icon{
+  font-size: 7em;
+  cursor: pointer;
+  position: absolute;
+  left: 34%;
+  top: 28%;
+}
+
+.actorIcon mat-icon{
+  position: absolute;
+  font-size: 7em;
   top: 28%;
   left: 9%;
-  height: 35%;
+}
+.parkingIcon  mat-icon{
+  font-size: 7em;
+  cursor: pointer;
+  position: absolute;
+  left: 47%;
+  top: 60%;
 }
 
-.culturalActorIcon{
+
+.TownHallemployeeIcon h1{
+  cursor: pointer;
   position: absolute;
-  font-size: 4em;
+  left: 82%;
+  top: 43%;
 }
 
-.TownHallemployeeDisplay{
+.sellerIcon h1{
+  cursor: pointer;
   position: absolute;
-  left: 79%;
-  top: 27.5%;
+  left: 59.2%;
+  top: 43%;
+}
+
+.inhabitantIcon h1{
+  cursor: pointer;
+  position: absolute;
+  left: 32%;
+  top: 43%;
+}
+
+.actorIcon h1{
+  cursor: pointer;
+  position: absolute;
+  top: 43%;
+  left: 5%;
+}
+.parkingIcon  h1{
+  cursor: pointer;
+  position: absolute;
+  left: 46%;
+  top: 75%;
 }

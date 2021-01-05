@@ -1,32 +1,42 @@
 <div class="display">
-  <h1><br>Welcome to PolyVille Active !</h1>
+  <h1 style="text-align: center"><br>Welcome to PolyVille Active !</h1>
 
-  <div class="inhabitantDisplay">
-    <a (click)="openInhabitantsDialog()" class="inhabitantIcon">
+  <div class="inhabitantDisplay" (click)="openInhabitantsDialog()">
+    <a  class="inhabitantIcon">
       <mat-icon [inline]="true">account_box</mat-icon>
+      <h1>Inhabitant</h1>
     </a><br>
-    <h1>Inhabitants and Visitors</h1>
+
   </div>
 
-  <div class="sellerDisplay">
-    <a (click)="openSellersDialog()" class="sellerIcon">
+  <div class="sellerDisplay" (click)="openSellersDialog()">
+    <a  class="sellerIcon">
       <mat-icon [inline]="true">shop</mat-icon>
+      <h1>Seller</h1>
     </a><br>
-    <h1>Sellers</h1>
+
   </div>
-<!--</div>-->
-  <div class="culturalActorDisplay">
+  <div class="culturalActorDisplay" (click)="openCulturalActorsDialog()">
     <a class="actorIcon">
-      <mat-icon (click)="openCulturalActorsDialog()" [inline]="true">supervised_user_circle</mat-icon>
+      <mat-icon  [inline]="true">supervised_user_circle</mat-icon>
+      <h1>Cultural Actor</h1>
     </a><br>
-    <h1>Cultural Actor</h1>
+
   </div>
 
   <div class="TownHallemployeeDisplay">
-    <a class="TownHallemployeeIcon">
-      <mat-icon (click)="openTownHallEmployeesDialog()" [inline]="true">perm_identity</mat-icon>
+    <a class="TownHallemployeeIcon" (click)="openTownHallEmployeesDialog()">
+      <mat-icon  [inline]="true">perm_identity</mat-icon>
+      <h1>Town Hall Employee</h1>
     </a><br>
-    <h1 style="position: absolute;left: -28%;white-space: nowrap;">Town Hall</h1>
-    <h1 style="position: absolute;top: 130%;left: -28%;">Employee</h1>
+
+  </div>
+
+  <div class="parkingDisplay">
+    <a class="parkingIcon" [routerLink]="['parking']">
+      <mat-icon  [inline]="true">local_parking</mat-icon>
+      <h1>Parking</h1>
+    </a><br>
+
   </div>
 </div>

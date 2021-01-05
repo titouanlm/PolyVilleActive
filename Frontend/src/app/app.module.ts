@@ -44,6 +44,7 @@ import { ItemStatisticsComponent } from "./item-statistics/item-statistics.compo
 import {CulturalActorEventsComponent} from "./cultural-actor-events/cultural-actor-events.component";
 import {DatePipe} from "@angular/common";
 import {EventListRatingComponent} from "./event-list-rating/event-list-rating.component";
+import { ParkingComponent } from './parking/parking.component';
 
 
 
@@ -81,6 +82,7 @@ import {EventListRatingComponent} from "./event-list-rating/event-list-rating.co
     ItemStatisticsComponent,
     CulturalActorEventsComponent,
     EventListRatingComponent,
+    ParkingComponent,
   ],
   imports: [
     BrowserModule,
@@ -106,6 +108,7 @@ import {EventListRatingComponent} from "./event-list-rating/event-list-rating.co
       {path: 'cultural-actor/events', component: CulturalActorEventsComponent},
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
       {path: 'town-hall-employee/blockly', component: TownHallEmployeeBlocksComponent},
+      {path: 'parking', component: ParkingComponent},
       /*{ path: '**', redirectTo: '' }*/
     ], { onSameUrlNavigation: 'reload', relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
     NgxBlocklyModule,
