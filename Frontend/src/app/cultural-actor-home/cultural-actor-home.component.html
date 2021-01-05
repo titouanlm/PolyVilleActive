@@ -1,5 +1,5 @@
 <div  class="culturalActorHome">
-  <h4>Welcome {{ culturalActor.firstName }} {{ culturalActor.lastName }}</h4>
+  <h4 *ngIf="culturalActor != undefined">Welcome {{ culturalActor.firstName }} {{ culturalActor.lastName }}</h4>
 
   <div class="cActorEvents" >
     <a [routerLink]="['events']" class="increaseSize">
