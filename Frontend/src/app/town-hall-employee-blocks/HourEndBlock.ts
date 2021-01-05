@@ -3,10 +3,15 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 declare var Blockly: any;
 
 export class HourEndBlock extends CustomBlock {
+
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = HourEndBlock;
   }
+
+  /**
+   * Define a conditional Blockly block
+   */
 
   defineBlock() {
     this.block.appendDummyInput("hourEndBlock")
@@ -24,6 +29,13 @@ export class HourEndBlock extends CustomBlock {
   toXML() {
     return '<block type="hourEndBlock"></block>';
   }
+
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     //var value_condheurefin = Blockly.JavaScript.valueToCode(block, 'condHeureFin', Blockly.JavaScript.ORDER_ATOMIC);

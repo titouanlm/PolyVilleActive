@@ -37,6 +37,13 @@ export class NotificationPromotionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * This method is used to push the information of whether or not a client is interested in this promotion
+   *
+   * @param promotion targeted promotion
+   * @param i promotion index in an array
+   */
+
   public interestedInPromotion(promotion : Promotion, i : number){
     if (!promotion.customersNumberInterested!= undefined && !promotion.customersNumberInterested.includes(this.idCurrentInhabitant)){
       promotion.customersNumberInterested.push(this.idCurrentInhabitant);

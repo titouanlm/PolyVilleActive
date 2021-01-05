@@ -3,10 +3,15 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 declare var Blockly: any;
 
 export class TargetPeopleBlock extends CustomBlock {
+
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = TargetPeopleBlock;
   }
+
+  /**
+   * Define a conditional Blockly block
+   */
 
   defineBlock() {
     this.block.appendDummyInput()
@@ -22,6 +27,13 @@ export class TargetPeopleBlock extends CustomBlock {
   toXML() {
     return '<block type="targetPeople"></block>';
   }
+
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     const dropdown_targetpeople = this.block.getFieldValue('targetPeople');

@@ -19,6 +19,10 @@ export class PopupTownHallEmployeeAuthentificationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * This method authenticate a town hall employee in the system
+   */
+
   authenticate() {
     this.employeeService.authenticateEmployee(Number(this.number))
       .subscribe(
