@@ -41,10 +41,11 @@ import { TownHallEmployeeHomeComponent } from "./town-hall-employee-home/town-ha
 import { StoreItemsComponent } from "./store-items/store-items.component";
 import { DialogAlertShopComponent } from "./dialog-alert-shop/dialog-alert-shop.component";
 import { ItemStatisticsComponent } from "./item-statistics/item-statistics.component";
-import { CulturalActorEventsComponent } from "./cultural-actor-events/cultural-actor-events.component";
-import { DatePipe } from "@angular/common";
-import { EventListRatingComponent } from "./event-list-rating/event-list-rating.component";
-import { ParkingPlacesComponent } from "./parking-places/parking-places.component";
+import {CulturalActorEventsComponent} from "./cultural-actor-events/cultural-actor-events.component";
+import {DatePipe} from "@angular/common";
+import {EventListRatingComponent} from "./event-list-rating/event-list-rating.component";
+import { ParkingComponent } from './parking/parking.component';
+import {ParkingPlacesComponent} from "./parking-places/parking-places.component";
 
 
 
@@ -82,6 +83,7 @@ import { ParkingPlacesComponent } from "./parking-places/parking-places.componen
     ItemStatisticsComponent,
     CulturalActorEventsComponent,
     EventListRatingComponent,
+    ParkingComponent,
     ParkingPlacesComponent,
   ],
   imports: [
@@ -109,7 +111,8 @@ import { ParkingPlacesComponent } from "./parking-places/parking-places.componen
       {path: 'cultural-actor/events', component: CulturalActorEventsComponent},
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
       {path: 'town-hall-employee/blockly', component: TownHallEmployeeBlocksComponent},
-      { path: '**', redirectTo: '' }
+      {path: 'parking', component: ParkingComponent},
+      { path: '**', redirectTo: '' },
     ], { onSameUrlNavigation: 'reload', relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
     NgxBlocklyModule,
     MatIconModule,
