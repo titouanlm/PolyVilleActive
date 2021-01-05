@@ -22,7 +22,10 @@ export interface Shop{
   parkingSpace: {
     nbrPlace: number,
     nbrPlaceFree: number,
-    places : Array<nameAvailabilityType>
+    nbrPlaceUnassignable :number,
+    nbrPlaceUnassignableFree :number,
+    places : Array<nameAvailabilityType>,
+    placesUnassignable:Array<nameAvailabilityType>
   }
 }
 

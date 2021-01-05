@@ -23,7 +23,14 @@ module.exports = new BaseModel('Shop', {
     parkingSpace: Joi.object({
         nbrPlace: Joi.number(),
         nbrPlaceFree: Joi.number(),
+        nbrPlaceUnassignable :Joi.number(),
+        nbrPlaceUnassignableFree :Joi.number(),
         places : Joi.array().items(Joi.object({
+
+            name : Joi.string(),
+            availability : Joi.boolean()
+        })),
+        placesUnassignable: Joi.array().items(Joi.object({
 
             name : Joi.string(),
             availability : Joi.boolean()

@@ -129,4 +129,6 @@ export class ShopInformationComponent implements OnInit {
 
   }
 
+
+
 }

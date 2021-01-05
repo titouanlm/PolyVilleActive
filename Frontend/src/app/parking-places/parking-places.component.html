@@ -1,0 +1,68 @@
+<div *ngIf="shop" >
+  <h1 class="shopInformation1">{{ shop.label}} </h1> <br>
+</div>
+
+<div>
+  <h3>Number of Parking places: {{shop.parkingSpace.nbrPlace}} </h3>
+</div>
+  <div>
+    <h3>Number of Free places:{{shop.parkingSpace.nbrPlaceFree}}</h3>
+  </div>
+    <div>
+      <h3>Number of Parking places Unassignable: {{shop.parkingSpace.nbrPlaceUnassignable}} </h3>
+    </div>
+  <div>
+        <h3>Number of Free Unassignable places :{{shop.parkingSpace.nbrPlaceUnassignableFree}}</h3>
+</div>
+
+<main class="flex-container" role="main" >
+  <section id="main-section">
+    <h1> Shops </h1>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Label</th>
+        <th scope="col">Availability</th>
+        <th scope="col">Type</th>
+        <th scope="col">Select</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let place of placesR;let i = index">
+        <th scope="row">{{i}}</th>
+        <td>{{place.name}}</td>
+        <td>{{place.availability}}</td>
+        <td>Assignable</td>
+        <td>
+          <button id="runButton" type="button" class="btn btn-success" (click)="unassignable(i)">Select</button><br>
+        </td>
+      </tr>
+      </tbody>
+      <tbody>
+      <tr *ngFor="let place of placesNR;let i = index">
+        <th scope="row">{{i}}</th>
+        <td>{{place.name}}</td>
+        <td>{{place.availability}}</td>
+        <td>Unassignable</td>
+        <td>
+          <button  id="runButton2" type="button" class="btn btn-success" (click)="assignable(i)" >Select</button><br>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<div class="sellersexit" >
+  <a [routerLink]="['..']" class="increaseSize">
+    <mat-icon [inline]="true" >exit_to_app</mat-icon>
+  </a>
+</div>
+
+<div>
+  <h4>
+    previous page
+  </h4>
+</div>

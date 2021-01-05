@@ -29,48 +29,7 @@
           1999,
           1867,
           1
-        ],
-        "parkingSpace":{
-          "nbrPlace":12,
-          "nbrPlaceFree":12,
-          "places":[
-            {"name":"H1",
-              "availability":"true"},
-
-            {"name":"H2",
-              "availability":"true"},
-
-            {"name":"H3",
-              "availability":"true"},
-
-            {"name":"H4",
-              "availability":"true"},
-
-            {"name":"H5",
-              "availability":"true"},
-
-            {"name":"H6",
-              "availability":"true"},
-
-            {"name":"H7",
-              "availability":"true"},
-
-            {"name":"H8",
-              "availability":"true"},
-
-            {"name":"H9",
-              "availability":"true"},
-
-            {"name":"H10",
-              "availability":"true"},
-
-            {"name":"H11",
-              "availability":"true"},
-
-            {"name":"H12",
-              "availability":"true"}
-          ]
-        }
+        ]
       },
       {
         "title": "LALALA",
@@ -144,45 +103,62 @@
       200,
       106
     ],
-    "parkingSpace":{
-      "nbrPlace":12,
-      "nbrPlaceFree":12,
-      "places":[
-        {"name":"G1",
-          "availability":"true"},
-
-        {"name":"G2",
-          "availability":"true"},
-
-        {"name":"G3",
-          "availability":"true"},
-
-        {"name":"G4",
-          "availability":"true"},
-
-        {"name":"G5",
-          "availability":"true"},
-
-        {"name":"G6",
-          "availability":"true"},
-
-        {"name":"G7",
-          "availability":"true"},
-
-        {"name":"G8",
-          "availability":"true"},
-
-        {"name":"G9",
-          "availability":"true"},
-
-        {"name":"G10",
-          "availability":"true"},
-
-        {"name":"G11",
-          "availability":"true"},
-
-        {"name":"G12",
-          "availability":"true"}
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
+      "places": [
+        {
+          "name": "G1",
+          "availability": "true"
+        },
+        {
+          "name": "G2",
+          "availability": "true"
+        },
+        {
+          "name": "G3",
+          "availability": "true"
+        },
+        {
+          "name": "G4",
+          "availability": "true"
+        },
+        {
+          "name": "G5",
+          "availability": "true"
+        },
+        {
+          "name": "G6",
+          "availability": "true"
+        },
+        {
+          "name": "G7",
+          "availability": "true"
+        },
+        {
+          "name": "G8",
+          "availability": "true"
+        },
+        {
+          "name": "G9",
+          "availability": "true"
+        },
+        {
+          "name": "G10",
+          "availability": "true"
+        },
+        {
+          "name": "G11",
+          "availability": "true"
+        },
+        {
+          "name": "G12",
+          "availability": "true"
+        }
+      ],
+      "placesUnassignable": [
       ]
     }
   },
@@ -287,45 +263,62 @@
       65,
       114
     ],
-    "parkingSpace":{
-      "nbrPlace":12,
-      "nbrPlaceFree":12,
-      "places":[
-        {"name":"F1",
-          "availability":"true"},
-
-        {"name":"F2",
-          "availability":"true"},
-
-        {"name":"F3",
-          "availability":"true"},
-
-        {"name":"F4",
-          "availability":"true"},
-
-        {"name":"F5",
-          "availability":"true"},
-
-        {"name":"F6",
-          "availability":"true"},
-
-        {"name":"F7",
-          "availability":"true"},
-
-        {"name":"F8",
-          "availability":"true"},
-
-        {"name":"F9",
-          "availability":"true"},
-
-        {"name":"F10",
-          "availability":"true"},
-
-        {"name":"F11",
-          "availability":"true"},
-
-        {"name":"F12",
-          "availability":"true"}
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
+      "places": [
+        {
+          "name": "F1",
+          "availability": "true"
+        },
+        {
+          "name": "F2",
+          "availability": "true"
+        },
+        {
+          "name": "F3",
+          "availability": "true"
+        },
+        {
+          "name": "F4",
+          "availability": "true"
+        },
+        {
+          "name": "F5",
+          "availability": "true"
+        },
+        {
+          "name": "F6",
+          "availability": "true"
+        },
+        {
+          "name": "F7",
+          "availability": "true"
+        },
+        {
+          "name": "F8",
+          "availability": "true"
+        },
+        {
+          "name": "F9",
+          "availability": "true"
+        },
+        {
+          "name": "F10",
+          "availability": "true"
+        },
+        {
+          "name": "F11",
+          "availability": "true"
+        },
+        {
+          "name": "F12",
+          "availability": "true"
+        }
+      ],
+      "placesUnassignable": [
       ]
     }
   },
@@ -508,45 +501,62 @@
       49,
       177
     ],
-    "parkingSpace":{
-      "nbrPlace":12,
-      "nbrPlaceFree":12,
-      "places":[
-        {"name":"E1",
-          "availability":"true"},
-
-        {"name":"E2",
-          "availability":"true"},
-
-        {"name":"E3",
-          "availability":"true"},
-
-        {"name":"E4",
-          "availability":"true"},
-
-        {"name":"E5",
-          "availability":"true"},
-
-        {"name":"E6",
-          "availability":"true"},
-
-        {"name":"E7",
-          "availability":"true"},
-
-        {"name":"E8",
-          "availability":"true"},
-
-        {"name":"E9",
-          "availability":"true"},
-
-        {"name":"E10",
-          "availability":"true"},
-
-        {"name":"E11",
-          "availability":"true"},
-
-        {"name":"E12",
-          "availability":"true"}
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
+      "places": [
+        {
+          "name": "E1",
+          "availability": "true"
+        },
+        {
+          "name": "E2",
+          "availability": "true"
+        },
+        {
+          "name": "E3",
+          "availability": "true"
+        },
+        {
+          "name": "E4",
+          "availability": "true"
+        },
+        {
+          "name": "E5",
+          "availability": "true"
+        },
+        {
+          "name": "E6",
+          "availability": "true"
+        },
+        {
+          "name": "E7",
+          "availability": "true"
+        },
+        {
+          "name": "E8",
+          "availability": "true"
+        },
+        {
+          "name": "E9",
+          "availability": "true"
+        },
+        {
+          "name": "E10",
+          "availability": "true"
+        },
+        {
+          "name": "E11",
+          "availability": "true"
+        },
+        {
+          "name": "E12",
+          "availability": "true"
+        }
+      ],
+      "placesUnassignable": [
       ]
     }
   },
@@ -670,6 +680,8 @@
     "parkingSpace": {
       "nbrPlace": 12,
       "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "D1",
@@ -719,6 +731,8 @@
           "name": "D12",
           "availability": "true"
         }
+      ],
+      "placesUnassignable": [
       ]
     }
   },
@@ -802,6 +816,8 @@
     "parkingSpace": {
       "nbrPlace": 12,
       "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "C1",
@@ -851,6 +867,8 @@
           "name": "C12",
           "availability": "true"
         }
+      ],
+      "placesUnassignable": [
       ]
     }
   },
@@ -994,6 +1012,8 @@
     "parkingSpace": {
       "nbrPlace": 12,
       "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "B1",
@@ -1043,6 +1063,8 @@
           "name": "B12",
           "availability": "true"
         }
+      ],
+      "placesUnassignable": [
       ]
     }
   },
@@ -1130,6 +1152,8 @@
     "parkingSpace": {
       "nbrPlace": 12,
       "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "A1",
@@ -1179,8 +1203,9 @@
           "name": "A12",
           "availability": "true"
         }
+      ],
+      "placesUnassignable": [
       ]
     }
-
   }
 ]
