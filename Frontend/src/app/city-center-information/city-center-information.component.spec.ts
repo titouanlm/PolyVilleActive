@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CityCenterInformationComponent } from './city-center-information.component';
+import {MatDialogRef} from "@angular/material/dialog";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 describe('CityCenterInformationComponent', () => {
   let component: CityCenterInformationComponent;
@@ -8,7 +10,8 @@ describe('CityCenterInformationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CityCenterInformationComponent ]
+      declarations: [ CityCenterInformationComponent ],
+      providers: [{provide: HttpClient, useValue: {}}]
     })
     .compileComponents();
   });

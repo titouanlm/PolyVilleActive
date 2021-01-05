@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CulturalActorHomeComponent } from './cultural-actor-home.component';
+import {MatDialogRef} from "@angular/material/dialog";
+import {HttpClient} from "@angular/common/http";
 
 describe('CulturalActorHomeComponent', () => {
   let component: CulturalActorHomeComponent;
@@ -8,7 +10,8 @@ describe('CulturalActorHomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CulturalActorHomeComponent ]
+      declarations: [ CulturalActorHomeComponent ],
+      providers: [{provide: HttpClient, useValue: {}}]
     })
     .compileComponents();
   });

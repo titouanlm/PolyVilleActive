@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SellerDisplayComponent } from './seller-display.component';
+import {HttpClient} from "@angular/common/http";
 
 describe('SellerDisplayComponent', () => {
   let component: SellerDisplayComponent;
@@ -8,7 +9,8 @@ describe('SellerDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SellerDisplayComponent ]
+      declarations: [ SellerDisplayComponent ],
+      providers: [{provide: HttpClient, useValue: {}}]
     })
     .compileComponents();
   });

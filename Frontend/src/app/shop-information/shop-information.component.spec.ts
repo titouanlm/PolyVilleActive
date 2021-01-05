@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShopInformationComponent } from './shop-information.component';
+import {HttpClient} from "@angular/common/http";
 
 describe('ShopInformationComponent', () => {
   let component: ShopInformationComponent;
@@ -8,7 +9,8 @@ describe('ShopInformationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShopInformationComponent ]
+      declarations: [ ShopInformationComponent ],
+      providers: [{provide: HttpClient, useValue: {}}]
     })
     .compileComponents();
   });
