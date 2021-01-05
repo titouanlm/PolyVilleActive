@@ -29,7 +29,48 @@
           1999,
           1867,
           1
-        ]
+        ],
+        "parkingSpace":{
+          "nbrPlace":12,
+          "nbrPlaceFree":12,
+          "places":[
+            {"name":"H1",
+              "availability":"true"},
+
+            {"name":"H2",
+              "availability":"true"},
+
+            {"name":"H3",
+              "availability":"true"},
+
+            {"name":"H4",
+              "availability":"true"},
+
+            {"name":"H5",
+              "availability":"true"},
+
+            {"name":"H6",
+              "availability":"true"},
+
+            {"name":"H7",
+              "availability":"true"},
+
+            {"name":"H8",
+              "availability":"true"},
+
+            {"name":"H9",
+              "availability":"true"},
+
+            {"name":"H10",
+              "availability":"true"},
+
+            {"name":"H11",
+              "availability":"true"},
+
+            {"name":"H12",
+              "availability":"true"}
+          ]
+        }
       },
       {
         "title": "LALALA",
@@ -102,7 +143,48 @@
     "numberOfPurchaseBySexRang": [
       200,
       106
-    ]
+    ],
+    "parkingSpace":{
+      "nbrPlace":12,
+      "nbrPlaceFree":12,
+      "places":[
+        {"name":"G1",
+          "availability":"true"},
+
+        {"name":"G2",
+          "availability":"true"},
+
+        {"name":"G3",
+          "availability":"true"},
+
+        {"name":"G4",
+          "availability":"true"},
+
+        {"name":"G5",
+          "availability":"true"},
+
+        {"name":"G6",
+          "availability":"true"},
+
+        {"name":"G7",
+          "availability":"true"},
+
+        {"name":"G8",
+          "availability":"true"},
+
+        {"name":"G9",
+          "availability":"true"},
+
+        {"name":"G10",
+          "availability":"true"},
+
+        {"name":"G11",
+          "availability":"true"},
+
+        {"name":"G12",
+          "availability":"true"}
+      ]
+    }
   },
   {
     "label": "Auctor Ullam",
@@ -204,7 +286,48 @@
     "numberOfPurchaseBySexRang": [
       65,
       114
-    ]
+    ],
+    "parkingSpace":{
+      "nbrPlace":12,
+      "nbrPlaceFree":12,
+      "places":[
+        {"name":"F1",
+          "availability":"true"},
+
+        {"name":"F2",
+          "availability":"true"},
+
+        {"name":"F3",
+          "availability":"true"},
+
+        {"name":"F4",
+          "availability":"true"},
+
+        {"name":"F5",
+          "availability":"true"},
+
+        {"name":"F6",
+          "availability":"true"},
+
+        {"name":"F7",
+          "availability":"true"},
+
+        {"name":"F8",
+          "availability":"true"},
+
+        {"name":"F9",
+          "availability":"true"},
+
+        {"name":"F10",
+          "availability":"true"},
+
+        {"name":"F11",
+          "availability":"true"},
+
+        {"name":"F12",
+          "availability":"true"}
+      ]
+    }
   },
   {
     "label": "Quis Arcu Industries",
@@ -384,7 +507,48 @@
     "numberOfPurchaseBySexRang": [
       49,
       177
-    ]
+    ],
+    "parkingSpace":{
+      "nbrPlace":12,
+      "nbrPlaceFree":12,
+      "places":[
+        {"name":"E1",
+          "availability":"true"},
+
+        {"name":"E2",
+          "availability":"true"},
+
+        {"name":"E3",
+          "availability":"true"},
+
+        {"name":"E4",
+          "availability":"true"},
+
+        {"name":"E5",
+          "availability":"true"},
+
+        {"name":"E6",
+          "availability":"true"},
+
+        {"name":"E7",
+          "availability":"true"},
+
+        {"name":"E8",
+          "availability":"true"},
+
+        {"name":"E9",
+          "availability":"true"},
+
+        {"name":"E10",
+          "availability":"true"},
+
+        {"name":"E11",
+          "availability":"true"},
+
+        {"name":"E12",
+          "availability":"true"}
+      ]
+    }
   },
   {
     "label": "Placerat Associates",
@@ -502,7 +666,61 @@
     "numberOfPurchaseBySexRang": [
       63,
       125
-    ]
+    ],
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "places": [
+        {
+          "name": "D1",
+          "availability": "true"
+        },
+        {
+          "name": "D2",
+          "availability": "true"
+        },
+        {
+          "name": "D3",
+          "availability": "true"
+        },
+        {
+          "name": "D4",
+          "availability": "true"
+        },
+        {
+          "name": "D5",
+          "availability": "true"
+        },
+        {
+          "name": "D6",
+          "availability": "true"
+        },
+        {
+          "name": "D7",
+          "availability": "true"
+        },
+        {
+          "name": "D8",
+          "availability": "true"
+        },
+        {
+          "name": "D9",
+          "availability": "true"
+        },
+        {
+          "name": "D10",
+          "availability": "true"
+        },
+        {
+          "name": "D11",
+          "availability": "true"
+        },
+        {
+          "name": "D12",
+          "availability": "true"
+        }
+      ]
+    }
   },
   {
     "label": "Phasellus Dapibus Associates",
@@ -580,7 +798,61 @@
     "numberOfPurchaseBySexRang": [
       130,
       85
-    ]
+    ],
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "places": [
+        {
+          "name": "C1",
+          "availability": "true"
+        },
+        {
+          "name": "C2",
+          "availability": "true"
+        },
+        {
+          "name": "C3",
+          "availability": "true"
+        },
+        {
+          "name": "C4",
+          "availability": "true"
+        },
+        {
+          "name": "C5",
+          "availability": "true"
+        },
+        {
+          "name": "C6",
+          "availability": "true"
+        },
+        {
+          "name": "C7",
+          "availability": "true"
+        },
+        {
+          "name": "C8",
+          "availability": "true"
+        },
+        {
+          "name": "C9",
+          "availability": "true"
+        },
+        {
+          "name": "C10",
+          "availability": "true"
+        },
+        {
+          "name": "C11",
+          "availability": "true"
+        },
+        {
+          "name": "C12",
+          "availability": "true"
+        }
+      ]
+    }
   },
   {
     "label": "Tellus Justo Sit Corp.",
@@ -718,7 +990,61 @@
     "numberOfPurchaseBySexRang": [
       244,
       66
-    ]
+    ],
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "places": [
+        {
+          "name": "B1",
+          "availability": "true"
+        },
+        {
+          "name": "B2",
+          "availability": "true"
+        },
+        {
+          "name": "B3",
+          "availability": "true"
+        },
+        {
+          "name": "B4",
+          "availability": "true"
+        },
+        {
+          "name": "B5",
+          "availability": "true"
+        },
+        {
+          "name": "B6",
+          "availability": "true"
+        },
+        {
+          "name": "B7",
+          "availability": "true"
+        },
+        {
+          "name": "B8",
+          "availability": "true"
+        },
+        {
+          "name": "B9",
+          "availability": "true"
+        },
+        {
+          "name": "B10",
+          "availability": "true"
+        },
+        {
+          "name": "B11",
+          "availability": "true"
+        },
+        {
+          "name": "B12",
+          "availability": "true"
+        }
+      ]
+    }
   },
   {
     "label": "Aenean Egestas Associates",
@@ -800,6 +1126,61 @@
     "numberOfPurchaseBySexRang": [
       112,
       163
-    ]
+    ],
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "places": [
+        {
+          "name": "A1",
+          "availability": "true"
+        },
+        {
+          "name": "A2",
+          "availability": "true"
+        },
+        {
+          "name": "A3",
+          "availability": "true"
+        },
+        {
+          "name": "A4",
+          "availability": "true"
+        },
+        {
+          "name": "A5",
+          "availability": "true"
+        },
+        {
+          "name": "A6",
+          "availability": "true"
+        },
+        {
+          "name": "A7",
+          "availability": "true"
+        },
+        {
+          "name": "A8",
+          "availability": "true"
+        },
+        {
+          "name": "A9",
+          "availability": "true"
+        },
+        {
+          "name": "A10",
+          "availability": "true"
+        },
+        {
+          "name": "A11",
+          "availability": "true"
+        },
+        {
+          "name": "A12",
+          "availability": "true"
+        }
+      ]
+    }
+
   }
 ]
