@@ -44,7 +44,6 @@ import { ItemStatisticsComponent } from "./item-statistics/item-statistics.compo
 import {CulturalActorEventsComponent} from "./cultural-actor-events/cultural-actor-events.component";
 import {DatePipe} from "@angular/common";
 import {EventListRatingComponent} from "./event-list-rating/event-list-rating.component";
-import {EventRatingComponent} from "./event-rating/event-rating.component";
 
 
 
@@ -82,7 +81,6 @@ import {EventRatingComponent} from "./event-rating/event-rating.component";
     ItemStatisticsComponent,
     CulturalActorEventsComponent,
     EventListRatingComponent,
-    EventRatingComponent,
   ],
   imports: [
     BrowserModule,
