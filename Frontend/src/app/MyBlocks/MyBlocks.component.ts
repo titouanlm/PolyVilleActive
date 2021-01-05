@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   Category,
   CustomBlock,
   NgxBlocklyConfig,
   NgxBlocklyGeneratorConfig,
   NgxToolboxBuilderService,
-  Separator
 } from 'ngx-blockly';
 import {PromoBlock} from './PromoBlock';
 import {DatesBlock} from './DatesBlock';
 import {NotifBlock} from './NotifBlock';
-import {CondPromoBlock} from './CondPromoBlock';
 import {TitreBlock} from './TitreBlock';
 import {EventBlock} from "./EventBlock";
 import {PromoEventBlock} from "./PromoEventBlock";
@@ -44,7 +42,6 @@ export class MyBlocksComponent {
     new PromoBlock('promotion', null, null),
     new TitreBlock( 'titredescription' , null , null),
     new DatesBlock('dates' , null, null),
-   // new CondPromoBlock( 'condpromo' , null , null)
   ];
   public customBlocks2: CustomBlock[] = [
     new EventBlock( 'Event' , null , null),
@@ -75,10 +72,7 @@ export class MyBlocksComponent {
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public promotionService : PromotionService,public eventService: EventService) {
     ngxToolboxBuilder.nodes = [
-    //  new Category('Evenement', '#cf9700', this.customBlocks2, null),
       new Category('Promotion', '#0f4f35', this.customBlocks1, null),
-    //  new Category('Notification' , '#9c1309', this.customBlocks3, null),
-    //  new Category('Condition de Promotion' ,'#700520', this.customBlocks4 , null)
     ];
     this.config.toolbox = ngxToolboxBuilder.build();
     this.config.scrollbars = false;
@@ -93,48 +87,14 @@ export class MyBlocksComponent {
     xml: true
   };
 
+  /**
+   * This method executes Blockly block string code
+   */
+
   execute() {
-   // this.event=null;
-   // this.promotion=null;
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
-    // Blockly.mainWorkspace.newBlock(Blockly.mainWorkspace,'notification',1);
     try {
       eval(code);
-/*
-      //CREATION D'UN EVENEMENT
-      if(this.event!=null){
-        console.log(this.event)
-        this.eventService.addEvent(this.event)
-        .subscribe(
-          eventCreated => {
-            alert("Votre nouvelle promotion : " + eventCreated.title + " a été créé !")
-          },
-          error => {
-            alert("Erreur : " + error);
-          });
-     // this.events=this.eventService.getShopEventsFromUrl(this.event.shopId+'');
-   // this.events=this.eventService.getEvent(this.event.shopId+'',this.event.title)
-        console.log(this.event.title)*/
-        console.log("Hello")
-    //    var idevent=this.eventService.getEvent(this.event.shopId+'',this.event.title).toString();
-      //  console.log(idevent);
-/*
-
-          this.eventService.addPromotion(this.event.shopId + '', this.events[0].id, this.promotion)
-            .subscribe(
-              promoCreated => {
-                alert("Votre nouvelle promotion : " + promoCreated.title + " a été créé !")
-              }, error => {
-                alert("Erreur : " + error);
-              });
-        */
-      /*  this.event.notification.forEach(
-          notification=>{
-            this.eventService.addNotification(this.event.shopId+'',this.event.id,notification)
-          }
-        )*/
-        //}
-
 
       //CREATION D'UNE PROMO
         if(this.promotion!=null){
@@ -150,8 +110,7 @@ export class MyBlocksComponent {
       } catch (e) {
         alert(e);
       }
-  //  console.log(this.event.title)
-    console.log("Hello")
+    console.log("Hello");
       console.log(code);
     }
 }

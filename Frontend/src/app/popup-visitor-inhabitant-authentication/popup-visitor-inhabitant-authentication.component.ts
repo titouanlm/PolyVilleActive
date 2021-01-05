@@ -20,6 +20,10 @@ export class PopupVisitorInhabitantAuthenticationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * This method authenticate an inhabitant or a visitor in the system
+   */
+
   authenticate() {
     this.inhabitantService.authenticateInhabitant(Number(this.number))
       .subscribe(

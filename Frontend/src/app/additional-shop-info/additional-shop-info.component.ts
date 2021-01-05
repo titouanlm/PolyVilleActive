@@ -32,7 +32,6 @@ export class AdditionalShopInfoComponent implements OnInit {
   ];
 
   constructor(public shopService: ShopService,public nicheService: NicheService) {
-    //this.shopService.getShopFromUrl(this.shopList[number].id);
     console.log("constructeur");
     this.shopService.shopSelected$.subscribe((shop) => {
       console.log('shop : '+shop);
@@ -44,6 +43,11 @@ export class AdditionalShopInfoComponent implements OnInit {
     });
   }
 
+
+  /**
+   * Builds the attendance list
+   *
+   * */
   buildListFreq(){
     this.niches.forEach(niche=>{
       this.listFreq.push(niche.nbPersonneMoyenne);

@@ -42,6 +42,9 @@ export class VisitorInhabitantDisplayComponent {
     this.inhabitant = this.inhabitantService.currentInhabitant;
   }
 
+  /**
+   * This method is used to move an inhabitant to a shop
+   */
 
   move() {
 
@@ -67,10 +70,13 @@ export class VisitorInhabitantDisplayComponent {
     this.inhabitantService.logout();
   }
 
+  /**
+   * This method verifies an inhabitant authorization and in the right case, opens a dialog
+   *
+   * @param shop current shop
+   */
 
-
-  private getAutorisation(shop:Shop)
-  {
+  private getAutorisation(shop:Shop) {
     var autorisation=this.autorisationService.verifyAutorisationExist(shop.label, this.inhabitant.id)
 
     if (autorisation.length == 0)
@@ -78,6 +84,12 @@ export class VisitorInhabitantDisplayComponent {
       this.openAuthorisationDialog(shop,this.inhabitant);
     }
   }
+
+  /**
+   * This method is used to open the PopupVisitorInhabitantAutorisationComponent component in a dialog
+   * @param shop current shop
+   * @param inhabitant current inhabitant
+   */
 
   openAuthorisationDialog(shop,inhabitant) {
     const dialogRef = this.dialog.open(PopupVisitorInhabitantAutorisationComponent, {
@@ -96,6 +108,12 @@ export class VisitorInhabitantDisplayComponent {
     )
   }
 
+  /**
+   * This method is used to fetch promotions from the server and to take them into account
+   *
+   * @param shop current shop
+   */
+
   private getPromotionShop(shop: Shop) {
     const promos = shop.promotions;
 
@@ -104,6 +122,12 @@ export class VisitorInhabitantDisplayComponent {
     }
   }
 
+  /**
+   * This method open the NotificationPromotionComponent component in a dialog
+   *
+   * @param promos current promotions
+   * @param shop current shop
+   */
 
   openPromoDialog(promos, shop) {
     const dialogRef = this.dialog.open(NotificationPromotionComponent, {

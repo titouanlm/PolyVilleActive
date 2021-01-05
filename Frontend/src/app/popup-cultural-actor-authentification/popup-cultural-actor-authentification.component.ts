@@ -19,6 +19,10 @@ export class PopupCulturalActorAuthentificationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * This method authenticate a cultural actor in the system
+   */
+
   authenticate() {
     this.culturaActorService.authenticateActor(Number(this.number))
       .subscribe(

@@ -10,8 +10,11 @@ export class CondTempsBlock extends CustomBlock {
 
   }
 
-  defineBlock() {
+  /**
+   * Define a conditional Blockly block
+   */
 
+  defineBlock() {
     this.block.appendValueInput("nombre_clients")
       .setCheck("Number")
       .appendField("Declancher la promotion");
@@ -26,6 +29,7 @@ export class CondTempsBlock extends CustomBlock {
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }
+
   toXML() {
     return '<block type="Temps"></block>';
   }
@@ -34,14 +38,18 @@ export class CondTempsBlock extends CustomBlock {
     return 'Not implemented';
   }
 
-  toJavaScriptCode(block: CustomBlock): string | any[] {
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
+  toJavaScriptCode(block: CustomBlock): string | any[] {
     var value_temps = Blockly.JavaScript.valueToCode(block, 'nombre_clients', Blockly.JavaScript.ORDER_NONE);
     var dropdown_temps = this.block.getFieldValue('temps');
     var code ='var Cond=new Condition();\nCond.type=\'NB_CUSTOMERS\';\nCond.durée='+value_temps+'Cond.temps='+dropdown_temps+';\n';
     return code;
-
-
   }
 
   toLuaCode(block: CustomBlock): string | any[] {

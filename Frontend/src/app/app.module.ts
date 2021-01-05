@@ -45,6 +45,7 @@ import {CulturalActorEventsComponent} from "./cultural-actor-events/cultural-act
 import {DatePipe} from "@angular/common";
 import {EventListRatingComponent} from "./event-list-rating/event-list-rating.component";
 import { ParkingComponent } from './parking/parking.component';
+import {ParkingPlacesComponent} from "./parking-places/parking-places.component";
 
 
 
@@ -83,6 +84,7 @@ import { ParkingComponent } from './parking/parking.component';
     CulturalActorEventsComponent,
     EventListRatingComponent,
     ParkingComponent,
+    ParkingPlacesComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,6 +96,7 @@ import { ParkingComponent } from './parking/parking.component';
       {path: 'visitorinhabitant', component: VisitorInhabitantDisplayComponent},
       {path: 'seller', component: SellerDisplayComponent},
       {path: 'seller/shop-information', component: ShopInformationComponent},
+      {path: 'seller/shop-information/my-parking-places', component: ParkingPlacesComponent},
       {path: 'seller/shop-information/othersinformation', component: OthersInformationComponent},
       {path: 'seller/shop-information/othersinformation/itemstatistics', component: ItemStatisticsComponent},
       {path: 'seller/blockly', component: MyBlocksComponent},

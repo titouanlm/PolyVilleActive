@@ -8,6 +8,10 @@ export class DurationBlock extends CustomBlock {
     this.class = DurationBlock;
   }
 
+  /**
+   * Define a conditional Blockly block
+   */
+
   defineBlock() {
     this.block.appendDummyInput()
       .appendField("If the duration of the event is not from ")
@@ -26,6 +30,13 @@ export class DurationBlock extends CustomBlock {
   toXML() {
     return '<block type="eventDuration"></block>';
   }
+
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     const dayMin = this.block.getFieldValue('min');

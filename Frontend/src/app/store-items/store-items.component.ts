@@ -20,6 +20,14 @@ export class StoreItemsComponent implements OnInit {
   shops: Shop[];
   inhabitants: Inhabitant[];
 
+  /**
+   * The constructor initialize the page by fetching inhabitants data and shops data from the server
+   *
+   * @param shopService
+   * @param inhabitantService
+   * @param dialog the tool which is used to open dialog
+   */
+
   constructor(private shopService: ShopService,
               private inhabitantService: InhabitantService,
               public dialog: MatDialog) {
@@ -39,6 +47,10 @@ export class StoreItemsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * This method is used to open the ThanksComponent component in a dialog
+   */
+
   openThanksDialog(){
     const dialogRef = this.dialog.open(ThanksComponent, {
       width: '25%',
@@ -46,11 +58,19 @@ export class StoreItemsComponent implements OnInit {
     });
   }
 
+  /**
+   * This method is used to create an object in a inhabitant if not already done
+   */
+
   inhabitantControl(){
     if (this.shop.averagePresenceBeforePurchase == undefined) {
       this.shop.averagePresenceBeforePurchase = {numberOfPurchases: 0, numberOfPresence: 0};
     }
   }
+
+  /**
+   * This method is used to add inhabitant attendance to the shop
+   */
 
   addInhabitantAttendanceToShop(){
     if (this.inhabitant.positions != undefined) {
@@ -67,6 +87,10 @@ export class StoreItemsComponent implements OnInit {
     this.shop.averagePresenceBeforePurchase.numberOfPurchases++;
   }
 
+  /**
+   * This method is used to push items in a inhabitant
+   */
+
   addItemsToInhabitant(){
     if (this.inhabitant.objectPurchased == undefined){
       this.inhabitant.objectPurchased = [];
@@ -78,6 +102,10 @@ export class StoreItemsComponent implements OnInit {
 
   }
 
+  /**
+   * This method is used to recalculate an inhabitant attendance after taking into account his positions
+   */
+
   manageInhabitantAttendance(){
     this.inhabitant.positions = this.inhabitant.positions
       .filter((position) =>
@@ -87,6 +115,12 @@ export class StoreItemsComponent implements OnInit {
   addPurchaseToAShop(number: number){
     this.shopService.shopSelected.purchasedItems[number][1] = (Number(this.shopService.shopSelected.purchasedItems[number][1])+1).toString();
   }
+
+  /**
+   * Add an item to inhabitant, take into account consequences to a shop and push the whole into the server
+   *
+   * @param number number of an inhabitant
+   */
 
   purchase(number: number) {
     if (this.shop.purchasedItems != undefined && this.shop.purchasedItems.length != 0){
@@ -104,6 +138,10 @@ export class StoreItemsComponent implements OnInit {
       this.objectName = undefined;
     }
   }
+
+  /**
+   * This method is used to take into account the item purchasing inhabitant age
+   */
 
   updateNumberfSexfAge(){
     //0-14,15-29,30-44,45-59,60-74,75
@@ -131,6 +169,5 @@ export class StoreItemsComponent implements OnInit {
     else this.shop.numberOfPurchaseBySexRang[1]+=1;
 
       console.log(this.shop)
-
   }
 }

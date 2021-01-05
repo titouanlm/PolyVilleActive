@@ -51,6 +51,13 @@ export class ShopInformationComponent implements OnInit {
   doughnutChartData2: MultiDataSet=[[0,0]];
   doughnutChartType2: ChartType = 'doughnut';
 
+  /**
+   * The constructor is used to set up graphs related to this component
+   *
+   * @param shopService bring the ShopService in this component
+   * @param nicheService bring the NicheService in this component
+   */
+
   constructor(public shopService: ShopService, public nicheService: NicheService) {
     this.calculateShopRate();
     this.shopService.shopSelected$.subscribe((shop) => {
@@ -74,7 +81,9 @@ export class ShopInformationComponent implements OnInit {
     });
   }
 
-
+  /**
+   * This method determine the rate of a shop
+   */
 
   private calculateShopRate(){
     this.shopService.shopSelected$.subscribe((shop) =>
@@ -86,6 +95,10 @@ export class ShopInformationComponent implements OnInit {
     });
   }
 
+  /**
+   * ngOnInit use a periodic observable to call a function
+   */
+
   ngOnInit(): void {
     interval(20000)
       .pipe(takeWhile(() => true))
@@ -94,16 +107,28 @@ export class ShopInformationComponent implements OnInit {
       });
   }
 
+  /**
+   * This method determines the number of people close to a specific shop
+   */
+
   private calculateNbPeopleClose() {
     this.shopService.getNbPeopleClose()
       .subscribe(nb => this.nbPeopleClose = nb);
   }
+
+  /**
+   * This method build the attendance value of a shop
+   */
 
   buildListFreq(){
     this.niches.forEach(niche=>{
       this.listFreq.push(niche.nbPersonneMoyenne);
     })
   }
+
+  /**
+   * This method build different purchasing age of a shop
+   */
 
   computeAverageOfPurchaseByAgeRang(){
     let total=0;
@@ -117,6 +142,10 @@ export class ShopInformationComponent implements OnInit {
 
   }
 
+  /**
+   * This method calculates the shop purchase gender distribution
+   */
+
   computeAverageOfPurchaseBySexRang(){
     let total=0;
     this.shop.numberOfPurchaseBySexRang.forEach(nbr =>{
@@ -128,5 +157,7 @@ export class ShopInformationComponent implements OnInit {
     })
 
   }
+
+
 
 }

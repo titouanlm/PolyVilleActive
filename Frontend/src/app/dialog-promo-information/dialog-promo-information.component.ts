@@ -20,7 +20,6 @@ export class DialogPromoInformationComponent implements OnInit {
       .subscribe((promotion) =>{
         if (promotion.notifiedCustomersNumber != undefined && promotion.notifiedCustomersNumber.length!=0){
           this.number = promotion.customersNumberInterested.length/promotion.notifiedCustomersNumber.length;
-          //console.log(this.number)
         }
       })
   }

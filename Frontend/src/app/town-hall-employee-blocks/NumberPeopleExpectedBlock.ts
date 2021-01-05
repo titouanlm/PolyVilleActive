@@ -3,10 +3,15 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 declare var Blockly: any;
 
 export class NumberPeopleExpectedBlock extends CustomBlock {
+
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = NumberPeopleExpectedBlock;
   }
+
+  /**
+   * Define a conditional Blockly block
+   */
 
   defineBlock() {
     this.block.appendDummyInput()
@@ -24,6 +29,13 @@ export class NumberPeopleExpectedBlock extends CustomBlock {
   toXML() {
     return '<block type="nbPeopleExpected"></block>';
   }
+
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     const number_min = this.block.getFieldValue('min');

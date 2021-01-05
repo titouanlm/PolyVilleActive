@@ -21,11 +21,21 @@ export class ItemStatisticsComponent implements OnInit {
 
   }
 
+  /**
+   * Reset to 0 the number that are related to an object
+   */
+
   resetItemsNumber(){
     for (let i=0; i<this.items.length;i++){
       this.items[i][1] = "0";
     }
   }
+
+  /**
+   * This method is used to increment the corresponding value of an array depending on the array passed in parameter
+   *
+   * @param array an array that contains in first position the name of the item and in second position the shop id where the item was purchased
+   */
 
   incrementArray(array: string[][]){
     for (let p=0;p<array.length;p++){
@@ -37,6 +47,10 @@ export class ItemStatisticsComponent implements OnInit {
     }
   }
 
+  /**
+   *
+   * This method is used to fetch all inhabitants data from the server and then calculate the number of times an object has been purchased
+   */
   getAll(){
     this.inhabitantService.getAllInhabitants().subscribe((inhabitants) =>{
       this.inhabitantList = inhabitants;
@@ -49,6 +63,11 @@ export class ItemStatisticsComponent implements OnInit {
       }
     });
   }
+
+  /**
+   *
+   * This method is used to fetch all inhabitants data from the server and then calculate the number of times an object has been purchased by a male
+   */
 
   getMale(){
     this.inhabitantService.getAllInhabitants().subscribe((inhabitants) =>{
@@ -63,6 +82,11 @@ export class ItemStatisticsComponent implements OnInit {
       }
     });
   }
+
+  /**
+   *
+   * This method is used to fetch all inhabitants data from the server and then calculate the number of times an object has been purchased by a female
+   */
 
   getFemale(){
     this.inhabitantService.getAllInhabitants().subscribe((inhabitants) =>{

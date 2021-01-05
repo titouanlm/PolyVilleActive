@@ -13,6 +13,11 @@ export class CulturalEventBlock extends CustomBlock {
 
   }
 
+  /**
+   * Define Blocky's block that are used to create an event
+   *
+   */
+
   defineBlock() {
         this.block.appendDummyInput()
           .appendField("Event title      ")
@@ -48,6 +53,13 @@ export class CulturalEventBlock extends CustomBlock {
   toXML() {
     return '<block type="culturalEvent"></block>';
   }
+
+  /**
+   * This method is creating a code that is converted into a string from a Blockly block
+   *
+   * @param block a Blockly's block
+   * @return a string of code
+   */
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
       var text_titre = this.block.getFieldValue('Titre');

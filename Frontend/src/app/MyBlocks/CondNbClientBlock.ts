@@ -3,12 +3,15 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 declare var Blockly: any;
 
 export class CondNbClientBlock extends CustomBlock {
+
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = CondNbClientBlock;
-
-
   }
+
+  /**
+   * Define a conditional Blockly block
+   */
 
   defineBlock() {
 
@@ -24,6 +27,7 @@ export class CondNbClientBlock extends CustomBlock {
     this.block.setTooltip("");
     this.block.setHelpUrl("");
   }
+
   toXML() {
     return '<block type="NbClient"></block>';
   }
@@ -31,6 +35,13 @@ export class CondNbClientBlock extends CustomBlock {
   toDartCode(block: CustomBlock): string | any[] {
     return 'Not implemented';
   }
+
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var value_nombre_clients = Blockly.JavaScript.valueToCode(block, 'nombre_clients', Blockly.JavaScript.ORDER_NONE);

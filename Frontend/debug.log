@@ -1,2 +1,5 @@
 [0105/110812.747:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\boein\AppData\Local\Temp\karma-72503810\Crashpad\attachments\b3f5e8d2-9e18-49ec-a113-3e453cd9f7b9: Le chemin d’accès spécifié est introuvable. (0x3)
 [0105/111446.573:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\boein\AppData\Local\Temp\karma-907752\Crashpad\attachments\4cd1ee07-8ebb-4bfc-be41-c7c4769f2333: Le chemin d’accès spécifié est introuvable. (0x3)
+[0105/114254.893:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[0105/161500.314:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[0105/171850.571:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\boein\AppData\Local\Temp\karma-46127133\Crashpad\attachments\92adcb80-f845-410c-bdca-cea19c3d4364: Le chemin d’accès spécifié est introuvable. (0x3)

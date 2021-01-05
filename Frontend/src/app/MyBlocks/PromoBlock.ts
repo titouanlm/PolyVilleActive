@@ -9,6 +9,10 @@ export class PromoBlock extends CustomBlock {
     this.class = PromoBlock;
   }
 
+  /**
+   * Define conditionals block
+   */
+
   defineBlock() {
     this.block.appendStatementInput('PROMOTION')
       .setCheck(null)
@@ -28,12 +32,15 @@ export class PromoBlock extends CustomBlock {
     return 'Not implemented';
   }
 
-  toJavaScriptCode(block: CustomBlock): string | any[] {
-    var statements_promotion = Blockly.JavaScript.statementToCode(block, 'PROMOTION');
-    //var code='var promo=new Promotion();\n';
-    //var code="hello";
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
-    return statements_promotion;
+  toJavaScriptCode(block: CustomBlock): string | any[] {
+    return Blockly.JavaScript.statementToCode(block, 'PROMOTION');
   }
 
   toLuaCode(block: CustomBlock): string | any[] {

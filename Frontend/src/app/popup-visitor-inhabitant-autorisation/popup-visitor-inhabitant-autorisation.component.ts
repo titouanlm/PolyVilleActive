@@ -27,8 +27,11 @@ export class PopupVisitorInhabitantAutorisationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  Authorize()
-  {
+  /**
+   * Close the dialog and authorize a client to go further
+   */
+
+  Authorize() {
     this.autorisation.shopId=Number(this.data.shop.id);
     this.autorisation.inhabitantId=this.data.inhabitant.id;
     this.autorisationService.addAutorisation(this.autorisation);
@@ -36,8 +39,12 @@ export class PopupVisitorInhabitantAutorisationComponent implements OnInit {
 
   }
 
-  Refuse()
-  {
+  /**
+   * Close the dialog and refuse a client to go further
+   */
+
+
+  Refuse() {
     this.dialogRef.close('false');
   }
 

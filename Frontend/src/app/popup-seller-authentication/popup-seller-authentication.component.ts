@@ -21,6 +21,10 @@ export class PopupSellerAuthenticationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * This method authenticate a seller in the system
+   */
+
   authenticate(){
     this.sellerService.authenticateSeller(Number(this.number))
       .subscribe(

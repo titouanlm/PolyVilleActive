@@ -43,6 +43,10 @@ export class OthersInformationComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
+  /**
+   * Create a dialog to display the component DialogPromoInformationComponent
+   */
+
   displayPromotion(){
     this.promotionService.getPromotion(this.number).subscribe(next => {
         const dialogRef = this.dialog.open(DialogPromoInformationComponent, {
@@ -55,6 +59,10 @@ export class OthersInformationComponent implements OnInit, OnDestroy {
           this.error = 'unknown promotion'
       });
   }
+
+  /**
+   * Create a dialog to display the component InhabitantForSellerComponent
+   */
 
   displayInhabitant(){
     this.inhabitantService.authenticateInhabitant(Number(this.inhabitantId))
