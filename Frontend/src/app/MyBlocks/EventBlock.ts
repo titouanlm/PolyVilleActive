@@ -3,15 +3,17 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 declare var Blockly: any;
 
 export class EventBlock extends CustomBlock {
+
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = EventBlock;
-
-
   }
 
-  defineBlock() {
+  /**
+   * Define conditionals block
+   */
 
+  defineBlock() {
     this.block.appendDummyInput()
       .appendField("Titre")
       .appendField(new Blockly.FieldTextInput(""), "Titre");
@@ -40,6 +42,7 @@ export class EventBlock extends CustomBlock {
     this.block.setTooltip('');
     this.block.setHelpUrl('');
   }
+
   toXML() {
     return '<block type="Event"></block>';
   }
@@ -48,8 +51,14 @@ export class EventBlock extends CustomBlock {
     return 'Not implemented';
   }
 
-  toJavaScriptCode(block: CustomBlock): string | any[] {
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
+  toJavaScriptCode(block: CustomBlock): string | any[] {
     var text_titre = this.block.getFieldValue('Titre');
     var text_description = this.block.getFieldValue('Description');
     var text_datedebut = this.block.getFieldValue('DateDebut');
@@ -67,7 +76,6 @@ export class EventBlock extends CustomBlock {
               'this.event.endDate="'+text_datefin+'";\n'+
               'this.event.shopId='+text_numeromagasin+';\n'+
               'this.event.keywords="'+text_motscles+'";\n'+
-             // 'this.promotion.shopId='+text_numeromagasin+";\n"+
               statements_promotions +
               statements_notifications;}
     else {
@@ -78,7 +86,6 @@ export class EventBlock extends CustomBlock {
         'this.event.shopId='+text_numeromagasin+';\n'+
         statements_promotions +
         statements_notifications;}
-
 
     return code;
   }

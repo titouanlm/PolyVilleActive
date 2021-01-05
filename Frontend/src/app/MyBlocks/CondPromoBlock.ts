@@ -9,6 +9,10 @@ export class CondPromoBlock extends CustomBlock {
     this.class = CondPromoBlock;
   }
 
+  /**
+   * Define a conditional Blockly block
+   */
+
   defineBlock() {
     this.block.appendDummyInput()
       .appendField('Déclencher la promotion quand la condition sur')
@@ -28,6 +32,13 @@ export class CondPromoBlock extends CustomBlock {
   toDartCode(block: CustomBlock): string | any[] {
     return 'Not implemented';
   }
+
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var type_cond=this.block.getFieldValue('PROMO_CONDITION');

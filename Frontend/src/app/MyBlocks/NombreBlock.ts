@@ -9,6 +9,10 @@ export class NombreBlock extends CustomBlock {
 
   }
 
+  /**
+   * Define a conditional Blockly block
+   */
+
   defineBlock() {
     this.block.appendDummyInput()
       .appendField(new Blockly.FieldTextInput("0"), "nombre");
@@ -25,6 +29,13 @@ export class NombreBlock extends CustomBlock {
     return 'Not implemented';
   }
 
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block respecting operator precedence
+   */
+
   toJavaScriptCode(block: CustomBlock): string | any[] {
     var nombre = parseInt(this.block.getFieldValue('nombre'),10);
     // TODO: Assemble JavaScript into code variable.
@@ -32,7 +43,6 @@ export class NombreBlock extends CustomBlock {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
 
-   // return code;
   }
 
   toLuaCode(block: CustomBlock): string | any[] {

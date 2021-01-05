@@ -26,8 +26,14 @@ export class CulturalActorEventsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  status(date2,date3)
-  {
+  /**
+   *
+   * @param date2 start date
+   * @param date3 end date
+   * @return a string that tell if the passing input date parameters relate to either an already passed date, current date or coming date.
+   * */
+
+  status(date2,date3) {
     var date1 = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
     var d1=new Date(date1);
     var d2=new Date(date2);

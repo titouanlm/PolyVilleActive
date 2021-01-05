@@ -48,7 +48,8 @@ export class EventListRatingComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  getevents() {
+
+  /*getevents() {
     this.culturalActors.forEach(actor=>
     {
       this.culturalActorService.getCulturalEvents(String(actor.id));
@@ -60,7 +61,6 @@ export class EventListRatingComponent implements OnInit {
         })
       });
     })
-
-  }
+  }*/
 
 }

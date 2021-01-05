@@ -3,15 +3,17 @@ import {BlockMutator, CustomBlock} from 'ngx-blockly';
 declare var Blockly: any;
 
 export class NotifFrequenceBlock extends CustomBlock {
+
   constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
     super(type, block, blockMutator, ...args);
     this.class = NotifFrequenceBlock;
-
-
   }
 
-  defineBlock() {
+  /**
+   * Define conditionals block
+   */
 
+  defineBlock() {
     this.block.appendValueInput("durée")
       .setCheck("Number")
       .appendField("Envoyer la notification chaque");
@@ -34,14 +36,18 @@ export class NotifFrequenceBlock extends CustomBlock {
     return 'Not implemented';
   }
 
-  toJavaScriptCode(block: CustomBlock): string | any[] {
+  /**
+   * This method transform a block into code
+   *
+   * @param block Blockly's block considered
+   * @return a string code of a targetted block
+   */
 
+  toJavaScriptCode(block: CustomBlock): string | any[] {
     var value_frequence = Blockly.JavaScript.valueToCode(block, 'durée', Blockly.JavaScript.ORDER_NONE);
     var dropdown_temps = this.block.getFieldValue('temps');
     var code ='notif.frequence='+value_frequence+'notif.temps_frequence='+dropdown_temps+';\n';
     return code;
-
-
   }
 
   toLuaCode(block: CustomBlock): string | any[] {
