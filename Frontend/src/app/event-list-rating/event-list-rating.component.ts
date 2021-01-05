@@ -18,13 +18,20 @@ export class EventListRatingComponent implements OnInit {
   public culturalActors:CulturalActor[]=[];
 
   constructor(public culturalActorService: CulturalActorService, public inhabitantService: InhabitantService) {
+
+    this.culturalActorService.getCulturalEvents('123484');
+    this.culturalActorService.cevents$.subscribe((cevents) => {
+      this.eventList = cevents;
+    });
+  }
+/*
     this.culturalActorService.getCulturalActorsFromUrl();
     this.culturalActorService.cactors$.subscribe((cactors) =>{
       this.culturalActors = cactors;
-      this.getevents();
+      this.getevents();*/
       //console.log(this.culturalActors);
 
-    });
+   // });
 
 
     // this.culturalActors=[];
@@ -37,13 +44,11 @@ export class EventListRatingComponent implements OnInit {
 
      })*/
 
-  }
 
   ngOnInit(): void {
 
   }
-  getevents()
-  {
+  getevents() {
     this.culturalActors.forEach(actor=>
     {
       this.culturalActorService.getCulturalEvents(String(actor.id));

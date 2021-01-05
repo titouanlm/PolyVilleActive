@@ -44,7 +44,7 @@ export class MyBlocksComponent {
     new PromoBlock('promotion', null, null),
     new TitreBlock( 'titredescription' , null , null),
     new DatesBlock('dates' , null, null),
-    new CondPromoBlock( 'condpromo' , null , null)
+   // new CondPromoBlock( 'condpromo' , null , null)
   ];
   public customBlocks2: CustomBlock[] = [
     new EventBlock( 'Event' , null , null),
@@ -75,10 +75,10 @@ export class MyBlocksComponent {
 
   constructor(ngxToolboxBuilder: NgxToolboxBuilderService, public promotionService : PromotionService,public eventService: EventService) {
     ngxToolboxBuilder.nodes = [
-      new Category('Evenement', '#cf9700', this.customBlocks2, null),
+    //  new Category('Evenement', '#cf9700', this.customBlocks2, null),
       new Category('Promotion', '#0f4f35', this.customBlocks1, null),
-      new Category('Notification' , '#9c1309', this.customBlocks3, null),
-      new Category('Condition de Promotion' ,'#700520', this.customBlocks4 , null)
+    //  new Category('Notification' , '#9c1309', this.customBlocks3, null),
+    //  new Category('Condition de Promotion' ,'#700520', this.customBlocks4 , null)
     ];
     this.config.toolbox = ngxToolboxBuilder.build();
     this.config.scrollbars = false;
@@ -95,12 +95,12 @@ export class MyBlocksComponent {
 
   execute() {
    // this.event=null;
-    this.promotion=null;
+   // this.promotion=null;
     var code = Blockly.JavaScript.workspaceToCode(Blockly.mainWorkspace);
     // Blockly.mainWorkspace.newBlock(Blockly.mainWorkspace,'notification',1);
     try {
       eval(code);
-
+/*
       //CREATION D'UN EVENEMENT
       if(this.event!=null){
         console.log(this.event)
@@ -114,7 +114,7 @@ export class MyBlocksComponent {
           });
      // this.events=this.eventService.getShopEventsFromUrl(this.event.shopId+'');
    // this.events=this.eventService.getEvent(this.event.shopId+'',this.event.title)
-        console.log(this.event.title)
+        console.log(this.event.title)*/
         console.log("Hello")
     //    var idevent=this.eventService.getEvent(this.event.shopId+'',this.event.title).toString();
       //  console.log(idevent);
@@ -133,7 +133,7 @@ export class MyBlocksComponent {
             this.eventService.addNotification(this.event.shopId+'',this.event.id,notification)
           }
         )*/
-        }
+        //}
 
 
       //CREATION D'UNE PROMO
@@ -150,7 +150,7 @@ export class MyBlocksComponent {
       } catch (e) {
         alert(e);
       }
-    console.log(this.event.title)
+  //  console.log(this.event.title)
     console.log("Hello")
       console.log(code);
     }
