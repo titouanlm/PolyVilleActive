@@ -24,7 +24,15 @@
         44.47807
       ]
     ],
-    "gender": "Male"
+    "gender": "Male",
+    "currentReservation": {
+      "platNumber": "ZERTY4",
+      "heureDebut": "20:48",
+      "heureFin": "22:49",
+      "shopId": 1234569,
+      "place": "H3",
+      "shopName": "Quis Arcu Industries"
+    }
   },
   {
     "firstName": "Griffin",

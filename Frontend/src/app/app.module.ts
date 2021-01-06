@@ -46,6 +46,8 @@ import {DatePipe} from "@angular/common";
 import {EventListRatingComponent} from "./event-list-rating/event-list-rating.component";
 import { ParkingComponent } from './parking/parking.component';
 import {ParkingPlacesComponent} from "./parking-places/parking-places.component";
+import { ParkingServationComponent } from './parking-servation/parking-servation.component';
+import {MatCardModule} from "@angular/material/card";
 
 
 
@@ -85,6 +87,7 @@ import {ParkingPlacesComponent} from "./parking-places/parking-places.component"
     EventListRatingComponent,
     ParkingComponent,
     ParkingPlacesComponent,
+    ParkingServationComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,15 +108,16 @@ import {ParkingPlacesComponent} from "./parking-places/parking-places.component"
       {path: 'visitorinhabitant/shoprating/shop/items', component: StoreItemsComponent},
       {path: 'visitorinhabitant/shoprating/shop/additionalinfo', component: AdditionalShopInfoComponent},
       {path: 'visitorinhabitant/citycenterinformation', component: CityCenterInformationComponent},
-      {path: 'visitorinhabitant/eventrating',component: EventListRatingComponent},
+      {path: 'visitorinhabitant/eventrating', component: EventListRatingComponent},
       {path: 'cultural-actor', component: CulturalActorHomeComponent},
       {path: 'cultural-actor/blockly', component: CulturalActorBlocksComponent},
       {path: 'cultural-actor/events', component: CulturalActorEventsComponent},
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
       {path: 'town-hall-employee/blockly', component: TownHallEmployeeBlocksComponent},
       {path: 'parking', component: ParkingComponent},
-      { path: '**', redirectTo: '' },
-    ], { onSameUrlNavigation: 'reload', relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
+      {path: 'visitorinhabitant/reservation', component: ParkingServationComponent},
+      {path: '**', redirectTo: ''},
+    ], {onSameUrlNavigation: 'reload', relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
     NgxBlocklyModule,
     MatIconModule,
     MatButtonModule,
@@ -124,6 +128,7 @@ import {ParkingPlacesComponent} from "./parking-places/parking-places.component"
     ReactiveFormsModule,
     NgbRatingModule,
     ChartsModule,
+    MatCardModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

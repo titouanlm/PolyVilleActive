@@ -31,5 +31,6 @@ export interface Shop{
 
 interface nameAvailabilityType{
   name : string,
-  availability : boolean
+  availability : boolean,
+  reserved : boolean
 }

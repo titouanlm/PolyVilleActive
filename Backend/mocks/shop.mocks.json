@@ -158,8 +158,7 @@
           "availability": "true"
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -318,8 +317,7 @@
           "availability": "true"
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -382,7 +380,33 @@
         "1"
       ]
     ],
-    "promotions": [],
+    "promotions": [
+      {
+        "title": "Basket 30% off",
+        "description": "Come and enjoy ",
+        "startDate": "2021-01-04",
+        "endDate": "2021-01-11",
+        "customersNumberInterested": [],
+        "notifiedCustomersNumber": [
+          1987,
+          1867
+        ],
+        "shopId": 1234569,
+        "id": 1609755098285
+      },
+      {
+        "title": "Come",
+        "description": "-99%",
+        "startDate": "2021-01-04",
+        "endDate": "2021-01-05",
+        "customersNumberInterested": [],
+        "notifiedCustomersNumber": [
+          1867
+        ],
+        "shopId": 1234569,
+        "id": 1609756485177
+      }
+    ],
     "numberOfPurchaseByAgeRang": [
       9,
       39,
@@ -399,50 +423,65 @@
       "numberOfPurchases": 16,
       "numberOfPresence": 18
     },
-    "parkingSpace":{
-      "nbrPlace":12,
-      "nbrPlaceFree":12,
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 9,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
-      "places":[
-        {"name":"H1",
-          "availability":"true"},
-
-        {"name":"H2",
-          "availability":"true"},
-
-        {"name":"H3",
-          "availability":"true"},
-
-        {"name":"H4",
-          "availability":"true"},
-
-        {"name":"H5",
-          "availability":"true"},
-
-        {"name":"H6",
-          "availability":"true"},
-
-        {"name":"H7",
-          "availability":"true"},
-
-        {"name":"H8",
-          "availability":"true"},
-
-        {"name":"H9",
-          "availability":"true"},
-
-        {"name":"H10",
-          "availability":"true"},
-
-        {"name":"H11",
-          "availability":"true"},
-
-        {"name":"H12",
-          "availability":"true"}
+      "places": [
+        {
+          "name": "H1",
+          "availability": "true",
+          "reserved": true
+        },
+        {
+          "name": "H2",
+          "availability": "true",
+          "reserved": true
+        },
+        {
+          "name": "H3",
+          "availability": "true",
+          "reserved": true
+        },
+        {
+          "name": "H4",
+          "availability": "true"
+        },
+        {
+          "name": "H5",
+          "availability": "true"
+        },
+        {
+          "name": "H6",
+          "availability": "true"
+        },
+        {
+          "name": "H7",
+          "availability": "true"
+        },
+        {
+          "name": "H8",
+          "availability": "true"
+        },
+        {
+          "name": "H9",
+          "availability": "true"
+        },
+        {
+          "name": "H10",
+          "availability": "true"
+        },
+        {
+          "name": "H11",
+          "availability": "true"
+        },
+        {
+          "name": "H12",
+          "availability": "true"
+        }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -469,64 +508,62 @@
       351
     ],
     "parkingSpace": {
-    "nbrPlace": 12,
-    "nbrPlaceFree": 12,
-    "nbrPlaceUnassignable": 0,
-    "nbrPlaceUnassignableFree": 0,
-    "places": [
-      {
-        "name": "I1",
-        "availability": "true"
-      },
-      {
-        "name": "I2",
-        "availability": "true"
-      },
-      {
-        "name": "I3",
-        "availability": "true"
-      },
-      {
-        "name": "I4",
-        "availability": "true"
-      },
-      {
-        "name": "I5",
-        "availability": "true"
-      },
-      {
-        "name": "I6",
-        "availability": "true"
-      },
-      {
-        "name": "I7",
-        "availability": "true"
-      },
-      {
-        "name": "I8",
-        "availability": "true"
-      },
-      {
-        "name": "I9",
-        "availability": "true"
-      },
-      {
-        "name": "I10",
-        "availability": "true"
-      },
-      {
-        "name": "I11",
-        "availability": "true"
-      },
-      {
-        "name": "I12",
-        "availability": "true"
-      }
-    ],
-    "placesUnassignable": [
-    ]
-  }
-
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
+      "places": [
+        {
+          "name": "I1",
+          "availability": "true"
+        },
+        {
+          "name": "I2",
+          "availability": "true"
+        },
+        {
+          "name": "I3",
+          "availability": "true"
+        },
+        {
+          "name": "I4",
+          "availability": "true"
+        },
+        {
+          "name": "I5",
+          "availability": "true"
+        },
+        {
+          "name": "I6",
+          "availability": "true"
+        },
+        {
+          "name": "I7",
+          "availability": "true"
+        },
+        {
+          "name": "I8",
+          "availability": "true"
+        },
+        {
+          "name": "I9",
+          "availability": "true"
+        },
+        {
+          "name": "I10",
+          "availability": "true"
+        },
+        {
+          "name": "I11",
+          "availability": "true"
+        },
+        {
+          "name": "I12",
+          "availability": "true"
+        }
+      ],
+      "placesUnassignable": []
+    }
   },
   {
     "label": "Nec Euismod In Associates",
@@ -660,8 +697,7 @@
           "availability": "true"
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -812,8 +848,7 @@
           "availability": "true"
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -894,8 +929,7 @@
           "availability": "true"
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -1030,8 +1064,7 @@
           "availability": "true"
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -1112,8 +1145,7 @@
           "availability": "true"
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -1260,8 +1292,7 @@
           "availability": "true"
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -1342,8 +1373,7 @@
           "availability": "true"
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -1482,8 +1512,7 @@
           "availability": "true"
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   }
 ]

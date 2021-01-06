@@ -4,7 +4,6 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {BehaviorSubject} from "rxjs";
 import {Shop} from "../models/shop.model";
-import {Niche} from "../models/niche.model";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +13,8 @@ export class InhabitantService {
 
   public currentInhabitant: Inhabitant;
   public inhabitant$: BehaviorSubject<Inhabitant>;
+  public currentInhabitant$: BehaviorSubject<Inhabitant>;
+
 
   /*public inhabitants: Inhabitant[];
   public inhabitants$: BehaviorSubject<Inhabitant[]>;*/
@@ -25,6 +26,8 @@ export class InhabitantService {
   constructor(private http: HttpClient) {
     //this.currentInhabitant = JSON.parse(localStorage.getItem('currentInhabitant'));
     this.inhabitant$ = new BehaviorSubject<Inhabitant>(this.currentInhabitant);
+    this.currentInhabitant$= new BehaviorSubject<Inhabitant>(this.currentInhabitant);
+
   }
 
   authenticateInhabitant(inhabitantNumber: number){
@@ -34,6 +37,7 @@ export class InhabitantService {
         localStorage.setItem('currentInhabitant', JSON.stringify(inhabitant));
         this.currentInhabitant = inhabitant;
         this.inhabitant$.next(this.currentInhabitant);
+        this.currentInhabitant$.next(this.currentInhabitant);
         return inhabitant;
       }));
   }
@@ -59,7 +63,10 @@ export class InhabitantService {
   }
 
   updateInhabitant(inhabitant: Inhabitant){
-    this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/'+inhabitant.id, inhabitant).subscribe();
+    this.http.put<Inhabitant>('http://localhost:9428/api/inhabitants/'+inhabitant.id, inhabitant).subscribe(inhab =>{
+      this.currentInhabitant=inhab;
+      this.currentInhabitant$.next(this.currentInhabitant)
+    });
   }
 
 
