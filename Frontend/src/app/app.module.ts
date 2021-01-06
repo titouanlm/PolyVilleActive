@@ -125,7 +125,7 @@ import {ParkingPlacesComponent} from "./parking-places/parking-places.component"
     NgbRatingModule,
     ChartsModule,
   ],
-  providers: [DatePipe, MatDialogRef],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
   exports: [RouterModule],
   entryComponents: [PopupVisitorInhabitantAuthenticationComponent,ThanksComponent],
