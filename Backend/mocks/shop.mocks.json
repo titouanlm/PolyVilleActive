@@ -610,7 +610,7 @@
       "places": [
         {
           "name": "J1",
-          "availability": true
+          "availability": false
         },
         {
           "name": "J2",
