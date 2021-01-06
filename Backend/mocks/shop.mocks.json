@@ -316,7 +316,33 @@
         "1"
       ]
     ],
-    "promotions": [],
+    "promotions": [
+      {
+        "title": "Basket 30% off",
+        "description": "Come and enjoy ",
+        "startDate": "2021-01-04",
+        "endDate": "2021-01-11",
+        "customersNumberInterested": [],
+        "notifiedCustomersNumber": [
+          1987,
+          1867
+        ],
+        "shopId": 1234569,
+        "id": 1609755098285
+      },
+      {
+        "title": "Come",
+        "description": "-99%",
+        "startDate": "2021-01-04",
+        "endDate": "2021-01-05",
+        "customersNumberInterested": [],
+        "notifiedCustomersNumber": [
+          1867
+        ],
+        "shopId": 1234569,
+        "id": 1609756485177
+      }
+    ],
     "numberOfPurchaseByAgeRang": [
       9,
       39,
@@ -333,11 +359,13 @@
       "numberOfPurchases": 16,
       "numberOfPresence": 18
     },
-    "parkingSpace":{
-      "nbrPlace":12,
-      "nbrPlaceFree":12,
+    "parkingSpace": {
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
+
+      "placesUnassignable": [],
       "places":[
         {"name":"H1",
           "availability":true},
@@ -350,8 +378,6 @@
 
         {"name":"H4",
           "availability":true}
-      ],
-      "placesUnassignable": [
       ]
     }
   },
@@ -379,8 +405,8 @@
       351
     ],
     "parkingSpace": {
-    "nbrPlace": 12,
-    "nbrPlaceFree": 12,
+    "nbrPlace": 4,
+    "nbrPlaceFree": 4,
     "nbrPlaceUnassignable": 0,
     "nbrPlaceUnassignableFree": 0,
     "places": [
@@ -404,7 +430,6 @@
     "placesUnassignable": [
     ]
   }
-
   },
   {
     "label": "Nec Euismod In Associates",
@@ -625,8 +650,7 @@
           "availability": true
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -827,8 +851,7 @@
           "availability": true
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {
@@ -943,8 +966,7 @@
           "availability": true
         }
       ],
-      "placesUnassignable": [
-      ]
+      "placesUnassignable": []
     }
   },
   {

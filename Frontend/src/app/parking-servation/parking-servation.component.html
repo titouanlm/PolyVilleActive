@@ -1,0 +1,53 @@
+<table>
+  <tr>
+  <td>
+    <form [formGroup]="reservationForm">
+
+      <fieldset>
+        <legend> Reservation de place de parking : </legend>
+
+        <label for="platNumber">Votre numéro de plaque :</label>
+        <input type="text" size="20"
+               maxlength="40" value="" id="platNumber" [formControlName]="'platNumber'" required="required" [ngClass]="{ 'is-invalid': submitted}" />
+
+        <label for="hdeb">Heure de debut de la reservation :</label>
+        <input type="time" size="20"
+               maxlength="40" value="" id="hdeb" [formControlName]="'heureDebut'" required="required" [ngClass]="{ 'is-invalid': submitted}"/>
+
+        <label for="hfin">Heure de fin de la reservation :</label>
+        <input type="time" size="20"
+               maxlength="40" value="" id="hfin" [formControlName]="'heureFin'" required="required" [ngClass]="{ 'is-invalid': submitted}"/>
+
+        <label for="shop">Magasin lié à la réservation :</label>
+        <select  id="shop" [formControlName]="'shopId'">
+          <option *ngFor="let shop of shops; let i=index" value="{{shop.id}}"> {{shop.label}}</option>
+        </select>
+      </fieldset>
+
+      <p>
+        <input type="submit" value="Reserve" (click)="makeReservation()" />
+        <input type="reset" (click)="onReset()" value="Abort" />
+      </p>
+
+    </form>
+    </td>
+    <td>
+      <div *ngIf="inhabitant.currentReservation">
+        <mat-card class="mat-elevation-z5">
+          <mat-card-header>
+            <mat-card-title class="title">You have a parking space reservation in progress.
+              Your reservation is linked to the shop {{inhabitant.currentReservation.shopName}} from {{inhabitant.currentReservation.heureDebut}} to
+              {{inhabitant.currentReservation.heureFin}}. They will be happy to see you make a purchase.</mat-card-title>
+            <mat-card-subtitle>Reserved place : {{inhabitant.currentReservation.place}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>See you... </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </td>
+  </tr>
+    </table>
