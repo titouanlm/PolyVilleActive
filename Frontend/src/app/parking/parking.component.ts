@@ -18,9 +18,7 @@ export class ParkingComponent implements OnInit {
       this.shops = shops;
       if(this.shops && test){
         this.shops.forEach((shop) =>{
-          if(shop.parkingSpace){
             this.places = this.places.concat(shop.parkingSpace.places);
-          }
         })
         test =false;
       }
