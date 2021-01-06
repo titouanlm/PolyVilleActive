@@ -332,6 +332,51 @@
     "averagePresenceBeforePurchase": {
       "numberOfPurchases": 16,
       "numberOfPresence": 18
+    },
+    "parkingSpace":{
+      "nbrPlace":12,
+      "nbrPlaceFree":12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
+      "places":[
+        {"name":"H1",
+          "availability":"true"},
+
+        {"name":"H2",
+          "availability":"true"},
+
+        {"name":"H3",
+          "availability":"true"},
+
+        {"name":"H4",
+          "availability":"true"},
+
+        {"name":"H5",
+          "availability":"true"},
+
+        {"name":"H6",
+          "availability":"true"},
+
+        {"name":"H7",
+          "availability":"true"},
+
+        {"name":"H8",
+          "availability":"true"},
+
+        {"name":"H9",
+          "availability":"true"},
+
+        {"name":"H10",
+          "availability":"true"},
+
+        {"name":"H11",
+          "availability":"true"},
+
+        {"name":"H12",
+          "availability":"true"}
+      ],
+      "placesUnassignable": [
+      ]
     }
   },
   {
@@ -356,7 +401,66 @@
     "numberOfPurchaseBySexRang": [
       16,
       351
+    ],
+    "parkingSpace": {
+    "nbrPlace": 12,
+    "nbrPlaceFree": 12,
+    "nbrPlaceUnassignable": 0,
+    "nbrPlaceUnassignableFree": 0,
+    "places": [
+      {
+        "name": "I1",
+        "availability": "true"
+      },
+      {
+        "name": "I2",
+        "availability": "true"
+      },
+      {
+        "name": "I3",
+        "availability": "true"
+      },
+      {
+        "name": "I4",
+        "availability": "true"
+      },
+      {
+        "name": "I5",
+        "availability": "true"
+      },
+      {
+        "name": "I6",
+        "availability": "true"
+      },
+      {
+        "name": "I7",
+        "availability": "true"
+      },
+      {
+        "name": "I8",
+        "availability": "true"
+      },
+      {
+        "name": "I9",
+        "availability": "true"
+      },
+      {
+        "name": "I10",
+        "availability": "true"
+      },
+      {
+        "name": "I11",
+        "availability": "true"
+      },
+      {
+        "name": "I12",
+        "availability": "true"
+      }
+    ],
+    "placesUnassignable": [
     ]
+  }
+
   },
   {
     "label": "Nec Euismod In Associates",
@@ -553,7 +657,65 @@
     "numberOfPurchaseBySexRang": [
       195,
       181
-    ]
+    ],
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
+      "places": [
+        {
+          "name": "J1",
+          "availability": "true"
+        },
+        {
+          "name": "J2",
+          "availability": "true"
+        },
+        {
+          "name": "J3",
+          "availability": "true"
+        },
+        {
+          "name": "J4",
+          "availability": "true"
+        },
+        {
+          "name": "J5",
+          "availability": "true"
+        },
+        {
+          "name": "J6",
+          "availability": "true"
+        },
+        {
+          "name": "J7",
+          "availability": "true"
+        },
+        {
+          "name": "J8",
+          "availability": "true"
+        },
+        {
+          "name": "J9",
+          "availability": "true"
+        },
+        {
+          "name": "J10",
+          "availability": "true"
+        },
+        {
+          "name": "J11",
+          "availability": "true"
+        },
+        {
+          "name": "J12",
+          "availability": "true"
+        }
+      ],
+      "placesUnassignable": [
+      ]
+    }
   },
   {
     "label": "At Associates",
@@ -729,7 +891,65 @@
     "numberOfPurchaseBySexRang": [
       9,
       259
-    ]
+    ],
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
+      "places": [
+        {
+          "name": "K1",
+          "availability": "true"
+        },
+        {
+          "name": "K2",
+          "availability": "true"
+        },
+        {
+          "name": "K3",
+          "availability": "true"
+        },
+        {
+          "name": "K4",
+          "availability": "true"
+        },
+        {
+          "name": "K5",
+          "availability": "true"
+        },
+        {
+          "name": "K6",
+          "availability": "true"
+        },
+        {
+          "name": "K7",
+          "availability": "true"
+        },
+        {
+          "name": "K8",
+          "availability": "true"
+        },
+        {
+          "name": "K9",
+          "availability": "true"
+        },
+        {
+          "name": "K10",
+          "availability": "true"
+        },
+        {
+          "name": "K11",
+          "availability": "true"
+        },
+        {
+          "name": "K12",
+          "availability": "true"
+        }
+      ],
+      "placesUnassignable": [
+      ]
+    }
   },
   {
     "label": "Est Corporation",
@@ -819,7 +1039,65 @@
     "numberOfPurchaseBySexRang": [
       275,
       24
-    ]
+    ],
+    "parkingSpace": {
+      "nbrPlace": 12,
+      "nbrPlaceFree": 12,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
+      "places": [
+        {
+          "name": "L1",
+          "availability": "true"
+        },
+        {
+          "name": "L2",
+          "availability": "true"
+        },
+        {
+          "name": "L3",
+          "availability": "true"
+        },
+        {
+          "name": "L4",
+          "availability": "true"
+        },
+        {
+          "name": "L5",
+          "availability": "true"
+        },
+        {
+          "name": "L6",
+          "availability": "true"
+        },
+        {
+          "name": "L7",
+          "availability": "true"
+        },
+        {
+          "name": "L8",
+          "availability": "true"
+        },
+        {
+          "name": "L9",
+          "availability": "true"
+        },
+        {
+          "name": "L10",
+          "availability": "true"
+        },
+        {
+          "name": "L11",
+          "availability": "true"
+        },
+        {
+          "name": "L12",
+          "availability": "true"
+        }
+      ],
+      "placesUnassignable": [
+      ]
+    }
   },
   {
     "label": "Dui Nec Tempus Associates",

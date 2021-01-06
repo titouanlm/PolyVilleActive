@@ -12,24 +12,24 @@ import { SellerDisplayComponent } from './seller-display/seller-display.componen
 import { MyBlocksComponent} from './MyBlocks/MyBlocks.component';
 import { ShopInformationComponent } from './shop-information/shop-information.component';
 import { PopupVisitorInhabitantAuthenticationComponent } from './popup-visitor-inhabitant-authentication/popup-visitor-inhabitant-authentication.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { PopupSellerAuthenticationComponent } from './popup-seller-authentication/popup-seller-authentication.component';
-import {ShopListRatingComponent} from "./shop-list-rating/shop-list-rating.component";
-import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
+import { ShopListRatingComponent} from "./shop-list-rating/shop-list-rating.component";
+import { NgbRatingModule } from "@ng-bootstrap/ng-bootstrap";
 import { ShopRatingComponent } from './shop-rating/shop-rating.component';
-import {ChartsModule} from "ng2-charts";
+import { ChartsModule } from "ng2-charts";
 import { NotificationPromotionComponent } from './notification-promotion/notification-promotion.component';
 import { AdditionalShopInfoComponent } from './additional-shop-info/additional-shop-info.component';
 import { CityCenterInformationComponent } from './city-center-information/city-center-information.component';
 import { OthersInformationComponent } from './others-information/others-information.component';
 import { DialogPromoInformationComponent } from './dialog-promo-information/dialog-promo-information.component';
-import {CulturalActorBlocksComponent} from "./CulturalActorBlocks/CulturalActorBlocks.component";
+import { CulturalActorBlocksComponent } from "./CulturalActorBlocks/CulturalActorBlocks.component";
 import { TownHallEmployeeBlocksComponent } from './town-hall-employee-blocks/town-hall-employee-blocks.component';
 import { ThanksComponent } from './thanks/thanks.component';
 import { InhabitantForSellerComponent } from './inhabitant-for-seller/inhabitant-for-seller.component';
@@ -112,7 +112,7 @@ import {ParkingPlacesComponent} from "./parking-places/parking-places.component"
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
       {path: 'town-hall-employee/blockly', component: TownHallEmployeeBlocksComponent},
       {path: 'parking', component: ParkingComponent},
-      /*{ path: '**', redirectTo: '' }*/
+      { path: '**', redirectTo: '' },
     ], { onSameUrlNavigation: 'reload', relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
     NgxBlocklyModule,
     MatIconModule,
@@ -123,11 +123,11 @@ import {ParkingPlacesComponent} from "./parking-places/parking-places.component"
     HttpClientModule,
     ReactiveFormsModule,
     NgbRatingModule,
-    ChartsModule
+    ChartsModule,
   ],
-  providers: [ DatePipe],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
-  exports: [RouterModule/*, NgbdRatingBasic*/],
+  exports: [RouterModule],
   entryComponents: [PopupVisitorInhabitantAuthenticationComponent,ThanksComponent],
 })
 

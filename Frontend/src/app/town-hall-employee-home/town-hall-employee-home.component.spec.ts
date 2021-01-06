@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TownHallEmployeeHomeComponent } from './town-hall-employee-home.component';
+import {HttpClient} from "@angular/common/http";
 
 describe('TownHallEmployeeHomeComponent', () => {
   let component: TownHallEmployeeHomeComponent;
@@ -8,7 +9,8 @@ describe('TownHallEmployeeHomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TownHallEmployeeHomeComponent ]
+      declarations: [ TownHallEmployeeHomeComponent ],
+      providers: [{provide: HttpClient, useValue: {}}]
     })
     .compileComponents();
   });

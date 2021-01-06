@@ -39,6 +39,7 @@ export class PromotionService {
   }
 
   getPromotions() {
+    if (this.currentSeller != undefined)
     this.http.get<Promotion[]>('http://localhost:9428/api/shops/'+this.currentSeller.shopId +'/promotions').subscribe((promos) => {
       this.promotions=promos;
       this.promotions$.next(promos);
@@ -46,6 +47,7 @@ export class PromotionService {
   }
 
   getPromotion(promoId: number) {
+    if (this.currentSeller != undefined)
     return this.http.get<Promotion>('http://localhost:9428/api/shops/'+this.currentSeller.shopId +'/promotions/'+promoId,this.httpOptions)
       .pipe(map((promotion) => {
         return promotion;
@@ -56,6 +58,7 @@ export class PromotionService {
     this.currentSeller = JSON.parse(localStorage.getItem('currentSeller'));
     promo.customersNumberInterested =[];
     promo.notifiedCustomersNumber = [];
+    if (this.currentSeller != undefined)
     return this.http.post<Promotion>(serverUrl + '/shops/' + this.currentSeller.shopId +'/promotions',promo,this.httpOptions)
       .pipe(map(promoCreated => {
         this.getPromotions();
@@ -64,8 +67,10 @@ export class PromotionService {
   }
 
   updatePromotion(promo: Promotion) {
-    const url = 'http://localhost:9428/api/shops/' +this.currentSeller.shopId+ '/promotions/' + promo.id ;
-    this.http.put<Promotion>(url,promo,this.httpOptions).subscribe();
+    if (this.currentSeller != undefined){
+      const url = 'http://localhost:9428/api/shops/' +this.currentSeller.shopId+ '/promotions/' + promo.id ;
+      this.http.put<Promotion>(url,promo,this.httpOptions).subscribe();
+    }
   }
 
 }

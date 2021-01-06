@@ -16,6 +16,7 @@ export class DialogPromoInformationComponent implements OnInit {
   constructor(private promotionService: PromotionService,
               @Inject(MAT_DIALOG_DATA) public data: DialogData2) {
     console.log(this.data.number2);
+    if (this.promotionService.getPromotion(this.data.number2) != undefined)
     this.promotionService.getPromotion(this.data.number2)
       .subscribe((promotion) =>{
         if (promotion.notifiedCustomersNumber != undefined && promotion.notifiedCustomersNumber.length!=0){

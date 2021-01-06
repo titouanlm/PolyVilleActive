@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShopRatingComponent } from './shop-rating.component';
+import {MatDialogRef} from "@angular/material/dialog";
+import {HttpClient} from "@angular/common/http";
 
 describe('ShopRatingComponent', () => {
   let component: ShopRatingComponent;
@@ -8,7 +10,8 @@ describe('ShopRatingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShopRatingComponent ]
+      declarations: [ ShopRatingComponent ],
+      providers: [{provide: MatDialogRef, useValue: {}},{provide: HttpClient, useValue: {}}]
     })
     .compileComponents();
   });

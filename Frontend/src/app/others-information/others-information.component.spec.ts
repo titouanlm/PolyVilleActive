@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OthersInformationComponent } from './others-information.component';
+import {MatDialog} from "@angular/material/dialog";
+import {HttpClient} from "@angular/common/http";
 
 describe('PromotionInformationComponent', () => {
   let component: OthersInformationComponent;
@@ -8,7 +10,8 @@ describe('PromotionInformationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OthersInformationComponent ]
+      declarations: [ OthersInformationComponent ],
+      providers: [{provide: MatDialog, useValue: {}},{provide: HttpClient, useValue: {}}],
     })
     .compileComponents();
   });

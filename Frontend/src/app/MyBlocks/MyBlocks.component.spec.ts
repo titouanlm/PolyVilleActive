@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MyBlocksComponent } from './MyBlocks.component';
+import {HttpClient} from "@angular/common/http";
+import {NgxToolboxBuilderService} from "ngx-blockly";
+import {MatDialogRef} from "@angular/material/dialog";
 
 describe('MyBlocks', () => {
   let component: MyBlocksComponent;
@@ -8,7 +11,8 @@ describe('MyBlocks', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MyBlocksComponent ]
+      declarations: [ MyBlocksComponent ],
+      providers: [{provide: NgxToolboxBuilderService, useValue: {}},{provide: HttpClient, useValue: {}}]
     })
       .compileComponents();
   });

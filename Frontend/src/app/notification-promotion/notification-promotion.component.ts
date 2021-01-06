@@ -22,16 +22,20 @@ export class NotificationPromotionComponent implements OnInit {
               public inhabitantService: InhabitantService,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) {
 
-    this.idCurrentInhabitant = this.inhabitantService.currentInhabitant.id;
+    if (this.inhabitantService.currentInhabitant != undefined){
+      this.idCurrentInhabitant = this.inhabitantService.currentInhabitant.id;
+    }
     let i=0;
     this.answers = [];
-    this.data.promotions.forEach((promotion) => {
-      if (promotion.customersNumberInterested != undefined && !promotion.notifiedCustomersNumber.includes(this.idCurrentInhabitant)){
-        promotion.notifiedCustomersNumber.push(this.idCurrentInhabitant);
-        this.promotionService.updatePromotion(promotion);
-      }
-      this.answers[i++] = false;
-    });
+    if (this.data.promotions != undefined){
+      this.data.promotions.forEach((promotion) => {
+        if (promotion.customersNumberInterested != undefined && !promotion.notifiedCustomersNumber.includes(this.idCurrentInhabitant)){
+          promotion.notifiedCustomersNumber.push(this.idCurrentInhabitant);
+          this.promotionService.updatePromotion(promotion);
+        }
+        this.answers[i++] = false;
+      });
+    }
   }
 
   ngOnInit(): void {

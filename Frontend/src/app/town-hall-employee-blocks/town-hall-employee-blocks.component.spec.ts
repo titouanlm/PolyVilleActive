@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TownHallEmployeeBlocksComponent } from './town-hall-employee-blocks.component';
+import {MatDialogRef} from "@angular/material/dialog";
+import {Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import {NgxToolboxBuilderService} from "ngx-blockly";
 
 describe('MayorBlocksComponent', () => {
   let component: TownHallEmployeeBlocksComponent;
@@ -8,7 +12,8 @@ describe('MayorBlocksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TownHallEmployeeBlocksComponent ]
+      declarations: [ TownHallEmployeeBlocksComponent ],
+      providers: [{provide: NgxToolboxBuilderService, useValue: {}},{provide: HttpClient, useValue: {}}]
     })
     .compileComponents();
   });
