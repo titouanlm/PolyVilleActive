@@ -610,51 +610,19 @@
       "places": [
         {
           "name": "J1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "J2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "J3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "J4",
-          "availability": "true"
-        },
-        {
-          "name": "J5",
-          "availability": "true"
-        },
-        {
-          "name": "J6",
-          "availability": "true"
-        },
-        {
-          "name": "J7",
-          "availability": "true"
-        },
-        {
-          "name": "J8",
-          "availability": "true"
-        },
-        {
-          "name": "J9",
-          "availability": "true"
-        },
-        {
-          "name": "J10",
-          "availability": "true"
-        },
-        {
-          "name": "J11",
-          "availability": "true"
-        },
-        {
-          "name": "J12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": [
