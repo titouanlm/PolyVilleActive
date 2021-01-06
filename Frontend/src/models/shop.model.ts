@@ -29,7 +29,7 @@ export interface Shop{
   }
 }
 
-interface nameAvailabilityType{
+export interface nameAvailabilityType{
   name : string,
   availability : boolean,
   reserved : boolean

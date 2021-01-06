@@ -104,58 +104,26 @@
       106
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "G1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "G2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "G3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "G4",
-          "availability": "true"
-        },
-        {
-          "name": "G5",
-          "availability": "true"
-        },
-        {
-          "name": "G6",
-          "availability": "true"
-        },
-        {
-          "name": "G7",
-          "availability": "true"
-        },
-        {
-          "name": "G8",
-          "availability": "true"
-        },
-        {
-          "name": "G9",
-          "availability": "true"
-        },
-        {
-          "name": "G10",
-          "availability": "true"
-        },
-        {
-          "name": "G11",
-          "availability": "true"
-        },
-        {
-          "name": "G12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": []
@@ -263,58 +231,26 @@
       114
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "F1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "F2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "F3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "F4",
-          "availability": "true"
-        },
-        {
-          "name": "F5",
-          "availability": "true"
-        },
-        {
-          "name": "F6",
-          "availability": "true"
-        },
-        {
-          "name": "F7",
-          "availability": "true"
-        },
-        {
-          "name": "F8",
-          "availability": "true"
-        },
-        {
-          "name": "F9",
-          "availability": "true"
-        },
-        {
-          "name": "F10",
-          "availability": "true"
-        },
-        {
-          "name": "F11",
-          "availability": "true"
-        },
-        {
-          "name": "F12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": []
@@ -424,64 +360,25 @@
       "numberOfPresence": 18
     },
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 9,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
-      "places": [
-        {
-          "name": "H1",
-          "availability": "true",
-          "reserved": true
-        },
-        {
-          "name": "H2",
-          "availability": "true",
-          "reserved": true
-        },
-        {
-          "name": "H3",
-          "availability": "true",
-          "reserved": true
-        },
-        {
-          "name": "H4",
-          "availability": "true"
-        },
-        {
-          "name": "H5",
-          "availability": "true"
-        },
-        {
-          "name": "H6",
-          "availability": "true"
-        },
-        {
-          "name": "H7",
-          "availability": "true"
-        },
-        {
-          "name": "H8",
-          "availability": "true"
-        },
-        {
-          "name": "H9",
-          "availability": "true"
-        },
-        {
-          "name": "H10",
-          "availability": "true"
-        },
-        {
-          "name": "H11",
-          "availability": "true"
-        },
-        {
-          "name": "H12",
-          "availability": "true"
-        }
-      ],
-      "placesUnassignable": []
+
+      "placesUnassignable": [],
+      "places":[
+        {"name":"H1",
+          "availability":true},
+
+        {"name":"H2",
+          "availability":true},
+
+        {"name":"H3",
+          "availability":true},
+
+        {"name":"H4",
+          "availability":true}
+      ]
     }
   },
   {
@@ -508,62 +405,31 @@
       351
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
-      "nbrPlaceUnassignable": 0,
-      "nbrPlaceUnassignableFree": 0,
-      "places": [
-        {
-          "name": "I1",
-          "availability": "true"
-        },
-        {
-          "name": "I2",
-          "availability": "true"
-        },
-        {
-          "name": "I3",
-          "availability": "true"
-        },
-        {
-          "name": "I4",
-          "availability": "true"
-        },
-        {
-          "name": "I5",
-          "availability": "true"
-        },
-        {
-          "name": "I6",
-          "availability": "true"
-        },
-        {
-          "name": "I7",
-          "availability": "true"
-        },
-        {
-          "name": "I8",
-          "availability": "true"
-        },
-        {
-          "name": "I9",
-          "availability": "true"
-        },
-        {
-          "name": "I10",
-          "availability": "true"
-        },
-        {
-          "name": "I11",
-          "availability": "true"
-        },
-        {
-          "name": "I12",
-          "availability": "true"
-        }
-      ],
-      "placesUnassignable": []
-    }
+    "nbrPlace": 4,
+    "nbrPlaceFree": 4,
+    "nbrPlaceUnassignable": 0,
+    "nbrPlaceUnassignableFree": 0,
+    "places": [
+      {
+        "name": "I1",
+        "availability": true
+      },
+      {
+        "name": "I2",
+        "availability": true
+      },
+      {
+        "name": "I3",
+        "availability": true
+      },
+      {
+        "name": "I4",
+        "availability": true
+      }
+    ],
+    "placesUnassignable": [
+    ]
+  }
   },
   {
     "label": "Nec Euismod In Associates",
@@ -643,58 +509,26 @@
       177
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "E1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "E2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "E3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "E4",
-          "availability": "true"
-        },
-        {
-          "name": "E5",
-          "availability": "true"
-        },
-        {
-          "name": "E6",
-          "availability": "true"
-        },
-        {
-          "name": "E7",
-          "availability": "true"
-        },
-        {
-          "name": "E8",
-          "availability": "true"
-        },
-        {
-          "name": "E9",
-          "availability": "true"
-        },
-        {
-          "name": "E10",
-          "availability": "true"
-        },
-        {
-          "name": "E11",
-          "availability": "true"
-        },
-        {
-          "name": "E12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": []
@@ -801,51 +635,19 @@
       "places": [
         {
           "name": "J1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "J2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "J3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "J4",
-          "availability": "true"
-        },
-        {
-          "name": "J5",
-          "availability": "true"
-        },
-        {
-          "name": "J6",
-          "availability": "true"
-        },
-        {
-          "name": "J7",
-          "availability": "true"
-        },
-        {
-          "name": "J8",
-          "availability": "true"
-        },
-        {
-          "name": "J9",
-          "availability": "true"
-        },
-        {
-          "name": "J10",
-          "availability": "true"
-        },
-        {
-          "name": "J11",
-          "availability": "true"
-        },
-        {
-          "name": "J12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": []
@@ -875,58 +677,26 @@
       125
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "D1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "D2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "D3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "D4",
-          "availability": "true"
-        },
-        {
-          "name": "D5",
-          "availability": "true"
-        },
-        {
-          "name": "D6",
-          "availability": "true"
-        },
-        {
-          "name": "D7",
-          "availability": "true"
-        },
-        {
-          "name": "D8",
-          "availability": "true"
-        },
-        {
-          "name": "D9",
-          "availability": "true"
-        },
-        {
-          "name": "D10",
-          "availability": "true"
-        },
-        {
-          "name": "D11",
-          "availability": "true"
-        },
-        {
-          "name": "D12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": []
@@ -1010,58 +780,26 @@
       85
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "C1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "C2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "C3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "C4",
-          "availability": "true"
-        },
-        {
-          "name": "C5",
-          "availability": "true"
-        },
-        {
-          "name": "C6",
-          "availability": "true"
-        },
-        {
-          "name": "C7",
-          "availability": "true"
-        },
-        {
-          "name": "C8",
-          "availability": "true"
-        },
-        {
-          "name": "C9",
-          "availability": "true"
-        },
-        {
-          "name": "C10",
-          "availability": "true"
-        },
-        {
-          "name": "C11",
-          "availability": "true"
-        },
-        {
-          "name": "C12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": []
@@ -1098,51 +836,19 @@
       "places": [
         {
           "name": "K1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "K2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "K3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "K4",
-          "availability": "true"
-        },
-        {
-          "name": "K5",
-          "availability": "true"
-        },
-        {
-          "name": "K6",
-          "availability": "true"
-        },
-        {
-          "name": "K7",
-          "availability": "true"
-        },
-        {
-          "name": "K8",
-          "availability": "true"
-        },
-        {
-          "name": "K9",
-          "availability": "true"
-        },
-        {
-          "name": "K10",
-          "availability": "true"
-        },
-        {
-          "name": "K11",
-          "availability": "true"
-        },
-        {
-          "name": "K12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": []
@@ -1245,51 +951,19 @@
       "places": [
         {
           "name": "L1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "L2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "L3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "L4",
-          "availability": "true"
-        },
-        {
-          "name": "L5",
-          "availability": "true"
-        },
-        {
-          "name": "L6",
-          "availability": "true"
-        },
-        {
-          "name": "L7",
-          "availability": "true"
-        },
-        {
-          "name": "L8",
-          "availability": "true"
-        },
-        {
-          "name": "L9",
-          "availability": "true"
-        },
-        {
-          "name": "L10",
-          "availability": "true"
-        },
-        {
-          "name": "L11",
-          "availability": "true"
-        },
-        {
-          "name": "L12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": []
@@ -1319,58 +993,26 @@
       66
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "B1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "B2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "B3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "B4",
-          "availability": "true"
-        },
-        {
-          "name": "B5",
-          "availability": "true"
-        },
-        {
-          "name": "B6",
-          "availability": "true"
-        },
-        {
-          "name": "B7",
-          "availability": "true"
-        },
-        {
-          "name": "B8",
-          "availability": "true"
-        },
-        {
-          "name": "B9",
-          "availability": "true"
-        },
-        {
-          "name": "B10",
-          "availability": "true"
-        },
-        {
-          "name": "B11",
-          "availability": "true"
-        },
-        {
-          "name": "B12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": []
@@ -1458,58 +1100,26 @@
       163
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
         {
           "name": "A1",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "A2",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "A3",
-          "availability": "true"
+          "availability": true
         },
         {
           "name": "A4",
-          "availability": "true"
-        },
-        {
-          "name": "A5",
-          "availability": "true"
-        },
-        {
-          "name": "A6",
-          "availability": "true"
-        },
-        {
-          "name": "A7",
-          "availability": "true"
-        },
-        {
-          "name": "A8",
-          "availability": "true"
-        },
-        {
-          "name": "A9",
-          "availability": "true"
-        },
-        {
-          "name": "A10",
-          "availability": "true"
-        },
-        {
-          "name": "A11",
-          "availability": "true"
-        },
-        {
-          "name": "A12",
-          "availability": "true"
+          "availability": true
         }
       ],
       "placesUnassignable": []

@@ -1,5 +1,15 @@
-<div class="card">
+<div class="card" >
+  <h3 style="text-align: center; padding: 0.2%"> PARKING </h3>
   <div class="card-body">
-      Parking
+    <div class="shop" *ngFor="let shop of shops">
+      <div class="shopLabel">
+        {{shop.label}}
+      </div>
+      <div class="places">
+        <div class="place" *ngFor="let place of shop.parkingSpace.places" [ngStyle]="{'background-color': place.availability? 'green' : 'red'}">
+          {{ place.name }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
