@@ -33,6 +33,7 @@
     </td>
     <td>
       <div *ngIf="inhabitant.currentReservation">
+        <div *ngIf="inhabitant.currentReservation.shopId!=0">
         <mat-card class="mat-elevation-z5">
           <mat-card-header>
             <mat-card-title class="title">You have a parking space reservation in progress.
@@ -45,8 +46,10 @@
           </mat-card-content>
           <mat-card-actions>
             <button mat-button>See you... </button>
+            <button class="btnccl" (click)="cancelReservation()" mat-button>Cancel </button>
           </mat-card-actions>
         </mat-card>
+        </div>
       </div>
     </td>
   </tr>

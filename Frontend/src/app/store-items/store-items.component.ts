@@ -131,12 +131,26 @@ export class StoreItemsComponent implements OnInit {
       this.addItemsToInhabitant();
       this.manageInhabitantAttendance();
       this.addPurchaseToAShop(number);
-      this.updateNumberfSexfAge()
+      this.updateNumberfSexfAge();
+      this.manageParkingReservation();
       this.inhabitantService.updateInhabitant(this.inhabitant);
       this.shopService.updateShop(this.shop);
       this.inhabitantService.authenticateInhabitant(this.inhabitant.id).subscribe((inhabitant) => this.inhabitant = inhabitant);
       this.objectName = undefined;
     }
+  }
+
+  /**
+   * This method is used to make free a reservation after a purchased item if an inhabitant has a reservation
+   */
+
+  manageParkingReservation(){
+    if (this.inhabitant.currentReservation != undefined
+      && this.inhabitant.currentReservation.price != undefined
+      && this.inhabitant.currentReservation.shopId == Number(this.shop.id)){
+      this.inhabitant.currentReservation.price = 0;
+    }
+
   }
 
   /**
