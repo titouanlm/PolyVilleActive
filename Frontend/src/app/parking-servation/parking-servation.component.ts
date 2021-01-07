@@ -66,9 +66,10 @@ export class ParkingServationComponent implements OnInit {
 
         if (this.selectedShop.parkingSpace.nbrPlaceFree > 0){
           for(let a=0;a<(this.selectedShop.parkingSpace.nbrPlace-this.selectedShop.parkingSpace.nbrPlaceUnassignable);a++) {
-            if (!this.selectedShop.parkingSpace.places[a].reserved) {
+            if (!this.selectedShop.parkingSpace.places[a].reserved && this.selectedShop.parkingSpace.places[a].availability ) {
 
               this.selectedShop.parkingSpace.places[a].reserved=true;
+              this.selectedShop.parkingSpace.places[a].inhabitantIdReserved= this.inhabitant.id;
               this.selectedShop.parkingSpace.nbrPlaceFree--;
               this.inhabitant.currentReservation = reservationToCreate;
               this.inhabitant.currentReservation.place=this.selectedShop.parkingSpace.places[a].name;
