@@ -220,7 +220,16 @@
         -34.52381,
         -44.95548
       ]
-    ]
+    ],
+    "currentReservation": {
+      "platNumber": "ZERTY4",
+      "heureDebut": "23:02",
+      "heureFin": "01:02",
+      "shopId": 1234568,
+      "place": "F1",
+      "shopName": "Auctor Ullam",
+      "price": 0
+    }
   },
   {
     "id": 3,

@@ -4,21 +4,21 @@
     <form [formGroup]="reservationForm">
 
       <fieldset>
-        <legend> Reservation de place de parking : </legend>
+        <legend> Parking place Reservation : </legend>
 
-        <label for="platNumber">Votre numéro de plaque :</label>
+        <label for="platNumber">Your license plate number:</label>
         <input type="text" size="20"
                maxlength="40" value="" id="platNumber" [formControlName]="'platNumber'" required="required" [ngClass]="{ 'is-invalid': submitted}" />
 
-        <label for="hdeb">Heure de debut de la reservation :</label>
+        <label for="hdeb">Start time of the reservation :</label>
         <input type="time" size="20"
                maxlength="40" value="" id="hdeb" [formControlName]="'heureDebut'" required="required" [ngClass]="{ 'is-invalid': submitted}"/>
 
-        <label for="hfin">Heure de fin de la reservation :</label>
+        <label for="hfin">End time of the reservation :</label>
         <input type="time" size="20"
                maxlength="40" value="" id="hfin" [formControlName]="'heureFin'" required="required" [ngClass]="{ 'is-invalid': submitted}"/>
 
-        <label for="shop">Magasin lié à la réservation :</label>
+        <label for="shop">Shop linked to the reservation:</label>
         <select  id="shop" [formControlName]="'shopId'">
           <option *ngFor="let shop of shops; let i=index" value="{{shop.id}}"> {{shop.label}}</option>
         </select>

@@ -263,7 +263,7 @@
     ],
     "parkingSpace": {
       "nbrPlace": 4,
-      "nbrPlaceFree": 2,
+      "nbrPlaceFree": 1,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
@@ -271,8 +271,8 @@
           "name": "F1",
           "availability": true,
           "shopId": 1234568,
-          "reserved": false,
-          "inhabitantIdReserved": -1,
+          "reserved": true,
+          "inhabitantIdReserved": 2,
           "inhabitantIdParked": -1
         },
         {
@@ -586,7 +586,8 @@
           "name": "E1",
           "availability": true,
           "shopId": 1234571,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdReserved": 2
         },
         {
           "name": "E2",
