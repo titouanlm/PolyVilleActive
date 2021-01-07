@@ -22,13 +22,13 @@
     ],
     "gender": "Male",
     "currentReservation": {
-      "platNumber": "lal",
-      "heureDebut": "22:34",
-      "heureFin": "23:34",
-      "shopId": 1234567,
-      "place": "G1",
-      "shopName": "Nam LLC 874",
-      "price": 0
+      "price": 0,
+      "heureDebut": "",
+      "heureFin": "",
+      "place": "",
+      "platNumber": "",
+      "shopId": 0,
+      "shopName": ""
     },
     "objectPurchased": [
       [
@@ -118,12 +118,13 @@
       1234569
     ],
     "currentReservation": {
-      "platNumber": "lal",
-      "heureDebut": "06:00",
-      "heureFin": "07:31",
-      "shopId": 1234569,
-      "place": "H3",
-      "shopName": "Quis Arcu Industries"
+      "price": 0,
+      "heureDebut": "",
+      "heureFin": "",
+      "place": "",
+      "platNumber": "",
+      "shopId": 0,
+      "shopName": ""
     }
   },
   {

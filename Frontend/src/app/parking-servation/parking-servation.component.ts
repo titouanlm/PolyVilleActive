@@ -80,6 +80,8 @@ export class ParkingServationComponent implements OnInit {
             }
           }
           this.inhabitant.currentReservation.shopName=this.selectedShop.label;
+          this.inhabitant.currentReservation.price=5;
+          console.log(this.inhabitant.currentReservation)
           this.makePrice(reservationToCreate);
           this.shopService.updateShop(this.selectedShop);
           this.inhabitantService.updateInhabitant(this.inhabitant);

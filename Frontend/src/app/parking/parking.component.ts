@@ -127,8 +127,19 @@ export class ParkingComponent implements OnInit {
       p.reserved = false;
       p.inhabitantIdParked = -1;
       p.inhabitantIdReserved = -1;
+      //Decremente
       this.updateShop(p);
-      alert("You have to pay 5$");
+
+      this.inhabitantService.getInhabitant(Number(exitF.inhabitantId))
+        .subscribe(
+          inhabitant => {
+            if(inhabitant.currentReservation.shopName != "" && inhabitant.currentReservation.price === 0 ){
+              alert("You have to pay nothing. It's free because of your purchases.");
+            }else{
+              alert("You have to pay 5$");
+            }
+          });
+
     }else{
       alert("This inhabitant is not parked in the parking.")
     }
