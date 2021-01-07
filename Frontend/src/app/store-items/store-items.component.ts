@@ -145,7 +145,9 @@ export class StoreItemsComponent implements OnInit {
    */
 
   manageParkingReservation(){
-    if (this.inhabitant.currentReservation != undefined && this.inhabitant.currentReservation.price != undefined){
+    if (this.inhabitant.currentReservation != undefined
+      && this.inhabitant.currentReservation.price != undefined
+      && this.inhabitant.currentReservation.shopId == Number(this.shop.id)){
       this.inhabitant.currentReservation.price = 0;
     }
 

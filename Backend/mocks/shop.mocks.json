@@ -45,7 +45,8 @@
           1999,
           1987,
           1,
-          9
+          9,
+          1867
         ],
         "shopId": 1234567,
         "id": 1608149454567
@@ -59,20 +60,21 @@
         "notifiedCustomersNumber": [
           1987,
           9,
-          1
+          1,
+          1867
         ],
         "shopId": 1234567,
         "id": 1609751185673
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 15,
-      "numberOfPresence": 20
+      "numberOfPurchases": 17,
+      "numberOfPresence": 22
     },
     "purchasedItems": [
       [
         "Flashbang",
-        "0"
+        "2"
       ],
       [
         "Rocket launcher",
@@ -112,11 +114,11 @@
       28,
       74,
       8,
-      72,
+      74,
       48
     ],
     "numberOfPurchaseBySexRang": [
-      200,
+      202,
       106
     ],
     "parkingSpace": {
@@ -167,8 +169,8 @@
     },
     "promotions": [
       {
-        "title": "Venez",
-        "description": "-70%",
+        "title": "Come !",
+        "description": "-70% off ",
         "startDate": "2021-01-01",
         "endDate": "2021-01-20",
         "public": true,
@@ -187,8 +189,8 @@
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 6,
-      "numberOfPresence": 10
+      "numberOfPurchases": 7,
+      "numberOfPresence": 12
     },
     "purchasedItems": [
       [
@@ -213,7 +215,7 @@
       ],
       [
         "Pantalon large gris",
-        "0"
+        "1"
       ],
       [
         "Pantalon large bordeaux",
@@ -249,11 +251,11 @@
       10,
       57,
       28,
-      16,
+      17,
       48
     ],
     "numberOfPurchaseBySexRang": [
-      65,
+      66,
       114
     ],
     "parkingSpace": {
