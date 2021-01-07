@@ -43,6 +43,7 @@ router.put('/:inhabitantId', (req, res) => {
 
         res.status(200).json(Inhabitant.update(req.params.inhabitantId, req.body))
     } catch (err) {
+        console.log(err)
         manageAllErrors(res, err)
     }
 });

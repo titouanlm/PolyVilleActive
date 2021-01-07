@@ -54,6 +54,18 @@ export class ParkingComponent implements OnInit {
      this.placeChoose = this.places.find((place) => place.name === placeName && place.availability);
   }
 
+  parkInhabitantOn() {
+    this.placeChoose.availability = false;
+    this.placeChoose.inhabitantIdParked = this.inhabitantToPark.id;
+    this.shops.forEach((shop) => {
+      if(shop.id === this.placeChoose.shopId){
+        this.shopService.updateShop(shop);
+        return;
+      }
+    });
+    this.enterForm.reset();
+  }
+
   submit() {
     this.submitted = true;
     var enterF  : EnterForm = this.enterForm.getRawValue() as EnterForm;
@@ -65,29 +77,21 @@ export class ParkingComponent implements OnInit {
 
           if(!this.inhabitantAlreadyPark(this.inhabitantToPark)){
             var placeReserved = this.places.find((place) => place.inhabitantIdReserved === this.inhabitantToPark.id)
-            //associate place to reservation
-
-            this.placeAvailable(enterF.placeName);
-
-            console.log(this.inhabitantToPark, this.placeChoose);
-
-            if(this.placeChoose){
-              if(!this.placeChoose.reserved){
-
-                this.placeChoose.availability = false;
-                this.placeChoose.inhabitantIdParked = this.inhabitantToPark.id;
-                this.shops.forEach((shop) => {
-                    if(shop.id === this.placeChoose.shopId){
-                      this.shopService.updateShop(shop);
-                      return;
-                    }
-                });
-                this.enterForm.reset();
-              }else{
-                alert("Error : the place is reserved for another inhabitant.")
-              }
+            if(placeReserved){
+              this.placeChoose = placeReserved;
+              this.parkInhabitantOn();
+              alert("This inhabitant got a reservation on " + this.placeChoose.name)
             }else{
-              alert("Error : the place doesn't exist or is not available.")
+              this.placeAvailable(enterF.placeName);
+              if(this.placeChoose){
+                if(!this.placeChoose.reserved){
+                  this.parkInhabitantOn();
+                }else{
+                  alert("Error : the place is reserved for another inhabitant.")
+                }
+              }else{
+                alert("Error : the place doesn't exist or is not available.")
+              }
             }
           }else{
             alert("Error : the inhabitant is already parked.")
@@ -97,4 +101,5 @@ export class ParkingComponent implements OnInit {
           alert("Error : the inhabitant doesn't exist.");
         });
   }
+
 }

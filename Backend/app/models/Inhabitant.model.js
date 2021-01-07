@@ -14,12 +14,12 @@ module.exports = new BaseModel('Inhabitant', {
     objectPurchased: Joi.array().items(Joi.array()),
     gender: Joi.string(),
     currentReservation : Joi.object({
-        platNumber: Joi.string(),
-        heureDebut: Joi.string(),
-        heureFin: Joi.string(),
-        shopId: Joi.number(),
-        place : Joi.string(),
-        shopName: Joi.string(),
+        platNumber: Joi.string().allow(""),
+        heureDebut: Joi.string().allow(""),
+        heureFin: Joi.string().allow(""),
+        shopId: Joi.number().allow(0),
+        place : Joi.string().allow(""),
+        shopName: Joi.string().allow(""),
         price: Joi.number(),
     })
 
