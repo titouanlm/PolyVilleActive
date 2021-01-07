@@ -61,7 +61,7 @@ export class ParkingServationComponent implements OnInit {
 
     this.shopService.getShopFromUrl(reservationToCreate.shopId+'');
     try {
-      if (!this.inhabitant.currentReservation || this.inhabitant.currentReservation.shopName != ""){
+      if (this.inhabitant.currentReservation && this.inhabitant.currentReservation.shopName){
         alert("You can't make two reservations, you have to abort the existing one before");
         return;
       }
@@ -80,9 +80,8 @@ export class ParkingServationComponent implements OnInit {
             }
           }
           this.inhabitant.currentReservation.shopName=this.selectedShop.label;
-          this.inhabitant.currentReservation.price=5;
-          console.log(this.inhabitant.currentReservation)
           this.makePrice(reservationToCreate);
+          this.inhabitant.currentReservation.price=5;
           this.shopService.updateShop(this.selectedShop);
           this.inhabitantService.updateInhabitant(this.inhabitant);
         }else {

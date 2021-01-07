@@ -138,6 +138,16 @@ export class ParkingComponent implements OnInit {
             }else{
               alert("You have to pay 5$");
             }
+            inhabitant.currentReservation = {
+              price: 0,
+              heureDebut: "",
+              heureFin: "",
+              place: "",
+              platNumber: "",
+              shopId: 0,
+              shopName: ""
+            };
+            this.inhabitantService.updateInhabitant(inhabitant);
           });
 
     }else{

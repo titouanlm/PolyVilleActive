@@ -121,7 +121,7 @@
     ],
     "parkingSpace": {
       "nbrPlace": 4,
-      "nbrPlaceFree": 4,
+      "nbrPlaceFree": 3,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
@@ -192,13 +192,13 @@
       }
     ],
     "averagePresenceBeforePurchase": {
-      "numberOfPurchases": 7,
-      "numberOfPresence": 12
+      "numberOfPurchases": 8,
+      "numberOfPresence": 13
     },
     "purchasedItems": [
       [
         "Jean chino clair",
-        "1"
+        "2"
       ],
       [
         "Pantalon slim noir",
@@ -255,10 +255,10 @@
       57,
       28,
       17,
-      48
+      49
     ],
     "numberOfPurchaseBySexRang": [
-      66,
+      67,
       114
     ],
     "parkingSpace": {
@@ -711,11 +711,11 @@
       "places": [
         {
           "name": "J1",
-          "availability": false,
+          "availability": true,
           "shopId": 1234572,
           "reserved": false,
-          "inhabitantIdReserved": 1987,
-          "inhabitantIdParked": 1987
+          "inhabitantIdReserved": -1,
+          "inhabitantIdParked": -1
         },
         {
           "name": "J2",
