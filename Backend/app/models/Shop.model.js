@@ -29,8 +29,10 @@ module.exports = new BaseModel('Shop', {
 
             name : Joi.string(),
             availability : Joi.boolean(),
-            reserved :  Joi.boolean()
-
+            reserved :  Joi.boolean(),
+            shopId : Joi.number(),
+            inhabitantIdParked : Joi.number(),
+            inhabitantIdReserved: Joi.number()
         })),
         placesUnassignable: Joi.array().items(Joi.object({
 

@@ -117,4 +117,11 @@ export class InhabitantService {
       this.inhabitants$.next(this.inhabitants);
     });
   }
+
+  getInhabitant(inhabitantId : number) {
+    const url = 'http://localhost:9428/api/inhabitants/' + inhabitantId ;
+    return this.http.get<Inhabitant>(url).pipe(map((inhabitant) => {
+      return inhabitant;
+    }));
+  }
 }

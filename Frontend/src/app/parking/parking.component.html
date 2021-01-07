@@ -6,7 +6,7 @@
         {{shop.label}}
       </div>
       <div class="places">
-        <div class="place" *ngFor="let place of shop.parkingSpace.places" [ngStyle]="{'background-color': place.availability? 'green' : 'red'}">
+        <div class="place" *ngFor="let place of shop.parkingSpace.places" [ngStyle]="{'background-color': !place.availability? 'red' : (place.reserved? 'orange' : 'green') }">
           {{ place.name }}
         </div>
       </div>
@@ -17,6 +17,22 @@
 <div id="actions" class="card">
   <div id="enter" class="card">
     <h3>ENTER</h3>
+    <form [formGroup]="enterForm">
+
+      <fieldset>
+        <label for="inhabitantId">Inhabitant ID</label><br>
+        <input type="text" size="20"
+               maxlength="20" value="" id="inhabitantId" [formControlName]="'inhabitantId'" required="required" /><br>
+        <label for="placeName">Place Name</label><br>
+        <input type="text" size="20"
+               maxlength="2" value="" id="placeName" [formControlName]="'placeName'" required="required"/>
+
+      </fieldset>
+      <br>
+      <p>
+        <input type="submit" value="Park" (click)="submit()" />
+      </p>
+    </form>
 
   </div>
   <div id="goOut" class="card">

@@ -32,5 +32,8 @@ export interface Shop{
 export interface nameAvailabilityType{
   name : string,
   availability : boolean,
-  reserved : boolean
+  reserved : boolean,
+  inhabitantIdParked : number;
+  inhabitantIdReserved: number;
+  shopId : string;
 }

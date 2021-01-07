@@ -28,12 +28,13 @@
           1988,
           1999,
           1867,
-          1
+          1,
+          9
         ]
       },
       {
-        "title": "LALALA",
-        "description": "dqiodj",
+        "title": "70% off",
+        "description": "only for t-shirts",
         "startDate": "2020-02-20",
         "endDate": "2020-02-20",
         "customersNumberInterested": [
@@ -43,10 +44,25 @@
         "notifiedCustomersNumber": [
           1999,
           1987,
-          1
+          1,
+          9
         ],
         "shopId": 1234567,
         "id": 1608149454567
+      },
+      {
+        "title": "10% off",
+        "description": "for everything",
+        "startDate": "2020-02-20",
+        "endDate": "2020-02-20",
+        "customersNumberInterested": [],
+        "notifiedCustomersNumber": [
+          1987,
+          9,
+          1
+        ],
+        "shopId": 1234567,
+        "id": 1609751185673
       }
     ],
     "averagePresenceBeforePurchase": {
@@ -111,19 +127,29 @@
       "places": [
         {
           "name": "G1",
-          "availability": true
+          "availability": false,
+          "shopId": 1234567,
+          "reserved": false,
+          "inhabitantIdParked": 1867
         },
         {
           "name": "G2",
-          "availability": true
+          "availability": false,
+          "shopId": 1234567,
+          "reserved": false,
+          "inhabitantIdParked": 1987
         },
         {
           "name": "G3",
-          "availability": true
+          "availability": true,
+          "shopId": 1234567,
+          "reserved": false
         },
         {
           "name": "G4",
-          "availability": true
+          "availability": true,
+          "shopId": 1234567,
+          "reserved": false
         }
       ],
       "placesUnassignable": []
@@ -238,19 +264,27 @@
       "places": [
         {
           "name": "F1",
-          "availability": true
+          "availability": true,
+          "shopId": 1234568,
+          "reserved": false
         },
         {
           "name": "F2",
-          "availability": true
+          "availability": true,
+          "shopId": 1234568,
+          "reserved": false
         },
         {
           "name": "F3",
-          "availability": true
+          "availability": true,
+          "shopId": 1234568,
+          "reserved": false
         },
         {
           "name": "F4",
-          "availability": true
+          "availability": true,
+          "shopId": 1234568,
+          "reserved": false
         }
       ],
       "placesUnassignable": []
@@ -361,23 +395,36 @@
     },
     "parkingSpace": {
       "nbrPlace": 4,
-      "nbrPlaceFree": 4,
+      "nbrPlaceFree": 1,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
-
       "placesUnassignable": [],
-      "places":[
-        {"name":"H1",
-          "availability":true},
-
-        {"name":"H2",
-          "availability":true},
-
-        {"name":"H3",
-          "availability":true},
-
-        {"name":"H4",
-          "availability":true}
+      "places": [
+        {
+          "name": "H1",
+          "availability": true,
+          "shopId": 1234569,
+          "reserved": false
+        },
+        {
+          "name": "H2",
+          "availability": true,
+          "shopId": 1234569,
+          "reserved": false
+        },
+        {
+          "name": "H3",
+          "availability": false,
+          "shopId": 1234569,
+          "reserved": false,
+          "inhabitantIdParked": 10
+        },
+        {
+          "name": "H4",
+          "availability": true,
+          "shopId": 1234569,
+          "reserved": false
+        }
       ]
     }
   },
@@ -405,31 +452,38 @@
       351
     ],
     "parkingSpace": {
-    "nbrPlace": 4,
-    "nbrPlaceFree": 4,
-    "nbrPlaceUnassignable": 0,
-    "nbrPlaceUnassignableFree": 0,
-    "places": [
-      {
-        "name": "I1",
-        "availability": true
-      },
-      {
-        "name": "I2",
-        "availability": true
-      },
-      {
-        "name": "I3",
-        "availability": true
-      },
-      {
-        "name": "I4",
-        "availability": true
-      }
-    ],
-    "placesUnassignable": [
-    ]
-  }
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
+      "nbrPlaceUnassignable": 0,
+      "nbrPlaceUnassignableFree": 0,
+      "places": [
+        {
+          "name": "I1",
+          "availability": true,
+          "shopId": 1234570,
+          "reserved": false
+        },
+        {
+          "name": "I2",
+          "availability": true,
+          "shopId": 1234570,
+          "reserved": false
+        },
+        {
+          "name": "I3",
+          "availability": true,
+          "shopId": 1234570,
+          "reserved": false
+        },
+        {
+          "name": "I4",
+          "availability": true,
+          "shopId": 1234570,
+          "reserved": false
+        }
+      ],
+      "placesUnassignable": []
+    }
   },
   {
     "label": "Nec Euismod In Associates",
@@ -516,19 +570,27 @@
       "places": [
         {
           "name": "E1",
-          "availability": true
+          "availability": true,
+          "shopId": 1234571,
+          "reserved": false
         },
         {
           "name": "E2",
-          "availability": true
+          "availability": true,
+          "shopId": 1234571,
+          "reserved": false
         },
         {
           "name": "E3",
-          "availability": true
+          "availability": true,
+          "shopId": 1234571,
+          "reserved": false
         },
         {
           "name": "E4",
-          "availability": true
+          "availability": true,
+          "shopId": 1234571,
+          "reserved": false
         }
       ],
       "placesUnassignable": []
@@ -635,19 +697,27 @@
       "places": [
         {
           "name": "J1",
-          "availability": false
+          "availability": true,
+          "shopId": 1234572,
+          "reserved": false
         },
         {
           "name": "J2",
-          "availability": true
+          "availability": true,
+          "shopId": 1234572,
+          "reserved": false
         },
         {
           "name": "J3",
-          "availability": true
+          "availability": true,
+          "shopId": 1234572,
+          "reserved": false
         },
         {
           "name": "J4",
-          "availability": true
+          "availability": true,
+          "shopId": 1234572,
+          "reserved": false
         }
       ],
       "placesUnassignable": []
@@ -684,19 +754,27 @@
       "places": [
         {
           "name": "D1",
-          "availability": true
+          "availability": true,
+          "shopId": 1234573,
+          "reserved": false
         },
         {
           "name": "D2",
-          "availability": true
+          "availability": true,
+          "shopId": 1234573,
+          "reserved": false
         },
         {
           "name": "D3",
-          "availability": true
+          "availability": true,
+          "shopId": 1234573,
+          "reserved": false
         },
         {
           "name": "D4",
-          "availability": true
+          "availability": true,
+          "shopId": 1234573,
+          "reserved": false
         }
       ],
       "placesUnassignable": []
@@ -787,19 +865,27 @@
       "places": [
         {
           "name": "C1",
-          "availability": true
+          "availability": true,
+          "shopId": 1234574,
+          "reserved": false
         },
         {
           "name": "C2",
-          "availability": true
+          "availability": true,
+          "shopId": 1234574,
+          "reserved": false
         },
         {
           "name": "C3",
-          "availability": true
+          "availability": true,
+          "shopId": 1234574,
+          "reserved": false
         },
         {
           "name": "C4",
-          "availability": true
+          "availability": true,
+          "shopId": 1234574,
+          "reserved": false
         }
       ],
       "placesUnassignable": []
@@ -836,19 +922,28 @@
       "places": [
         {
           "name": "K1",
-          "availability": true
+          "availability": true,
+          "shopId": 1234575,
+          "reserved": false
         },
         {
           "name": "K2",
-          "availability": true
+          "availability": true,
+          "shopId": 1234575,
+          "reserved": false
         },
         {
           "name": "K3",
-          "availability": true
+          "availability": false,
+          "shopId": 1234575,
+          "reserved": false,
+          "inhabitantIdParked": 11
         },
         {
           "name": "K4",
-          "availability": true
+          "availability": true,
+          "shopId": 1234575,
+          "reserved": false
         }
       ],
       "placesUnassignable": []
@@ -951,19 +1046,27 @@
       "places": [
         {
           "name": "L1",
-          "availability": true
+          "availability": true,
+          "shopId": 1234576,
+          "reserved": false
         },
         {
           "name": "L2",
-          "availability": true
+          "availability": true,
+          "shopId": 1234576,
+          "reserved": false
         },
         {
           "name": "L3",
-          "availability": true
+          "availability": true,
+          "shopId": 1234576,
+          "reserved": false
         },
         {
           "name": "L4",
-          "availability": true
+          "availability": true,
+          "shopId": 1234576,
+          "reserved": false
         }
       ],
       "placesUnassignable": []
@@ -1000,19 +1103,27 @@
       "places": [
         {
           "name": "B1",
-          "availability": true
+          "availability": true,
+          "shopId": 1234577,
+          "reserved": false
         },
         {
           "name": "B2",
-          "availability": true
+          "availability": true,
+          "shopId": 1234577,
+          "reserved": false
         },
         {
           "name": "B3",
-          "availability": true
+          "availability": true,
+          "shopId": 1234577,
+          "reserved": false
         },
         {
           "name": "B4",
-          "availability": true
+          "availability": true,
+          "shopId": 1234577,
+          "reserved": false
         }
       ],
       "placesUnassignable": []
@@ -1107,19 +1218,27 @@
       "places": [
         {
           "name": "A1",
-          "availability": true
+          "availability": true,
+          "shopId": 1234578,
+          "reserved": false
         },
         {
           "name": "A2",
-          "availability": true
+          "availability": true,
+          "shopId": 1234578,
+          "reserved": false
         },
         {
           "name": "A3",
-          "availability": true
+          "availability": true,
+          "shopId": 1234578,
+          "reserved": false
         },
         {
           "name": "A4",
-          "availability": true
+          "availability": true,
+          "shopId": 1234578,
+          "reserved": false
         }
       ],
       "placesUnassignable": []

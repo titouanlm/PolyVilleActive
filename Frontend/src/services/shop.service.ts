@@ -98,7 +98,7 @@ export class ShopService {
 
 
   updateShop(shop: Shop) {
-    this.http.put<Shop>('http://localhost:9428/api/shops/' + shop.id, shop).subscribe();
+    this.http.put<Shop>('http://localhost:9428/api/shops/' + shop.id, shop).subscribe(() => this.getShopsFromUrl());
   }
 
   updateEvent(shop: Shop, event: Event) {

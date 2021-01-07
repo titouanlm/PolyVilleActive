@@ -39,5 +39,15 @@
     "percentageShowHallCondition": 50,
     "createdBy": "Jean Dupond",
     "id": 1609755976755
+  },
+  {
+    "type": "concert",
+    "targetPeople": [
+      "young"
+    ],
+    "code": "if( this.culturalEvent.typeEvenement === \"concert\"){ if( this.culturalEvent.typePublic === \"young\"){this.verified=true}}",
+    "text": "It is forbidden to create an event of type \"concert\" If the target audience is \"young\".",
+    "createdBy": "Jean Dupond",
+    "id": 1610019703258
   }
 ]

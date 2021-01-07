@@ -105,7 +105,15 @@
     "shopRated": [
       1234569,
       1234569
-    ]
+    ],
+    "currentReservation": {
+      "platNumber": "lal",
+      "heureDebut": "06:00",
+      "heureFin": "07:31",
+      "shopId": 1234569,
+      "place": "H3",
+      "shopName": "Quis Arcu Industries"
+    }
   },
   {
     "id": 1,
