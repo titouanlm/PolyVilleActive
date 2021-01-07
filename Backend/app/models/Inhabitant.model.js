@@ -19,7 +19,8 @@ module.exports = new BaseModel('Inhabitant', {
         heureFin: Joi.string(),
         shopId: Joi.number(),
         place : Joi.string(),
-        shopName: Joi.string()
+        shopName: Joi.string(),
+        price: Joi.number(),
     })
 
 });

@@ -5,6 +5,7 @@ export interface Reservation {
   shopId: number;
   place : string;
   shopName: string;
+  price: number;
 
   // inhabitantId : number;
   //id: number;
