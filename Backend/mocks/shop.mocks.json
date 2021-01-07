@@ -395,7 +395,7 @@
     },
     "parkingSpace": {
       "nbrPlace": 4,
-      "nbrPlaceFree": 1,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "placesUnassignable": [],
@@ -416,8 +416,7 @@
           "name": "H3",
           "availability": false,
           "shopId": 1234569,
-          "reserved": false,
-          "inhabitantIdParked": 10
+          "reserved": false
         },
         {
           "name": "H4",
