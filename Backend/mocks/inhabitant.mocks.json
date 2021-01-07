@@ -22,12 +22,12 @@
     ],
     "gender": "Male",
     "currentReservation": {
-      "heureDebut": "",
-      "heureFin": "",
-      "place": "",
-      "platNumber": "",
+      "platNumber": "lal",
+      "heureDebut": "22:34",
+      "heureFin": "23:34",
       "shopId": 1234567,
-      "shopName": "",
+      "place": "G1",
+      "shopName": "Nam LLC 874",
       "price": 0
     },
     "objectPurchased": [

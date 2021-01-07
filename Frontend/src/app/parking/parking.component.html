@@ -3,7 +3,7 @@
   <div class="card-body">
     <div class="shop" *ngFor="let shop of shops">
       <div class="shopLabel">
-        {{shop.label}}
+        <h4> {{shop.label}} </h4>
       </div>
       <div class="places">
         <div class="place" *ngFor="let place of shop.parkingSpace.places" [ngStyle]="{'background-color': !place.availability? 'red' : (place.reserved? 'orange' : 'green') }">
@@ -15,7 +15,7 @@
           <span *ngIf="(place.inhabitantIdParked === -1 || !place.inhabitantIdParked) && !place.reserved">
             FREE
           </span>
-          <span *ngIf="!place.inhabitantIdParked && place.reserved">
+          <span *ngIf="place.inhabitantIdParked === -1 && place.reserved">
             ID : {{place.inhabitantIdReserved}} <br>
             RESERVED
           </span>
