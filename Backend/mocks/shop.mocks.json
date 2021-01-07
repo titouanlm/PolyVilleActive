@@ -139,7 +139,7 @@
           "shopId": 1234567,
           "reserved": false,
           "inhabitantIdParked": -1,
-          "inhabitantIdReserved": -1
+          "inhabitantIdReserved": 13
         },
         {
           "name": "G3",
@@ -1091,7 +1091,9 @@
           "name": "L4",
           "availability": true,
           "shopId": 1234576,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdParked": -1,
+          "inhabitantIdReserved": -1
         }
       ],
       "placesUnassignable": []

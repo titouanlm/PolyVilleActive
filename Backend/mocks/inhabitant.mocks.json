@@ -346,7 +346,16 @@
     "longitude": 17.3382537,
     "latitude": 49.4841887,
     "gender": "Male",
-    "age": 13
+    "age": 13,
+    "currentReservation": {
+      "price": 0,
+      "heureDebut": "",
+      "heureFin": "",
+      "place": "",
+      "platNumber": "",
+      "shopId": 0,
+      "shopName": ""
+    }
   },
   {
     "id": 14,
