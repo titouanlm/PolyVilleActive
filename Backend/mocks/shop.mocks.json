@@ -690,8 +690,8 @@
       181
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
@@ -915,8 +915,8 @@
       259
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
@@ -1039,8 +1039,8 @@
       24
     ],
     "parkingSpace": {
-      "nbrPlace": 12,
-      "nbrPlaceFree": 12,
+      "nbrPlace": 4,
+      "nbrPlaceFree": 4,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
