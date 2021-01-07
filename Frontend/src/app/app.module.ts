@@ -48,6 +48,7 @@ import { ParkingComponent } from './parking/parking.component';
 import {ParkingPlacesComponent} from "./parking-places/parking-places.component";
 import { ParkingServationComponent } from './parking-servation/parking-servation.component';
 import {MatCardModule} from "@angular/material/card";
+import {FreeParkingPlacesComponent} from "./free-parking-places/free-parking-places.component";
 
 
 
@@ -88,6 +89,7 @@ import {MatCardModule} from "@angular/material/card";
     ParkingComponent,
     ParkingPlacesComponent,
     ParkingServationComponent,
+    FreeParkingPlacesComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,7 +117,8 @@ import {MatCardModule} from "@angular/material/card";
       {path: 'town-hall-employee', component: TownHallEmployeeHomeComponent},
       {path: 'town-hall-employee/blockly', component: TownHallEmployeeBlocksComponent},
       {path: 'parking', component: ParkingComponent},
-      {path: 'visitorinhabitant/reservation', component: ParkingServationComponent},
+      {path: 'visitorinhabitant/parking-places/reservation', component: ParkingServationComponent},
+      {path: 'visitorinhabitant/parking-places', component: FreeParkingPlacesComponent},
       {path: '**', redirectTo: ''},
     ], {onSameUrlNavigation: 'reload', relativeLinkResolution: 'legacy'}/*{useHash: true}*/),
     NgxBlocklyModule,
