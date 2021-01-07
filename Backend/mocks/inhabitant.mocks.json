@@ -218,7 +218,15 @@
     "longitude": 114.392392,
     "latitude": 36.097577,
     "gender": "Female",
-    "age": 37
+    "age": 37,
+    "currentReservation": {
+      "platNumber": "TEST",
+      "heureDebut": "16:26",
+      "heureFin": "18:26",
+      "shopId": 1234567,
+      "place": "G3",
+      "shopName": "Nam LLC 874"
+    }
   },
   {
     "id": 4,
@@ -227,7 +235,15 @@
     "longitude": 117.743378,
     "latitude": 32.644699,
     "gender": "Male",
-    "age": 65
+    "age": 65,
+    "currentReservation": {
+      "platNumber": "195",
+      "heureDebut": "17:24",
+      "heureFin": "18:23",
+      "shopId": 1234568,
+      "place": "F1",
+      "shopName": "Auctor Ullam"
+    }
   },
   {
     "id": 5,
@@ -254,7 +270,15 @@
     "longitude": -5.8406587,
     "latitude": 30.3458998,
     "gender": "Male",
-    "age": 95
+    "age": 95,
+    "currentReservation": {
+      "platNumber": "TEST6",
+      "heureDebut": "18:41",
+      "heureFin": "19:45",
+      "shopId": 1234568,
+      "place": "F2",
+      "shopName": "Auctor Ullam"
+    }
   },
   {
     "id": 8,
@@ -327,7 +351,15 @@
     "longitude": 100.721884,
     "latitude": 22.62097,
     "gender": "Female",
-    "age": 42
+    "age": 42,
+    "currentReservation": {
+      "platNumber": "lal",
+      "heureDebut": "20:44",
+      "heureFin": "21:44",
+      "shopId": 1234577,
+      "place": "B4",
+      "shopName": "Dui Nec Tempus Associates"
+    }
   },
   {
     "id": 15,

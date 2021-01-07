@@ -7,7 +7,18 @@
       </div>
       <div class="places">
         <div class="place" *ngFor="let place of shop.parkingSpace.places" [ngStyle]="{'background-color': !place.availability? 'red' : (place.reserved? 'orange' : 'green') }">
-          {{ place.name }}
+          {{ place.name }} <br>
+          <span *ngIf="place.inhabitantIdParked !=-1 && place.inhabitantIdParked">
+            ID : {{ place.inhabitantIdParked }} <br>
+            PARKED
+          </span>
+          <span *ngIf="(place.inhabitantIdParked === -1 || !place.inhabitantIdParked) && !place.reserved">
+            FREE
+          </span>
+          <span *ngIf="!place.inhabitantIdParked && place.reserved">
+            ID : {{place.inhabitantIdReserved}} <br>
+            RESERVED
+          </span>
         </div>
       </div>
     </div>
@@ -16,7 +27,7 @@
 
 <div id="actions" class="card">
   <div id="enter" class="card">
-    <h3>ENTER</h3>
+    <h3>ENTER</h3><br>
     <form [formGroup]="enterForm">
 
       <fieldset>
@@ -30,13 +41,26 @@
       </fieldset>
       <br>
       <p>
-        <input type="submit" value="Park" (click)="submit()" />
+        <button type="submit" class="btn btn-success" (click)="submitEnter()"> Enter </button>
+
       </p>
     </form>
 
   </div>
   <div id="goOut" class="card">
-    <h3>GO OUT</h3>
+    <h3>EXIT</h3><br>
+    <form [formGroup]="exitForm">
+
+      <fieldset>
+        <label for="inhabitantId2">Inhabitant ID</label><br>
+        <input type="text" size="20"
+               maxlength="20" value="" id="inhabitantId2" [formControlName]="'inhabitantId'" required="required" /><br>
+      </fieldset>
+      <br>
+      <p>
+        <button type="submit" class="btn btn-danger" (click)="submitExit()"> Exit </button>
+      </p>
+    </form>
   </div>
 
 </div>

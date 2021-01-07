@@ -10,6 +10,10 @@ interface EnterForm {
   placeName: string;
 }
 
+interface ExitForm {
+  inhabitantId: string;
+}
+
 
 @Component({
   selector: 'app-parking',
@@ -20,12 +24,27 @@ export class ParkingComponent implements OnInit {
   public shops : Shop[];
   public places : nameAvailabilityType[];
   public enterForm: FormGroup;
+  public exitForm: FormGroup;
 
   public inhabitantToPark : Inhabitant;
   public placeChoose : nameAvailabilityType;
 
   submitted=false;
   constructor(public shopService : ShopService, public formBuilder: FormBuilder, public inhabitantService: InhabitantService) {
+    this.updatePlaces();
+    this.enterForm= this.formBuilder.group({
+      inhabitantId: ['',Validators.required],
+      placeName:  ['',Validators.required]
+    });
+    this.exitForm= this.formBuilder.group({
+      inhabitantId: ['',Validators.required],
+    });
+  }
+
+  ngOnInit(): void {
+  }
+
+  updatePlaces(){
     this.shopService.getShopsFromUrl();
     this.shopService.shops$.subscribe((shops) =>{
       this.shops = shops;
@@ -36,13 +55,6 @@ export class ParkingComponent implements OnInit {
         });
       }
     });
-    this.enterForm= this.formBuilder.group({
-      inhabitantId: ['',Validators.required],
-      placeName:  ['',Validators.required]
-    });
-  }
-
-  ngOnInit(): void {
   }
 
   inhabitantAlreadyPark(inhabitantToPark: Inhabitant) {
@@ -57,16 +69,10 @@ export class ParkingComponent implements OnInit {
   parkInhabitantOn() {
     this.placeChoose.availability = false;
     this.placeChoose.inhabitantIdParked = this.inhabitantToPark.id;
-    this.shops.forEach((shop) => {
-      if(shop.id === this.placeChoose.shopId){
-        this.shopService.updateShop(shop);
-        return;
-      }
-    });
-    this.enterForm.reset();
+    this.updateShop(this.placeChoose);
   }
 
-  submit() {
+  submitEnter() {
     this.submitted = true;
     var enterF  : EnterForm = this.enterForm.getRawValue() as EnterForm;
 
@@ -102,4 +108,29 @@ export class ParkingComponent implements OnInit {
         });
   }
 
+  updateShop(place : nameAvailabilityType){
+    this.shops.forEach((shop) => {
+      if(shop.id === place.shopId){
+        this.shopService.updateShop(shop);
+        return;
+      }
+    });
+    this.enterForm.reset();
+    this.exitForm.reset();
+  }
+
+  submitExit() {
+    var exitF  : ExitForm = this.exitForm.getRawValue() as ExitForm;
+    var p = this.places.find((place) => place.inhabitantIdParked === Number(exitF.inhabitantId))
+    if(p){
+      p.availability = true;
+      p.reserved = false;
+      p.inhabitantIdParked = -1;
+      p.inhabitantIdReserved = -1;
+      this.updateShop(p);
+      alert("You have to pay 5$");
+    }else{
+      alert("This inhabitant is not parked in the parking.")
+    }
+  }
 }

@@ -127,29 +127,34 @@
       "places": [
         {
           "name": "G1",
-          "availability": false,
+          "availability": true,
           "shopId": 1234567,
           "reserved": false,
-          "inhabitantIdParked": 1867
+          "inhabitantIdParked": -1,
+          "inhabitantIdReserved": -1
         },
         {
           "name": "G2",
-          "availability": false,
+          "availability": true,
           "shopId": 1234567,
           "reserved": false,
-          "inhabitantIdParked": 1987
+          "inhabitantIdParked": -1,
+          "inhabitantIdReserved": -1
         },
         {
           "name": "G3",
           "availability": true,
           "shopId": 1234567,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdReserved": 3
         },
         {
           "name": "G4",
           "availability": true,
           "shopId": 1234567,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdParked": -1,
+          "inhabitantIdReserved": -1
         }
       ],
       "placesUnassignable": []
@@ -167,8 +172,8 @@
     },
     "promotions": [
       {
-        "title": "Venez",
-        "description": "-70%",
+        "title": "Come !",
+        "description": "-70% off ",
         "startDate": "2021-01-01",
         "endDate": "2021-01-20",
         "public": true,
@@ -258,7 +263,7 @@
     ],
     "parkingSpace": {
       "nbrPlace": 4,
-      "nbrPlaceFree": 4,
+      "nbrPlaceFree": 2,
       "nbrPlaceUnassignable": 0,
       "nbrPlaceUnassignableFree": 0,
       "places": [
@@ -266,13 +271,17 @@
           "name": "F1",
           "availability": true,
           "shopId": 1234568,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdReserved": -1,
+          "inhabitantIdParked": -1
         },
         {
           "name": "F2",
           "availability": true,
           "shopId": 1234568,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdReserved": -1,
+          "inhabitantIdParked": -1
         },
         {
           "name": "F3",
@@ -284,7 +293,9 @@
           "name": "F4",
           "availability": true,
           "shopId": 1234568,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdParked": -1,
+          "inhabitantIdReserved": -1
         }
       ],
       "placesUnassignable": []
@@ -410,14 +421,17 @@
           "name": "H2",
           "availability": true,
           "shopId": 1234569,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdParked": -1,
+          "inhabitantIdReserved": -1
         },
         {
           "name": "H3",
-          "availability": false,
+          "availability": true,
           "shopId": 1234569,
           "reserved": false,
-          "inhabitantIdParked": 10
+          "inhabitantIdParked": -1,
+          "inhabitantIdReserved": -1
         },
         {
           "name": "H4",
@@ -762,7 +776,9 @@
           "name": "D2",
           "availability": true,
           "shopId": 1234573,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdParked": -1,
+          "inhabitantIdReserved": -1
         },
         {
           "name": "D3",
@@ -934,10 +950,11 @@
         },
         {
           "name": "K3",
-          "availability": false,
+          "availability": true,
           "shopId": 1234575,
           "reserved": false,
-          "inhabitantIdParked": 11
+          "inhabitantIdParked": -1,
+          "inhabitantIdReserved": -1
         },
         {
           "name": "K4",
@@ -1060,7 +1077,9 @@
           "name": "L3",
           "availability": true,
           "shopId": 1234576,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdParked": -1,
+          "inhabitantIdReserved": -1
         },
         {
           "name": "L4",
@@ -1105,25 +1124,30 @@
           "name": "B1",
           "availability": true,
           "shopId": 1234577,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdReserved": -1,
+          "inhabitantIdParked": -1
         },
         {
           "name": "B2",
           "availability": true,
           "shopId": 1234577,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdReserved": -1
         },
         {
           "name": "B3",
           "availability": true,
           "shopId": 1234577,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdReserved": -1
         },
         {
           "name": "B4",
           "availability": true,
           "shopId": 1234577,
-          "reserved": false
+          "reserved": false,
+          "inhabitantIdReserved": -1
         }
       ],
       "placesUnassignable": []
